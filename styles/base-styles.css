@@ -1,0 +1,30 @@
+@import "./base-variables.css";
+
+@font-face {
+  font-family: "Hana2";
+  src: url("/public/fonts/Hana2-Regular.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hana2";
+  src: url("/public/fonts/Hana2-Bold.ttf") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Hana2", "Notosans_Regular";
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-width: var(--screen-width); /* 1210px */
+}
+
+.inner {
+  width: var(--inner-width);
+  margin: 0 auto;
+}
