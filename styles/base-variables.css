@@ -1,0 +1,11 @@
+/* Colors */
+:root {
+  --primary-color: #008485;
+}
+
+/* Variables */
+:root {
+  --screen-width: 75.625rem; /* 1210px */
+  --inner-width: 72.5rem; /* 1160px */
+  --component-margin: 1.25rem 1.875rem;
+}
