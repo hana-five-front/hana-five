@@ -21,8 +21,7 @@
 
 body {
   width: 100%;
-  /* min-width: 120rem; 1920px */
-  min-width: 760px; /* 1920px */
+  min-width: 75.625rem; /* 1210px */
 }
 
 .inner {
