@@ -71,6 +71,7 @@ newMake();
 
 function randomNum(arr, lower, upper) {
     let checkSet = new Set([])
+    
   for (var i = 0; i < arr.length; i++) {
     let number = Math.floor(Math.random() * (upper - lower + 1)) + lower;
     
@@ -91,13 +92,15 @@ function randomNum(arr, lower, upper) {
 }
 
 function placesSearchCB(data, status, pagination) {
+
   if (status === kakao.maps.services.Status.OK) {
     let random_list = randomNum(Array.from({ length: 4 }), 0, 14);
-    console.log(random_list)
     random_list.forEach((e, idx) => {
       let rulletList = document.querySelectorAll(
         `.rullet-list-name${idx + 1}`
       )[0];
+      let link = document.querySelectorAll(`.rullet-a-name${idx+1}`)[0]
+      link.setAttribute("href",`${data[e].place_url}`)
       let childList = rulletList.getElementsByTagName("div");
       let rulletListName = childList[0];
       let rulletListAddress = childList[1];
