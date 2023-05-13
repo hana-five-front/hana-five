@@ -1,15 +1,29 @@
-@import "./base-variables.css";
+
 
 @font-face {
   font-family: "Hana2";
-  src: url("/public/fonts/Hana2-Regular.ttf") format("woff");
+  src: url("../public/fonts/Hana2-Regular.otf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Hana2";
-  src: url("/public/fonts/Hana2-Bold.ttf") format("woff");
+  src: url("../public/fonts/Hana2-Bold.otf") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hana2";
+  src: url("../public/fonts/Hana2-Regular.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hana2";
+  src: url("../public/fonts/Hana2-Bold.ttf") format("woff");
   font-weight: bold;
   font-style: normal;
 }
