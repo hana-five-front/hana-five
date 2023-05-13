@@ -8,19 +8,16 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../footer.css" />
     <link rel="stylesheet" href="../header.css" />
-    
-    <title>Document</title>
 
-      
+    <title>Document</title>
   </head>
   <body>
-
     <header class="inner header-component">
       <div>
         <a href="../index.html">
           <img src="../images/headerLogo.png" alt="디지털하나로 로고" />
         </a>
-        
+
         <ul>
           <li>소개</li>
           <li>채용</li>
@@ -35,14 +32,10 @@
     </header>
 
     <main class="inner">
-
       <div class="roullet-component">
-   
         <div>
-          <canvas width="380" height='380'></canvas>  
+          <canvas width="380" height="380"></canvas>
           <div class="rul-cursor"></div>
-          
-      <!-- <button onclick="rotate()">룰렛 돌리기</button> -->
         </div>
         <div>
           <div class="rullet-top">
@@ -50,55 +43,58 @@
             <div class="rullet-top-subtitle">돌림판 보조 텍스트</div>
           </div>
           <button class="rullet-button" onclick="rotate()">
-           돌림판 돌리기!
+            돌림판 돌리기!
           </button>
         </div>
       </div>
       <div class="list-component">
-         <div class="pick-list">
+        <div class="pick-list">
           <div class="pick-list-title">개발자 추천 맛집 리스트</div>
-            
-            <div class="pick-list-name1">
-             <div>어쩌구 식당</div>
-             <div>서울특별시 성동구 아차산로 111</div>
-            </div>
-            <div class="pick-list-name2">
-              <div>어쩌구 식당</div>
-              <div>서울특별시 성동구 아차산로 111</div>
-             </div>
-             <div class="pick-list-name3">
-              <div>어쩌구 식당</div>
-              <div>서울특별시 성동구 아차산로 111</div>
-             </div>
-             <div class="pick-list-name4">
-              <div>어쩌구 식당</div>
-              <div>서울특별시 성동구 아차산로 111</div>
-             </div>
-             
-         
-         </div>
-         <div class="rullet-list">
-          <div class="pick-list-title">성수동 [양식] 맛집 리스트</div>
-            
+
+          <div class="pick-list-name1">
+            <div>어쩌구 식당</div>
+            <div>서울특별시 성동구 아차산로 111</div>
+          </div>
+          <div class="pick-list-name2">
+            <div>어쩌구 식당</div>
+            <div>서울특별시 성동구 아차산로 111</div>
+          </div>
+          <div class="pick-list-name3">
+            <div>어쩌구 식당</div>
+            <div>서울특별시 성동구 아차산로 111</div>
+          </div>
+          <div class="pick-list-name4">
+            <div>어쩌구 식당</div>
+            <div>서울특별시 성동구 아차산로 111</div>
+          </div>
+        </div>
+        <div class="rullet-list">
+          <div class="pick-list-title">성수동 <span class="rullet-keyword"></span> 맛집 리스트</div>
+          <a href="">
             <div class="rullet-list-name1">
-             <div>어쩌구 식당</div>
-             <div>서울특별시 성동구 아차산로 111</div>
+              <div class="rulletlist-list-name">어쩌구 식당</div>
+              <div class="rulletlist-list-address">서울특별시 성동구 아차산로 111</div>
             </div>
+          </a>
+          <a href="">
             <div class="rullet-list-name2">
-              <div>어쩌구 식당</div>
-              <div>서울특별시 성동구 아차산로 111</div>
-             </div>
-             <div class="rullet-list-name3">
-              <div>어쩌구 식당</div>
-              <div>서울특별시 성동구 아차산로 111</div>
-             </div>
-             <div class="rullet-list-name4">
-              <div>어쩌구 식당</div>
-              <div>서울특별시 성동구 아차산로 111</div>
-             </div>
-             
-         
-         </div>
+              <div class="rulletlist-list-name">어쩌구 식당</div>
+              <div class="rulletlist-list-address">서울특별시 성동구 아차산로 111</div>
+            </div>
+          </a>
+          <a href="">
+            <div class="rullet-list-name3">
+              <div class="rulletlist-list-name">어쩌구 식당</div>
+              <div class="rulletlist-list-address">서울특별시 성동구 아차산로 111</div>
+            </div>
+          </a>
+          <a href="">
+            <div class="rullet-list-name4">
+              <div class="rulletlist-list-name">어쩌구 식당</div>
+              <div class="rulletlist-list-address">서울특별시 성동구 아차산로 111</div>
+            </div>
+          </a>
+        </div>
       </div>
     </main>
 
@@ -135,6 +131,10 @@
         </div>
       </div>
     </footer>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0ac5b958752d7cb070f6e4eb29c305bc&libraries=services"
+    ></script>
     <script src="index.js"></script>
   </body>
 </html>

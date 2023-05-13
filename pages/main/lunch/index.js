@@ -22,7 +22,7 @@ const newMake = () => {
   ctx.textAlign = "center";
 
   for (let i = 0; i < product.length; i++) {
-    const angle = (arc * i) + (arc / 2);
+    const angle = arc * i + arc / 2;
 
     ctx.save();
 
@@ -51,11 +51,59 @@ const rotate = () => {
     const arc = 360 / product.length;
     const rotate = ran * arc + 3600 + arc * 3 - arc / 4;
 
-    $c.style.transform = `rotate(-${rotate-144}deg)`;
+    $c.style.transform = `rotate(-${rotate - 144}deg)`;
     $c.style.transition = "2s";
 
-    setTimeout(() => alert(`오늘의 맛집은 ${product[ran]} 어떠신가요?`), 2000);
+    setTimeout(() => {
+      var ps = new kakao.maps.services.Places();
+      const name=document.querySelectorAll(
+        `.rullet-keyword`
+      )[0]
+      name.innerText = `[${product[ran]}]`;
+    
+        ps.keywordSearch(`성수역 ${product[ran]} 맛집`, placesSearchCB)
+   
+    }, 2000);
   }, 1);
 };
 
 newMake();
+
+function randomNum(arr, lower, upper) {
+    let checkSet = new Set([])
+  for (var i = 0; i < arr.length; i++) {
+    let number = Math.floor(Math.random() * (upper - lower + 1)) + lower;
+    
+    while(true) {
+        
+        if (!checkSet.has(number)) {
+            checkSet.add(number)
+            break;
+        }
+        else{
+            number = Math.floor(Math.random() * (upper - lower + 1)) + lower;
+        }
+       
+    }
+    arr[i]=number
+  }
+  return arr;
+}
+
+function placesSearchCB(data, status, pagination) {
+  if (status === kakao.maps.services.Status.OK) {
+    let random_list = randomNum(Array.from({ length: 4 }), 0, 14);
+    console.log(random_list)
+    random_list.forEach((e, idx) => {
+      let rulletList = document.querySelectorAll(
+        `.rullet-list-name${idx + 1}`
+      )[0];
+      let childList = rulletList.getElementsByTagName("div");
+      let rulletListName = childList[0];
+      let rulletListAddress = childList[1];
+      rulletListName.innerText = data[e].place_name;
+      rulletListAddress.innerText = data[e].address_name;
+    });
+
+  }
+}

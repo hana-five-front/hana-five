@@ -109,14 +109,14 @@ button:active {
 
 .list-component {
   height: 12rem;
-  width: 60rem;
+  width: 80rem;
 
   display:flex;
   justify-content: space-evenly;
 }
 
 .pick-list{
-    width: 23.3606rem;
+    width: 30rem;
     
     height: 100%;
 }
@@ -129,15 +129,23 @@ button:active {
 
 }
 .rullet-list{
-    width: 23.3606rem;
+    width: 30rem;
     
     height: 100%; 
+}
+.rulletlist-list-name{
+    width:50%
+}
+.rulletlist-list-address{
+    width:50%;
+    text-align:left;
 }
 .rullet-list-name1{
     display: flex;
     margin-top: .625rem;
     justify-content: space-between;
 }
+
 
 .rullet-list-name2{
     display: flex;
@@ -176,4 +184,13 @@ button:active {
     margin-top: .625rem;
     display: flex;
     justify-content: space-between;
+}
+
+a { 
+    color: inherit;
+    text-decoration: none;
+}
+
+.rullet-keyword {
+    color:#008375
 }
