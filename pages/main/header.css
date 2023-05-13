@@ -16,7 +16,7 @@
     width: 60rem;
     height: 5rem;
 }
-.header-component > div > img {
+.header-component > div > a > img {
     width: 11.5rem;
     height: 5rem;
 }

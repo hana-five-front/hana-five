@@ -58,7 +58,7 @@
   width: 36.25rem;
   display: flex;
   justify-content: flex-end;
-  padding: 0rem 1.25rem;
+
 }
 .mainCarouselButton {
   width: 4.5rem;
@@ -119,6 +119,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .whatShouldIEatButton > div {
@@ -264,4 +265,7 @@
     height: 1.125rem;
     margin: .3125rem 0;
     font-size: .8125rem;
+}
+a {
+  text-decoration: none;
 }
