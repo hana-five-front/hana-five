@@ -1,0 +1,90 @@
+.footer-component {
+  height: 10.9375rem;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+}
+.footer-component > div {
+  width: 60rem;
+  height: 7.1875rem;
+  display: flex;
+  justify-content: space-between;
+}
+.left {
+  width: 20.6875rem;
+}
+.about-link {
+  display: flex;
+  align-items: center;
+}
+.about-link > p {
+  width: 4.375rem;
+  height: 0.4125rem;
+  font-size: 13px;
+  color: #008485;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.about-link > p:hover {
+  font-weight: bold;
+}
+.about-text {
+  height: 4rem;
+}
+
+.left-p_black {
+  width: 20.6875rem;
+  font-size: 0.8125rem;
+}
+
+.left-p_gray {
+  width: 20.6875rem;
+  font-size: 0.75rem;
+
+  color: #d1d6db;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 15.6875rem;
+  height: 7.1875rem;
+}
+
+.right-up {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 3rem;
+}
+.right-up > :first-child {
+  height: 1.25rem;
+  font-size: 1rem;
+  color: #008485;
+}
+.right-up > :last-child {
+  height: 1.75rem;
+  font-size: 1.375rem;
+}
+
+.right-down {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 3rem;
+}
+.right-down > :first-child {
+  height: 1.25rem;
+  font-size: 1rem;
+  color: #008485;
+}
+.right-down > :last-child {
+  height: 1.75rem;
+  font-size: 1.375rem;
+}
