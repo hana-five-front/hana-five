@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../styles/base-styles.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../footer.css" />
+    <link rel="stylesheet" href="../header.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="inner header-component">
+      <div>
+        <a href="../index.html">
+          <img src="../images/headerLogo.png" alt="디지털하나로 로고" />
+        </a>
+
+        <ul>
+          <li>소개</li>
+          <li>채용</li>
+          <li>교육</li>
+          <li>커뮤니티</li>
+        </ul>
+        <div>
+          <button></button>
+          <button>로그인</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="inner">
+      <div class="roullet-component">
+        <div>
+          <canvas width="380" height="380"></canvas>
+          <div class="rul-cursor"></div>
+        </div>
+        <div>
+          <div class="rullet-top">
+            <div class="rullet-top-title">오늘 뭐 먹지</div>
+            <div class="rullet-top-subtitle">돌림판 보조 텍스트</div>
+          </div>
+          <button class="rullet-button" onclick="rotate()">
+            돌림판 돌리기!
+          </button>
+        </div>
+      </div>
+      <div class="list-component">
+        <div class="pick-list">
+          <div class="pick-list-title">개발자 추천 맛집 리스트</div>
+
+          <div class="pick-list-name1">
+            <div>어쩌구 식당</div>
+            <div>서울특별시 성동구 아차산로 111</div>
+          </div>
+          <div class="pick-list-name2">
+            <div>어쩌구 식당</div>
+            <div>서울특별시 성동구 아차산로 111</div>
+          </div>
+          <div class="pick-list-name3">
+            <div>어쩌구 식당</div>
+            <div>서울특별시 성동구 아차산로 111</div>
+          </div>
+          <div class="pick-list-name4">
+            <div>어쩌구 식당</div>
+            <div>서울특별시 성동구 아차산로 111</div>
+          </div>
+        </div>
+        <div class="rullet-list">
+          <div class="pick-list-title">성수동 <span class="rullet-keyword"></span> 맛집 리스트</div>
+          <a class="rullet-a-name1" href="">
+            <div class="rullet-list-name1">
+              <div class="rulletlist-list-name">어쩌구 식당</div>
+              <div class="rulletlist-list-address">서울특별시 성동구 아차산로 111</div>
+            </div>
+          </a>
+          <a class="rullet-a-name2" href="">
+            <div class="rullet-list-name2">
+              <div class="rulletlist-list-name">어쩌구 식당</div>
+              <div class="rulletlist-list-address">서울특별시 성동구 아차산로 111</div>
+            </div>
+          </a>
+          <a class="rullet-a-name3" href="">
+            <div class="rullet-list-name3">
+              <div class="rulletlist-list-name">어쩌구 식당</div>
+              <div class="rulletlist-list-address">서울특별시 성동구 아차산로 111</div>
+            </div>
+          </a>
+          <a class="rullet-a-name4" href="">
+            <div class="rullet-list-name4">
+              <div class="rulletlist-list-name">어쩌구 식당</div>
+              <div class="rulletlist-list-address">서울특별시 성동구 아차산로 111</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="inner footer-component">
+      <div>
+        <div class="left">
+          <div class="about-link">
+            <p>About US</p>
+            <p>GitHub</p>
+            <p>OpenAPI</p>
+            <p>ETC</p>
+          </div>
+          <div class="about-text">
+            <p class="left-p_black">
+              서울특별시 중구 을지로 35 (을지로1가, 하나은행)
+            </p>
+            <p class="left-p_black">
+              서울 성동구 아차산로 111 2층 (알파코 제2캠퍼스)
+            </p>
+            <p class="left-p_gray">
+              COPYRIGHT(C) Hana Bank. ALL RIGHTS RESERVED
+            </p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="right-up">
+            <div>하나은행 고객센터</div>
+            <div>1588-1111 / 1599-1111</div>
+          </div>
+          <div class="right-down">
+            <div>알파코 제2캠퍼스</div>
+            <div>0507-1336-5730</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0ac5b958752d7cb070f6e4eb29c305bc&libraries=services"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
