@@ -7,45 +7,88 @@ main {
   display: flex;
 }
 
-main > .container {
+a {
+  text-decoration: none;
+  color: #191f29;
+}
+
+.container {
   display: flex;
+  width: 62.5rem;
+  min-height: 50rem;
 }
 
-main > .container > .sidebar {
-  height: 100%;
-  width: 16.375rem;
-}
-
-main > .container > .page-container {
+.aside {
+  width: 16.25rem;
   display: flex;
   flex-direction: column;
-  padding-top: 3.125rem;
+  padding-top: 5rem;
+}
+.asideTitle {
+  font-size: 1.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  color: #008485;
+  border-bottom: 0.1875rem solid #008485;
+}
+.asideContentList {
+  margin: 0rem;
+  padding: 0rem;
+}
+.asideContent {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #191f29;
+  border-bottom: 0.0313rem #d1d6db solid;
+}
+.asideCommunityBoard {
+  color: #008485;
 }
 
-main > .container > .page-container > header > div {
-  height: 6.6875rem;
+.page-container {
+  display: flex;
+  flex-direction: column;
+  width: 46.25rem;
+  padding: 3.125rem 1rem 1.625rem 4.375rem;
+}
+
+.page-container > header > div {
   padding: 1.25rem 0.4375rem 1.875rem;
 }
 
-main > .container > .page-container > header > div > span {
-  font-family: 'Inter', Times, sans-serif;
+.page-container > header > div > span {
   font-size: 2.375rem;
   font-weight: bold;
   color: #191f29;
 }
 
-main > .container > div > .calender-container {
-  width: 43.625rem;
+.calender-container {
+  width: 100%;
   height: auto;
   display: flex;
+  flex-direction: column;
 }
 
-main > .container > div > .calender-container > .calender1 {
-  width: 70%;
+.calender-day {
+  overflow: hidden;
+}
+
+.calender .day {
+  text-align: left;
+  vertical-align: top;
+}
+
+.calender1 {
+  width: 100%;
   height: 100%;
 }
 
-main > .container > div > .calender-container > .calender1 > .calender-month {
+.calender-month {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,13 +97,7 @@ main > .container > div > .calender-container > .calender1 > .calender-month {
   margin-bottom: 0.625rem;
 }
 
-main
-  > .container
-  > div
-  > .calender-container
-  > .calender1
-  > .calender-month
-  > button {
+.calender-month > button {
   background-color: transparent;
   border: none;
   font-size: 1.875rem;
@@ -69,101 +106,123 @@ main
   cursor: pointer;
 }
 
-main
-  > .container
-  > div
-  > .calender-container
-  > .calender1
-  > .calender-month
-  > button:hover {
+.calender-month > button:hover {
   color: #008484;
 }
 
-main
-  > .container
-  > .page-container
-  > .calender-container
-  > .calender1
-  > .calender-day {
+.calender-day {
   min-height: 400px;
-}
-
-main
-  > .container
-  > div
-  > .calender-container
-  > .calender1
-  > .calender-day
-  > table {
-  border: 1px solid black;
-  text-align: center;
-  border-spacing: 0;
-  font-size: 0.625rem;
-  width: 31.25rem;
-  height: 31.25rem;
-}
-
-main
-  > .container
-  > div
-  > .calender-container
-  > .calender1
-  > .calender-day
-  > table
-  > .calender-content {
-  border: 0.4px solid black;
-}
-
-main > .container > div > .calender-container > .calender2 {
-  width: 30%;
-  padding-left: 1.25rem;
-}
-
-main > .container > div > .calender-container > .calender2 > .calender-empty {
-  height: 3rem;
-}
-
-main > .container > div > .calender-container > .calender2 > .schedule-list {
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-
-main
-  > .container
-  > div
-  > .calender-container
-  > .calender2
-  > .schedule-list
-  > .monthly-schedule {
-  margin-bottom: 0.625rem;
   display: flex;
   justify-content: center;
-  align-items: start;
-  font-size: 1.25rem;
+  width: auto;
+}
+
+.calender {
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.day-week,
+.day {
+  border: 0.4px solid black;
+  padding: 0.3125rem;
+  height: 5.625rem;
+  box-sizing: border-box;
+}
+
+.day > div {
+  position: relative;
+  height: 100%;
+  padding-top: 1rem;
+}
+
+.day-week {
+  height: 40px;
+  background-color: #008484;
+  color: #f2f4f6;
+  font-size: 0.8rem;
+  text-align: center;
   font-weight: bold;
 }
 
-main
-  > .container
-  > div
-  > .calender-container
-  > .calender2
-  > .schedule-list
-  > ul {
-  font-size: 1rem;
-  margin: 0;
-  padding-inline-start: 1.5rem;
+#week1-1,
+#week2-1,
+#week3-1,
+#week4-1,
+#week5-1 {
+  color: red;
 }
 
-main
-  > .container
-  > div
-  > .calender-container
-  > .calender2
-  > .schedule-list
-  > ul
-  > li {
+#week1-7,
+#week2-7,
+#week3-7,
+#week4-7,
+#week5-7 {
+  color: blue;
+}
+
+#week1-6 > div > .d-day,
+#week5-2 > div > .d-day,
+#week4-7 > div > .d-day {
+  color: red;
+}
+
+.d-day {
+  font-size: 0.8125rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+}
+
+.holiday {
+  font-size: 0.7rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #333d4b;
+}
+
+.day {
+  word-break: break-all;
+}
+
+.day > div > ul {
+  list-style-type: none;
+  margin: 0;
+  padding-inline-start: 0;
+  font-size: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+}
+
+.calender2 {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.monthly-schedule {
+  width: auto;
+}
+
+.monthly-schedule > p {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 2.25rem 0 0 0;
+}
+
+.monthly-schedule > ul {
+  font-size: 1rem;
+  margin: 0;
+  padding-inline-start: 0.3rem;
+  list-style-type: none;
+}
+
+.monthly-schedule > ul > li {
   margin: 0.625rem 0;
 }

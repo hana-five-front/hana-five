@@ -15,12 +15,19 @@
   <body>
     <header class="inner header-component">
       <div>
-        <img src="/public/images/headerLogo.png" alt="디지털하나로 로고" />
+        <img
+          src="../../../public/images/headerLogo.png"
+          alt="디지털하나로 로고"
+        />
         <ul>
-          <li>소개</li>
-          <li>채용</li>
-          <li>교육</li>
-          <li>커뮤니티</li>
+          <li><a href="../../introduction/index.html">소개</a></li>
+          <li><a href="../../career/index.html">채용</a></li>
+          <li>
+            <a href="../../curriculum/calender/index.html">교육</a>
+          </li>
+          <li>
+            <a href="../../community/board/index.html">커뮤니티</a>
+          </li>
         </ul>
         <div>
           <button></button>
@@ -31,7 +38,21 @@
 
     <main class="inner">
       <div class="container">
-        <div class="sidebar"></div>
+        <div class="aside">
+          <div class="asideTitle">교육</div>
+          <ul class="asideContentList">
+            <li class="asideContent">
+              <a class="asideMenu" href="../calender/">
+                <p class="aside-curriculum">교육 과정</p>
+              </a>
+            </li>
+            <li class="asideContent">
+              <a class="asideMenu" href="../lecturer/index.html">
+                <p class="aside-lecturer">강사 소개</p>
+              </a>
+            </li>
+          </ul>
+        </div>
         <div class="page-container">
           <header>
             <div><span>교육 과정</span></div>
@@ -44,73 +65,90 @@
                 <button class="next">></button>
               </div>
               <div class="calender-day">
-                <table>
-                  <tr class="table-header">
-                    <td class="table-header-row">일</td>
-                    <td class="table-header-row">월</td>
-                    <td class="table-header-row">화</td>
-                    <td class="table-header-row">수</td>
-                    <td class="table-header-row">목</td>
-                    <td class="table-header-row">금</td>
-                    <td class="table-header-row">토</td>
-                  </tr>
-                  <tr class="calender-content">
-                    <td class="calender-content" id="week1-1">1주 일요일</td>
-                    <td class="calender-content" id="week1-2">1주 월요일</td>
-                    <td class="calender-content" id="week1-3">1주 화요일</td>
-                    <td class="calender-content" id="week1-4">1주 수요일</td>
-                    <td class="calender-content" id="week1-5">1주 목요일</td>
-                    <td class="calender-content" id="week1-6">1주 금요일</td>
-                    <td class="calender-content" id="week1-7">1주 토요일</td>
-                  </tr>
-                  <tr>
-                    <td class="calender-content" id="week2-1">2주 일요일</td>
-                    <td class="calender-content" id="week2-2">2주 월요일</td>
-                    <td class="calender-content" id="week2-3">2주 화요일</td>
-                    <td class="calender-content" id="week2-4">2주 수요일</td>
-                    <td class="calender-content" id="week2-5">2주 목요일</td>
-                    <td class="calender-content" id="week2-6">2주 금요일</td>
-                    <td class="calender-content" id="week2-7">2주 토요일</td>
-                  </tr>
-                  <tr>
-                    <td class="calender-content" id="week3-1">3주 일요일</td>
-                    <td class="calender-content" id="week3-2">3주 월요일</td>
-                    <td class="calender-content" id="week3-3">3주 화요일</td>
-                    <td class="calender-content" id="week3-4">3주 수요일</td>
-                    <td class="calender-content" id="week3-5">3주 목요일</td>
-                    <td class="calender-content" id="week3-6">3주 금요일</td>
-                    <td class="calender-content" id="week3-7">3주 토요일</td>
-                  </tr>
-                  <tr>
-                    <td class="calender-content" id="week4-1">4주 일요일</td>
-                    <td class="calender-content" id="week4-2">4주 월요일</td>
-                    <td class="calender-content" id="week4-3">4주 화요일</td>
-                    <td class="calender-content" id="week4-4">4주 수요일</td>
-                    <td class="calender-content" id="week4-5">4주 목요일</td>
-                    <td class="calender-content" id="week4-6">4주 금요일</td>
-                    <td class="calender-content" id="week4-7">4주 토요일</td>
-                  </tr>
-                  <tr>
-                    <td class="calender-content" id="week5-1">5주 일요일</td>
-                    <td class="calender-content" id="week5-2">5주 월요일</td>
-                    <td class="calender-content" id="week5-3">5주 화요일</td>
-                    <td class="calender-content" id="week5-4">5주 수요일</td>
-                    <td class="calender-content" id="week5-5">5주 목요일</td>
-                    <td class="calender-content" id="week5-6">5주 금요일</td>
-                    <td class="calender-content" id="week5-7">5주 토요일</td>
-                  </tr>
+                <table class="calender">
+                  <thead>
+                    <tr class="">
+                      <td class="day-week">일</td>
+                      <td class="day-week">월</td>
+                      <td class="day-week">화</td>
+                      <td class="day-week">수</td>
+                      <td class="day-week">목</td>
+                      <td class="day-week">금</td>
+                      <td class="day-week" id="sat">토</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="week">
+                      <td class="day" id="week1-1"><div><span class="d-day"></span>
+                      <ul><li></li></ul></td></div>
+                      <td class="day" id="week1-2"><div><span class="d-day">1</span><span class='holiday'>근로자의 날</span><ul><li></li></ul></td></div>
+                      <td class="day" id="week1-3"><div><span class="d-day">2</span><ul><li>하나은행 특강(8)</li></ul></td></div>
+                      <td class="day" id="week1-4"><div><span class="d-day">3</span><ul><li>은행의 업무와 데이터 분석(8)</li></ul></td></div>
+                      <td class="day" id="week1-5"><div><span class="d-day">4</span>
+                        <ul>
+                          <li>은행의 업무와 데이터분석(3)</li>
+                          <li>ICT아키텍처이해(5)</li>
+                        </ul></td></div>
+                      <td class="day" id="week1-6"><div><span class="d-day">5</span><span class='holiday'>어린이날</span><ul>
+                        </ul></td></div>
+                      <td class="day" id="week1-7"><div><span class="d-day">6</span><ul><li></li></ul></td></div>
+                    </tr>
+                    <tr class="week">
+                      <td class="day" id="week2-1"><div><span class="d-day">7</span><ul><li></li></ul></td></div>
+                      <td class="day" id="week2-2"><div><span class="d-day">8</span><ul><li>ICT아키텍처이해(5)</li><li>첫 웹페이지 따라하기(3)</li></ul></td></div>
+                      <td class="day" id="week2-3"><div><span class="d-day">9</span><ul><li>첫 웹페이지 따라하기(8)</li></ul></td></div>
+                      <td class="day" id="week2-4"><div><span class="d-day">10</span><ul><li>첫 웹페이지 따라하기(8)</li></ul></td></div>
+                      <td class="day" id="week2-5"><div><span class="d-day">11</span><ul><li>첫 웹페이지 따라하기(8)</li></ul></td></div>
+                      <td class="day" id="week2-6"><div><span class="d-day">12</span><ul><li>첫 웹페이지 따라하기(5)</li><li>GitHub와 소스코드 관리(3)</li></ul></td></div>
+                      <td class="day" id="week2-7"><div><span class="d-day">13</span><ul></ul></td></div>
+                    </tr>
+                    <tr class="week">
+                      <td class="day" id="week3-1"><div><span class="d-day">14</span><ul><li></li></ul></td></div>
+                      <td class="day" id="week3-2"><div><span class="d-day">15</span><ul><li>GitHub와 소스코드 관리(1)</li><li>UI/UX 디자인구현(HTML/CSS)(7)</li></ul></td></div>
+                      <td class="day" id="week3-3"><div><span class="d-day">16</span><ul><li>UI/UX 디자인구현(HTML/CSS)(8)</li></ul></td></div>
+                      <td class="day" id="week3-4"><div><span class="d-day">17</span><ul><li>UI/UX 디자인구현(HTML/CSS)(8)</li></ul></td></div>
+                      <td class="day" id="week3-5"><div><span class="d-day">18</span><ul><li>UI/UX 디자인구현(HTML/CSS)(8)</li></ul></td></div>
+                      <td class="day" id="week3-6"><div><span class="d-day">19</span><ul><li>UI/UX 디자인구현(HTML/CSS)(8)</li></ul></td></div>
+                      <td class="day" id="week3-7"><div><span class="d-day">20</span><ul><li></li></ul></td></div>
+                    </tr>
+                    <tr class="week">
+                      <td class="day" id="week4-1"><div><span class="d-day">21</span><ul></ul></td></div>
+                      <td class="day" id="week4-2"><div><span class="d-day">22</span><ul><li>UI/UX 디자인구현(HTML/CSS)(1)</li><li>프론트엔드 기초(Javascript)(7)</li></ul></td></div>
+                      <td class="day" id="week4-3"><div><span class="d-day">23</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
+                      <td class="day" id="week4-4"><div><span class="d-day">24</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
+                      <td class="day" id="week4-5"><div><span class="d-day">25</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
+                      <td class="day" id="week4-6"><div><span class="d-day">26</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
+                      <td class="day" id="week4-7"><div><span class="d-day">27</span><span class='holiday'>부처님오신날</span><ul><li></li></ul></td></div>
+                    </tr>
+                    <tr class="week">
+                      <td class="day" id="week5-1"><div><span class="d-day">28</span><ul><li></li></ul></td></div>
+                      <td class="day" id="week5-2"><div><span class="d-day">29</span><span class="holiday">대체공휴일</span><ul><li></li></ul></td></div>
+                      <td class="day" id="week5-3"><div><span class="d-day">30</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
+                      <td class="day" id="week5-4"><div><span class="d-day">31</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
+                      <td class="day" id="week5-5"><div><span class="d-day"></span><ul><li></li></ul></td></div>
+                      <td class="day" id="week5-6"><div><span class="d-day"></span><ul><li></li></ul></td></div>
+                      <td class="day" id="week5-7"><div><span class="d-day"></span><ul><li></li></ul></td></div>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>
             <div class="calender2">
-              <div class="calender-empty"></div>
-              <div class="schedule-list">
-                <div class="monthly-schedule">5월 주요 활동</div>
-                <ul>
-                  <li>주요학습1</li>
-                  <li>주요학습2</li>
-                  <li>주요학습3</li>
-                  <li>주요학습4</li>
+                <div class="monthly-schedule">
+                  <p>5월 주요 활동</p>
+                  <ul>
+                    <li>은행의 업무와 데이터 분석</li>
+                    <li>첫 웹페이지 따라하기</li>
+                    <li>UI/UX 디자인 구현(HTML/CSS)</li>
+                    <li>프론트엔드 기초(Javascript)</li>
+                  </ul>
+                </div>
+
+                <div class="monthly-schedule"><p>특강</p>
+                  <ul>
+                    <li>하나은행 특강</li>
+                </div>
+                
                 </ul>
               </div>
             </div>
