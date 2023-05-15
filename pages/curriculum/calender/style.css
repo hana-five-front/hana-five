@@ -1,0 +1,169 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+}
+
+main > .container {
+  display: flex;
+}
+
+main > .container > .sidebar {
+  height: 100%;
+  width: 16.375rem;
+}
+
+main > .container > .page-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3.125rem;
+}
+
+main > .container > .page-container > header > div {
+  height: 6.6875rem;
+  padding: 1.25rem 0.4375rem 1.875rem;
+}
+
+main > .container > .page-container > header > div > span {
+  font-family: 'Inter', Times, sans-serif;
+  font-size: 2.375rem;
+  font-weight: bold;
+  color: #191f29;
+}
+
+main > .container > div > .calender-container {
+  width: 43.625rem;
+  height: auto;
+  display: flex;
+}
+
+main > .container > div > .calender-container > .calender1 {
+  width: 70%;
+  height: 100%;
+}
+
+main > .container > div > .calender-container > .calender1 > .calender-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+}
+
+main
+  > .container
+  > div
+  > .calender-container
+  > .calender1
+  > .calender-month
+  > button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.875rem;
+  font-weight: bold;
+  padding: 0 1.625rem;
+  cursor: pointer;
+}
+
+main
+  > .container
+  > div
+  > .calender-container
+  > .calender1
+  > .calender-month
+  > button:hover {
+  color: #008484;
+}
+
+main
+  > .container
+  > .page-container
+  > .calender-container
+  > .calender1
+  > .calender-day {
+  min-height: 400px;
+}
+
+main
+  > .container
+  > div
+  > .calender-container
+  > .calender1
+  > .calender-day
+  > table {
+  border: 1px solid black;
+  text-align: center;
+  border-spacing: 0;
+  font-size: 0.625rem;
+  width: 31.25rem;
+  height: 31.25rem;
+}
+
+main
+  > .container
+  > div
+  > .calender-container
+  > .calender1
+  > .calender-day
+  > table
+  > .calender-content {
+  border: 0.4px solid black;
+}
+
+main > .container > div > .calender-container > .calender2 {
+  width: 30%;
+  padding-left: 1.25rem;
+}
+
+main > .container > div > .calender-container > .calender2 > .calender-empty {
+  height: 3rem;
+}
+
+main > .container > div > .calender-container > .calender2 > .schedule-list {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+main
+  > .container
+  > div
+  > .calender-container
+  > .calender2
+  > .schedule-list
+  > .monthly-schedule {
+  margin-bottom: 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+main
+  > .container
+  > div
+  > .calender-container
+  > .calender2
+  > .schedule-list
+  > ul {
+  font-size: 1rem;
+  margin: 0;
+  padding-inline-start: 1.5rem;
+}
+
+main
+  > .container
+  > div
+  > .calender-container
+  > .calender2
+  > .schedule-list
+  > ul
+  > li {
+  margin: 0.625rem 0;
+}
