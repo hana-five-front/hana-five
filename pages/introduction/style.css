@@ -1,0 +1,164 @@
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.boxCheck {
+  border: 1px solid black;
+}
+
+section {
+  margin: var(--component-margin);
+}
+.intro {
+  min-height: 27.5rem;
+  margin-bottom: 18rem;
+}
+.introHeading {
+  font-size: 2.75rem;
+  font-weight: bold;
+}
+.introCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  margin: var(--component-margin);
+}
+.introCard {
+  width: 25rem;
+  min-height: 12.5rem;
+}
+.cardContent {
+  color: #6b7684;
+}
+.introCardHeader {
+  width: 23.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.btn {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+.btnLearnMore {
+  width: 6.25rem;
+  height: 1.5rem;
+}
+.btnWrapper {
+  text-align: right;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  outline: none;
+  font-size: 1.0625rem;
+}
+
+a:hover,
+a:active {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.talent {
+  min-height: 60.625rem;
+}
+.sectionHeader {
+  font-size: 2.75rem;
+  font-weight: bold;
+  text-align: center;
+}
+.talentSubtitle {
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 0.75;
+}
+.talentText {
+  color: #6b7684;
+}
+.talentImgContainer {
+  margin: var(--component-margin);
+}
+
+.images {
+  width: 60rem;
+  margin-bottom: 10rem;
+}
+.imagesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  width: 60rem;
+  gap: 2rem;
+}
+.timelineItem {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.timelineHeader {
+  grid-column: span 2 / span 2;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b1b1b1;
+  position: relative;
+}
+.timelineHeader p {
+  position: absolute;
+  left: 1.5rem;
+  top: -1rem;
+  margin: 0;
+}
+.timelineContents {
+  position: relative;
+  grid-column: span 9 / span 9;
+  border-left: 3px solid var(--primary-color);
+  padding-left: 2rem;
+  width: 100%;
+}
+.timelineDot {
+  position: absolute;
+  left: -1rem;
+  top: -0.9rem;
+}
+.timelineList {
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+  margin: 0;
+  border-top: 2px solid #eee;
+  color: #6b7684;
+}
+.timelineListItem::marker {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
