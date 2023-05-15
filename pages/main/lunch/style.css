@@ -1,0 +1,196 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+canvas {
+  transition: 2s;
+}
+
+
+
+main {
+  height: 39.9375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 1.875rem;
+}
+
+canvas {
+  transition: 2s;
+}
+
+
+
+button:active {
+  background: #444;
+  color: #f9f9f9;
+}
+
+.roullet-component {
+  height: 24.125rem;
+  width: 60rem;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+}
+
+.roullet-component > :first-child {
+  width: 50%;
+  height: 100%;
+ 
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.roullet-component > :last-child {
+  width: 50%;
+  height: 100%;
+ 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+ 
+}
+
+.rullet-top{
+    width: 13.75rem;
+   height: 5.625rem;
+  
+   
+   
+}
+
+.rullet-top-title{
+    font-size: 2.1875rem;
+     height: 3.5625rem;
+}
+
+.rullet-top-subtitle{
+    font-size: .9375rem;
+    color: #6B7684;
+}
+
+
+
+.rul-cursor {
+  box-sizing: border-box;
+
+  position: absolute;
+  right: 5rem;
+  width: 0px;
+  height: 0px;
+  border-right: 2.5rem solid transparent;
+  border-left: 2.5rem solid transparent;
+  border-bottom: 6.25rem solid red;
+
+  transform: rotate(210deg);
+}
+
+.rullet-button{
+    width: 13.75rem;
+    height: 3.125rem;
+    margin: 0 auto;
+    border:none;
+    list-style: none;
+    background-color: #008375;
+    color:white;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .3125rem;
+    cursor:pointer;
+}
+
+.list-component {
+  height: 12rem;
+  width: 80rem;
+
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.pick-list{
+    width: 30rem;
+    
+    height: 100%;
+}
+.pick-list-title{
+    width:100%;
+    height: 2.8125rem;
+    text-align: center;
+    font-size:30px;
+    border-bottom: .0625rem solid;
+
+}
+.rullet-list{
+    width: 30rem;
+    
+    height: 100%; 
+}
+.rulletlist-list-name{
+    width:50%
+}
+.rulletlist-list-address{
+    width:50%;
+    text-align:left;
+}
+.rullet-list-name1{
+    display: flex;
+    margin-top: .625rem;
+    justify-content: space-between;
+}
+
+
+.rullet-list-name2{
+    display: flex;
+    margin-top: .625rem;
+    justify-content: space-between;
+}
+
+.rullet-list-name3{
+    display: flex;
+    margin-top: .625rem;
+    justify-content: space-between;
+}
+.rullet-list-name4{
+    margin-top: .625rem;
+    display: flex;
+    justify-content: space-between;
+}
+.pick-list-name1{
+    display: flex;
+    margin-top: .625rem;
+    justify-content: space-between;
+}
+
+.pick-list-name2{
+    display: flex;
+    margin-top: .625rem;
+    justify-content: space-between;
+}
+
+.pick-list-name3{
+    display: flex;
+    margin-top: .625rem;
+    justify-content: space-between;
+}
+.pick-list-name4{
+    margin-top: .625rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+a { 
+    color: inherit;
+    text-decoration: none;
+}
+
+.rullet-keyword {
+    color:#008375
+}
