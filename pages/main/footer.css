@@ -3,7 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px #ECF0F1 solid;
 }
+/* 푸터에 상단 보더 1px #ECF0F1 solid 추가 부탁드립니다! */
 .footer-component > div {
   width: 60rem;
   height: 7.1875rem;
@@ -51,8 +53,8 @@
 .right {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 15.6875rem;
+  justify-content: space-evenly;
+  width: 20.6875rem;
   height: 7.1875rem;
 }
 
@@ -61,6 +63,7 @@
   flex-direction: column;
   align-items: flex-end;
   height: 3rem;
+  list-style: none;
 }
 .right-up > :first-child {
   height: 1.25rem;
@@ -77,6 +80,7 @@
   flex-direction: column;
   align-items: flex-end;
   height: 3rem;
+  list-style:none;
 }
 .right-down > :first-child {
   height: 1.25rem;
