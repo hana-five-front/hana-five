@@ -234,6 +234,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .mainBottomBoardTop {
   width: 26.25rem;
   height: 1.5625rem;
@@ -276,3 +277,4 @@
 a {
   text-decoration: none;
 }
+
