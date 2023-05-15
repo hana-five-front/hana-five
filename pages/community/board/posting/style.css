@@ -22,70 +22,84 @@
   padding: 0rem;
 }
 .asideContent {
-  width: 100%;
   height: 3rem;
   display: flex;
   align-items: center;
   font-size: 1rem;
   color: #191f29;
   border-bottom: 0.0313rem #d1d6db solid;
+  text-decoration:none
 }
 .asideCommunityBoard {
   color: #008485;
 }
-.boardComponent {
+.postingComponent {
   width: 39.375rem;
   display: flex;
   flex-direction: column;
   margin-left: 4.375rem;
 }
-.boardSubject {
+.postingSubject {
   padding-top: 1.25rem;
   padding-bottom: 2.5rem;
   font-size: 2.375rem;
   font-weight: bold;
   color: #191f29;
 }
-.boardTop {
+.postingInputTop {
+  width: 100%;
+  height: 1.875rem;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 1.25rem;
-  border-bottom: 0.0313rem #6B7684 solid;
 }
-.boardSearchBar {
+.postingInputWriter {
+  width: 73%;
+}
+.postingInputPassword {
+  width: 25%;
+}
+.postingInputContext {
+  width: 100%;
+  height: 400px;
+  margin-top: 1.25rem;
+}
+.detailButtonBox {
+  display: flex;
+  justify-content: center;
+  padding-top: 3.125rem;
+  padding-bottom: 4.375rem;
+  
+}
+.detailButtons{
+  width: 18.75rem;
   display: flex;
   justify-content: space-between;
-  align-items: end;
 }
-.boardSearchInput {
-  width: 16.75rem;
-  height: 1.8125rem;
-  margin-right: 0.625rem;
-}
-.boardPostingButton {
-  width: auto;
-}
-.boardPosting:hover {
-  color: #008485;
-}
-.boardList {
-  margin: 0rem;
-  padding: 0rem 0.625rem;
-}
-.boardContent {
-  height: 3.125rem;
+.backToList{
   display: flex;
-  align-items: center;
-  list-style: none;
-  border-bottom: 0.03rem #d1d6db solid;
+  justify-content: center;
 }
-button {
-  width: 6.125rem;
-  height: 1.8125rem;
-  color: #008485;
-  border:#008485 0.0625rem solid;
-  border-radius: 0.1563rem;
+.backToListButton {
+  width: 7rem;
+  height: 2.8125rem;
+  color: #D70035;
   background-color: #ffffff;
+  border: #D70035 0.0625rem solid;
+  cursor: pointer;
+}
+.backToList:hover {
+  color: #D70035;
+}
+.posting {
+  display: flex;
+  justify-content: center;
+}
+.postingButton {
+  width: 7rem;
+  height: 2.8125rem;
+  color: #008485;
+  background-color: #ffffff;
+  border: #008485 0.0625rem solid;
   cursor: pointer;
 }
 a {

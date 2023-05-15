@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/base-styles.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="inner"></header>
+
+    <main class="inner">
+      <div class="middle-component">
+        <div class="aside">
+          <div class="asideTitle">커뮤니티</div>
+          <ul class="asideContentList">
+            <li class="asideContent">
+              <a href="../../notice/index.html">
+                <p class="asideCommunityNotice">공지사항</p>
+              </a>
+            </li>
+            <li class="asideContent">
+              <a href="../../board/index.html">
+                <p class="asideCommunityBoard">자유게시판</p>
+              </a>
+            </li>
+            <li class="asideContent">
+              <a href="../../qna/index.html">
+                <p class="asideCommunityQna">QnA</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="postingComponent">
+          <div class="postingSubject">글 작성</div>
+          <div class="postingInput">
+            <div class="postingInputTop">
+              <input class="postingInputWriter"type="text" placeholder="제목을 입력하세요.">
+              <input class="postingInputPassword"type="text" placeholder="비밀번호를 입력하세요.">  
+            </div>
+            <textarea class="postingInputContext"></textarea>
+          </div>
+          <div class="detailButtonBox">
+            <div class="detailButtons">
+              <a class="backToList" href="../index.html">
+                <button class="backToListButton" onclick="index.html">취소</button>
+              </a>
+              <a class="posting" href="">
+                <button class="postingButton">작성하기</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="inner"></footer>
+  </body>
+</html>

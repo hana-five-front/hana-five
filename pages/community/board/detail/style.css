@@ -1,0 +1,133 @@
+.middle-component {
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
+}
+.aside {
+  width: 16.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.asideTitle {
+  font-size: 1.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  color: #008485;
+  border-bottom: 0.1875rem solid #008485;
+}
+.asideContentList {
+  margin: 0rem;
+  padding: 0rem;
+}
+.asideContent {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #191f29;
+  border-bottom: 0.0313rem #d1d6db solid;
+}
+.asideMenu {
+  width: 100%;
+}
+.asideCommunityBoard{
+  color: #008485;
+}
+.detailComponent {
+  width: 39.375rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 4.375rem;
+}
+.detailSubject {
+  padding-top: 1.25rem;
+  padding-bottom: 2.5rem;
+  font-size: 2.375rem;
+  font-weight: bold;
+  color: #191f29;
+}
+.detailContentTop {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem 0.75rem 1.875rem;
+  background-color: #f2f4f6;
+  border-top: #d1d6db 0.0625rem solid;
+  border-bottom: #d1d6db 0.0625rem solid;
+}
+.detailTitle {
+  font-size: 1rem;
+  color: #008485
+}
+.detailInformation {
+  display: flex;
+}
+.detailDate {
+  margin-left: 1.875rem;
+}
+.detailContext {
+  padding: 1rem 1.25rem 0.75rem 1.875rem;
+  border-bottom: #6B7684 0.0625rem solid;
+}
+.detailCommentComponent {
+  padding: 1rem 2rem 0rem 2rem;
+}
+.detailCommentInput {
+  height: 2.8125rem;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 1rem;
+  border-bottom: #d1d6db 0.0625rem solid;
+}
+.detailCommentInputWriter {
+  width: 15%;
+}
+.detailCommentInputContext {
+  width: 75%;
+}
+.detailComment {
+  display: flex;
+  padding: 0.3125rem 0px;
+  justify-content: space-evenly;
+}
+.detailCommentWriter {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+.detailCommentContext {
+  width: 75%;
+  display: flex;
+  justify-content: start;
+  margin-left: 0.625rem;
+}
+.detailButtonBox {
+  display: flex;
+  padding-top: 3.125rem;
+  padding-bottom: 4.375rem;
+  justify-content: center;
+}
+.backToListButton {
+  width: 7rem;
+  height: 2.8125rem;
+  color: #008485;
+  background-color: #ffffff;
+  border: #008485 0.0625rem solid;
+  cursor: pointer;
+}
+a {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #191f29;
+}
+a:hover {
+  color: #008485;
+  text-decoration: underline;
+}
+p {
+  margin: 0rem;
+}
