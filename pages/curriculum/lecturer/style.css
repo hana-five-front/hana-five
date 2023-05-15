@@ -1,0 +1,84 @@
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+main > .container {
+  min-height: 25rem;
+  display: flex;
+  width: 60rem;
+}
+
+main > .container > .sidebar {
+  height: 100%;
+  width: 16.25rem;
+}
+
+main > .container > .lecture-info {
+  padding-top: 3.125rem;
+  width: 39.375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-grow: 0;
+}
+
+main > .container > .lecture-info > header > div {
+  padding: 1.25rem 0.4375rem 1.875rem;
+  display: flex;
+  align-self: stretch;
+}
+
+main > .container > .lecture-info > header > div > span {
+  font-family: 'Inter', Times, sans-serif;
+  font-size: 2.375rem;
+  font-weight: bold;
+  color: #191f29;
+}
+
+main > .container > .lecture-info > .info-container {
+  display: flex;
+}
+
+main > .container > .lecture-info > .info-container > div {
+  margin-right: 2.625rem;
+}
+
+main > .container > .lecture-info > .info-container > .info1 > .profile-image {
+  height: 6.25rem;
+  width: 5rem;
+  background-color: #dfdfdf;
+  text-align: center;
+  padding-top: 50%;
+}
+
+main > .container > .lecture-info > .info-container > .info2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+main > .container > .lecture-info > .info-container > div > div > ul {
+  color: #191f29;
+  list-style-type: none;
+  padding-left: 0.625rem;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+main > .container > .lecture-info > .info-container > div > div > ul > li {
+  font-family: 'Inter', Times, sans-serif;
+}
+
+main > .container > .lecture-info > .info-container > div > div > .sub-title {
+  font-family: 'Inter', Times, sans-serif;
+  font-size: 1.25rem;
+  color: #008485;
+  margin: 0 0 0.325rem 0;
+}
+
+main > .container > .lecture-info > .info-container > div > div > #textbook {
+  margin-top: 0.625rem;
+}
