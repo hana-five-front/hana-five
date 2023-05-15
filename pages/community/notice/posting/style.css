@@ -43,7 +43,6 @@
   margin-left: 4.375rem;
 }
 .postingSubject {
-  padding-top: 1.25rem;
   padding-bottom: 2.5rem;
   font-size: 2.375rem;
   font-weight: bold;
@@ -104,20 +103,4 @@
   background-color: #ffffff;
   border: #008485 0.0625rem solid;
   cursor: pointer;
-}
-a {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  color: #191f29;
-}
-a:hover {
-  color: #008485;
-  text-decoration: underline;
-}
-p {
-  margin: 0rem;
 }

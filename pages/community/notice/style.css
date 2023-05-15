@@ -39,7 +39,6 @@
   margin-left: 4.375rem;
 }
 .boardSubject {
-  padding-top: 1.25rem;
   padding-bottom: 2.5rem;
   font-size: 2.375rem;
   font-weight: bold;
@@ -86,20 +85,4 @@ button {
   border-radius: 0.1563rem;
   background-color: #ffffff;
   cursor: pointer;
-}
-a {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  color: #191f29;
-}
-a:hover {
-  color: #008485;
-  text-decoration: underline;
-}
-p {
-  margin: 0rem;
 }
