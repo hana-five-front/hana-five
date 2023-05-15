@@ -1,4 +1,3 @@
-
 @import url(./base-variables.css);
 @font-face {
   font-family: "Hana2";
@@ -41,4 +40,18 @@ body {
 .inner {
   width: var(--inner-width);
   margin: 0 auto;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  outline: none;
+  font-size: 1.0625rem;
+}
+
+a:hover,
+a:active {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: underline;
 }
