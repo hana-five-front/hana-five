@@ -1,0 +1,106 @@
+.career-component {
+  margin-top: 1.875rem;
+  width: 16.0625rem;
+  height: 4.25rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 150%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.careerBoxAll-component {
+  margin-top: 1.875rem;
+  width: 60rem;
+  height: 9.6875rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+}
+.careerBoxOne-component {
+  /*각 전형별 바깥 테두리*/
+  width: 13.75rem;
+  height: 7.6875rem;
+}
+.process {
+  width: 13.75rem;
+  height: 2.1875rem;
+  font-weight: bold;
+  font-size: 1.4375rem;
+  line-height: 150%;
+  line-height: 2.1875rem;
+}
+.processText {
+  border: 2px solid #008485;
+  border-radius: 20px;
+  width: 13.75rem;
+  height: 5.5rem;
+  line-height: 180%;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+}
+
+.benefit-component {
+  margin-top: 1.25rem;
+  width: 60rem;
+  height: 4.25rem;
+  line-height: 4.25rem;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 150%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.benefitBoxAll-component {
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
+  width: 60rem;
+  height: 21.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+.benefitBox-component {
+  width: 57.5rem;
+  height: 9.0625rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.benefitBox {
+  width: 430px;
+  height: 9.0625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.benefitBoxTitle {
+  color: #008485;
+  width: 20.875rem;
+  height: 2.8125rem;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 150%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.625rem;
+}
+.benefitBoxText {
+  width: 25.75rem;
+  height: 5.625rem;
+  margin-top: 2%;
+  font-size: 1rem;
+  line-height: 170%;
+}

@@ -1,5 +1,5 @@
-@import url(./base-variables.css);
 
+@import url(./base-variables.css);
 @font-face {
   font-family: "Hana2";
   src: url("../public/fonts/Hana2-Regular.otf") format("woff");
