@@ -1,0 +1,105 @@
+.middle-component {
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
+}
+.aside {
+  width: 16.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.asideTitle {
+  font-size: 1.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  color: #008485;
+  border-bottom: 0.1875rem solid #008485;
+}
+.asideContentList {
+  margin: 0rem;
+  padding: 0rem;
+}
+.asideContent {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #191f29;
+  border-bottom: 0.0313rem #d1d6db solid;
+}
+.asideCommunityQna {
+  color: #008485;
+}
+.boardComponent {
+  width: 39.375rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 4.375rem;
+}
+.boardSubject {
+  padding-top: 1.25rem;
+  padding-bottom: 2.5rem;
+  font-size: 2.375rem;
+  font-weight: bold;
+  color: #191f29;
+}
+.boardTop {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 0.0313rem #6B7684 solid;
+}
+.boardSearchBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.boardSearchInput {
+  width: 16.75rem;
+  height: 1.8125rem;
+  margin-right: 0.625rem;
+}
+.boardPostingButton {
+  width: auto;
+}
+.boardPosting:hover {
+  color: #008485;
+}
+.boardList {
+  margin: 0rem;
+  padding: 0rem 0.625rem;
+}
+.boardContent {
+  height: 3.125rem;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  border-bottom: 0.03rem #d1d6db solid;
+}
+button {
+  width: 6.125rem;
+  height: 1.8125rem;
+  color: #008485;
+  border:#008485 0.0625rem solid;
+  border-radius: 0.1563rem;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #191f29;
+}
+a:hover {
+  color: #008485;
+  text-decoration: underline;
+}
+p {
+  margin: 0rem;
+}
