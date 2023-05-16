@@ -63,7 +63,10 @@
 .detailInformation {
   display: flex;
 }
-.detailDate {
+.detailInformation > p {
+  margin: 0px;
+}
+.detailInformation > .detailDate {
   margin-left: 1.875rem;
 }
 .detailContext {
@@ -91,6 +94,9 @@
   padding: 0.3125rem 0px;
   justify-content: space-evenly;
 }
+.detailComment > p {
+  margin: 0px;
+}
 .detailCommentWriter {
   width: 15%;
   display: flex;
@@ -115,7 +121,4 @@
   background-color: #ffffff;
   border: #008485 0.0625rem solid;
   cursor: pointer;
-}
-p {
-  margin: 0px;
 }
