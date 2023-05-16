@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function(){
   let postId = window.location.hash.substring(1).split('#'); 
   let posts = JSON.parse(localStorage.getItem('qnaPosts')) || [];
 
-  console.log(posts)
   let post = posts.find(post => post.id == postId);
   
   if (post) {
