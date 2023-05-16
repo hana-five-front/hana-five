@@ -16,6 +16,11 @@ video {
   height: auto;
 }
 
+header img {
+  display: inline-block;
+  vertical-align: unset;
+}
+
 .blind {
   position: absolute;
   clip: rect(0 0 0 0);
