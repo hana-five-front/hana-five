@@ -2,6 +2,7 @@
   display: flex;
   padding-top: 50px;
   justify-content: center;
+  min-height: 50rem;
 }
 .aside {
   width: 16.25rem;
@@ -32,7 +33,7 @@
 .asideMenu {
   width: 100%;
 }
-.asideCommunityBoard{
+.asideCommunityBoard {
   color: #008485;
 }
 .detailComponent {
@@ -42,7 +43,6 @@
   margin-left: 4.375rem;
 }
 .detailSubject {
-  padding-top: 1.25rem;
   padding-bottom: 2.5rem;
   font-size: 2.375rem;
   font-weight: bold;
@@ -58,17 +58,21 @@
 }
 .detailTitle {
   font-size: 1rem;
-  color: #008485
+  color: #008485;
 }
 .detailInformation {
   display: flex;
 }
-.detailDate {
+.detailInformation > p {
+  margin: 0px;
+}
+.detailInformation > .detailDate {
   margin-left: 1.875rem;
 }
 .detailContext {
+  min-height: 18.75rem;
   padding: 1rem 1.25rem 0.75rem 1.875rem;
-  border-bottom: #6B7684 0.0625rem solid;
+  border-bottom: #6b7684 0.0625rem solid;
 }
 .detailCommentComponent {
   padding: 1rem 2rem 0rem 2rem;
@@ -90,6 +94,9 @@
   display: flex;
   padding: 0.3125rem 0px;
   justify-content: space-evenly;
+}
+.detailComment > p {
+  margin: 0px;
 }
 .detailCommentWriter {
   width: 15%;
@@ -115,19 +122,4 @@
   background-color: #ffffff;
   border: #008485 0.0625rem solid;
   cursor: pointer;
-}
-a {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  color: #191f29;
-}
-a:hover {
-  color: #008485;
-  text-decoration: underline;
-}
-p {
-  margin: 0rem;
 }

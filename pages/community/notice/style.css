@@ -2,6 +2,7 @@
   display: flex;
   padding-top: 50px;
   justify-content: center;
+  min-height: 50rem;
 }
 .aside {
   width: 16.25rem;
@@ -39,7 +40,6 @@
   margin-left: 4.375rem;
 }
 .boardSubject {
-  padding-top: 1.25rem;
   padding-bottom: 2.5rem;
   font-size: 2.375rem;
   font-weight: bold;
@@ -49,7 +49,7 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 1.25rem;
-  border-bottom: 0.0313rem #6B7684 solid;
+  border-bottom: 0.0313rem #6b7684 solid;
 }
 .boardSearchBar {
   display: flex;
@@ -78,28 +78,23 @@
   list-style: none;
   border-bottom: 0.03rem #d1d6db solid;
 }
+.boardContent > a {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.boardContentInformation {
+  display: flex;
+}
+.boardContentDate {
+  margin-left: 1.25rem;
+}
 button {
   width: 6.125rem;
   height: 1.8125rem;
   color: #008485;
-  border:#008485 0.0625rem solid;
+  border: #008485 0.0625rem solid;
   border-radius: 0.1563rem;
   background-color: #ffffff;
   cursor: pointer;
-}
-a {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  color: #191f29;
-}
-a:hover {
-  color: #008485;
-  text-decoration: underline;
-}
-p {
-  margin: 0rem;
 }
