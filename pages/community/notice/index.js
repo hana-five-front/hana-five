@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
   let boardList = document.querySelector('.boardList');
-  let posts = JSON.parse(localStorage.getItem('noticePosts')) || [];
+  let posts = (JSON.parse(localStorage.getItem('noticePosts')) || []).reverse();
   boardList.innerHTML = ''
   
   posts.forEach(function(post, index){
