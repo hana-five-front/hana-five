@@ -4,81 +4,104 @@ body {
   width: 100vw;
 }
 
-main > .container {
-  min-height: 25rem;
+a {
+  text-decoration: none;
+  color: #191f29;
+}
+
+.container {
+  min-height: 40rem;
   display: flex;
-  width: 60rem;
+  width: 62.5rem;
 }
 
-main > .container > .sidebar {
-  height: 100%;
+.aside {
   width: 16.25rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+}
+.asideTitle {
+  font-size: 1.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  color: #008485;
+  border-bottom: 0.1875rem solid #008485;
+}
+.asideContentList {
+  margin: 0rem;
+  padding: 0rem;
+}
+.asideContent {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #191f29;
+  border-bottom: 0.0313rem #d1d6db solid;
+}
+.asideCommunityBoard {
+  color: #008485;
 }
 
-main > .container > .lecture-info {
-  padding-top: 3.125rem;
-  width: 39.375rem;
+.lecture-info {
+  padding: 3.125rem 2.375rem 1.625rem 4.375rem;
+  width: 46.25rem;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   flex-grow: 0;
 }
 
-main > .container > .lecture-info > header > div {
-  padding: 1.25rem 0.4375rem 1.875rem;
+.lecturer-head {
+  padding: 1.25rem 0.4375rem 2.5rem;
   display: flex;
   align-self: stretch;
 }
 
-main > .container > .lecture-info > header > div > span {
-  font-family: 'Inter', Times, sans-serif;
+.lecturer-text {
   font-size: 2.375rem;
   font-weight: bold;
   color: #191f29;
 }
 
-main > .container > .lecture-info > .info-container {
+.info-container {
   display: flex;
 }
 
-main > .container > .lecture-info > .info-container > div {
+.info-container > div {
   margin-right: 2.625rem;
 }
 
-main > .container > .lecture-info > .info-container > .info1 > .profile-image {
-  height: 6.25rem;
-  width: 5rem;
-  background-color: #dfdfdf;
-  text-align: center;
-  padding-top: 50%;
+.profile-image > img {
+  height: 7.5rem;
+  width: 5.625rem;
 }
 
-main > .container > .lecture-info > .info-container > .info2 {
+.info2 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-main > .container > .lecture-info > .info-container > div > div > ul {
-  color: #191f29;
-  list-style-type: none;
-  padding-left: 0.625rem;
-  margin: 0;
-  font-size: 0.875rem;
-  font-weight: bold;
+.info2 > div {
+  margin-bottom: 1.25rem;
 }
 
-main > .container > .lecture-info > .info-container > div > div > ul > li {
-  font-family: 'Inter', Times, sans-serif;
-}
-
-main > .container > .lecture-info > .info-container > div > div > .sub-title {
-  font-family: 'Inter', Times, sans-serif;
+.sub-title {
   font-size: 1.25rem;
   color: #008485;
   margin: 0 0 0.325rem 0;
 }
 
-main > .container > .lecture-info > .info-container > div > div > #textbook {
-  margin-top: 0.625rem;
+.brief {
+  color: #191f29;
+  list-style-type: none;
+  padding: 0 0 0.3125rem 0.625rem;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
 }
