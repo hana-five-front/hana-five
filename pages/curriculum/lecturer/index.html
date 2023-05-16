@@ -15,12 +15,19 @@
   <body>
     <header class="inner header-component">
       <div>
-        <img src="/public/images/headerLogo.png" alt="디지털하나로 로고" />
+        <img
+          src="../../../public/images/headerLogo.png"
+          alt="디지털하나로 로고"
+        />
         <ul>
-          <li>소개</li>
-          <li>채용</li>
-          <li>교육</li>
-          <li>커뮤니티</li>
+          <li><a href="../../introduction/index.html">소개</a></li>
+          <li><a href="../../career/index.html">채용</a></li>
+          <li>
+            <a href="../../curriculum/calender/index.html">교육</a>
+          </li>
+          <li>
+            <a href="../../community/board/index.html">커뮤니티</a>
+          </li>
         </ul>
         <div>
           <button></button>
@@ -31,40 +38,61 @@
 
     <main class="inner">
       <div class="container">
-        <div class="sidebar"></div>
+        <div class="aside">
+          <div class="asideTitle">교육</div>
+          <ul class="asideContentList">
+            <li class="asideContent">
+              <a class="asideMenu" href="../calender/index.html">
+                <p class="aside-curriculum">교육 과정</p>
+              </a>
+            </li>
+            <li class="asideContent">
+              <a class="asideMenu" href="../lecturer/index.html">
+                <p class="aside-lecturer">강사 소개</p>
+              </a>
+            </li>
+          </ul>
+        </div>
         <div class="lecture-info">
           <header>
-            <div><span>강사 소개</span></div>
+            <div class="lecturer-head">
+              <span class="lecturer-text">강사 소개</span>
+            </div>
           </header>
           <div class="info-container">
             <div class="info1">
-              <div class="profile-image">강사 사진</div>
+              <div class="profile-image">
+                <img
+                  src="./images/lecturerProfileImage.png"
+                  alt="강사 프로필 사진"
+                />
+              </div>
             </div>
             <div class="info2">
               <div class="name">
                 <h1 class="sub-title">정현희 지도 강사</h1>
-                <ul>
+                <ul class="brief">
                   <li>단국대 IT 석사</li>
-                  <li>개발 경력 8년 / 강의 경력 25년</li>
-                  <li>이메일 :</li>
+                  <li>강의 경력 25년 / 개발 경력 8년</li>
                 </ul>
               </div>
               <div class="textbook">
                 <h1 class="sub-title" id="textbook">교재 집필 이력</h1>
-                <ul>
-                  <li>교재1</li>
-                  <li>교재2</li>
-                  <li>교재3</li>
+                <ul class="brief">
+                  <li>알기 쉬운 스크래치 C코딩 - 크라운 출판사</li>
+                  <li>알기 쉬운 파이썬/SQL 코딩하기 1회 - 크라운 출판사</li>
+                  <li>알기 쉬운 파이썬/SQL 코딩하기 2회 - 크라운 출판사</li>
                 </ul>
               </div>
-            </div>
-            <div class="info3">
               <div class="lecture">
-                <h1 class="sub-title">담당 교과목</h1>
-                <ul>
-                  <li>교과목1</li>
-                  <li>교과목2</li>
-                  <li>교과목3</li>
+                <h1 class="sub-title">강의 이력</h1>
+                <ul class="brief">
+                  <li>
+                    (전) 오산대학교 / 광운대학교 / 성신여대 외래교수 및 시간강사
+                  </li>
+                  <li>(전) 대한상공회의소 전임교수</li>
+                  <li>(전) 삼성 멀티캠퍼스 / LG SK 기업 강사/</li>
+                  <li>(현) 알파코 강사</li>
                 </ul>
               </div>
             </div>
