@@ -31,10 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
       posts.push(post);
       localStorage.setItem("boardPosts", JSON.stringify(posts));
 
-      window.location.href = "../detail/index.html#" + post.id; // 여기에 실제 게시글 목록 페이지의 URL을 입력하세요
+      window.location.href = "../detail/index.html#" + post.id;
     }
 
-    // 입력 필드 초기화
     titleInput.value = "";
     nameInput.value = "";
     contentInput.value = "";

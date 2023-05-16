@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     detailDate.textContent = post.date;
     detailContext.textContent = post.content;
   } else {
-    // ID가 유효하지 않은 경우
     alert("해당 게시글을 찾을 수 없습니다.");
     window.location.href = "../index.html";
   }

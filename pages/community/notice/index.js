@@ -15,20 +15,20 @@ document.addEventListener("DOMContentLoaded", function () {
     title.textContent = post.title;
     link.appendChild(title);
 
-    let infoDiv = document.createElement("div"); // 게시글 정보를 담을 새 div 생성
-    infoDiv.className = "boardContentInformation"; // 적절한 CSS 클래스 이름 설정
+    let infoDiv = document.createElement("div");
+    infoDiv.className = "boardContentInformation";
 
-    let name = document.createElement("p"); // 작성자를 나타내는 새로운 요소 생성
-    name.className = "boardContentName"; // 적절한 CSS 클래스 이름 설정
-    name.textContent = post.name; // 작성자 이름 설정
-    infoDiv.appendChild(name); // 작성자 요소를 정보 div에 추가
+    let name = document.createElement("p");
+    name.className = "boardContentName";
+    name.textContent = post.name;
+    infoDiv.appendChild(name);
 
     let date = document.createElement("p");
     date.className = "boardContentDate";
     date.textContent = post.date;
-    infoDiv.appendChild(date); // 날짜 요소를 정보 div에 추가
+    infoDiv.appendChild(date);
 
-    link.appendChild(infoDiv); // 정보 div를 링크 요소에 추가
+    link.appendChild(infoDiv);
     listItem.appendChild(link);
     boardList.appendChild(listItem);
   }
