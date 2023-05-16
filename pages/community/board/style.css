@@ -84,6 +84,12 @@
   display: flex;
   justify-content: space-between;
 }
+.boardContentInformation {
+  display: flex;
+}
+.boardContentDate {
+  margin-left: 1.25rem;
+}
 button {
   width: 6.125rem;
   height: 1.8125rem;
