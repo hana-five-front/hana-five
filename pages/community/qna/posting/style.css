@@ -29,7 +29,7 @@
   font-size: 1rem;
   color: #191f29;
   border-bottom: 0.0313rem #d1d6db solid;
-  text-decoration:none
+  text-decoration: none;
 }
 .asideCommunityQna {
   color: #008485;
@@ -69,25 +69,25 @@
   padding-top: 3.125rem;
   padding-bottom: 4.375rem;
 }
-.detailButtons{
+.detailButtons {
   width: 18.75rem;
   display: flex;
   justify-content: space-between;
 }
-.backToList{
+.backToList {
   display: flex;
   justify-content: center;
 }
 .backToListButton {
   width: 7rem;
   height: 2.8125rem;
-  color: #D70035;
+  color: #d70035;
   background-color: #ffffff;
-  border: #D70035 0.0625rem solid;
+  border: #d70035 0.0625rem solid;
   cursor: pointer;
 }
 .backToList:hover {
-  color: #D70035;
+  color: #d70035;
 }
 .posting {
   display: flex;

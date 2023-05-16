@@ -49,7 +49,7 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 1.25rem;
-  border-bottom: 0.0313rem #6B7684 solid;
+  border-bottom: 0.0313rem #6b7684 solid;
 }
 .boardSearchBar {
   display: flex;
@@ -93,7 +93,7 @@ button {
   width: 6.125rem;
   height: 1.8125rem;
   color: #008485;
-  border:#008485 0.0625rem solid;
+  border: #008485 0.0625rem solid;
   border-radius: 0.1563rem;
   background-color: #ffffff;
   cursor: pointer;
