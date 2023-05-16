@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
       localStorage.setItem('noticePosts', JSON.stringify(posts));
 
       window.location.href = '../detail/index.html#' + post.id;
-    }
 
-    titleInput.value = '';
-    nameInput.value = '';
-    contentInput.value = '';
+      titleInput.value = '';
+      nameInput.value = '';
+      contentInput.value = '';
+    }
   });
 });
