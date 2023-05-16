@@ -52,10 +52,10 @@
   display: flex;
   justify-content: space-between;
 }
-.postingInputWriter {
+.postingInputTitle {
   width: 73%;
 }
-.postingInputPassword {
+.postingInputName {
   width: 25%;
 }
 .postingInputContext {
