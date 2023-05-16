@@ -78,6 +78,11 @@
   list-style: none;
   border-bottom: 0.03rem #d1d6db solid;
 }
+.boardContent > a {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 button {
   width: 6.125rem;
   height: 1.8125rem;

@@ -115,3 +115,6 @@
   border: #008485 0.0625rem solid;
   cursor: pointer;
 }
+p {
+  margin: 0px;
+}
