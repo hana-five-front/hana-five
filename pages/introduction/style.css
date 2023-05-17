@@ -93,6 +93,7 @@ section {
 
 .talent {
   min-height: 60.625rem;
+  margin-bottom: 10rem;
 }
 .sectionHeader {
   font-size: 2.75rem;
@@ -106,6 +107,7 @@ section {
 }
 .talentText {
   color: #6b7684;
+  margin-bottom: 2rem;
 }
 .talentImgContainer {
   margin: var(--component-margin);
@@ -133,6 +135,9 @@ section {
   font-weight: bold;
   color: #b1b1b1;
   position: relative;
+}
+.timeline {
+  margin-bottom: 4rem;
 }
 .timelineHeader p {
   position: absolute;
