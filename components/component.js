@@ -1,6 +1,6 @@
 // Header 삽입
 export function makeHeader() {
-    fetch('hana-five/components/header/header.html')
+    fetch('/hana-five/components/header/index.html')
     .then(function(response) {
       if (response.ok) {
         return response.text();
@@ -16,7 +16,7 @@ export function makeHeader() {
 }
 // Footer 삽입
 export function makeFooter() {
-    fetch('/hana-five/components/footer/footer.html')
+    fetch('/hana-five/components/footer/index.html')
     .then(function(response) {
       if (response.ok) {
         return response.text();
