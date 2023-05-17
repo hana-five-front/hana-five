@@ -88,7 +88,17 @@
   width: 15%;
 }
 .detailCommentInputContext {
-  width: 75%;
+  width: 70%;
+}
+.detailCommentSubmit {
+  width: 10%;
+  color: #fff;
+  background-color: #008485;
+  border: #008485 0.0625rem solid;
+  cursor: pointer;
+}
+.detailCommentSubmit:hover {
+  opacity: 90%;
 }
 .detailComment {
   display: flex;
@@ -99,12 +109,12 @@
   margin: 0px;
 }
 .detailCommentWriter {
-  width: 15%;
+  width: 16%;
   display: flex;
   justify-content: center;
 }
 .detailCommentContext {
-  width: 75%;
+  width: 80%;
   display: flex;
   justify-content: start;
   margin-left: 0.625rem;
