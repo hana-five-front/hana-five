@@ -1,4 +1,3 @@
-// Header 삽입
 function makeHeader() {
   fetch('/hana-five/components/header/index.html')
     .then(function (response) {
