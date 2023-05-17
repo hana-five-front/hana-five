@@ -1,10 +1,10 @@
 .main-component {
   margin: 1.25rem;
-  width: 100%;
   height: 33.6875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   justify-content: center;
 }
 .middle-component {
@@ -15,56 +15,87 @@
 }
 
 .middle-left {
+  /*캐러셀 부분 전체*/
   width: 36.25rem;
   height: 14.375rem;
   display: flex;
-  overflow: hidden;
+  flex-direction: column;
   justify-content: space-between;
 }
 
-.fixed-carousel {
+.carousel {
+  width: 36.25rem;
+  height: 12.5rem;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+.carousel-items {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.3s ease;
 }
 
-.list-carousel {
+.carousel-item {
+  width: 36.25rem;
+  height: 100%;
+  border: 1px solid;
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: space-between;
+  /* 각 슬라이드 아이템의 크기 조정 */
 }
 .mainCarouselTop {
+  /*캐러셀 윗부분*/
   width: 36.25rem;
   height: 12.5rem;
   display: flex;
   justify-content: space-between;
 }
-
 .mainCarouselText {
-  width: 16.375rem;
-  height: 9.6875rem;
+  border: 1px solid green;
+  width: 26.25rem;
+  height: 12.5rem;
   display: flex;
   flex-direction: column;
 }
-
 .mainCarouselText > :first-child {
-  width: 15.125rem;
+  width: 70%;
   height: 3.5625rem;
   font-size: 2.1875rem;
 }
-
 .mainCarouselText > :last-child {
-  width: 7.375rem;
+  width: 15.375rem;
   height: 1.4375rem;
   font-size: 0.9375rem;
 }
-
 .mainCarouselImage {
+  border: 1px solid red;
   width: 12.5rem;
-  height: 12.5rem;
+  height: 11.25rem;
   background: #d9d9d9;
 }
-
-.mainCarouselBottom {
-  height: 1.25rem;
+.carousel-buttons {
+  /* height: 1.25rem;
   width: 36.25rem;
   display: flex;
   justify-content: flex-end;
+  align-items: center; */
+  width: 4.5rem;
+  height: 10%;
+  background-color: #8b95a1;
+  border-radius: 0.625rem;
+  font-size: 0.625rem;
+  color: #fff;
+  display: flex;
   align-items: center;
+  float: right;
+  margin-top: 0.625rem;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .mainCarouselButton {
   width: 4.5rem;
@@ -73,7 +104,6 @@
   border-radius: 0.625rem;
   font-size: 0.625rem;
   color: #fff;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -82,7 +112,9 @@
   border: none;
   outline: none;
   background-color: transparent;
+  cursor: pointer;
 }
+
 .middle-right {
   width: 14.9375rem;
   height: 14.375rem;
