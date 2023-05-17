@@ -67,28 +67,28 @@ a {
   color: #191f29;
 }
 
-.calender-container {
+.calendar-container {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
 }
 
-.calender-day {
+.calendar-day {
   overflow: hidden;
 }
 
-.calender .day {
+.calendar .day {
   text-align: left;
   vertical-align: top;
 }
 
-.calender1 {
+.calendar1 {
   width: 100%;
   height: 100%;
 }
 
-.calender-month {
+.calendar-month {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,7 +97,7 @@ a {
   margin-bottom: 0.625rem;
 }
 
-.calender-month > button {
+.calendar-month > button {
   background-color: transparent;
   border: none;
   font-size: 1.875rem;
@@ -106,18 +106,18 @@ a {
   cursor: pointer;
 }
 
-.calender-month > button:hover {
+.calendar-month > button:hover {
   color: #008484;
 }
 
-.calender-day {
+.calendar-day {
   min-height: 400px;
   display: flex;
   justify-content: center;
   width: auto;
 }
 
-.calender {
+.calendar {
   width: 100%;
   height: 100%;
   table-layout: fixed;
@@ -200,7 +200,7 @@ a {
   align-items: center;
 }
 
-.calender2 {
+.calendar2 {
   display: flex;
   justify-content: center;
   gap: 8rem;
