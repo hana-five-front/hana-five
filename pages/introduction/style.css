@@ -16,6 +16,11 @@ video {
   height: auto;
 }
 
+header img {
+  display: inline-block;
+  vertical-align: unset;
+}
+
 .blind {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -75,16 +80,12 @@ section {
 .btnWrapper {
   text-align: right;
 }
-
-a {
+.learnMoreBtn {
   color: var(--primary-color);
-  text-decoration: none;
-  outline: none;
-  font-size: 1.0625rem;
 }
 
-a:hover,
-a:active {
+.learnMoreBtn:hover,
+.learnMoreBtn:active {
   color: var(--primary-color);
   font-weight: bold;
   text-decoration: underline;

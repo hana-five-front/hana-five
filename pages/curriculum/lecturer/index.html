@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/base-styles.css" />
-    <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="/components/header/header.css" />
+    <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="index.js"></script>
     <title>강사 소개</title>
@@ -15,19 +15,14 @@
   <body>
     <header class="inner header-component">
       <div>
-        <img
-          src="../../../public/images/headerLogo.png"
-          alt="디지털하나로 로고"
-        />
+        <a href="/pages/main/index.html">
+          <img src="/public/images/headerLogo.png" alt="디지털하나로 로고" />
+        </a>
         <ul>
-          <li><a href="../../introduction/index.html">소개</a></li>
-          <li><a href="../../career/index.html">채용</a></li>
-          <li>
-            <a href="../../curriculum/calender/index.html">교육</a>
-          </li>
-          <li>
-            <a href="../../community/board/index.html">커뮤니티</a>
-          </li>
+          <li><a href="/pages/introduction/index.html">소개</a></li>
+          <li><a href="/pages/career/index.html">채용</a></li>
+          <li><a href="/pages/curriculum/calendar/index.html">교육</a></li>
+          <li><a href="/pages/community/notice/index.html">커뮤니티</a></li>
         </ul>
         <div>
           <button></button>
@@ -42,7 +37,7 @@
           <div class="asideTitle">교육</div>
           <ul class="asideContentList">
             <li class="asideContent">
-              <a class="asideMenu" href="../calender/index.html">
+              <a class="asideMenu" href="../calendar/index.html">
                 <p class="aside-curriculum">교육 과정</p>
               </a>
             </li>
@@ -63,7 +58,7 @@
             <div class="info1">
               <div class="profile-image">
                 <img
-                  src="./images/lecturerProfileImage.png"
+                  src="/public/images/lecturerProfileImage.png"
                   alt="강사 프로필 사진"
                 />
               </div>
