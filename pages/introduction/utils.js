@@ -24,9 +24,9 @@ export const makeImageTags = images => {
   for (const image of images) {
     tagString += imgTagTemplate(image);
   }
-  $imagesContainer.innerHTML = tagString;
-
   setFadeIn($imagesContainer);
+
+  $imagesContainer.innerHTML = tagString;
 };
 
 const imgTagTemplate = src =>
