@@ -1,0 +1,59 @@
+{
+  "4월": {
+    "monthly-schedule": ["입학식 및 OT 진행"],
+    "special-lecture": ["[28일] OT 진행"],
+    "special-time": ["[28일] 10:00~12:00"]
+  },
+  "5월": {
+    "monthly-schedule": [
+      "은행의 업무와 데이터 분석",
+      "첫 웹페이지 따라하기",
+      "UI/UX 디자인 구현(HTML/CSS)",
+      "프론트엔드 기초(Javascript)"
+    ],
+    "special-lecture": ["[1일] 하나은행 특강"],
+    "special-time": []
+  },
+  "6월": {
+    "monthly-schedule": [
+      "프론트엔드 기초(Javascript)",
+      "백엔드 기초(JAVA)",
+      "데이터베이스(SQL)",
+      "프론트엔드 심화(React)"
+    ],
+    "special-lecture": [],
+    "special-time": []
+  },
+  "7월": {
+    "monthly-schedule": [
+      "프론트엔드 심화(React)",
+      "시큐어 코딩",
+      "백엔드 심화(JAVA)"
+    ],
+    "special-lecture": [],
+    "special-time": []
+  },
+  "8월": {
+    "monthly-schedule": [
+      "백엔드 심화(JAVA)",
+      "게시판 프로젝트와 함께하는 풀스택 개발",
+      "실무프로젝트Ⅰ"
+    ],
+    "special-lecture": ["[10일] 하나은행 IT 개발 현업 실습"],
+    "special-time": [
+      "[9일] 09:00~19:00",
+      "[10일] 09:00~16:00",
+      "[11일] 09:00~17:00"
+    ]
+  },
+  "9월": {
+    "monthly-schedule": ["실무프로젝트Ⅰ", "실무프로젝트Ⅱ"],
+    "special-lecture": ["[7일] DevRel 하나은행, 취업특강"],
+    "special-time": []
+  },
+  "10월": {
+    "monthly-schedule": ["실무프로젝트Ⅱ"],
+    "special-lecture": ["[30일] DevRel 하나은행, 수료식"],
+    "special-time": ["[27일] 09:00~19:00", "[30일] 09:00~16:00"]
+  }
+}

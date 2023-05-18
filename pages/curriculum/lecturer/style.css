@@ -19,7 +19,7 @@ a {
   width: 16.25rem;
   display: flex;
   flex-direction: column;
-  padding-top: 5rem;
+  padding-top: 3.125rem;
 }
 .asideTitle {
   font-size: 1.75rem;
@@ -57,7 +57,7 @@ a {
 }
 
 .lecturer-head {
-  padding: 1.25rem 0.4375rem 2.5rem;
+  padding: 0 0.4375rem 2.5rem;
   display: flex;
   align-self: stretch;
 }

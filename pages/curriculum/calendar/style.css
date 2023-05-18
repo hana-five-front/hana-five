@@ -16,14 +16,16 @@ a {
   display: flex;
   width: 62.5rem;
   min-height: 50rem;
+  justify-content: center;
 }
 
 .aside {
   width: 16.25rem;
   display: flex;
   flex-direction: column;
-  padding-top: 5rem;
+  padding-top: 3.125rem;
 }
+
 .asideTitle {
   font-size: 1.75rem;
   font-weight: bold;
@@ -33,10 +35,12 @@ a {
   color: #008485;
   border-bottom: 0.1875rem solid #008485;
 }
+
 .asideContentList {
   margin: 0rem;
   padding: 0rem;
 }
+
 .asideContent {
   width: 100%;
   height: 3rem;
@@ -46,6 +50,7 @@ a {
   color: #191f29;
   border-bottom: 0.0313rem #d1d6db solid;
 }
+
 .asideCommunityBoard {
   color: #008485;
 }
@@ -53,12 +58,13 @@ a {
 .page-container {
   display: flex;
   flex-direction: column;
-  width: 46.25rem;
-  padding: 3.125rem 1rem 1.625rem 4.375rem;
+  width: 39.375rem;
+  padding: 3.125rem 0rem 1.625rem 0;
+  margin-left: 4.375rem;
 }
 
 .page-container > header > div {
-  padding: 1.25rem 0.4375rem 1.875rem;
+  padding: 0 0.4375rem 1.875rem;
 }
 
 .page-container > header > div > span {
@@ -78,7 +84,7 @@ a {
   overflow: hidden;
 }
 
-.calendar .day {
+#calendar .day {
   text-align: left;
   vertical-align: top;
 }
@@ -117,15 +123,15 @@ a {
   width: auto;
 }
 
-.calendar {
+#calendar {
   width: 100%;
   height: 100%;
   table-layout: fixed;
   border-collapse: collapse;
 }
 
-.day-week,
-.day {
+td,
+th {
   border: 0.4px solid black;
   padding: 0.3125rem;
   height: 5.625rem;
@@ -143,30 +149,6 @@ a {
   background-color: #008484;
   color: #f2f4f6;
   font-size: 0.8rem;
-  text-align: center;
-  font-weight: bold;
-}
-
-#week1-1,
-#week2-1,
-#week3-1,
-#week4-1,
-#week5-1 {
-  color: red;
-}
-
-#week1-7,
-#week2-7,
-#week3-7,
-#week4-7,
-#week5-7 {
-  color: blue;
-}
-
-#week1-6 > div > .d-day,
-#week5-2 > div > .d-day,
-#week4-7 > div > .d-day {
-  color: red;
 }
 
 .d-day {
@@ -185,6 +167,15 @@ a {
   color: #333d4b;
 }
 
+.time {
+  font-size: 0.5rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: blue;
+}
+
 .day {
   word-break: break-all;
 }
@@ -200,29 +191,49 @@ a {
   align-items: center;
 }
 
+.day > div > ul > li {
+  width: 100%;
+  text-align: left;
+  font-size: 0.5rem;
+}
+
 .calendar2 {
   display: flex;
-  justify-content: center;
-  gap: 8rem;
+  justify-content: space-around;
+  padding-top: 1.375rem;
+  margin-bottom: 4.2rem;
 }
 
-.monthly-schedule {
-  width: auto;
+#monthly-schedule {
+  width: 33%;
 }
 
-.monthly-schedule > p {
+#special-lecture {
+  width: 33%;
+}
+
+#special-time {
+  width: 33%;
+}
+
+.calendar2 > div > p {
+  text-align: center;
   font-size: 1.25rem;
   font-weight: bold;
-  margin: 2.25rem 0 0 0;
+  margin: 2.25rem 0 1rem 0;
 }
 
-.monthly-schedule > ul {
+.calendar2 > div > ul {
   font-size: 1rem;
-  margin: 0;
-  padding-inline-start: 0.3rem;
-  list-style-type: none;
+  margin: 0.625rem 0;
+  padding-inline-start: 1rem;
+  /* list-style-type: none; */
 }
 
-.monthly-schedule > ul > li {
+.calendar2 > div > ul > li {
   margin: 0.625rem 0;
+}
+
+.sat {
+  color: blue;
 }
