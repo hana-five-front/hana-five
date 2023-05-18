@@ -9,20 +9,26 @@
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="index.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>디지털 하나로 소개 페이지</title>
     <style></style>
   </head>
   <body>
     <header class="inner header-component">
       <div>
-        <a href="/pages/main/index.html">
+        <a href="/hana-five/pages/main/index.html">
           <img src="/public/images/headerLogo.png" alt="디지털하나로 로고" />
         </a>
         <ul>
-          <li><a href="/pages/introduction/index.html">소개</a></li>
-          <li><a href="/pages/career/index.html">채용</a></li>
-          <li><a href="/pages/curriculum/calendar/index.html">교육</a></li>
-          <li><a href="/pages/community/notice/index.html">커뮤니티</a></li>
+          <li><a href="/hana-five/pages/introduction/index.html">소개</a></li>
+          <li><a href="/hana-five/pages/career/index.html">채용</a></li>
+          <li>
+            <a href="/hana-five/pages/curriculum/calendar/index.html">교육</a>
+          </li>
+          <li>
+            <a href="/hana-five/pages/community/notice/index.html">커뮤니티</a>
+          </li>
         </ul>
         <div>
           <button></button>
@@ -33,13 +39,24 @@
 
     <main class="inner">
       <section class="intro">
-        <header>
+        <header
+          data-aos="fade-in"
+          data-aos-once="false"
+          data-aos-offset="100"
+          data-aos-duration="1800"
+        >
           <h2 class="blind">디지털 하나로 소개</h2>
           <p class="introHeading">디지털 하나로 소개</p>
         </header>
 
         <article class="introCardsContainer">
-          <div class="introCard">
+          <div
+            class="introCard"
+            data-aos="fade-right"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+          >
             <div>
               <h3 class="blind">은행권 최초 K-Digital 프로그램</h3>
               <p class="introCardHeader">은행권 최초 K-Digital 프로그램</p>
@@ -56,7 +73,13 @@
               </div>
             </div>
           </div>
-          <div class="introCard">
+          <div
+            class="introCard"
+            data-aos="fade-left"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+          >
             <div>
               <h3 class="blind">은행권 최초 K-Digital 프로그램</h3>
               <p class="introCardHeader">은행권 최초 K-Digital 프로그램</p>
@@ -73,7 +96,13 @@
               </div>
             </div>
           </div>
-          <div class="introCard">
+          <div
+            class="introCard"
+            data-aos="fade-right"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+          >
             <div>
               <h3 class="blind">은행권 최초 K-Digital 프로그램</h3>
               <p class="introCardHeader">은행권 최초 K-Digital 프로그램</p>
@@ -90,7 +119,13 @@
               </div>
             </div>
           </div>
-          <div class="introCard">
+          <div
+            class="introCard"
+            data-aos="fade-left"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+          >
             <div>
               <h3 class="blind">은행권 최초 K-Digital 프로그램</h3>
               <p class="introCardHeader">은행권 최초 K-Digital 프로그램</p>
@@ -110,7 +145,13 @@
         </article>
       </section>
 
-      <section class="talent">
+      <section
+        class="talent"
+        data-aos="fade-up"
+        data-aos-once="false"
+        data-aos-offset="300"
+        data-aos-duration="1200"
+      >
         <header>
           <h2 class="blind">하나 금융그룹 인재상</h2>
           <p class="sectionHeader">하나 금융그룹 인재상</p>
@@ -124,7 +165,15 @@
             구체적으로 Integrity와 5가지 핵심가치를 바탕으로 성과 리더십, 조직
             리더십, 혁신 리더십을 실현하는 리더를 뜻합니다.
           </p>
-          <div class="talentImgContainer">
+          <div
+            class="talentImgContainer"
+            data-aos="fade-up"
+            data-aos-once="false"
+            data-aos-duration="1200"
+            data-aos-delay="200"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-out"
+          >
             <img src="/public/images/인재상1.png" alt="인재상1" />
             <img src="/public/images/인재상2.png" alt="인재상2" />
             <img src="/public/images/인재상3.png" alt="인재상3" />
@@ -132,7 +181,14 @@
         </article>
       </section>
 
-      <section class="images">
+      <section
+        class="images"
+        data-aos="fade-up"
+        data-aos-once="false"
+        data-aos-offset="100"
+        data-aos-duration="1200"
+        data-aos-easing="ease-in-out"
+      >
         <header>
           <h2 class="blind">수강 분위기</h2>
           <p class="sectionHeader">수강 분위기</p>
@@ -173,13 +229,26 @@
       </section>
 
       <section class="timeline">
-        <header>
+        <header
+          data-aos="fade-up"
+          data-aos-once="false"
+          data-aos-offset="100"
+          data-aos-duration="1200"
+          data-aos-easing="ease-in-out"
+        >
           <h2 class="blind">타임라인</h2>
           <p class="sectionHeader">타임라인</p>
         </header>
 
         <article>
-          <div class="timelineItem">
+          <div
+            class="timelineItem"
+            data-aos="fade-up"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+          >
             <div class="timelineHeader">
               <p>2023.04</p>
             </div>
@@ -210,7 +279,14 @@
             </div>
           </div>
 
-          <div class="timelineItem">
+          <div
+            class="timelineItem"
+            data-aos="fade-up"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+          >
             <div class="timelineHeader">
               <p>2023.05</p>
             </div>
@@ -241,7 +317,14 @@
             </div>
           </div>
 
-          <div class="timelineItem">
+          <div
+            class="timelineItem"
+            data-aos="fade-up"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+          >
             <div class="timelineHeader">
               <p>2023.06</p>
             </div>
@@ -269,7 +352,14 @@
             </div>
           </div>
 
-          <div class="timelineItem">
+          <div
+            class="timelineItem"
+            data-aos="fade-up"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+          >
             <div class="timelineHeader">
               <p>2023.07</p>
             </div>
@@ -288,7 +378,14 @@
             </div>
           </div>
 
-          <div class="timelineItem">
+          <div
+            class="timelineItem"
+            data-aos="fade-up"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+          >
             <div class="timelineHeader">
               <p>2023.08</p>
             </div>
@@ -316,7 +413,14 @@
             </div>
           </div>
 
-          <div class="timelineItem">
+          <div
+            class="timelineItem"
+            data-aos="fade-up"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+          >
             <div class="timelineHeader">
               <p>2023.09</p>
             </div>
@@ -335,7 +439,14 @@
             </div>
           </div>
 
-          <div class="timelineItem">
+          <div
+            class="timelineItem"
+            data-aos="fade-up"
+            data-aos-once="false"
+            data-aos-offset="100"
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+          >
             <div class="timelineHeader">
               <p>2023.10</p>
             </div>
@@ -399,5 +510,8 @@
         </div>
       </div>
     </footer>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
