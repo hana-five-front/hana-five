@@ -116,6 +116,15 @@ section {
 .images {
   width: 60rem;
   margin-bottom: 10rem;
+  transition: all 0.5s;
+}
+.animationHidden {
+  opacity: 0;
+}
+
+.animationFadeIn {
+  opacity: 1;
+  transition: all 0.5s ease-out;
 }
 .imagesContainer {
   display: grid;
