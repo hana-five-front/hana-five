@@ -4,32 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/base-styles.css" />
-    <link rel="stylesheet" href="/components/header/header.css" />
-    <link rel="stylesheet" href="/components/footer/footer.css" />
+    <link rel="stylesheet" href="/hana-five/styles/base-styles.css" />
+    <link rel="stylesheet" href="/hana-five/components/header/header.css" />
+    <link rel="stylesheet" href="/hana-five/components/footer/footer.css" />
+    <script type="module" src="/hana-five/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="index.js"></script>
     <title>교육 과정</title>
     <style></style>
   </head>
   <body>
-    <header class="inner header-component">
-      <div>
-        <a href="/hana-five/pages/main/index.html">
-          <img src="/public/images/headerLogo.png" alt="디지털하나로 로고" />
-        </a>
-        <ul>
-          <li><a href="/hana-five/pages/introduction/index.html">소개</a></li>
-          <li><a href="/hana-five/pages/career/index.html">채용</a></li>
-          <li><a href="/hana-five/pages/curriculum/calendar/index.html">교육</a></li>
-          <li><a href="/hana-five/pages/community/notice/index.html">커뮤니티</a></li>
-        </ul>
-        <div>
-          <button></button>
-          <button>로그인</button>
-        </div>
-      </div>
-    </header>
+    <header class="inner header-component" id="header"></header>
     
 
     <main class="inner">
@@ -153,38 +138,6 @@
       </div>
     </main>
 
-    <footer class="inner footer-component">
-      <div>
-        <div class="left">
-          <div class="about-link">
-            <p>About US</p>
-            <p>GitHub</p>
-            <p>OpenAPI</p>
-            <p>ETC</p>
-          </div>
-          <div class="about-text">
-            <p class="left-p_black">
-              서울특별시 중구 을지로 35 (을지로1가, 하나은행)
-            </p>
-            <p class="left-p_black">
-              서울 성동구 아차산로 111 2층 (알파코 제2캠퍼스)
-            </p>
-            <p class="left-p_gray">
-              COPYRIGHT(C) Hana Bank. ALL RIGHTS RESERVED
-            </p>
-          </div>
-        </div>
-        <div class="right">
-          <div class="right-up">
-            <div>하나은행 고객센터</div>
-            <div>1588-1111 / 1599-1111</div>
-          </div>
-          <div class="right-down">
-            <div>알파코 제2캠퍼스</div>
-            <div>0507-1336-5730</div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <footer class="inner footer-component" id="footer"></footer>
   </body>
 </html>
