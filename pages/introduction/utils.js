@@ -21,11 +21,13 @@ export const flipImages = arr => {
 export const makeImageTags = images => {
   const $imagesContainer = document.querySelector('.imagesContainer');
   let tagString = '';
-  for (let i = 0; i < 6; i++) {
-    tagString += `<img src="${images[i]}" alt="별돌이"width="300px" height="300px" />`;
+  for (const image of images) {
+    tagString += imgTagTemplate(image);
   }
+  $imagesContainer.innerHTML = tagString;
 
   setFadeIn($imagesContainer);
-
-  $imagesContainer.innerHTML = tagString;
 };
+
+const imgTagTemplate = src =>
+  `<img src="${src}" alt="별돌이"width="300px" height="300px" />`;
