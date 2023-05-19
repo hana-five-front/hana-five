@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
+
     <title>교육 과정</title>
     <style></style>
   </head>
@@ -39,102 +40,44 @@
           <div class="calendar-container">
             <div class="calendar1">
               <div class="calendar-month">
-                <button class="previous"><</button>
-                <div class="month">5월</div>
-                <button class="next">></button>
+                <button class="previous" onclick="prevCalendar()"><</button>
+                <div id="month">mm월</div>
+                <button class="next" onclick="nextCalendar()">></button>
               </div>
               <div class="calendar-day">
-                <table class="calendar">
+                <table id="calendar">
                   <thead>
                     <tr class="">
-                      <td class="day-week">일</td>
-                      <td class="day-week">월</td>
-                      <td class="day-week">화</td>
-                      <td class="day-week">수</td>
-                      <td class="day-week">목</td>
-                      <td class="day-week">금</td>
-                      <td class="day-week" id="sat">토</td>
+                      <th class="day-week">일</th>
+                      <th class="day-week">월</th>
+                      <th class="day-week">화</th>
+                      <th class="day-week">수</th>
+                      <th class="day-week">목</th>
+                      <th class="day-week">금</th>
+                      <th class="day-week">토</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr class="week">
-                      <td class="day" id="week1-1"><div><span class="d-day"></span>
-                      <ul><li></li></ul></td></div>
-                      <td class="day" id="week1-2"><div><span class="d-day">1</span><span class='holiday'>근로자의 날</span><ul><li></li></ul></td></div>
-                      <td class="day" id="week1-3"><div><span class="d-day">2</span><ul><li>하나은행 특강(8)</li></ul></td></div>
-                      <td class="day" id="week1-4"><div><span class="d-day">3</span><ul><li>은행의 업무와 데이터 분석(8)</li></ul></td></div>
-                      <td class="day" id="week1-5"><div><span class="d-day">4</span>
-                        <ul>
-                          <li>은행의 업무와 데이터분석(3)</li>
-                          <li>ICT아키텍처이해(5)</li>
-                        </ul></td></div>
-                      <td class="day" id="week1-6"><div><span class="d-day">5</span><span class='holiday'>어린이날</span><ul>
-                        </ul></td></div>
-                      <td class="day" id="week1-7"><div><span class="d-day">6</span><ul><li></li></ul></td></div>
-                    </tr>
-                    <tr class="week">
-                      <td class="day" id="week2-1"><div><span class="d-day">7</span><ul><li></li></ul></td></div>
-                      <td class="day" id="week2-2"><div><span class="d-day">8</span><ul><li>ICT아키텍처이해(5)</li><li>첫 웹페이지 따라하기(3)</li></ul></td></div>
-                      <td class="day" id="week2-3"><div><span class="d-day">9</span><ul><li>첫 웹페이지 따라하기(8)</li></ul></td></div>
-                      <td class="day" id="week2-4"><div><span class="d-day">10</span><ul><li>첫 웹페이지 따라하기(8)</li></ul></td></div>
-                      <td class="day" id="week2-5"><div><span class="d-day">11</span><ul><li>첫 웹페이지 따라하기(8)</li></ul></td></div>
-                      <td class="day" id="week2-6"><div><span class="d-day">12</span><ul><li>첫 웹페이지 따라하기(5)</li><li>GitHub와 소스코드 관리(3)</li></ul></td></div>
-                      <td class="day" id="week2-7"><div><span class="d-day">13</span><ul></ul></td></div>
-                    </tr>
-                    <tr class="week">
-                      <td class="day" id="week3-1"><div><span class="d-day">14</span><ul><li></li></ul></td></div>
-                      <td class="day" id="week3-2"><div><span class="d-day">15</span><ul><li>GitHub와 소스코드 관리(1)</li><li>UI/UX 디자인구현(HTML/CSS)(7)</li></ul></td></div>
-                      <td class="day" id="week3-3"><div><span class="d-day">16</span><ul><li>UI/UX 디자인구현(HTML/CSS)(8)</li></ul></td></div>
-                      <td class="day" id="week3-4"><div><span class="d-day">17</span><ul><li>UI/UX 디자인구현(HTML/CSS)(8)</li></ul></td></div>
-                      <td class="day" id="week3-5"><div><span class="d-day">18</span><ul><li>UI/UX 디자인구현(HTML/CSS)(8)</li></ul></td></div>
-                      <td class="day" id="week3-6"><div><span class="d-day">19</span><ul><li>UI/UX 디자인구현(HTML/CSS)(8)</li></ul></td></div>
-                      <td class="day" id="week3-7"><div><span class="d-day">20</span><ul><li></li></ul></td></div>
-                    </tr>
-                    <tr class="week">
-                      <td class="day" id="week4-1"><div><span class="d-day">21</span><ul></ul></td></div>
-                      <td class="day" id="week4-2"><div><span class="d-day">22</span><ul><li>UI/UX 디자인구현(HTML/CSS)(1)</li><li>프론트엔드 기초(Javascript)(7)</li></ul></td></div>
-                      <td class="day" id="week4-3"><div><span class="d-day">23</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
-                      <td class="day" id="week4-4"><div><span class="d-day">24</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
-                      <td class="day" id="week4-5"><div><span class="d-day">25</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
-                      <td class="day" id="week4-6"><div><span class="d-day">26</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
-                      <td class="day" id="week4-7"><div><span class="d-day">27</span><span class='holiday'>부처님오신날</span><ul><li></li></ul></td></div>
-                    </tr>
-                    <tr class="week">
-                      <td class="day" id="week5-1"><div><span class="d-day">28</span><ul><li></li></ul></td></div>
-                      <td class="day" id="week5-2"><div><span class="d-day">29</span><span class="holiday">대체공휴일</span><ul><li></li></ul></td></div>
-                      <td class="day" id="week5-3"><div><span class="d-day">30</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
-                      <td class="day" id="week5-4"><div><span class="d-day">31</span><ul><li>프론트엔드 기초(Javascript)(8)</li></ul></td></div>
-                      <td class="day" id="week5-5"><div><span class="d-day"></span><ul><li></li></ul></td></div>
-                      <td class="day" id="week5-6"><div><span class="d-day"></span><ul><li></li></ul></td></div>
-                      <td class="day" id="week5-7"><div><span class="d-day"></span><ul><li></li></ul></td></div>
-                    </tr>
-                  </tbody>
                 </table>
               </div>
             </div>
             <div class="calendar2">
-                <div class="monthly-schedule">
-                  <p>5월 주요 활동</p>
-                  <ul>
-                    <li>은행의 업무와 데이터 분석</li>
-                    <li>첫 웹페이지 따라하기</li>
-                    <li>UI/UX 디자인 구현(HTML/CSS)</li>
-                    <li>프론트엔드 기초(Javascript)</li>
-                  </ul>
+                <div id="monthly-schedule">
+                  <p id="summaryMonth">mm월 주요 활동</p>
+                  <ul></ul>
                 </div>
-
-                <div class="monthly-schedule"><p>특강</p>
-                  <ul>
-                    <li>하나은행 특강</li>
+                <div id="special-lecture"><p>특강</p>
+                  <ul></ul>
                 </div>
-                
-                </ul>
+                <div id="special-time"><p>시간 특이사항</p>
+                  <ul></ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </main>
+    <script src="./index.js"></script>
 
     <footer class="inner footer-component" id="footer"></footer>
 
