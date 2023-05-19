@@ -4,31 +4,70 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/hana-five/styles/base-styles.css" />
-    <link rel="stylesheet" href="/hana-five/components/header/header.css" />
-    <link rel="stylesheet" href="/hana-five/components/footer/footer.css" />
+    <link rel="stylesheet" href="/styles/base-styles.css" />
+    <link rel="stylesheet" href="/components/header/header.css" />
+    <link rel="stylesheet" href="/components/footer/footer.css" />
+    <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="/hana-five/components/component.js"></script>
     <title>디지털 하나로 메인 페이지</title>
   </head>
   <body>
-    <header class="inner header-component" id="header">
-    </header>
+    <header class="inner header-component" id="header"></header>
 
     <main class="inner main-component">
       <div class="middle-component">
-        <div class="fixed-carousel">
-          <div class="middle-left">
-            <div class="mainCarouselTop">
-              <div class="mainCarouselText">
-                <div>캐러셀 텍스트0</div>
-                <div>캐러셀 보조 텍스트0</div>
+        <div class="middle-left">
+          <div class="carousel">
+            <div class="carousel-items">
+              <div class="carousel-item">
+                <div class="mainCarouselText">
+                  <div>메인캐러셀0</div>
+                  <div>메인캐러셀서브텍스트0</div>
+                </div>
+                <div class="mainCarouselImage"></div>
               </div>
-              <div class="mainCarouselImage"></div>
+
+              <div class="carousel-item">
+                <div class="mainCarouselText">
+                  <div>메인캐러셀1</div>
+                  <div>메인캐러셀서브텍스트1</div>
+                </div>
+                <div class="mainCarouselImage"></div>
+                <!-- 두 번째 슬라이드 내용 -->
+              </div>
+
+              <div class="carousel-item">
+                <div class="mainCarouselText">
+                  <div>메인캐러셀2</div>
+                  <div>메인캐러셀서브텍스트2</div>
+                </div>
+                <div class="mainCarouselImage"></div>
+                <!-- 세 번째 슬라이드 내용 -->
+              </div>
+
+              <div class="carousel-item">
+                <div class="mainCarouselText">
+                  <div>메인캐러셀3</div>
+                  <div>메인캐러셀서브텍스트3</div>
+                </div>
+                <div class="mainCarouselImage"></div>
+                <!-- 네 번째 슬라이드 내용 -->
+              </div>
+              <!-- 추가 슬라이드 아이템들 -->
+            </div>
+          </div>
+          <div class="middle-bottom">
+            <div class="carousel-buttons">
+              <a class="left-button" href="#"> < </a>
+              <div id="result">
+                <b>1</b>
+              </div>
+              <span> / 4 </span>
+              <a class="right-button" href="#"> > </a>
+              <!-- carousel-control next -->
             </div>
           </div>
         </div>
-
         <div class="middle-right">
           <div class="todayTable">
             <div class="todayTableTitle">오늘 시간표</div>
@@ -110,9 +149,8 @@
       </div>
     </main>
 
-    <footer class="inner footer-component" id="footer">
+    <footer class="inner footer-component" id="footer"></footer>
 
-    </footer>
     <script src="index.js"></script>
   </body>
 </html>

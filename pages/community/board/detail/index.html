@@ -7,32 +7,13 @@
     <link rel="stylesheet" href="/styles/base-styles.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="/components/header/header.css" />
+    <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="index.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <header class="inner header-component">
-      <div>
-        <a href="/hana-five/pages/main/index.html">
-          <img src="/public/images/headerLogo.png" alt="디지털하나로 로고" />
-        </a>
-        <ul>
-          <li><a href="/hana-five/pages/introduction/index.html">소개</a></li>
-          <li><a href="/hana-five/pages/career/index.html">채용</a></li>
-          <li>
-            <a href="/hana-five/pages/curriculum/calendar/index.html">교육</a>
-          </li>
-          <li>
-            <a href="/hana-five/pages/community/notice/index.html">커뮤니티</a>
-          </li>
-        </ul>
-        <div>
-          <button></button>
-          <button>로그인</button>
-        </div>
-      </div>
-    </header>
+    <header class="inner header-component" id="header"></header>
 
     <main class="inner">
       <div class="middle-component">
@@ -93,38 +74,6 @@
       </div>
     </main>
 
-    <footer class="inner footer-component">
-      <div>
-        <section class="left">
-          <div class="about-link">
-            <p>About US</p>
-            <p>GitHub</p>
-            <p>OpenAPI</p>
-            <p>ETC</p>
-          </div>
-          <section class="about-text">
-            <p class="left-p_black">
-              서울특별시 중구 을지로 35 (을지로1가, 하나은행)
-            </p>
-            <p class="left-p_black">
-              서울 성동구 아차산로 111 2층 (알파코 제2캠퍼스)
-            </p>
-            <p class="left-p_gray">
-              COPYRIGHT(C) Hana Bank. ALL RIGHTS RESERVED
-            </p>
-          </section>
-        </section>
-        <section class="right">
-          <ul class="right-up">
-            <li>하나은행 고객센터</li>
-            <li>1588-1111 / 1599-1111</li>
-          </ul>
-          <ul class="right-down">
-            <li>알파코 제2캠퍼스</li>
-            <li>0507-1336-5730</li>
-          </ul>
-        </section>
-      </div>
-    </footer>
+    <footer class="inner footer-component" id="footer"></footer>
   </body>
 </html>

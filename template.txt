@@ -4,68 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../styles/base-styles.css" />
-    <link rel="stylesheet" href="header.css" />
-       <!-- components폴더에 header폴더에 header.css를 작업하시는 폴더에 넣어주세요 -->
-        <!-- 디지털하나로 이미지가 안 보이면 components폴더 Image폴더에 있습니다 -->
-    <link rel="stylesheet" href="footer.css" />
-  <!-- components폴더에 footer폴더에 footer.css를 작업하시는 폴더에 넣어주세요 -->
+    <link rel="stylesheet" href="/styles/base-styles.css" />
+    <link rel="stylesheet" href="/components/header/header.css" />
+    <link rel="stylesheet" href="/components/footer/footer.css" />
+    <script type="module" src="/components/component.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>디지털 하나로 메인 페이지</title>
   </head>
   <body>
-    <header class="inner header-component">
-      <div>
-        <img src="./images/headerLogo.png" alt="디지털하나로 로고" />
-        <ul>
-          <li>소개</li>
-          <li>채용</li>
-          <li>교육</li>
-          <li>커뮤니티</li>
-        </ul>
-        <div>
-          <button></button>
-          <button>로그인</button>
-        </div>
-      </div>
-    </header>
+    <header class="inner header-component" id="header"></header>
 
-    <main class="inner">
-      <div class="component">컴 포 넌 트</div>
-      <div class="component">컴 포 넌 트</div>
+    <main class="inner main-component">
     </main>
 
-    <footer class="inner footer-component">
-      <div>
-        <div class="left">
-          <div class="about-link">
-            <p>About US</p>
-            <p>GitHub</p>
-            <p>OpenAPI</p>
-            <p>ETC</p>
-          </div>
-          <div class="about-text">
-            <p class="left-p_black">
-              서울특별시 중구 을지로 35 (을지로1가, 하나은행)
-            </p>
-            <p class="left-p_black">
-              서울 성동구 아차산로 111 2층 (알파코 제2캠퍼스)
-            </p>
-            <p class="left-p_gray">
-              COPYRIGHT(C) Hana Bank. ALL RIGHTS RESERVED
-            </p>
-          </div>
-        </div>
-        <div class="right">
-          <div class="right-up">
-            <div>하나은행 고객센터</div>
-            <div>1588-1111 / 1599-1111</div>
-          </div>
-          <div class="right-down">
-            <div>알파코 제2캠퍼스</div>
-            <div>0507-1336-5730</div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <footer class="inner footer-component" id="footer"></footer>
+
+    <script src="index.js"></script>
   </body>
 </html>
