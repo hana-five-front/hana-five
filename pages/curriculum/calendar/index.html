@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
     <title>교육 과정</title>
     <style></style>
   </head>
@@ -138,5 +137,11 @@
     </main>
 
     <footer class="inner footer-component" id="footer"></footer>
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+      window.Kakao.init('70ea0bfda7dfa09b98fb24b01114d26f');
+    </script>
+    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
   </body>
 </html>

@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>디지털 하나로 소개 페이지</title>
@@ -460,6 +459,11 @@
 
     <footer class="inner footer-component" id="footer"></footer>
 
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+      window.Kakao.init('70ea0bfda7dfa09b98fb24b01114d26f');
+    </script>
+    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
     <script>
       AOS.init();
     </script>
