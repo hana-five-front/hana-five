@@ -2,30 +2,25 @@ body {
   display: flex;
   flex-direction: column;
 }
-
 main {
   display: flex;
 }
-
 a {
   text-decoration: none;
   color: #191f29;
 }
-
 .container {
   display: flex;
   width: 62.5rem;
   min-height: 50rem;
   justify-content: center;
 }
-
 .aside {
   width: 16.25rem;
   display: flex;
   flex-direction: column;
   padding-top: 3.125rem;
 }
-
 .asideTitle {
   font-size: 1.75rem;
   font-weight: bold;
@@ -35,12 +30,10 @@ a {
   color: #008485;
   border-bottom: 0.1875rem solid #008485;
 }
-
 .asideContentList {
   margin: 0rem;
   padding: 0rem;
 }
-
 .asideContent {
   width: 100%;
   height: 3rem;
@@ -50,11 +43,9 @@ a {
   color: #191f29;
   border-bottom: 0.0313rem #d1d6db solid;
 }
-
 .asideCommunityBoard {
   color: #008485;
 }
-
 .page-container {
   display: flex;
   flex-direction: column;
@@ -62,38 +53,31 @@ a {
   padding: 3.125rem 0rem 1.625rem 0;
   margin-left: 4.375rem;
 }
-
 .page-container > header > div {
   padding: 0 0.4375rem 1.875rem;
 }
-
 .page-container > header > div > span {
   font-size: 2.375rem;
   font-weight: bold;
   color: #191f29;
 }
-
 .calendar-container {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
 }
-
 .calendar-day {
   overflow: hidden;
 }
-
 #calendar .day {
   text-align: left;
   vertical-align: top;
 }
-
 .calendar1 {
   width: 100%;
   height: 100%;
 }
-
 .calendar-month {
   display: flex;
   justify-content: center;
@@ -102,7 +86,6 @@ a {
   font-weight: bold;
   margin-bottom: 0.625rem;
 }
-
 .calendar-month > button {
   background-color: transparent;
   border: none;
@@ -111,25 +94,21 @@ a {
   padding: 0 1.625rem;
   cursor: pointer;
 }
-
 .calendar-month > button:hover {
   color: #008484;
 }
-
 .calendar-day {
   min-height: 400px;
   display: flex;
   justify-content: center;
   width: auto;
 }
-
 #calendar {
   width: 100%;
   height: 100%;
   table-layout: fixed;
   border-collapse: collapse;
 }
-
 td,
 th {
   border: 0.4px solid black;
@@ -137,27 +116,23 @@ th {
   height: 5.625rem;
   box-sizing: border-box;
 }
-
 .day > div {
   position: relative;
   height: 100%;
   padding-top: 1rem;
 }
-
 .day-week {
   height: 40px;
   background-color: #008484;
   color: #f2f4f6;
   font-size: 0.8rem;
 }
-
 .d-day {
   font-size: 0.8125rem;
   font-weight: bold;
   position: absolute;
   top: 0;
 }
-
 .holiday {
   font-size: 0.7rem;
   font-weight: bold;
@@ -166,7 +141,6 @@ th {
   right: 0;
   color: #333d4b;
 }
-
 .time {
   font-size: 0.5rem;
   font-weight: bold;
@@ -175,11 +149,9 @@ th {
   right: 0;
   color: blue;
 }
-
 .day {
   word-break: break-all;
 }
-
 .day > div > ul {
   list-style-type: none;
   margin: 0;
@@ -190,50 +162,40 @@ th {
   height: 100%;
   align-items: center;
 }
-
 .day > div > ul > li {
   width: 100%;
   text-align: left;
   font-size: 0.5rem;
 }
-
 .calendar2 {
   display: flex;
   justify-content: space-around;
   padding-top: 1.375rem;
   margin-bottom: 4.2rem;
 }
-
 #monthly-schedule {
   width: 33%;
 }
-
 #special-lecture {
   width: 33%;
 }
-
 #special-time {
   width: 33%;
 }
-
 .calendar2 > div > p {
   text-align: center;
   font-size: 1.25rem;
   font-weight: bold;
   margin: 2.25rem 0 1rem 0;
 }
-
 .calendar2 > div > ul {
   font-size: 1rem;
   margin: 0.625rem 0;
   padding-inline-start: 1rem;
-  /* list-style-type: none; */
 }
-
 .calendar2 > div > ul > li {
   margin: 0.625rem 0;
 }
-
 .sat {
   color: blue;
 }
