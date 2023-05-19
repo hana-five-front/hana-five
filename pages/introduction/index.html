@@ -460,9 +460,12 @@
     <footer class="inner footer-component" id="footer"></footer>
 
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
     <script>
-      window.Kakao.init('70ea0bfda7dfa09b98fb24b01114d26f');
+      import { config } from '/scripts/apikey.js';
+      window.Kakao.init(config.apikey);
     </script>
+    <script type="modules" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
     <script>
       AOS.init();
