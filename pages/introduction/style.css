@@ -9,18 +9,15 @@ object {
   display: block;
   vertical-align: middle;
 }
-
 img,
 video {
   max-width: 100%;
   height: auto;
 }
-
 header img {
   display: inline-block;
   vertical-align: unset;
 }
-
 .blind {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -29,11 +26,9 @@ header img {
   margin: -1px;
   overflow: hidden;
 }
-
 .boxCheck {
   border: 1px solid black;
 }
-
 section {
   margin: var(--component-margin);
 }
@@ -63,7 +58,6 @@ section {
   font-size: 1.5rem;
   font-weight: bold;
 }
-
 .btn {
   background: inherit;
   border: none;
@@ -83,14 +77,12 @@ section {
 .learnMoreBtn {
   color: var(--primary-color);
 }
-
 .learnMoreBtn:hover,
 .learnMoreBtn:active {
   color: var(--primary-color);
   font-weight: bold;
   text-decoration: underline;
 }
-
 .talent {
   min-height: 60.625rem;
   margin-bottom: 10rem;
@@ -112,7 +104,6 @@ section {
 .talentImgContainer {
   margin: var(--component-margin);
 }
-
 .images {
   width: 60rem;
   margin-bottom: 10rem;
@@ -121,7 +112,6 @@ section {
 .animationHidden {
   opacity: 0;
 }
-
 .animationFadeIn {
   opacity: 1;
   transition: all 0.5s ease-out;
@@ -137,7 +127,6 @@ section {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
-
 .timelineHeader {
   grid-column: span 2 / span 2;
   font-size: 1.5rem;
