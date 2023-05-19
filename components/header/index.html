@@ -1,4 +1,5 @@
 <header class="inner header-component">
+  <script type="module" src="/scripts/kakaoLogin.js"></script>
   <div>
     <a href="/pages/main/index.html">
       <img src="/public/images/headerLogo.png" alt="디지털하나로 로고" />
@@ -14,8 +15,13 @@
       </li>
     </ul>
     <div>
-      <button></button>
+      <button type="button" id="login">카카오<br />로그인</button>
       <button>로그인</button>
     </div>
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+      window.Kakao.init('70ea0bfda7dfa09b98fb24b01114d26f');
+    </script>
   </div>
 </header>
