@@ -1,41 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-  let postingButton = document.querySelector('.postingButton');
-  let titleInput = document.querySelector('.postingInputTitle');
-  let nameInput = document.querySelector('.postingInputName');
-  let contentInput = document.querySelector('.postingInputContext');
+import { submitPost } from '../../community.js';
 
-  postingButton.addEventListener('click', function (event) {
-    event.preventDefault();
+let postType = 'qnaPosts';
+let postingButton = document.querySelector('.postingButton');
 
-    let title = titleInput.value;
-    let name = nameInput.value;
-    if (name === '') {
-      name = '익명';
-    }
-    let content = contentInput.value;
-    let date = new Date().toISOString().split('T')[0];
-
-    if (title === '' || content === '') {
-      alert('제목과 내용을 모두 입력해주세요.');
-    } else {
-      let post = {
-        id: Date.now(),
-        title: titleInput.value,
-        name: name,
-        content: contentInput.value,
-        date: date,
-      };
-
-      let posts = JSON.parse(localStorage.getItem('qnaPosts')) || [];
-
-      posts.push(post);
-      localStorage.setItem('qnaPosts', JSON.stringify(posts));
-
-      window.location.href = '../detail/index.html#' + post.id;
-
-      titleInput.value = '';
-      nameInput.value = '';
-      contentInput.value = '';
-    }
-  });
+postingButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  submitPost(postType);
 });

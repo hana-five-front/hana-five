@@ -55,6 +55,43 @@ export function submitComment(postType) {
   detailCommentInputContext.value = '';
 }
 
+export function submitPost(postType) {
+  let titleInput = document.querySelector('.postingInputTitle');
+  let nameInput = document.querySelector('.postingInputName');
+  let contentInput = document.querySelector('.postingInputContext');
+
+  let title = titleInput.value;
+  let name = nameInput.value;
+  if (name === '') {
+    name = '익명';
+  }
+  let content = contentInput.value;
+  let date = new Date().toISOString().split('T')[0];
+
+  if (title === '' || content === '') {
+    alert('제목과 내용을 모두 입력해주세요.');
+  } else {
+    let post = {
+      id: Date.now(),
+      title: titleInput.value,
+      name: name,
+      content: contentInput.value,
+      date: date,
+    };
+
+    let posts = JSON.parse(localStorage.getItem(postType)) || [];
+
+    posts.push(post);
+    localStorage.setItem(postType, JSON.stringify(posts));
+
+    window.location.href = '../detail/index.html#' + post.id;
+
+    titleInput.value = '';
+    nameInput.value = '';
+    contentInput.value = '';
+  }
+}
+
 function renderComments(comments) {
   let detailCommentList = document.querySelector('.detailCommentList');
 
