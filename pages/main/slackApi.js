@@ -1,5 +1,4 @@
 const noticeContainer = document.querySelector('.mainBottomNoticeBottom')
-console.log(noticeContainer)
 
 
 function markDowntoPlainWords (message) {
@@ -33,7 +32,7 @@ function getNotice () {
     throw new Error('Error: ' + response.status);
   })
   .then(function (data) {
-    console.log(data)
+
     for (let i = 2; i >= 0; i--) {
        let {title,date} = data[i]
        date = dateToText(date)
