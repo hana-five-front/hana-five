@@ -14,14 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let postId = window.location.hash.substring(1).split('#');
   let posts = JSON.parse(localStorage.getItem('notice')) || [];
-
   let post = posts.find(post => post.id == postId);
 
   if (post) {
     detailTitle.textContent = post.title;
     detailWriter.textContent = post.userName || '익명';
     detailDate.textContent = post.date;
-    post.contents.forEach((e,idx)=>{
+    post.contents.forEach(e=>{
       const outerDiv = document.createElement('div');
       outerDiv.textContent = e;
       detailContext.appendChild(outerDiv)
@@ -29,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     renderComments((post.comments || []).reverse());
   } else {
+    
     alert('해당 게시글을 찾을 수 없습니다.');
     window.location.href = '../index.html';
   }

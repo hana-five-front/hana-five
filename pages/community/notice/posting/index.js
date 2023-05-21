@@ -18,24 +18,30 @@ document.addEventListener('DOMContentLoaded', function () {
     if (title === '' || content === '') {
       alert('제목과 내용을 모두 입력해주세요.');
     } else {
+      let posts = JSON.parse(localStorage.getItem('notice')) || [];
       let post = {
-        id: Date.now(),
+        id: posts.length,
         title: titleInput.value,
         name: name,
-        content: contentInput.value,
+        contents: contentInput.value.split('\n'),
         date: date,
       };
-
-      let posts = JSON.parse(localStorage.getItem('noticePosts')) || [];
-
       posts.push(post);
-      localStorage.setItem('noticePosts', JSON.stringify(posts));
 
-      window.location.href = '../detail/index.html#' + post.id;
-
+      let text = [title + '\n', ...contentInput.value].join('');
+      fetch('http://localhost:3000/slackapi', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text }),
+      });
+      localStorage.setItem('notice', JSON.stringify(posts));
       titleInput.value = '';
       nameInput.value = '';
       contentInput.value = '';
+
+      window.location.href = '../detail/index.html#' + post.id;
     }
   });
 });

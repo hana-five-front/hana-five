@@ -48,7 +48,7 @@ function makeNotice(posts) {
 }
 
 function getNotice() {
-  fetch('http://43.200.63.91:3000/slackapi')
+  fetch('http://localhost:3000/slackapi')
     .then(function (response) {
       if (response.ok) {
         return response.json();
@@ -66,7 +66,6 @@ function getNotice() {
 
       localStorage.setItem('notice', JSON.stringify(data));
       const x = JSON.parse(localStorage.getItem('notice'));
-      console.log(x);
       return data;
     })
     .catch(function (error) {
