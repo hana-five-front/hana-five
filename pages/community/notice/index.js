@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function markDowntoPlainWords(message) {
-  return message.replace(/:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
+  return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
 }
 
 function dateToText(date) {
@@ -57,16 +57,16 @@ function getNotice() {
     })
     .then(data => {
       data = data.map((e, idx) => {
-        e.title= markDowntoPlainWords(e.title)
-        e.contents = e.contents.map(e=> markDowntoPlainWords(e))
-        e.date = dateToText(e.date)
+        e.title = markDowntoPlainWords(e.title);
+        e.contents = e.contents.map(e => markDowntoPlainWords(e));
+        e.date = dateToText(e.date);
         return (e = { ...e, id: idx });
       });
       makeNotice(data);
-      
-      localStorage.setItem("notice",JSON.stringify(data))
-      const x = JSON.parse(localStorage.getItem("notice"))
-      console.log(x)
+
+      localStorage.setItem('notice', JSON.stringify(data));
+      const x = JSON.parse(localStorage.getItem('notice'));
+      console.log(x);
       return data;
     })
     .catch(function (error) {
