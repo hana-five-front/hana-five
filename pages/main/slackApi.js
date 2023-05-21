@@ -32,7 +32,7 @@ function getNotice () {
     throw new Error('Error: ' + response.status);
   })
   .then(function (data) {
-
+    
     for (let i = 2; i >= 0; i--) {
        let {title,date} = data[i]
        date = dateToText(date)
