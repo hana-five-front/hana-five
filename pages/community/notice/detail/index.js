@@ -13,15 +13,20 @@ document.addEventListener('DOMContentLoaded', function () {
   let detailCommentList = document.querySelector('.detailCommentList');
 
   let postId = window.location.hash.substring(1).split('#');
-  let posts = JSON.parse(localStorage.getItem('noticePosts')) || [];
+  let posts = JSON.parse(localStorage.getItem('notice')) || [];
 
   let post = posts.find(post => post.id == postId);
 
   if (post) {
     detailTitle.textContent = post.title;
-    detailWriter.textContent = post.name || '익명';
+    detailWriter.textContent = post.userName || '익명';
     detailDate.textContent = post.date;
-    detailContext.textContent = post.content;
+    post.contents.forEach((e,idx)=>{
+      const outerDiv = document.createElement('div');
+      outerDiv.textContent = e;
+      detailContext.appendChild(outerDiv)
+    })
+
     renderComments((post.comments || []).reverse());
   } else {
     alert('해당 게시글을 찾을 수 없습니다.');
