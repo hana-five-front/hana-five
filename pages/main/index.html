@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/styles/base-styles.css" />
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
+    <link rel="stylesheet" href="./chatbot/chatbot.css" />
+    <script type="module" defer src="./chatbot/chatbotFunctions.js"></script>
+    <script type="module" defer src="./chatbot/chatbot.js"></script>
     <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>디지털 하나로 메인 페이지</title>
@@ -111,9 +114,7 @@
             <div class="mainBottomNoticeText">공지사항</div>
             <div class="mainBottomNoticeLearnButton">+더보기</div>
           </div>
-          <div class="mainBottomNoticeBottom">
-
-          </div>
+          <div class="mainBottomNoticeBottom"></div>
         </div>
         <div class="mainBottomBoard">
           <div class="mainBottomBoardTop">
@@ -137,6 +138,17 @@
         </div>
       </div>
     </main>
+    <section class="chatbotWrapper">
+      <div class="chatbotButton">🫡</div>
+    </section>
+    <section class="modalWrapper">
+      <div class="modalContainer hidden">
+        <div class="chatbotHeader"></div>
+        <div class="chatbotList"></div>
+        <div class="chatbotButtons"></div>
+        <div class="chatbotFooter"></div>
+      </div>
+    </section>
 
     <footer class="inner footer-component" id="footer"></footer>
     <script src="slackApi.js"></script>
