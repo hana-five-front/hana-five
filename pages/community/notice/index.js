@@ -1,8 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-  let boardList = document.querySelector('.boardList');
-  boardList.innerHTML = '';
-  getNotice();
-});
+import { getPosts, displayPage, displayPagination } from '../community.js';
 
 function markDowntoPlainWords(message) {
   return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
@@ -47,7 +43,7 @@ function makeNotice(posts) {
   }
 }
 
-function getNotice() {
+function getSlackNotice() {
   fetch('http://localhost:3000/slackapi')
     .then(function (response) {
       if (response.ok) {
@@ -72,3 +68,17 @@ function getNotice() {
       console.log(error);
     });
 }
+
+
+getSlackNotice()
+let postType = 'notice';
+
+let currentPage = 1;
+
+let boardList = document.querySelector('.boardList');
+let pagination = document.querySelector('.boardPage');
+
+let posts = getPosts(postType).reverse();
+
+displayPage(posts, currentPage, boardList);
+displayPagination(posts, currentPage, pagination, boardList);

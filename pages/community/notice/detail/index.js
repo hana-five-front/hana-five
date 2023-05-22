@@ -77,3 +77,15 @@ document.addEventListener('DOMContentLoaded', function () {
     detailCommentInputContext.value = '';
   });
 });
+
+
+// import { renderPost, submitComment } from '../../community.js';
+
+// const postType = 'noticePosts';
+// const detailCommentSubmit = document.querySelector('.detailCommentSubmit');
+
+// renderPost(postType);
+
+// detailCommentSubmit.addEventListener('click', function () {
+//   submitComment(postType);
+// });
