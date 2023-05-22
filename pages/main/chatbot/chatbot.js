@@ -3,11 +3,13 @@ import { makeChatbotUI, makeModal } from './chatbotFunctions.js';
 export const messages = [
   {
     id: 0,
+    resId: 0,
     type: 'req',
     contents:
       '안녕하세요, 디지털 하나로 문의하기 화면입니다. 궁금한 사항을 클릭해주세요..! ',
   },
 ];
+export let nextReqGroup = 0;
 
 const main = () => {
   const $chatBotButton = document.querySelector('.chatbotButton');
