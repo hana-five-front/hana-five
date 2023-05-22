@@ -31,7 +31,7 @@ function getSlackNotice() {
       throw new Error('Error: ' + response.status);
     })
     .then(function (data) {
-      for (let i = 2; i >= 0; i--) {
+      for (let i = 4; i >= 0; i--) {
         let { title, date } = data[i];
         date = dateToText(date);
         title = markDowntoPlainWords(title);
