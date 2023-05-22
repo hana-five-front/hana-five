@@ -26,7 +26,7 @@
   width: 36.25rem;
   height: 12.5rem;
   display: flex;
-  overflow: hidden;
+
   position: relative;
 }
 .carousel-items {
@@ -310,7 +310,7 @@ a {
 
 .wave-title {
   display: flex;
-  width: 6.25rem;
+  width: 20.25rem;
   justify-content: space-between;
   height: 1.125rem;
   margin: 0.3125rem 0;
@@ -323,7 +323,7 @@ a {
 }
 .wave-date {
   display: flex;
-  width: 2.25rem;
+  width: 4.25rem;
   justify-content: space-between;
   height: 1.125rem;
   margin: 0.3125rem 0;
