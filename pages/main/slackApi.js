@@ -32,6 +32,7 @@ function getSlackNotice() {
       throw new Error('Error: ' + response.status);
     })
     .then(function (data) {
+      noticeContainer.innerHTML=''
       for (let i = 0; i < 5; i++) {
         let { title, date } = data[i];
         date = dateToText(date);

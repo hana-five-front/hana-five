@@ -297,3 +297,71 @@
 a {
   text-decoration: none;
 }
+
+.mainBottomNoticeBottom > div {
+  display: flex;
+  width: 26.25rem;
+  justify-content: space-between;
+  height: 1.125rem;
+  margin: 0.3125rem 0;
+  font-size: 0.8125rem;
+  position: relative;
+}
+
+.wave-title {
+  display: flex;
+  width: 6.25rem;
+  justify-content: space-between;
+  height: 1.125rem;
+  margin: 0.3125rem 0;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  background-color:  #d2d8e0;
+  position: relative;
+  overflow: hidden;
+  border-radius: .3125rem
+}
+.wave-date {
+  display: flex;
+  width: 2.25rem;
+  justify-content: space-between;
+  height: 1.125rem;
+  margin: 0.3125rem 0;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  background-color:  #d2d8e0;
+  position: relative;
+  overflow: hidden;
+  border-radius: .3125rem;
+}
+.wave-date::before {
+  
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%; 
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.708) 0%, rgba(201, 197, 197, 0.8) 50%, rgba(255, 255, 255, 0.708)100%);
+  animation: wave-animation 3s  infinite;
+}
+.wave-title::before {
+  
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%; 
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.708) 0%, rgba(201, 197, 197, 0.8) 50%, rgba(255, 255, 255, 0.708)100%);
+  animation: wave-animation 3s linear infinite;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
