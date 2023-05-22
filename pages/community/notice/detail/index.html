@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/styles/base-styles.css" />
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
-    <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="index.js"></script>
+    <script type="module" src="/components/component.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -75,5 +75,14 @@
     </main>
 
     <footer class="inner footer-component" id="footer"></footer>
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+    <script>
+      import { config } from '/scripts/apikey.js';
+      window.Kakao.init(config.apikey);
+    </script>
+    <script type="modules" src="/scripts/apikey.js"></script>
+    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
   </body>
 </html>

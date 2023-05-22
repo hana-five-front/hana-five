@@ -44,3 +44,4 @@ let posts = getPosts(postType);
 
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);
+

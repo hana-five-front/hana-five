@@ -7,3 +7,4 @@ postingButton.addEventListener('click', function (event) {
   event.preventDefault();
   submitPost(postType);
 });
+
