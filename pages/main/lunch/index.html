@@ -93,6 +93,15 @@
 
     <footer class="inner footer-component" id="footer"></footer>
 
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+    <script>
+      import { config } from '/scripts/apikey.js';
+      window.Kakao.init(config.apikey);
+    </script>
+    <script type="modules" src="/scripts/apikey.js"></script>
+    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
+
     <script
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0ac5b958752d7cb070f6e4eb29c305bc&libraries=services"

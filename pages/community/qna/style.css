@@ -68,6 +68,7 @@
   color: #008485;
 }
 .boardList {
+  min-height: 34.375rem;
   margin: 0rem;
   padding: 0rem 0.625rem;
 }
@@ -88,6 +89,70 @@
 }
 .boardContentDate {
   margin-left: 1.25rem;
+}
+.boardPage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.boardPage > a {
+  width: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #ffffff 1px solid;
+}
+.boardPage > a:hover {
+  width: 23px;
+  border: #008485 1px solid;
+}
+.firstPage {
+  background-position: 3px -146px;
+  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  background-repeat: no-repeat;
+  border: 1px solid #fff;
+  font-size: 0;
+  line-height: 0;
+}
+.firstPage:hover {
+  background-position: 3px -171px;
+  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+}
+.prevPage {
+  background-position: 4px -96px;
+  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  background-repeat: no-repeat;
+  border: 1px solid #fff;
+  font-size: 0;
+  line-height: 0;
+}
+.prevPage:hover {
+  background-position: 4px -121px;
+  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+}
+.nextPage {
+  background-position: -33px -96px;
+  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  background-repeat: no-repeat;
+  border: 1px solid #fff;
+  font-size: 0;
+  line-height: 0;
+}
+.nextPage:hover {
+  background-position: -33px -121px;
+  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+}
+.endPage {
+  background-position: -32px -146px;
+  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  background-repeat: no-repeat;
+  border: 1px solid #fff;
+  font-size: 0;
+  line-height: 0;
+}
+.endPage:hover {
+  background-position: -32px -171px;
+  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
 }
 button {
   width: 6.125rem;
