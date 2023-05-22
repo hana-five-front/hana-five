@@ -22,7 +22,7 @@ function dateToText(date) {
   return date.split('T')[0];
 }
 
-function getNotice() {
+function getSlackNotice() {
   fetch('http://43.200.63.91:3000/slackapi')
     .then(function (response) {
       if (response.ok) {
@@ -43,5 +43,5 @@ function getNotice() {
     });
 }
 
-getNotice();
+getSlackNotice();
 

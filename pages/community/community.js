@@ -119,7 +119,16 @@ export function renderPost(postType) {
     detailTitle.textContent = post.title;
     detailWriter.textContent = post.name || '익명';
     detailDate.textContent = post.date;
-    detailContext.textContent = post.content;
+    if (postType === 'notice') {
+      post.content.forEach(e => {
+        const outerDiv = document.createElement('div');
+        outerDiv.textContent = e;
+        detailContext.appendChild(outerDiv);
+      });
+    } else {
+      detailContext.textContent = post.content;
+    }
+
     renderComments((post.comments || []).reverse());
   } else {
     alert('해당 게시글을 찾을 수 없습니다.');
@@ -178,24 +187,49 @@ export function submitPost(postType) {
   if (title === '' || content === '') {
     alert('제목과 내용을 모두 입력해주세요.');
   } else {
-    let post = {
-      id: Date.now(),
-      title: titleInput.value,
-      name: name,
-      content: contentInput.value,
-      date: date,
-    };
-
     let posts = JSON.parse(localStorage.getItem(postType)) || [];
 
-    posts.push(post);
-    localStorage.setItem(postType, JSON.stringify(posts));
+    if (postType === 'notice') {
+      let post = {
+        id: posts.length,
+        title: titleInput.value,
+        name: name,
+        content: contentInput.value.split('\n'),
+        date: date,
+      };
 
-    window.location.href = '../detail/index.html#' + post.id;
+      posts.unshift(post);
+      localStorage.setItem(postType, JSON.stringify(posts));
+      let text = [title + '\n', ...contentInput.value].join('');
+      fetch('http://localhost:3000/slackapi', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text }),
+      });
+      titleInput.value = '';
+      nameInput.value = '';
+      contentInput.value = '';
+      window.location.href = '../detail/index.html#' + post.id;
+    } 
+    else {
+      let post = {
+        id: posts.length,
+        title: titleInput.value,
+        name: name,
+        content: contentInput.value,
+        date: date,
+      };
 
-    titleInput.value = '';
-    nameInput.value = '';
-    contentInput.value = '';
+      posts.push(post);
+      localStorage.setItem(postType, JSON.stringify(posts));
+      titleInput.value = '';
+      nameInput.value = '';
+      contentInput.value = '';
+      window.location.href = '../detail/index.html#' + post.id;
+    }
+
   }
 }
 
