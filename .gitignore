@@ -142,3 +142,5 @@ Webpack/*
 
 .vscode
 No newline at end of file
+
+scripts/apikey.js

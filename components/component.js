@@ -1,3 +1,5 @@
+import { kakaoLoginInit } from '../scripts/kakaoLogin.js';
+
 function makeHeader() {
   fetch('/components/header/index.html')
     .then(function (response) {
@@ -11,6 +13,9 @@ function makeHeader() {
     })
     .catch(function (error) {
       console.log(error);
+    })
+    .finally(() => {
+      kakaoLoginInit();
     });
 }
 // Footer 삽입

@@ -3,6 +3,7 @@ const slide = document.getElementsByClassName('carousel-item')[0];
 const leftButton = document.getElementsByClassName('left-button')[0];
 const rightButton = document.getElementsByClassName('right-button')[0];
 const resultElement = document.getElementById('result');
+const API_KEY = config.apikey;
 
 let number = resultElement.innerText;
 const slideWidth = slides.clientWidth;
