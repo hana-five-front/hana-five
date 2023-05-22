@@ -151,6 +151,12 @@
 
     <footer class="inner footer-component" id="footer"></footer>
 
-    <script src="index.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+      import { config } from '/scripts/apikey.js';
+      window.Kakao.init(config.apikey);
+    </script>
+    <script type="modules" src="/scripts/apikey.js"></script>
+    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
   </body>
 </html>
