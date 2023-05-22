@@ -1,9 +1,9 @@
 .main-component {
-  height: 33.6875rem;
+  height: 38.6875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  width: 100%;
   justify-content: center;
 }
 .middle-component {

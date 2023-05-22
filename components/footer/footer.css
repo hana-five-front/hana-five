@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
 }
-.about-link > p {
+.about-link > a {
   width: 4.375rem;
   height: 0.4125rem;
   font-size: 13px;
@@ -32,7 +32,7 @@
   align-items: center;
   cursor: pointer;
 }
-.about-link > p:hover {
+.about-link > a:hover {
   font-weight: bold;
 }
 .about-text {
