@@ -1,11 +1,36 @@
-export function getPosts(key) {
+export function getLocalStorageItems(key) {
   return JSON.parse(localStorage.getItem(key)) || [];
 }
 
-export function displayPage(posts, currentPage, boardList) {
+export function setLocalStorageItems(key, items) {
+  localStorage.setItem(key, JSON.stringify(items));
+}
+
+export function getPostId() {
+  return window.location.hash.substring(1).split('#');
+}
+
+export function findLocalStorageItemById(items, id) {
+  return items.find(post => post.id == id);
+}
+
+export function findAndDeleteLocalStorageItem(items, id) {
+  let index = items.findIndex(item => item.id == id);
+  if (index !== -1) {
+    items.splice(index, 1);
+  }
+}
+
+export function redirectToIndex() {
+  window.location.href = '../index.html';
+}
+
+export function displayPage(postType, currentPage, boardList) {
   let postsPerPage = 10;
   let start = (currentPage - 1) * postsPerPage;
   let end = start + postsPerPage;
+
+  let posts = getLocalStorageItems(postType);
 
   boardList.innerHTML = '';
 
@@ -40,9 +65,16 @@ export function displayPage(posts, currentPage, boardList) {
   }
 }
 
-export function displayPagination(posts, currentPage, pagination, boardList) {
+export function displayPagination(
+  postType,
+  currentPage,
+  pagination,
+  boardList
+) {
   let postsPerPage = 10;
   let totalPages = Math.ceil(posts.length / postsPerPage);
+
+  let posts = getLocalStorageItems(postType);
 
   pagination.innerHTML = '';
 
@@ -111,9 +143,10 @@ export function renderPost(postType) {
   let detailDate = document.querySelector('.detailDate');
   let detailContext = document.querySelector('.detailContext');
 
-  let postId = window.location.hash.substring(1).split('#');
-  let posts = JSON.parse(localStorage.getItem(postType)) || [];
-  let post = posts.find(post => post.id == postId);
+  let post = findLocalStorageItemById(
+    getLocalStorageItems(postType),
+    getPostId()
+  );
 
   if (post) {
     detailTitle.textContent = post.title;
@@ -132,8 +165,17 @@ export function renderPost(postType) {
     renderComments((post.comments || []).reverse());
   } else {
     alert('해당 게시글을 찾을 수 없습니다.');
-    window.location.href = '../index.html';
+    redirectToIndex();
   }
+}
+
+export function deletePost(postType) {
+  let posts = getLocalStorageItems(postType);
+
+  findAndDeleteLocalStorageItem(posts, getPostId());
+
+  setLocalStorageItems(postType, posts);
+  redirectToIndex();
 }
 
 export function submitComment(postType) {
@@ -151,9 +193,10 @@ export function submitComment(postType) {
     return;
   }
 
-  let postId = window.location.hash.substring(1).split('#');
-  let posts = JSON.parse(localStorage.getItem(postType)) || [];
-  let post = posts.find(post => post.id == postId);
+  let post = findLocalStorageItemById(
+    getLocalStorageItems(postType),
+    getPostId()
+  );
 
   if (!post.comments) {
     post.comments = [];
@@ -163,7 +206,7 @@ export function submitComment(postType) {
     name: commentName,
     content: commentContent,
   });
-  localStorage.setItem(postType, JSON.stringify(posts));
+  setLocalStorageItems(postType, posts);
 
   renderComments((post.comments || []).reverse());
 
@@ -187,7 +230,7 @@ export function submitPost(postType) {
   if (title === '' || content === '') {
     alert('제목과 내용을 모두 입력해주세요.');
   } else {
-    let posts = JSON.parse(localStorage.getItem(postType)) || [];
+    let posts = getLocalStorageItems(postType);
 
     if (postType === 'notice') {
       let post = {
@@ -199,7 +242,7 @@ export function submitPost(postType) {
       };
 
       posts.unshift(post);
-      localStorage.setItem(postType, JSON.stringify(posts));
+      setLocalStorageItems(postType, posts);
       let text = [title + '\n', ...contentInput.value].join('');
       fetch('http://localhost:3000/slackapi', {
         method: 'POST',
@@ -212,8 +255,7 @@ export function submitPost(postType) {
       nameInput.value = '';
       contentInput.value = '';
       window.location.href = '../detail/index.html#' + post.id;
-    } 
-    else {
+    } else {
       let post = {
         id: posts.length,
         title: titleInput.value,
@@ -223,13 +265,13 @@ export function submitPost(postType) {
       };
 
       posts.push(post);
-      localStorage.setItem(postType, JSON.stringify(posts));
+      setLocalStorageItems(postType, posts);
+
       titleInput.value = '';
       nameInput.value = '';
       contentInput.value = '';
       window.location.href = '../detail/index.html#' + post.id;
     }
-
   }
 }
 
