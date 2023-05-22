@@ -17,6 +17,7 @@ function getSlackNotice() {
       throw new Error('Error: ' + response.status);
     })
     .then(data => {
+      console.log(data)
       data = data.map((e, idx) => {
         e.title = markDowntoPlainWords(e.title);
         e.content = e.content.map(e => markDowntoPlainWords(e));

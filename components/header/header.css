@@ -3,8 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width:100%;
   border-bottom: 0.0625rem solid #008484;
   height: 5rem;
+
 }
 .header-component > div {
   display: flex;
