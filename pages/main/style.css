@@ -227,6 +227,7 @@
   border: none;
   font-size: 0.75rem;
   outline: none;
+  cursor: pointer;
 }
 
 .mainBottomNoticeBottom {
@@ -237,7 +238,7 @@
   align-items: center;
 }
 
-.mainBottomNoticeBottom > div {
+.mainBottomNoticeBottom > a {
   display: flex;
   width: 26.25rem;
   justify-content: space-between;
@@ -284,13 +285,14 @@
   align-items: center;
 }
 
-.mainBottomBoardBottom > div {
+.mainBottomBoardBottom > a {
   display: flex;
   width: 26.25rem;
   justify-content: space-between;
   height: 1.125rem;
   margin: 0.3125rem 0;
   font-size: 0.8125rem;
+  cursor: pointer;
 }
 a {
   text-decoration: none;

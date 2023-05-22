@@ -4,8 +4,9 @@ function markDowntoPlainWords(message) {
   return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
 }
 
-function makeNotice(title, date) {
-  const outerDiv = document.createElement('div');
+function makeNotice(title, date,id) {
+  const outerDiv = document.createElement('a');
+  outerDiv.href=`../community/notice/detail/index.html#${id}`
   const innerDiv1 = document.createElement('div');
   const innerDiv2 = document.createElement('div');
 
@@ -31,11 +32,12 @@ function getSlackNotice() {
       throw new Error('Error: ' + response.status);
     })
     .then(function (data) {
-      for (let i = 4; i >= 0; i--) {
+      for (let i = 0; i < 5; i++) {
         let { title, date } = data[i];
         date = dateToText(date);
         title = markDowntoPlainWords(title);
-        makeNotice(title, date);
+        let id = i;
+        makeNotice(title, date,id);
       }
     })
     .catch(function (error) {
