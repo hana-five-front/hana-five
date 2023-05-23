@@ -1,10 +1,10 @@
 import {
-  ChatbotCharacter,
-  ChatbotFAQButtons,
-  ChatbotHeader,
-  ChatbotList,
-  makeChatbotUI,
   makeModal,
+  ChatbotHeader,
+  ChatbotCharacter,
+  ChatbotList,
+  ChatbotFAQButtons,
+  ChatbotFooter,
 } from './chatbotFunctions.js';
 
 export const makeChatbotUI = () => {
@@ -15,6 +15,7 @@ export const makeChatbotUI = () => {
   ChatbotCharacter();
   ChatbotList();
   ChatbotFAQButtons();
+  ChatbotFooter();
 };
 
 const handleClickChatbot = () => {

@@ -81,7 +81,7 @@ export const ChatbotList = () => {
             height="30px"
           />
             <div class="">
-              <p class="chatName">${message.nickName}</p>
+              <p class="chatName">하나은행 문의채널</p>
               <p class="chatItemContainer">${message.contents}</p>
             </div>
           </li>
@@ -91,7 +91,7 @@ export const ChatbotList = () => {
         <li class="resItem">
           <button 
             key=${message.resId} 
-            class="qnaButton" 
+            class="qnaButtonSelected" 
             data-resId=${message.resId}
             data-nextReqGroup=${message.nextReqGroup}
             data-contents=${message.contents}
@@ -138,6 +138,7 @@ export const handleClickFAQButton = e => {
   messages.push(temp);
   ChatbotList();
   ChatbotFAQButtons();
+  ChatbotFooter();
 };
 
 export const ChatbotFAQButtons = () => {
@@ -165,4 +166,38 @@ export const ChatbotFAQButtons = () => {
   const $qnaButtons = document.querySelectorAll('.qnaButton');
 
   $qnaButtons.forEach(x => x.addEventListener('click', handleClickFAQButton));
+};
+
+const handleSubmitMessage = e => {
+  e.preventDefault();
+  const { value } = e.target;
+  messages.push({
+    id: messages.length,
+    type: 'res',
+    contents: value,
+    createdAt: getFormatTime(Date.now()),
+  });
+  // 리렌더
+  ChatbotList();
+  ChatbotFAQButtons();
+  ChatbotFooter();
+};
+
+export const ChatbotFooter = () => {
+  const $chatbotFooter = document.querySelector('.chatbotFooter');
+  $chatbotFooter.innerHTML = `
+    <form class="messageInputForm" onsubmit="handleSubmitMessage">
+      <input type="text" disabled id="sendMessage" placeholder="버튼으로 문의 해주세요..!"/>
+    </form>
+    <div class="sendImage">
+      <img src="/public/images/send.png" width="22px" height="22px"/>
+    </div>
+  `;
+
+  $chatbotFooter.style.position = 'sticky';
+  $chatbotFooter.style.bottom = 0;
+
+  document
+    .querySelector('.messageInputForm')
+    .addEventListener('submit', handleSubmitMessage);
 };
