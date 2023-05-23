@@ -50,9 +50,9 @@ export const ChatbotList = () => {
   messages.forEach((message, i) => {
     const prevMessage = messages[i - 1];
     const prevTime = prevMessage?.createdAt;
-    if (message.type == 'req') {
+    if (message.type === 'req') {
       tempInnerHTML += `<li key=${message.id} class="chatItem">`;
-      if (prevTime == undefined || prevTime != message.createdAt) {
+      if (prevTime === undefined || prevTime !== message.createdAt) {
         tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
       }
       tempInnerHTML += `<div class="chatItemWrapper">
@@ -116,7 +116,9 @@ export const handleClickFAQButton = e => {
   messages.push(question);
   store.setState('nextReqGroup', question.nextReqGroup);
 
-  const temp = ANSWER_LIST.filter(x => x.resId == question.resId)[0];
+  const temp = ANSWER_LIST.filter(
+    x => parseInt(x.resId) === parseInt(question.resId)
+  )[0];
   temp.createdAt = getFormatTime(Date.now());
   messages.push(temp);
   ChatbotList();
@@ -128,7 +130,9 @@ export const ChatbotFAQButtons = () => {
   const $chatbotButtons = document.querySelector('.chatbotButtons');
   let tempInnerHTML = '';
   FAQ_LIST.forEach(question => {
-    if (question.reqGroup == store.getState('nextReqGroup')) {
+    if (
+      parseInt(question.reqGroup) === parseInt(store.getState('nextReqGroup'))
+    ) {
       const { resId, nextReqGroup, contents } = question;
       tempInnerHTML += `
       <button 
