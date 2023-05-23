@@ -1,0 +1,240 @@
+ul,
+ol,
+li,
+a,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+.characterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0 0 0;
+}
+.profileTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1rem 0 0 0;
+}
+.profileImage {
+  width: 96px;
+  height: 96px;
+  border-radius: 40%;
+}
+.response {
+  font-size: 0.8rem;
+  color: #777;
+}
+.chatTime {
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #999;
+  font-weight: bold;
+}
+.chatName {
+  font-size: 0.8rem;
+  color: #999;
+  padding: 0 0 0 0.25rem;
+  margin: 0 0 0 0.25rem;
+}
+.chatItemWrapper {
+  display: flex;
+  align-items: end;
+  margin: 0.25rem;
+}
+.chatItemContainer {
+  background-color: #eee;
+  max-width: 90%;
+  padding: 1rem;
+  margin: 0;
+  margin-left: 0.25rem;
+  border-radius: 1rem;
+}
+.messageSpan {
+  display: block;
+}
+.chatbotWrapper {
+  position: relative;
+}
+.chatbotButton {
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 4rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 1rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.chatbotButton:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 8px 16px rgba(0, 0, 0, 0.22);
+}
+.modalBackground {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.modalContainer {
+  position: absolute;
+  top: calc(50vh);
+  left: calc(50vw);
+  transform: translate(-50%, -50%);
+  width: 370px;
+  height: 600px;
+  border-radius: 10px;
+  z-index: 10000;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.chatbotModal {
+  background-color: white;
+}
+.hidden {
+  display: none;
+}
+.chatbotHeader {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eeecec;
+  padding: 1rem;
+  width: 100%;
+}
+.chevronLeft {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.headerLogo {
+  border-radius: 0.75rem;
+  width: 30px;
+  height: 30px;
+}
+.headerTitle {
+  line-height: 30px;
+  width: 100%;
+  margin: 0 0 0 0.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+.headerGear {
+  width: 20px;
+  height: 20px;
+  vertical-align: center;
+  color: rgb(145, 162, 220);
+}
+.characterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profileTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1rem 0 0 0;
+}
+.profileImage {
+  width: 96px;
+  height: 96px;
+  border-radius: 40%;
+}
+.response {
+  font-size: 0.8rem;
+  color: #777;
+}
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+.qnaButton,
+.qnaButtonSelected {
+  padding: 0.5rem 1rem;
+  border: 0.5px solid #ccc;
+  color: #444;
+  margin: 0.25rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  display: inline-block;
+  justify-content: space-between;
+}
+.buttonIcon {
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  margin-right: 0.25rem;
+  pointer-events: none;
+}
+.buttonText {
+  line-height: 1.125rem;
+  pointer-events: none;
+}
+.chatbotButtons {
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+}
+.contentCard {
+  width: 100%;
+}
+.resItem {
+  text-align: right;
+  padding-bottom: 1rem;
+}
+.chatbotFooter {
+  position: sticky;
+  bottom: 0;
+  margin-top: 100px;
+  height: 3rem;
+  line-height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  border: 0.8px solid #ccc;
+  background-color: white;
+}
+.chatbotFooter > form {
+  display: block;
+  width: 80%;
+}
+.messageInputForm {
+  margin: 0 0 0 1rem;
+}
+.messageInputForm > input {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  padding: 0 0.5rem;
+}
+.sendImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem 0 0;
+  opacity: 0.5;
+}
