@@ -33,7 +33,7 @@ function buildCalendar(calendarData, holidayData, timeData, specialData) {
     cell.setAttribute('id', i);
     cell.setAttribute('class', 'day');
     cell.innerHTML = `
-      <div>
+      <div class="cal-div">
         <span class="d-day">${i}</span>
         <span class="holiday"></span>
         <span class="time"></span>
@@ -46,6 +46,17 @@ function buildCalendar(calendarData, holidayData, timeData, specialData) {
     if (cnt % 7 == 0) {
       cell.classList.add('sat');
       row = calendar.insertRow();
+    }
+
+    if (
+      i === currentDate.getDate() &&
+      today.getMonth() === currentDate.getMonth() &&
+      today.getFullYear() === currentDate.getFullYear()
+    ) {
+      let todayCell = document.getElementById(i);
+      let dDayElement = todayCell.querySelector('.d-day');
+      dDayElement.style.borderRadius = '50%';
+      dDayElement.style.backgroundColor = '#faa';
     }
   }
 
@@ -76,6 +87,40 @@ function buildCalendar(calendarData, holidayData, timeData, specialData) {
         const liElement = document.createElement('li');
         liElement.textContent = item;
         ulElement.appendChild(liElement);
+
+        if (item.includes('Javascript') || item.includes('React')) {
+          liElement.parentNode.parentNode.parentNode.style.backgroundColor =
+            '#E4F0DB';
+        } else if (item.includes('JAVA')) {
+          liElement.parentNode.parentNode.parentNode.style.backgroundColor =
+            '#DCE3F2';
+        } else if (
+          item.includes('SQL') ||
+          item.includes('시큐어') ||
+          item.includes('디자인') ||
+          item.includes('웹페이지') ||
+          item.includes('데이터')
+        ) {
+          liElement.parentNode.parentNode.parentNode.style.backgroundColor =
+            '#F7E6D8';
+        } else if (
+          item.includes('하나은행') ||
+          item.includes('DevRel') ||
+          item.includes('입학식') ||
+          item.includes('OT')
+        ) {
+          liElement.parentNode.parentNode.parentNode.style.backgroundColor =
+            '#FBE7A3';
+        } else if (item.includes('풀스택')) {
+          liElement.parentNode.parentNode.parentNode.style.backgroundColor =
+            '#E4F0DB';
+        } else if (item.includes('Ⅰ')) {
+          liElement.parentNode.parentNode.parentNode.style.backgroundColor =
+            '#F7E6D8';
+        } else if (item.includes('Ⅱ')) {
+          liElement.parentNode.parentNode.parentNode.style.backgroundColor =
+            '#DCE3F2';
+        }
       });
     }
 
@@ -184,6 +229,8 @@ fetchOrBuildCalendar();
 
 var today = new Date();
 var monthKey = today.getMonth() + 1 + '월';
+
+let currentDate = new Date();
 
 const prevCalendar = () => {
   const targetYear = 2023;

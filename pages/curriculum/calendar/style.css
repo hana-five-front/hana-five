@@ -16,7 +16,7 @@ a {
   justify-content: center;
 }
 .aside {
-  width: 16.25rem;
+  width: 13.25rem;
   display: flex;
   flex-direction: column;
   padding-top: 3.125rem;
@@ -49,7 +49,7 @@ a {
 .page-container {
   display: flex;
   flex-direction: column;
-  width: 39.375rem;
+  width: 44.375rem;
   padding: 3.125rem 0rem 1.625rem 0;
   margin-left: 4.375rem;
 }
@@ -61,14 +61,15 @@ a {
   font-weight: bold;
   color: #191f29;
 }
+#month {
+  width: 4.5rem;
+  text-align: center;
+}
 .calendar-container {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
-}
-.calendar-day {
-  overflow: hidden;
 }
 #calendar .day {
   text-align: left;
@@ -113,8 +114,13 @@ td,
 th {
   border: 0.4px solid black;
   padding: 0.3125rem;
-  height: 5.625rem;
   box-sizing: border-box;
+  height: 6.25rem;
+  width: 5.125rem;
+}
+.cal-div {
+  width: 100%;
+  height: 100%;
 }
 .day > div {
   position: relative;
@@ -122,7 +128,7 @@ th {
   padding-top: 1rem;
 }
 .day-week {
-  height: 40px;
+  height: 2.5rem;
   background-color: #008484;
   color: #f2f4f6;
   font-size: 0.8rem;
@@ -149,51 +155,51 @@ th {
   right: 0;
   color: blue;
 }
-.day {
-  word-break: break-all;
-}
 .day > div > ul {
   list-style-type: none;
   margin: 0;
   padding-inline-start: 0;
   font-size: 0.625rem;
-  display: flex;
+  display: block;
   flex-direction: column;
   height: 100%;
   align-items: center;
+  overflow: hidden;
 }
 .day > div > ul > li {
   width: 100%;
   text-align: left;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
+  word-break: break-all;
 }
-.calendar2 {
+.calendar2-row1 {
   display: flex;
   justify-content: space-around;
-  padding-top: 1.375rem;
-  margin-bottom: 4.2rem;
 }
-#monthly-schedule {
-  width: 33%;
+.calendar2-row1 > div,
+.calendar2-row2 > div {
+  width: 50%;
 }
-#special-lecture {
-  width: 33%;
+.calendar2-row2 {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 3.875rem;
 }
-#special-time {
-  width: 33%;
-}
-.calendar2 > div > p {
-  text-align: center;
+#monthly-schedule > p,
+#special-time > p,
+#special-lecture > p {
   font-size: 1.25rem;
   font-weight: bold;
   margin: 2.25rem 0 1rem 0;
 }
-.calendar2 > div > ul {
+#monthly-schedule > ul,
+#special-time > ul,
+#special-lecture > ul {
   font-size: 1rem;
   margin: 0.625rem 0;
   padding-inline-start: 1rem;
 }
-.calendar2 > div > ul > li {
+.calendar2-row1 > div > ul > li {
   margin: 0.625rem 0;
 }
 .sat {
