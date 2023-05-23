@@ -1,5 +1,5 @@
 import {
-  makeModal,
+  setOpenModal,
   ChatbotHeader,
   ChatbotCharacter,
   ChatbotList,
@@ -25,7 +25,7 @@ export const renderContents = () => {
 };
 
 const handleClickChatbot = () => {
-  makeModal();
+  setOpenModal();
   makeChatbotUI();
 };
 

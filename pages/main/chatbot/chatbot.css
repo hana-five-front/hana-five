@@ -127,6 +127,10 @@ li {
   padding: 1rem;
   width: 100%;
 }
+.chevronLeft {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
 .headerLogo {
   border-radius: 0.75rem;
   width: 30px;

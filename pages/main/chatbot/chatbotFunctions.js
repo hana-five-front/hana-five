@@ -7,12 +7,28 @@ import {
   messages,
 } from './chatbotData.js';
 
-export const makeModal = () => {
+export const setOpenModal = () => {
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.add('chatbotModal');
   const $modalBackground = document.querySelector('.modalBackground');
   $modalBackground.classList.remove('hidden');
   $modalBackground.addEventListener('click', e => {
+    if (!e.target.classList.contains('modalBackground')) {
+      return;
+    }
+    $modalBackground.classList.add('hidden');
+    $modalContainer.classList.remove('chatbotModal');
+    $modalContainer.classList.add('hidden');
+  });
+};
+
+export const setCloseModal = () => {
+  const $modalContainer = document.querySelector('.modalContainer');
+  $modalContainer.classList.remove('chatbotModal');
+  $modalContainer.classList.add('hidden');
+  const $modalBackground = document.querySelector('.modalBackground');
+  $modalBackground.classList.add('hidden');
+  $modalBackground.removeEventListener('click', e => {
     if (!e.target.classList.contains('modalBackground')) {
       return;
     }
@@ -32,6 +48,7 @@ export const getFormatTime = () => {
 export const ChatbotHeader = () => {
   const $chatbotHeader = document.querySelector('.chatbotHeader');
   $chatbotHeader.innerHTML = `
+    <img class="chevronLeft" src="/public/images/Chevron Left.svg" width="18px" height="18px"/>
     <img
       class="headerLogo"
       alt="headerLogo"
@@ -42,6 +59,9 @@ export const ChatbotHeader = () => {
     <p class="headerTitle">하나은행 문의채널</p>
     ${GEAR_ICON_SVG_TAG}
   `;
+
+  const $chevronLeft = document.querySelector('.chevronLeft');
+  $chevronLeft.addEventListener('click', setCloseModal);
 };
 
 export const ChatbotList = () => {
