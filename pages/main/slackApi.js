@@ -4,9 +4,9 @@ function markDowntoPlainWords(message) {
   return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
 }
 
-function makeNotice(title, date,id) {
+function makeNotice(title, date, id) {
   const outerDiv = document.createElement('a');
-  outerDiv.href=`../community/notice/detail/index.html#${id}`
+  outerDiv.href = `../community/notice/detail/index.html#${id}`;
   const innerDiv1 = document.createElement('div');
   const innerDiv2 = document.createElement('div');
 
@@ -24,14 +24,14 @@ function dateToText(date) {
 }
 
 function getSlackNotice() {
-  const data = JSON.parse(localStorage.getItem('notice'))
+  const data = JSON.parse(localStorage.getItem('notice'));
   if (data) {
-    noticeContainer.innerHTML=''
+    noticeContainer.innerHTML = '';
     for (let i = 0; i < 5; i++) {
-      let { title, date,id } = data[i];
+      let { title, date, id } = data[i];
       date = dateToText(date);
       title = markDowntoPlainWords(title);
-      makeNotice(title, date,id);
+      makeNotice(title, date, id);
     }
   }
   fetch('http://localhost:3000/slackapi')
@@ -50,13 +50,13 @@ function getSlackNotice() {
         return (e = { ...e, id: idx });
       });
       localStorage.setItem('notice', JSON.stringify(data));
-      noticeContainer.innerHTML=''
+      noticeContainer.innerHTML = '';
       for (let i = 0; i < 5; i++) {
-        let { title, date,id } = data[i];
+        let { title, date, id } = data[i];
         date = dateToText(date);
         title = markDowntoPlainWords(title);
-  
-        makeNotice(title, date,id);
+
+        makeNotice(title, date, id);
       }
     })
     .catch(function (error) {
@@ -65,4 +65,3 @@ function getSlackNotice() {
 }
 
 getSlackNotice();
-

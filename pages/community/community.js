@@ -3,14 +3,44 @@ export function getPosts(key) {
 }
 export function setBoard(key) {
   let initBoard = [
-    {content:"안녕하세요",date: "2023-05-12",id: 4, name: "이수창", title:"안녕하세요 이수창입니다"},
-    {content:"반갑습니다",date: "2023-05-13",id: 3, name: "임채동", title:"감사합니다 임채동입니다"},
-    {content:"감사합니다",date: "2023-05-14",id: 2, name: "이상준", title:"반갑습니다 이상준입니다"},
-    {content:"좋은 하루입니다",date: "2023-05-15",id: 1, name: "장주성", title:"안녕하십니까 장주성입니다"},
-    {content:"날씨가 좋네요",date: "2023-05-16",id: 0, name: "이현주", title:"좋은아침 이현주입니다"},
+    {
+      content: '안녕하세요',
+      date: '2023-05-12',
+      id: 4,
+      name: '이수창',
+      title: '안녕하세요 이수창입니다',
+    },
+    {
+      content: '반갑습니다',
+      date: '2023-05-13',
+      id: 3,
+      name: '임채동',
+      title: '감사합니다 임채동입니다',
+    },
+    {
+      content: '감사합니다',
+      date: '2023-05-14',
+      id: 2,
+      name: '이상준',
+      title: '반갑습니다 이상준입니다',
+    },
+    {
+      content: '좋은 하루입니다',
+      date: '2023-05-15',
+      id: 1,
+      name: '장주성',
+      title: '안녕하십니까 장주성입니다',
+    },
+    {
+      content: '날씨가 좋네요',
+      date: '2023-05-16',
+      id: 0,
+      name: '이현주',
+      title: '좋은아침 이현주입니다',
+    },
   ];
-  if(!localStorage.getItem('boardPosts'))
-  localStorage.setItem('boardPosts',JSON.stringify(initBoard))
+  if (!localStorage.getItem('boardPosts'))
+    localStorage.setItem('boardPosts', JSON.stringify(initBoard));
 }
 export function displayPage(posts, currentPage, boardList) {
   let postsPerPage = 10;
@@ -222,8 +252,7 @@ export function submitPost(postType) {
       nameInput.value = '';
       contentInput.value = '';
       window.location.href = '../detail/index.html#' + post.id;
-    } 
-    else {
+    } else {
       let post = {
         id: posts.length,
         title: titleInput.value,
@@ -239,7 +268,6 @@ export function submitPost(postType) {
       contentInput.value = '';
       window.location.href = '../detail/index.html#' + post.id;
     }
-
   }
 }
 
