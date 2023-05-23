@@ -1,4 +1,5 @@
 import { store } from './Store.js';
+import { renderContents } from './chatbot.js';
 import {
   ANSWER_LIST,
   FAQ_LIST,
@@ -121,9 +122,8 @@ export const handleClickFAQButton = e => {
   )[0];
   temp.createdAt = getFormatTime(Date.now());
   messages.push(temp);
-  ChatbotList();
-  ChatbotFAQButtons();
-  ChatbotFooter();
+
+  renderContents();
 };
 
 export const ChatbotFAQButtons = () => {
@@ -164,10 +164,8 @@ const handleSubmitMessage = e => {
     contents: value,
     createdAt: getFormatTime(Date.now()),
   });
-  // 리렌더
-  ChatbotList();
-  ChatbotFAQButtons();
-  ChatbotFooter();
+
+  renderContents();
 };
 
 export const ChatbotFooter = () => {

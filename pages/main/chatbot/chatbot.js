@@ -18,6 +18,12 @@ export const makeChatbotUI = () => {
   ChatbotFooter();
 };
 
+export const renderContents = () => {
+  ChatbotList();
+  ChatbotFAQButtons();
+  ChatbotFooter();
+};
+
 const handleClickChatbot = () => {
   makeModal();
   makeChatbotUI();
