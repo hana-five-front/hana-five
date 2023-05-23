@@ -80,8 +80,8 @@
   color: #8b95a1;
 }
 .mainCarouselImage {
-  width: 12.5rem;
-  height: 12.5rem;
+  width: 14.5rem;
+  height: 16.5rem;
   border-radius: 0.3125rem;
   background: #d9d9d9;
 }
@@ -146,7 +146,8 @@
   height: 1.5rem;
   display: flex;
   align-items: center;
-  line-height: 150%;
+  text-align: center;
+  
 }
 .whatShouldIEatButton {
   width: 5rem;
