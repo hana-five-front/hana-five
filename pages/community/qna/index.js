@@ -1,6 +1,6 @@
 import { displayPage, displayPagination } from '../community.js';
 
-let postType = 'qna';
+let postType = 'qnaPosts';
 
 let currentPage = 1;
 

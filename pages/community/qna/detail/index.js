@@ -1,6 +1,13 @@
-import { renderPost, deletePost, submitComment } from '../../community.js';
+import {
+  renderPost,
+  getPostId,
+  deletePost,
+  submitComment,
+  redirectTo,
+} from '../../community.js';
 
-const postType = 'qna';
+const postType = 'qnaPosts';
+
 const modifyBtn = document.querySelector('.modifyBtn');
 const deleteBtn = document.querySelector('.deleteBtn');
 const detailCommentSubmit = document.querySelector('.detailCommentSubmit');
@@ -8,7 +15,7 @@ const detailCommentSubmit = document.querySelector('.detailCommentSubmit');
 renderPost(postType);
 
 modifyBtn.addEventListener('click', function () {
-  submitComment(postType);
+  redirectTo('posting/index', getPostId());
 });
 
 deleteBtn.addEventListener('click', function () {
