@@ -371,10 +371,8 @@ export function submitPost(postType) {
         },
         body: JSON.stringify({ text }),
       });
-      titleInput.value = '';
-      nameInput.value = '';
-      contentInput.value = '';
-      window.location.href = '../detail/index.html#' + post.id;
+      resetInputs([titleInput, nameInput, contentInput]);
+      redirectTo('detail/index', post.id);
     } else {
       let post = {
         id: nextId,
@@ -386,10 +384,8 @@ export function submitPost(postType) {
 
       posts.push(post);
       localStorage.setItem(postType, JSON.stringify(posts));
-      titleInput.value = '';
-      nameInput.value = '';
-      contentInput.value = '';
-      window.location.href = '../detail/index.html#' + post.id;
+      resetInputs([titleInput, nameInput, contentInput]);
+      redirectTo('detail/index', post.id);
     }
   }
 }
