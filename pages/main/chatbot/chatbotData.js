@@ -1,22 +1,5 @@
 import { getFormatTime } from './chatbotFunctions.js';
 
-class Store {
-  constructor() {
-    this.state = {
-      nextReqGroup: 0,
-      prevTime: '',
-    };
-  }
-  getState(key) {
-    return this.state[key];
-  }
-  setState(key, newState) {
-    this.state[key] = newState;
-  }
-}
-
-export const store = new Store();
-
 export const FAQ_LIST = [
   { resId: 0, reqGroup: 0, nextReqGroup: 0, contents: '디지털 하나로 소개' },
   { resId: 1, reqGroup: 0, nextReqGroup: 1, contents: '지원 자격 문의' },

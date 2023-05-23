@@ -1,9 +1,9 @@
+import { store } from './Store.js';
 import {
   ANSWER_LIST,
   FAQ_LIST,
   GEAR_ICON_SVG_TAG,
   messages,
-  store,
 } from './chatbotData.js';
 
 export const makeModal = () => {
