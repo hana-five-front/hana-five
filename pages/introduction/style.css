@@ -50,6 +50,12 @@ section {
   width: 25rem;
   min-height: 12.5rem;
 }
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 .cardContent {
   color: #6b7684;
 }
