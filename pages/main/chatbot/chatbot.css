@@ -48,10 +48,6 @@ li {
   padding: 0 0 0 0.25rem;
   margin: 0 0 0 0.25rem;
 }
-.chatName.left {
-}
-.chatName.right {
-}
 .chatItemWrapper {
   display: flex;
   align-items: end;
@@ -144,7 +140,6 @@ li {
   text-align: left;
 }
 .headerGear {
-  /* display: block; */
   width: 20px;
   height: 20px;
   vertical-align: center;
@@ -213,10 +208,8 @@ button {
   padding-bottom: 1rem;
 }
 .chatbotFooter {
-  /* background-color: grey; */
   position: sticky;
   bottom: 0;
-  /* TODO: 더 좋은 솔루션 찾기 */
   margin-top: 100px;
   height: 3rem;
   line-height: 3rem;
