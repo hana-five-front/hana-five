@@ -24,12 +24,12 @@ function goToSlide(index) {
 }
 setInterval(()=>{
   // 3 0 1 2 3 0
-  if (currentIndex <= slidesLength + 1 ) {
+  if (currentIndex <= slidesLength + 2 ) {
     slides.style.transition = "transform 0.3s ease"
     number = parseInt(number)  < 4 ? parseInt(number) + 1 : parseInt(1)  
     goToSlide(currentIndex + 1);
   } 
-  if (currentIndex == slidesLength + 1) {
+  if (currentIndex == slidesLength + 2) {
     setTimeout(function() {
       slides.style.transition = "transform 0.3s ease"
       slides.style.transform = 'translateX(' + -slideWidth  + 'px)';
@@ -38,7 +38,7 @@ setInterval(()=>{
     }, [300]);
     slides.style.transition = "0ms";
     goToSlide(1)
-    number = 1
+    number = 2
     resultElement.innerText = number
     currentIndex=1
   }
