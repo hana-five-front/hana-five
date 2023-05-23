@@ -3,7 +3,7 @@ import { getPosts, setBoard } from '../community/community.js';
 let boardList = document.querySelector('.mainBottomBoardBottom');
 
 let postType = 'boardPosts';
-document.addEventListener('DOMContentLoaded', setBoard());
+document.addEventListener('DOMContentLoaded', setBoard);
 let posts = getPosts(postType).reverse();
 
 for (let post of posts) {

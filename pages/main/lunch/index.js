@@ -11,11 +11,10 @@ const colors = [
 ];
 const roulletContainer = document.createElement('div');
 roulletContainer.classList.add('rulllet-list');
-roulletContainer.style='display:none'
+roulletContainer.style = 'display:none';
 document.querySelector('main').appendChild(roulletContainer);
 
 const newMake = () => {
-
   const [cw, ch] = [$c.width / 2, $c.height / 2];
   const arc = (2 * Math.PI) / product.length;
 
@@ -55,9 +54,8 @@ const newMake = () => {
 const rotate = () => {
   $c.style.transform = 'initial';
   $c.style.transition = 'initial';
-  roulletContainer.style='display:none'
-  if(roulletContainer.children)
-  roulletContainer.innerHTML=''
+  roulletContainer.style = 'display:none';
+  if (roulletContainer.children) roulletContainer.innerHTML = '';
   setTimeout(() => {
     const ran = Math.floor(Math.random() * product.length);
 
@@ -69,17 +67,17 @@ const rotate = () => {
 
     setTimeout(() => {
       var ps = new kakao.maps.services.Places();
-      const list = document.createElement('div')
-      list.classList.add('rullet-list')
-      const mainTitle = document.createElement('div')
-      mainTitle.classList.add('pick-list-title')
-      mainTitle.innerHTML = `성수동 <span class="rullet-keyword"></span> 맛집 리스트`
-      roulletContainer.appendChild(mainTitle)
-   
-      ps.keywordSearch(`성수역 ${product[ran]} 맛집`, placesSearchCB)
+      const list = document.createElement('div');
+      list.classList.add('rullet-list');
+      const mainTitle = document.createElement('div');
+      mainTitle.classList.add('pick-list-title');
+      mainTitle.innerHTML = `성수동 <span class="rullet-keyword"></span> 맛집 리스트`;
+      roulletContainer.appendChild(mainTitle);
+
+      ps.keywordSearch(`성수역 ${product[ran]} 맛집`, placesSearchCB);
       const name = document.querySelectorAll(`.rullet-keyword`)[0];
       name.innerText = `[${product[ran]}]`;
-      roulletContainer.style="display:``"
+      roulletContainer.style = 'display:``';
     }, 2000);
   }, 1);
 };
@@ -106,26 +104,25 @@ function randomNum(arr, lower, upper) {
 }
 
 function placesSearchCB(data, status, pagination) {
-
   if (status === kakao.maps.services.Status.OK) {
     let random_list = randomNum(Array.from({ length: 9 }), 0, 14);
     random_list.forEach((e, idx) => {
-      let outerAnchor = document.createElement('a')
-      outerAnchor.classList.add('rullet-a-name')
-      outerAnchor.href = `${data[e].place_url}`
-      outerAnchor.target = '_blank'
-      let innerDiv = document.createElement('div')
-      innerDiv.classList.add('rullet-list-name')
-      let childNameDiv = document.createElement('div')
-      childNameDiv.classList.add('rulletlist-list-name')
-      childNameDiv.innerText= data[e].place_name.split(" ")[0];
-      let childAddressDiv = document.createElement('div')
-      childAddressDiv.classList.add('rulletlist-list-address')
+      let outerAnchor = document.createElement('a');
+      outerAnchor.classList.add('rullet-a-name');
+      outerAnchor.href = `${data[e].place_url}`;
+      outerAnchor.target = '_blank';
+      let innerDiv = document.createElement('div');
+      innerDiv.classList.add('rullet-list-name');
+      let childNameDiv = document.createElement('div');
+      childNameDiv.classList.add('rulletlist-list-name');
+      childNameDiv.innerText = data[e].place_name.split(' ')[0];
+      let childAddressDiv = document.createElement('div');
+      childAddressDiv.classList.add('rulletlist-list-address');
       childAddressDiv.innerText = data[e].address_name;
-      innerDiv.appendChild(childNameDiv)
-      innerDiv.appendChild(childAddressDiv)
-      outerAnchor.appendChild(innerDiv)
-      roulletContainer.appendChild(outerAnchor)
+      innerDiv.appendChild(childNameDiv);
+      innerDiv.appendChild(childAddressDiv);
+      outerAnchor.appendChild(innerDiv);
+      roulletContainer.appendChild(outerAnchor);
     });
   }
 }

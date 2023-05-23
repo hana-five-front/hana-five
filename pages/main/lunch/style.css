@@ -12,7 +12,6 @@ main {
   padding-top: 1.875rem;
 }
 
-
 button:active {
   background: #444;
   color: #f9f9f9;
@@ -28,10 +27,10 @@ button:active {
   align-items: center;
 }
 .roullet-canvas {
-  position:relative;
-  display:flex;
+  position: relative;
+  display: flex;
   justify-content: center;
-  width:25rem;
+  width: 25rem;
 }
 .roullet-component > :first-child {
   width: 50%;
@@ -53,7 +52,7 @@ button:active {
 }
 
 .rullet-top {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -72,7 +71,7 @@ button:active {
   font-size: 0.9375rem;
   color: #6b7684;
 }
-.roullet-component{
+.roullet-component {
   position: relative;
 }
 .rul-cursor {
@@ -112,23 +111,20 @@ button:active {
 .pick-list {
   width: 28rem;
   height: 100%;
-
 }
 .pick-list-title {
   width: 100%;
   height: 3.2rem;
   text-align: center;
   font-size: 2.1875rem;
-  border-bottom: .0625rem solid #008375;
-
+  border-bottom: 0.0625rem solid #008375;
 }
 .rullet-a-name1 {
-  width:100%;
+  width: 100%;
 }
 .rullet-list {
   width: 50rem;
-  height:  39.9375rem;
-  
+  height: 39.9375rem;
 }
 .rulletlist-list-name {
   width: 30%;
@@ -137,7 +133,6 @@ button:active {
 .rulletlist-list-address {
   width: 70%;
   text-align: right;
-  
 }
 .rullet-list-name {
   display: flex;
@@ -147,7 +142,6 @@ button:active {
   align-items: center;
   justify-content: space-between;
 }
-
 
 a {
   color: inherit;

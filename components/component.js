@@ -4,6 +4,7 @@ function makeHeader() {
   fetch('/components/header/index.html')
     .then(function (response) {
       if (response.ok) {
+        console.log(response)
         return response.text();
       }
       throw new Error('Error: ' + response.status);
