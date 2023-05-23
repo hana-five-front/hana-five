@@ -45,3 +45,17 @@ let posts = getPosts(postType);
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);
 
+let writeBtn = document.querySelector('.boardPostingButton');
+
+export function postingButton() {
+  const sessionUser = sessionStorage.getItem('userName');
+  console.log(sessionUser);
+  if (!sessionUser) {
+    console.log(sessionUser);
+    writeBtn.style.visibility = 'hidden';
+  } else {
+    writeBtn.style.visibility = 'visible';
+  }
+}
+
+postingButton();

@@ -1,3 +1,4 @@
+import { postingButton } from '../pages/community/notice/index.js';
 import { config } from './apikey.js';
 
 window.Kakao.init(config.apikey);
@@ -23,7 +24,7 @@ export const kakaoLoginInit = () => {
               loginBtn.innerText = '카카오\n로그아웃';
               const kakao_account = res.kakao_account;
               alert('login success');
-
+              postingButton();
               window.sessionStorage.setItem(
                 'userName',
                 kakao_account.profile.nickname
@@ -44,6 +45,7 @@ export const kakaoLoginInit = () => {
         Kakao.Auth.logout(function () {
           window.sessionStorage.setItem('userName', '');
           window.sessionStorage.setItem('userMail', '');
+          postingButton();
           loginBtn.innerText = '카카오\n로그인';
           alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
         });
