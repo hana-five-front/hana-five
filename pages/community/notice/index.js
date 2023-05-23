@@ -1,4 +1,4 @@
-import { getPosts, displayPage, displayPagination } from '../community.js';
+import { getLocalStorageItems,displayPage, displayPagination } from '../community.js';
 
 function markDowntoPlainWords(message) {
   return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
@@ -33,6 +33,7 @@ function getSlackNotice() {
 }
 
 getSlackNotice();
+
 let postType = 'notice';
 
 let currentPage = 1;
@@ -40,7 +41,7 @@ let currentPage = 1;
 let boardList = document.querySelector('.boardList');
 let pagination = document.querySelector('.boardPage');
 
-let posts = getPosts(postType);
+let posts = getLocalStorageItems(postType);
 
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);
