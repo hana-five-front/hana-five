@@ -1,8 +1,21 @@
-/*
-  0: 디폴트 질문 그룹
-  1: 커리큘럼 관련 그룹
-  2: 교육 생활 문의
-*/
+import { getFormatTime } from './chatbotFunctions.js';
+
+class Store {
+  constructor() {
+    this.state = {
+      nextReqGroup: 0,
+      prevTime: '',
+    };
+  }
+  getState(key) {
+    return this.state[key];
+  }
+  setState(key, newState) {
+    this.state[key] = newState;
+  }
+}
+
+export const store = new Store();
 
 export const FAQ_LIST = [
   { resId: 0, reqGroup: 0, nextReqGroup: 0, contents: '디지털 하나로 소개' },
@@ -84,5 +97,16 @@ export const ANSWER_LIST = [
     type: 'req',
     contents: `시간표는 시간표 페이지로 가시죠..! 
       `,
+  },
+];
+
+export const messages = [
+  {
+    id: 0,
+    resId: 0,
+    type: 'req',
+    contents:
+      '안녕하세요, 디지털 하나로 문의하기 화면입니다. 궁금한 사항을 클릭해주세요..! ',
+    createdAt: getFormatTime(Date.now()),
   },
 ];

@@ -1,5 +1,4 @@
-import { messages, nextReqGroup } from './chatbot.js';
-import { ANSWER_LIST, FAQ_LIST } from './chatbotData.js';
+import { ANSWER_LIST, FAQ_LIST, messages, store } from './chatbotData.js';
 
 export const makeModal = () => {
   const $modalContainer = document.querySelector('.modalContainer');
@@ -16,14 +15,14 @@ export const makeModal = () => {
   });
 };
 
-const getFormatTime = () => {
+export const getFormatTime = () => {
   const now = new Date();
   const localeTimeString = now.toLocaleTimeString();
   const formatTime = localeTimeString.slice(0, 5) + localeTimeString.slice(8);
   return formatTime;
 };
 
-const ChatbotHeader = () => {
+export const ChatbotHeader = () => {
   const $chatbotHeader = document.querySelector('.chatbotHeader');
   $chatbotHeader.innerHTML = `
     <img
@@ -61,37 +60,29 @@ const ChatbotHeader = () => {
   `;
 };
 
-const ChatbotList = () => {
+export const ChatbotList = () => {
   const $chatbotList = document.querySelector('.chatbotList');
   let tempInnerHTML = '';
 
-  messages.forEach(message => {
+  messages.forEach((message, i) => {
+    const prevMessage = messages[i - 1];
+    const prevTime = prevMessage?.createdAt;
     if (message.type == 'req') {
-      tempInnerHTML +=
-        `
-          <li key=${message.id} class="chatItem">
-            <p class="chatTime">${getFormatTime()}</p>
-      
-            <div class="chatItemWrapper">
-              <img
-                class="headerLogo"
-                alt="headerLogo"
-                src="https://cf.channel.io/avatar/emoji/mouse.91a2dc.png"
-                width="30px"
-                height="30px"
-              />
-              <div class="">
-                <p class="chatName">${message.nickName}</p>
-                <p class="chatItemContainer">만들어야함` +
-        // TODO:
-        // ${message.message.split('\n').map((message, idx) => (
-        //   <span key={idx} class="messageSpan">
-        //     {message}
-        //   </span>
-        // ))}
-        `
-                </p>
-              </div>
+      tempInnerHTML += `<li key=${message.id} class="chatItem">`;
+      if (prevTime == undefined || prevTime != message.createdAt) {
+        tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
+      }
+      tempInnerHTML += `<div class="chatItemWrapper">
+          <img
+            class="headerLogo"
+            alt="headerLogo"
+            src="https://cf.channel.io/avatar/emoji/mouse.91a2dc.png"
+            width="30px"
+            height="30px"
+          />
+            <div class="">
+              <p class="chatName">${message.nickName}</p>
+              <p class="chatItemContainer">${message.contents}</p>
             </div>
           </li>
         `;
@@ -115,7 +106,8 @@ const ChatbotList = () => {
 
   $chatbotList.innerHTML = tempInnerHTML;
 };
-const ChatbotCharacter = () => {
+
+export const ChatbotCharacter = () => {
   const $chatbotCharacter = document.querySelector('.chatbotCharacter');
   $chatbotCharacter.innerHTML = `
     <img
@@ -125,43 +117,34 @@ const ChatbotCharacter = () => {
       width="96px"
       height="96px"
     />
-
     <p class="profileTitle">하나은행 문의채널에 문의하기</p>
-    <p>
-      <span class="response">보통 수십 분 내 답변</span>
-    </p>
+    <p><span class="response">보통 수십 분 내 답변</span></p>
   `;
 };
 
-const handleClickFAQButton = e => {
-  // 누르면 messages에 푸쉬되고,
-  // messages를 활용해 CHATLIST UI를 다시 그리고
+export const handleClickFAQButton = e => {
   const question = {};
-  // console.log(e.target.dataset);
   question['resId'] = e.target.dataset.resid;
   question['nextReqGroup'] = e.target.dataset.nextreqgroup;
   question['contents'] = e.target.dataset.contents;
-  console.log(e.target.dataset.contents);
   question['type'] = 'res';
   question['id'] = messages.length;
+  question['createdAt'] = getFormatTime(Date.now());
   messages.push(question);
-  // console.log('question', question);
+  store.setState('nextReqGroup', question.nextReqGroup);
 
-  const temp = ANSWER_LIST.filter(x => x.resId == question.resId);
-  // console.log(temp);
-  // console.log('question.resId', question.resId);
-  // console.log('ANSWER_LIST', ANSWER_LIST);
-  messages.push(ANSWER_LIST.filter(x => x.resId == question.resId)[0]);
-  // console.log(messages);
-  console.log(messages);
+  const temp = ANSWER_LIST.filter(x => x.resId == question.resId)[0];
+  temp.createdAt = getFormatTime(Date.now());
+  messages.push(temp);
   ChatbotList();
+  ChatbotFAQButtons();
 };
 
-const ChatbotFAQButtons = () => {
+export const ChatbotFAQButtons = () => {
   const $chatbotButtons = document.querySelector('.chatbotButtons');
   let tempInnerHTML = '';
   FAQ_LIST.forEach(question => {
-    if (question.nextReqGroup == nextReqGroup) {
+    if (question.reqGroup == store.getState('nextReqGroup')) {
       const { resId, nextReqGroup, contents } = question;
       tempInnerHTML += `
       <button 
@@ -182,14 +165,4 @@ const ChatbotFAQButtons = () => {
   const $qnaButtons = document.querySelectorAll('.qnaButton');
 
   $qnaButtons.forEach(x => x.addEventListener('click', handleClickFAQButton));
-};
-
-export const makeChatbotUI = () => {
-  const $modalContainer = document.querySelector('.modalContainer');
-  $modalContainer.classList.remove('hidden');
-
-  ChatbotHeader();
-  ChatbotCharacter();
-  ChatbotList();
-  ChatbotFAQButtons();
 };

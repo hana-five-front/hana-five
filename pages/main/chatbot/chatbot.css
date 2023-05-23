@@ -221,39 +221,6 @@ button {
 .contentCard {
   width: 100%;
 }
-.chatTime {
-  width: 100%;
-  text-align: center;
-  font-size: 0.75rem;
-  color: #999;
-  font-weight: bold;
-}
-.chatName {
-  font-size: 0.8rem;
-  color: #999;
-  padding: 0 0 0 0.25rem;
-  margin: 0 0 0 0.25rem;
-}
-.chatName.left {
-}
-.chatName.right {
-}
-.chatItemWrapper {
-  display: flex;
-  align-items: end;
-  margin: 0.25rem;
-}
-.chatItemContainer {
-  background-color: #eee;
-  max-width: 90%;
-  padding: 1rem;
-  margin: 0;
-  margin-left: 0.25rem;
-  border-radius: 1rem;
-}
-.messageSpan {
-  display: block;
-}
 .resItem {
   text-align: right;
   padding-bottom: 1rem;
