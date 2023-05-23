@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 canvas {
   transition: 2s;
@@ -7,15 +7,11 @@ canvas {
 main {
   height: 39.9375rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-around;
   padding-top: 1.875rem;
 }
 
-canvas {
-  transition: 2s;
-}
 
 button:active {
   background: #444;
@@ -24,14 +20,19 @@ button:active {
 
 .roullet-component {
   height: 24.125rem;
-  width: 60rem;
+  width: 40%;
 
   display: flex;
-
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+.roullet-canvas {
+  position:relative;
+  display:flex;
+  justify-content: center;
+  width:25rem;
+}
 .roullet-component > :first-child {
   width: 50%;
   height: 100%;
@@ -52,11 +53,17 @@ button:active {
 }
 
 .rullet-top {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 13.75rem;
   height: 5.625rem;
+  margin-bottom: 1.875rem;
 }
 
 .rullet-top-title {
+  color: #008375;
   font-size: 2.1875rem;
   height: 3.5625rem;
 }
@@ -65,25 +72,20 @@ button:active {
   font-size: 0.9375rem;
   color: #6b7684;
 }
-
+.roullet-component{
+  position: relative;
+}
 .rul-cursor {
-  box-sizing: border-box;
-
   position: absolute;
-  right: 5rem;
-  width: 0px;
-  height: 0px;
-  border-right: 2.5rem solid transparent;
-  border-left: 2.5rem solid transparent;
-  border-bottom: 6.25rem solid red;
-
-  transform: rotate(210deg);
+  right: 1rem;
+  top: -2.2rem;
 }
 
 .rullet-button {
   width: 13.75rem;
   height: 3.125rem;
   margin: 0 auto;
+  margin-top: 1.875rem;
   border: none;
   list-style: none;
   background-color: #008375;
@@ -95,83 +97,57 @@ button:active {
   border-radius: 0.3125rem;
   cursor: pointer;
 }
+.rullet-button:hover {
+  font-weight: bold;
+}
 
 .list-component {
   height: 12rem;
-  width: 80rem;
+  width: 60rem;
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .pick-list {
-  width: 30rem;
-
+  width: 28rem;
   height: 100%;
+
 }
 .pick-list-title {
   width: 100%;
-  height: 2.8125rem;
+  height: 3.2rem;
   text-align: center;
-  font-size: 30px;
-  border-bottom: 0.0625rem solid;
+  font-size: 2.1875rem;
+  border-bottom: .0625rem solid #008375;
+
+}
+.rullet-a-name1 {
+  width:100%;
 }
 .rullet-list {
-  width: 30rem;
-
-  height: 100%;
+  width: 50rem;
+  height:  39.9375rem;
+  
 }
 .rulletlist-list-name {
-  width: 50%;
+  width: 30%;
+  color: #008375;
 }
 .rulletlist-list-address {
-  width: 50%;
-  text-align: left;
+  width: 70%;
+  text-align: right;
+  
 }
-.rullet-list-name1 {
+.rullet-list-name {
   display: flex;
   margin-top: 0.625rem;
+  width: 100%;
+  height: 2.5rem;
+  align-items: center;
   justify-content: space-between;
 }
 
-.rullet-list-name2 {
-  display: flex;
-  margin-top: 0.625rem;
-  justify-content: space-between;
-}
-
-.rullet-list-name3 {
-  display: flex;
-  margin-top: 0.625rem;
-  justify-content: space-between;
-}
-.rullet-list-name4 {
-  margin-top: 0.625rem;
-  display: flex;
-  justify-content: space-between;
-}
-.pick-list-name1 {
-  display: flex;
-  margin-top: 0.625rem;
-  justify-content: space-between;
-}
-
-.pick-list-name2 {
-  display: flex;
-  margin-top: 0.625rem;
-  justify-content: space-between;
-}
-
-.pick-list-name3 {
-  display: flex;
-  margin-top: 0.625rem;
-  justify-content: space-between;
-}
-.pick-list-name4 {
-  margin-top: 0.625rem;
-  display: flex;
-  justify-content: space-between;
-}
 
 a {
   color: inherit;
