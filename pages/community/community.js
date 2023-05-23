@@ -1,13 +1,85 @@
-export function getPosts(key) {
+export function getLocalStorageItems(key) {
   return JSON.parse(localStorage.getItem(key)) || [];
 }
 
-export function displayPage(posts, currentPage, boardList) {
+export function setLocalStorageItems(key, items) {
+  localStorage.setItem(key, JSON.stringify(items));
+}
+
+export function getPostId() {
+  return window.location.hash.substring(1).split('#');
+}
+
+export function getNextId(items) {
+  const nextId = Math.max(...items.map(item => item.id)) + 1;
+  return isFinite(nextId) ? nextId : 0;
+}
+
+export function findLocalStorageItemById(items, id) {
+  return items.find(item => item.id == id);
+}
+
+export function findLocalStorageItemIndexById(items, id) {
+  return items.findIndex(item => item.id == id);
+}
+
+export function getCommentsByPostId(posts, postId) {
+  return findLocalStorageItemById(posts, postId).comments;
+}
+
+export function deleteLocalStorageItem(items, index) {
+  if (index !== -1) {
+    items.splice(index, 1);
+  }
+}
+
+export function changeLocalStorageItem(items, index, newItem) {
+  if (index !== -1) {
+    items.splice(index, 1, newItem);
+  }
+}
+
+export function findAndDeleteLocalStorageItem(key, items, id) {
+  let index = findLocalStorageItemIndexById(items, id);
+  deleteLocalStorageItem(items, index);
+  setLocalStorageItems(key, items);
+}
+
+export function findAndChangeLocalStorageItem(key, items, id, newItem) {
+  let index = findLocalStorageItemIndexById(items, id);
+  changeLocalStorageItem(items, index, newItem);
+  setLocalStorageItems(key, items);
+}
+
+export function redirectTo(href, index) {
+  if (index) {
+    index = '#' + index;
+  } else {
+    index = '';
+  }
+  window.location.href = '../' + href + '.html' + index;
+}
+
+function resetInputs(inputs) {
+  inputs.forEach(input => {
+    input.value = '';
+  });
+}
+
+function resetElementContent(selectors) {
+  selectors.forEach(selector => {
+    selector.innerHTML = '';
+  });
+}
+
+export function displayPage(postType, currentPage, boardList) {
   let postsPerPage = 10;
   let start = (currentPage - 1) * postsPerPage;
   let end = start + postsPerPage;
 
-  boardList.innerHTML = '';
+  let posts = getLocalStorageItems(postType).reverse();
+
+  resetElementContent([boardList]);
 
   for (let i = start; i < end && i < posts.length; i++) {
     let post = posts[i];
@@ -40,15 +112,23 @@ export function displayPage(posts, currentPage, boardList) {
   }
 }
 
-export function displayPagination(posts, currentPage, pagination, boardList) {
+export function displayPagination(
+  postType,
+  currentPage,
+  pagination,
+  boardList
+) {
+  let posts = getLocalStorageItems(postType);
+
   let postsPerPage = 10;
   let totalPages = Math.ceil(posts.length / postsPerPage);
 
-  pagination.innerHTML = '';
+  resetElementContent([pagination]);
 
   let firstPageButton = document.createElement('a');
   firstPageButton.href = '#';
   firstPageButton.className = 'firstPage';
+
   firstPageButton.addEventListener('click', function (e) {
     e.preventDefault();
     currentPage = 1;
@@ -59,6 +139,7 @@ export function displayPagination(posts, currentPage, pagination, boardList) {
   let prevPageButton = document.createElement('a');
   prevPageButton.href = '#';
   prevPageButton.className = 'prevPage';
+
   prevPageButton.addEventListener('click', function (e) {
     e.preventDefault();
     if (currentPage > 1) {
@@ -78,13 +159,13 @@ export function displayPagination(posts, currentPage, pagination, boardList) {
       currentPage = i;
       displayPage(posts, currentPage, boardList);
     });
-
     pagination.appendChild(pageButton);
   }
 
   let nextPageButton = document.createElement('a');
   nextPageButton.href = '#';
   nextPageButton.className = 'nextPage';
+
   nextPageButton.addEventListener('click', function (e) {
     e.preventDefault();
     if (currentPage < totalPages) {
@@ -97,6 +178,7 @@ export function displayPagination(posts, currentPage, pagination, boardList) {
   let endPageButton = document.createElement('a');
   endPageButton.href = '#';
   endPageButton.className = 'endPage';
+
   endPageButton.addEventListener('click', function (e) {
     e.preventDefault();
     currentPage = totalPages;
@@ -111,9 +193,10 @@ export function renderPost(postType) {
   let detailDate = document.querySelector('.detailDate');
   let detailContext = document.querySelector('.detailContext');
 
-  let postId = window.location.hash.substring(1).split('#');
-  let posts = JSON.parse(localStorage.getItem(postType)) || [];
-  let post = posts.find(post => post.id == postId);
+  let post = findLocalStorageItemById(
+    getLocalStorageItems(postType),
+    getPostId()
+  );
 
   if (post) {
     detailTitle.textContent = post.title;
@@ -128,12 +211,54 @@ export function renderPost(postType) {
     } else {
       detailContext.textContent = post.content;
     }
-
     renderComments((post.comments || []).reverse());
   } else {
     alert('해당 게시글을 찾을 수 없습니다.');
-    window.location.href = '../index.html';
+    redirectTo('index');
   }
+}
+
+export function modifyPost(postType, postId) {
+  let titleInput = document.querySelector('.postingInputTitle');
+  let nameInput = document.querySelector('.postingInputName');
+  let contentInput = document.querySelector('.postingInputContext');
+
+  let title = titleInput.value;
+  let name = nameInput.value;
+  if (name === '') {
+    name = '익명';
+  }
+  let content = contentInput.value;
+  let date = new Date().toISOString().split('T')[0];
+
+  if (title === '' || content === '') {
+    alert('제목과 내용을 모두 입력해주세요.');
+  } else {
+    let posts = getLocalStorageItems(postType);
+
+    let post = {
+      id: parseInt(postId),
+      title: title,
+      name: name,
+      content: content,
+      date: date,
+      comments: getCommentsByPostId(posts, postId),
+    };
+
+    findAndChangeLocalStorageItem(postType, posts, postId, post);
+
+    resetInputs([titleInput, nameInput, contentInput]);
+    redirectTo('detail/index', postId);
+  }
+}
+
+export function deletePost(postType) {
+  findAndDeleteLocalStorageItem(
+    postType,
+    getLocalStorageItems(postType),
+    getPostId()
+  );
+  redirectTo('index');
 }
 
 export function submitComment(postType) {
@@ -151,9 +276,8 @@ export function submitComment(postType) {
     return;
   }
 
-  let postId = window.location.hash.substring(1).split('#');
-  let posts = JSON.parse(localStorage.getItem(postType)) || [];
-  let post = posts.find(post => post.id == postId);
+  let posts = getLocalStorageItems(postType);
+  let post = findLocalStorageItemById(posts, getPostId());
 
   if (!post.comments) {
     post.comments = [];
@@ -163,12 +287,11 @@ export function submitComment(postType) {
     name: commentName,
     content: commentContent,
   });
-  localStorage.setItem(postType, JSON.stringify(posts));
+  setLocalStorageItems(postType, posts);
 
   renderComments((post.comments || []).reverse());
 
-  detailCommentInputWriter.value = '';
-  detailCommentInputContext.value = '';
+  resetInputs([detailCommentInputWriter, detailCommentInputContext]);
 }
 
 export function submitPost(postType) {
@@ -187,11 +310,12 @@ export function submitPost(postType) {
   if (title === '' || content === '') {
     alert('제목과 내용을 모두 입력해주세요.');
   } else {
-    let posts = JSON.parse(localStorage.getItem(postType)) || [];
+    let posts = getLocalStorageItems(postType);
+    let nextId = getNextId(posts);
 
     if (postType === 'notice') {
       let post = {
-        id: posts.length,
+        id: nextId,
         title: titleInput.value,
         name: name,
         content: contentInput.value.split('\n'),
@@ -199,7 +323,7 @@ export function submitPost(postType) {
       };
 
       posts.unshift(post);
-      localStorage.setItem(postType, JSON.stringify(posts));
+      setLocalStorageItems(postType, posts);
       let text = [title + '\n', ...contentInput.value].join('');
       fetch('http://localhost:3000/slackapi', {
         method: 'POST',
@@ -208,14 +332,11 @@ export function submitPost(postType) {
         },
         body: JSON.stringify({ text }),
       });
-      titleInput.value = '';
-      nameInput.value = '';
-      contentInput.value = '';
-      window.location.href = '../detail/index.html#' + post.id;
-    } 
-    else {
+      resetInputs([titleInput, nameInput, contentInput]);
+      redirectTo('detail/index', post.id);
+    } else {
       let post = {
-        id: posts.length,
+        id: nextId,
         title: titleInput.value,
         name: name,
         content: contentInput.value,
@@ -223,20 +344,19 @@ export function submitPost(postType) {
       };
 
       posts.push(post);
-      localStorage.setItem(postType, JSON.stringify(posts));
-      titleInput.value = '';
-      nameInput.value = '';
-      contentInput.value = '';
-      window.location.href = '../detail/index.html#' + post.id;
-    }
+      setLocalStorageItems(postType, posts);
 
+      resetInputs([titleInput, nameInput, contentInput]);
+      redirectTo('detail/index', post.id);
+    }
   }
 }
 
 function renderComments(comments) {
   let detailCommentList = document.querySelector('.detailCommentList');
 
-  detailCommentList.innerHTML = '';
+  resetElementContent([detailCommentList]);
+
   for (let comment of comments) {
     let commentElement = document.createElement('div');
     commentElement.className = 'detailComment';

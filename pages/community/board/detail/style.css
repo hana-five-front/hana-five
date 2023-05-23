@@ -43,10 +43,23 @@
   margin-left: 4.375rem;
 }
 .detailSubject {
-  padding-bottom: 2.5rem;
+  padding-bottom: 0.3125rem;
   font-size: 2.375rem;
   font-weight: bold;
   color: #191f29;
+}
+.editButtons {
+  display: flex;
+  justify-content: end;
+}
+.editButtons > img {
+  height: 25px;
+  margin: 5px;
+  opacity: 40%;
+}
+.editButtons > img:hover {
+  cursor: pointer;
+  opacity: 90%;
 }
 .detailContentTop {
   display: flex;
