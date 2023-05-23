@@ -4,6 +4,8 @@
   justify-content: center;
   align-items: center;
   border-top: 1px #ecf0f1 solid;
+  position:sticky;
+  width:100%;
 }
 .footer-component > div {
   width: 60rem;
@@ -13,12 +15,15 @@
 }
 .left {
   width: 20.6875rem;
+  display:flex;
+  flex-direction: column;
+  margin:0;
 }
 .about-link {
   display: flex;
   align-items: center;
 }
-.about-link > p {
+.about-link > a {
   width: 4.375rem;
   height: 0.4125rem;
   font-size: 13px;
@@ -26,14 +31,14 @@
   font-weight: 400;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-.about-link > p:hover {
+.about-link > a:hover {
   font-weight: bold;
 }
 .about-text {
+  margin-top: .625rem;
   height: 4rem;
 }
 
@@ -52,7 +57,7 @@
 .right {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  margin:0;
   width: 20.6875rem;
   height: 7.1875rem;
 }
@@ -79,6 +84,7 @@
   flex-direction: column;
   align-items: flex-end;
   height: 3rem;
+  margin-top: .625rem;
   list-style: none;
 }
 .right-down > :first-child {

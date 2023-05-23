@@ -10,10 +10,12 @@
     <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>디지털 하나로 메인 페이지</title>
+    <script async src="slackApi.js"></script>
+    <script src="board.js" type="module"></script>
+   
   </head>
   <body>
     <header class="inner header-component" id="header"></header>
-
     <main class="inner main-component">
       <div class="middle-component">
         <div class="middle-left">
@@ -21,36 +23,40 @@
             <div class="carousel-items">
               <div class="carousel-item">
                 <div class="mainCarouselText">
-                  <div>메인캐러셀0</div>
-                  <div>메인캐러셀서브텍스트0</div>
+                  <div>금융개발자ING</div>
+                  <div class="extraText">디지털 하나로</div>
+                  <div>#금융 #개발 #풀스택개발자</div>
                 </div>
-                <div class="mainCarouselImage"></div>
+                <img class="mainCarouselImage" src="../../public/images/캐러셀1.png"></img>
               </div>
 
               <div class="carousel-item">
                 <div class="mainCarouselText">
-                  <div>메인캐러셀1</div>
-                  <div>메인캐러셀서브텍스트1</div>
+                  <div>밝은 미래를 위해</div>
+                  <div class="extraText">디지털 하나로</div>
+                  <div>#청춘 #미래 #행복</div>
                 </div>
-                <div class="mainCarouselImage"></div>
+                <img class="mainCarouselImage" src="../../public/images/캐러셀2.png"></img>
                 <!-- 두 번째 슬라이드 내용 -->
               </div>
 
               <div class="carousel-item">
                 <div class="mainCarouselText">
-                  <div>메인캐러셀2</div>
-                  <div>메인캐러셀서브텍스트2</div>
+                  <div>하나의 팀이 되는</div>
+                  <div class="extraText">디지털 하나로</div>
+                  <div>#원팀 #좋은동료 </div>
                 </div>
-                <div class="mainCarouselImage"></div>
+                <img class="mainCarouselImage" src="../../public/images/캐러셀3.png"></img>
                 <!-- 세 번째 슬라이드 내용 -->
               </div>
 
               <div class="carousel-item">
                 <div class="mainCarouselText">
-                  <div>메인캐러셀3</div>
-                  <div>메인캐러셀서브텍스트3</div>
+                  <div>우리 모두 같이</div>
+                  <div class="extraText">디지털 하나로~</div>
+                  <div>#열공 #화이팅 #워라밸</div>
                 </div>
-                <div class="mainCarouselImage"></div>
+                <img class="mainCarouselImage" src="../../public/images/캐러셀4.png"></img>
                 <!-- 네 번째 슬라이드 내용 -->
               </div>
               <!-- 추가 슬라이드 아이템들 -->
@@ -72,10 +78,7 @@
           <div class="todayTable">
             <div class="todayTableTitle">오늘 시간표</div>
             <div class="todayTableContent">
-              <div>ICT 아키텍처의 이해</div>
-              <div>(5H)</div>
-              <div>HTML 기초</div>
-              <div>(3H)</div>
+
             </div>
           </div>
           <a href="./lunch/index.html">
@@ -89,59 +92,78 @@
       </div>
       <div class="link-component">
         <div>
-          <div>하나은행</div>
-          <div>하나은행 홈페이지</div>
+          <a href="https://www.kebhana.com/">
+            <div>하나은행</div>
+            <div>하나은행 홈페이지</div>
+          </a>
         </div>
         <div>
-          <div>대한상공회의소</div>
-          <div>대한상공회의소 홈페이지</div>
+          <a href="http://www.korcham.net/nCham/Service/Main/appl/Main.asp">
+            <div>대한상공회의소</div>
+            <div>대한상공회의소 홈페이지</div>
+          </a>
         </div>
         <div>
-          <div>알파코</div>
-          <div>알파코 홈페이지</div>
+          <a href="https://corp.alpaco.co.kr/">
+            <div>알파코</div>
+            <div>알파코 홈페이지</div>
+          </a>
         </div>
         <div>
-          <div>온라인 강의</div>
-          <div>알파고 온라인 콘텐츠</div>
+          <a href="https://digitalhanaro.alpaedu.co.kr/gate.do">
+            <div>온라인 강의</div>
+            <div>알파고 온라인 콘텐츠</div>
+          </a>
         </div>
       </div>
       <div class="list-component">
         <div class="mainBottomNotice">
           <div class="mainBottomNoticeTop">
             <div class="mainBottomNoticeText">공지사항</div>
-            <div class="mainBottomNoticeLearnButton">+더보기</div>
+            <a href="../community/notice" class="mainBottomNoticeLearnButton"
+              >+더보기</a
+            >
+          
           </div>
-          <div class="mainBottomNoticeBottom"></div>
+          <div class="mainBottomNoticeBottom">
+            <div class="">
+              <div class="wave-title"></div>
+              <div class="wave-date"></div>
+            </div>
+            <div class="">
+              <div class="wave-title"></div>
+              <div class="wave-date"></div>
+            </div>
+            <div class="">
+              <div class="wave-title"></div>
+              <div class="wave-date"></div>
+            </div>
+            <div class="">
+              <div class="wave-title"></div>
+              <div class="wave-date"></div>
+            </div>
+            <div class="">
+              <div class="wave-title"></div>
+              <div class="wave-date"></div>
+            </div>
+          </div>
         </div>
         <div class="mainBottomBoard">
           <div class="mainBottomBoardTop">
             <div class="mainBottomBoardText">자유게시판</div>
-            <div class="mainBottomBoardLearnButton">+더보기</div>
+            <a href="../community/board" class="mainBottomBoardLearnButton">+더보기</a>
           </div>
-          <div class="mainBottomBoardBottom">
-            <div>
-              <div>내일배움카드 안내</div>
-              <div>2023-04-27</div>
-            </div>
-            <div>
-              <div>내일배움카드 안내</div>
-              <div>2023-04-27</div>
-            </div>
-            <div>
-              <div>내일배움카드 안내</div>
-              <div>2023-04-27</div>
-            </div>
-          </div>
+          <div class="mainBottomBoardBottom"></div>
         </div>
       </div>
     </main>
 
     <footer class="inner footer-component" id="footer"></footer>
-    <script src="slackApi.js"></script>
+    <script src="today.js"> </script>
     <script src="index.js"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-
     <script type="modules" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
+   
   </body>
 </html>

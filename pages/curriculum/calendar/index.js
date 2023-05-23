@@ -88,7 +88,7 @@ function buildCalendar(calendarData, holidayData, timeData, specialData) {
     }
 
     if (typeof time !== 'undefined') {
-      timeSpanElement.textContent = time;
+      timeSpanElement.textContent = time.split(" ").join("");
     } else {
       timeSpanElement.textContent = '';
     }

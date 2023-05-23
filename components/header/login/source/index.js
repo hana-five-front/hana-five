@@ -5,16 +5,12 @@ document.getElementById('login').onclick = function () {
     window.Kakao.Auth.login({
       scope: 'profile_nickname, account_email',
       success: authObj => {
-        console.log('authObj : ');
-        console.log(authObj);
+
         window.Kakao.API.request({
           url: '/v2/user/me',
           success: res => {
             loginbtn.innerText = '카카오\n로그아웃';
             const kakao_account = res.kakao_account;
-            console.log(kakao_account);
-            console.log('success: ');
-            console.log(res);
             alert('login success');
           },
           fail: res => {
