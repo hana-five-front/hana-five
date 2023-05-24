@@ -73,8 +73,8 @@ a {
   margin-right: 2.625rem;
 }
 .profile-image > img {
-  height: 7.5rem;
-  width: 5.625rem;
+  height: 18.75rem;
+  width: 14.0625rem;
 }
 .info2 {
   display: flex;
@@ -85,7 +85,7 @@ a {
   margin-bottom: 1.25rem;
 }
 .sub-title {
-  font-size: 1.25rem;
+  font-size: 1.875rem;
   color: #008485;
   margin: 0 0 0.325rem 0;
 }
