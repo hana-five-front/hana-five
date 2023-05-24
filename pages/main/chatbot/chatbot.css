@@ -27,9 +27,9 @@ li {
   margin: 1rem 0 0 0;
 }
 .profileImage {
-  width: 96px;
-  height: 96px;
-  border-radius: 40%;
+  width: 38.87px;
+  height: 36.57px;
+  margin: 0 28.57px;
 }
 .response {
   font-size: 0.8rem;
@@ -53,6 +53,15 @@ li {
   align-items: end;
   margin: 0.25rem;
 }
+.chatLogoBox {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  background-image: linear-gradient(#b5abff, #888cf6);
+  border-radius: 50%;
+}
 .chatItemContainer {
   background-color: #eee;
   max-width: 90%;
@@ -69,18 +78,24 @@ li {
 }
 .chatbotButton {
   position: absolute;
-  bottom: 0;
-  left: 3rem;
-  background-color: white;
-  width: 4rem;
-  height: 4rem;
+  bottom: 2.5rem;
+  left: 4.5rem;
+  width: 2.625rem;
+  height: 2.625rem;
   text-align: center;
-  font-size: 2rem;
   line-height: 4rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  border-radius: 1rem;
+  border-radius: 50%;
   transition: all 0.2s;
   cursor: pointer;
+  background-image: linear-gradient(#b5abff, #888cf6);
+  align-items: center;
+  display: inline-flex;
+}
+.chatbotButtonImage {
+  width: 1.0625rem;
+  height: 1rem;
+  margin: 0 0.7813rem;
 }
 .chatbotButton:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 8px 16px rgba(0, 0, 0, 0.22);
@@ -128,9 +143,9 @@ li {
   cursor: pointer;
 }
 .headerLogo {
-  border-radius: 0.75rem;
-  width: 30px;
-  height: 30px;
+  width: 13px;
+  height: 12.24px;
+  margin: 0 0.5rem;
 }
 .headerTitle {
   line-height: 30px;
@@ -156,10 +171,13 @@ li {
   font-weight: bold;
   margin: 1rem 0 0 0;
 }
-.profileImage {
+.profileImageBox {
   width: 96px;
   height: 96px;
-  border-radius: 40%;
+  border-radius: 50%;
+  background-image: linear-gradient(#b5abff, #888cf6);
+  align-items: center;
+  display: inline-flex;
 }
 .response {
   font-size: 0.8rem;
