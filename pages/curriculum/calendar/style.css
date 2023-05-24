@@ -14,19 +14,20 @@ a {
   width: 62.5rem;
   min-height: 50rem;
   justify-content: center;
-}
-.aside {
-  width: 13.25rem;
-  display: flex;
-  flex-direction: column;
   padding-top: 3.125rem;
 }
+.aside {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.8125rem;
+}
 .asideTitle {
-  font-size: 1.75rem;
+  font-size: 1.375rem;
   font-weight: bold;
   display: flex;
   align-items: center;
-  padding-bottom: 1rem;
+  padding-bottom: 0.625rem;
   color: #008485;
   border-bottom: 0.1875rem solid #008485;
 }
@@ -43,20 +44,22 @@ a {
   color: #191f29;
   border-bottom: 0.0313rem #d1d6db solid;
 }
-.asideCommunityBoard {
+.aside-curriculum {
   color: #008485;
 }
 .page-container {
   display: flex;
   flex-direction: column;
-  width: 44.375rem;
-  padding: 3.125rem 0rem 1.625rem 0;
+  width: 80%;
+  padding-bottom: 1.625rem;
   margin-left: 4.375rem;
 }
-.page-container > header > div {
-  padding: 0 0.4375rem 1.875rem;
+.calendar-head {
+  padding: 0 0 10px 0;
+  display: flex;
+  align-self: stretch;
 }
-.page-container > header > div > span {
+.calendar-text {
   font-size: 2.375rem;
   font-weight: bold;
   color: #191f29;

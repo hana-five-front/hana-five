@@ -1,20 +1,21 @@
 .middle-component {
   display: flex;
-  padding-top: 50px;
+  padding-top: 3.125rem;
   justify-content: center;
   min-height: 50rem;
 }
 .aside {
-  width: 16.25rem;
+  width: 20%;
   display: flex;
   flex-direction: column;
+  margin-top: 0.8125rem;
 }
 .asideTitle {
-  font-size: 1.75rem;
+  font-size: 1.375rem;
   font-weight: bold;
   display: flex;
   align-items: center;
-  padding-bottom: 1rem;
+  padding-bottom: 0.625rem;
   color: #008485;
   border-bottom: 0.1875rem solid #008485;
 }
@@ -35,7 +36,7 @@
   color: #008485;
 }
 .boardComponent {
-  width: 39.375rem;
+  width: 80%;
   display: flex;
   flex-direction: column;
   margin-left: 4.375rem;

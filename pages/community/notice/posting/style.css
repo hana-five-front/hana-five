@@ -5,16 +5,17 @@
   min-height: 50rem;
 }
 .aside {
-  width: 16.25rem;
+  width: 20%;
   display: flex;
   flex-direction: column;
+  margin-top: 0.8125rem;
 }
 .asideTitle {
-  font-size: 1.75rem;
+  font-size: 1.375rem;
   font-weight: bold;
   display: flex;
   align-items: center;
-  padding-bottom: 1rem;
+  padding-bottom: 0.625rem;
   color: #008485;
   border-bottom: 0.1875rem solid #008485;
 }
@@ -23,22 +24,19 @@
   padding: 0rem;
 }
 .asideContent {
+  width: 100%;
   height: 3rem;
   display: flex;
   align-items: center;
   font-size: 1rem;
   color: #191f29;
   border-bottom: 0.0313rem #d1d6db solid;
-  text-decoration: none;
-}
-.asideMenu {
-  width: 100%;
 }
 .asideCommunityNotice {
   color: #008485;
 }
 .postingComponent {
-  width: 39.375rem;
+  width: 80%;
   display: flex;
   flex-direction: column;
   margin-left: 4.375rem;
