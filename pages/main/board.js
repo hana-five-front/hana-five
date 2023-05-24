@@ -2,9 +2,9 @@ import { getLocalStorageItems, setBoard } from '../community/community.js';
 
 let boardList = document.querySelector('.mainBottomBoardBottom');
 
-let postType = 'boardPosts';
+let postType = 'board';
 document.addEventListener('DOMContentLoaded', setBoard);
-let posts = getLocalStorageItems(postType).reverse().slice(0,5);
+let posts = getLocalStorageItems(postType).reverse().slice(0, 5);
 
 for (let post of posts) {
   const { title, date, id } = post;

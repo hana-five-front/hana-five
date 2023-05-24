@@ -4,7 +4,7 @@ import {
   getLocalStorageItems,
 } from '../community.js';
 
-let postType = 'qnaPosts';
+let postType = 'qna';
 
 let currentPage = 1;
 

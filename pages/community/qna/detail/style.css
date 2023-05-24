@@ -94,34 +94,39 @@
 .detailCommentInputContext {
   width: 70%;
 }
-.detailCommentSubmit {
+.submitCommentBtn {
   width: 10%;
   color: #fff;
   background-color: #008485;
   border: #008485 0.0625rem solid;
   cursor: pointer;
 }
-.detailCommentSubmit:hover {
+.submitCommentBtn:hover {
   opacity: 90%;
 }
 .detailComment {
   display: flex;
   padding: 0.3125rem 0px;
   justify-content: space-evenly;
+  align-items: center;
 }
 .detailComment > p {
   margin: 0px;
 }
 .detailCommentWriter {
-  width: 16%;
+  width: 15%;
   display: flex;
   justify-content: center;
 }
 .detailCommentContext {
-  width: 80%;
+  width: 70%;
   display: flex;
   justify-content: start;
   margin-left: 0.625rem;
+}
+.deleteCommentBtn {
+  width: 15px;
+  margin: 0px 12px;
 }
 .detailButtonBox {
   display: flex;
@@ -137,12 +142,12 @@
   border: #008485 0.0625rem solid;
   cursor: pointer;
 }
-img {
+div > img {
   height: 25px;
   margin: 5px;
   opacity: 40%;
 }
-img:hover {
+div > img:hover {
   cursor: pointer;
   opacity: 90%;
 }
