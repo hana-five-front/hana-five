@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/styles/base-styles.css" />
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
-    <script type="module" src="/components/component.js"></script>
+    <script defer type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
-
+    <script defer src="./index.js"></script>
     <title>교육 과정</title>
     <style></style>
   </head>
@@ -64,12 +64,14 @@
                   <p id="summaryMonth">mm월 주요 활동</p>
                   <ul></ul>
                 </div>
-                <div id="special-time"><p>시간 특이사항</p>
+                <div id="special-time">
+                  <p id="specialCommute">시간 특이사항</p>
                   <ul></ul>
                 </div>
               </div>
               <div class="calendar2-row2">
-                <div id="special-lecture"><p>특강</p>
+                <div id="special-lecture">
+                  <p id="specialLecture">특강</p>
                   <ul></ul>
                 </div>
               </div>
@@ -79,8 +81,6 @@
       </div>
     </div>
     </main>
-    <script src="./index.js"></script>
-
     <footer class="inner footer-component" id="footer"></footer>
 
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
