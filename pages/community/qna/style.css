@@ -53,6 +53,15 @@
   padding-bottom: 1.25rem;
   border-bottom: 0.0313rem #6b7684 solid;
 }
+.boardButton {
+  width: 6.125rem;
+  height: 1.8125rem;
+  color: #008485;
+  border: #008485 0.0625rem solid;
+  border-radius: 0.1563rem;
+  background-color: #ffffff;
+  cursor: pointer;
+}
 .boardSearchBar {
   display: flex;
   justify-content: space-between;
@@ -155,13 +164,4 @@
 .endPage:hover {
   background-position: -32px -171px;
   background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
-}
-button {
-  width: 6.125rem;
-  height: 1.8125rem;
-  color: #008485;
-  border: #008485 0.0625rem solid;
-  border-radius: 0.1563rem;
-  background-color: #ffffff;
-  cursor: pointer;
 }
