@@ -12,7 +12,7 @@ const colors = [
 const roulletContainer = document.createElement('div');
 
 roulletContainer.classList.add('rullet-list');
-roulletContainer.style.display= 'none'
+roulletContainer.style.display = 'none';
 
 document.querySelector('main').appendChild(roulletContainer);
 
@@ -54,14 +54,14 @@ const newMake = () => {
 };
 
 const rotate = async () => {
-  roulletContainer.style.display='none'
+  roulletContainer.style.display = 'none';
   $c.style.transform = 'initial';
   $c.style.transition = 'initial';
 
-  if (roulletContainer.children){
+  if (roulletContainer.children) {
     roulletContainer.innerHTML = '';
-  } 
-  
+  }
+
   setTimeout(() => {
     const ran = Math.floor(Math.random() * product.length);
 
@@ -78,15 +78,12 @@ const rotate = async () => {
       mainTitle.classList.add('pick-list-title');
       mainTitle.innerHTML = `성수동 <span class="rullet-keyword"></span> 맛집 리스트`;
       roulletContainer.appendChild(mainTitle);
- 
+
       ps.keywordSearch(`성수역 ${product[ran]} 맛집`, placesSearchCB);
       const name = document.querySelectorAll(`.rullet-keyword`)[0];
       name.innerText = `[${product[ran]}]`;
-     
     }, 2000);
-
   }, 1);
-
 };
 
 newMake();
@@ -111,9 +108,8 @@ function randomNum(arr, lower, upper) {
 }
 
 function placesSearchCB(data, status, pagination) {
-    roulletContainer.style.display = '';
+  roulletContainer.style.display = '';
   if (status === kakao.maps.services.Status.OK) {
-
     let random_list = randomNum(Array.from({ length: 7 }), 0, 14);
     random_list.forEach((e, idx) => {
       let outerAnchor = document.createElement('a');
