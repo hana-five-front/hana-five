@@ -356,13 +356,18 @@ export function deleteCommentHandler(event) {
 
 export function submitPost(postType) {
   let titleInput = document.querySelector('.postingInputTitle');
-  let nameInput = document.querySelector('.postingInputName');
+  let nameInput = null;
+  let name = null;
+  if (postType !== 'notice') {
+    nameInput = document.querySelector('.postingInputName');
+    name = nameInput.value;
+  }
   let contentInput = document.querySelector('.postingInputContext');
 
   let title = titleInput.value;
-  let name = nameInput.value;
-  if (name === '') {
-    name = '익명';
+
+  if (name == null) {
+    name = '관리자';
   }
   let content = contentInput.value;
   let date = new Date().toISOString().split('T')[0];
@@ -392,7 +397,7 @@ export function submitPost(postType) {
         },
         body: JSON.stringify({ text }),
       });
-      resetInputs([titleInput, nameInput, contentInput]);
+      resetInputs([titleInput, contentInput]);
       redirectTo('detail/index', post.id);
     } else {
       let post = {
