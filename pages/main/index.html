@@ -17,7 +17,9 @@
     <script defer type="module" src="./chatbot/chatbotFunctions.js"></script>
     <script defer type="module" src="./chatbot/chatbot.js"></script>
     <title>디지털 하나로 메인 페이지</title>
-   
+    <script async src="slackApi.js"></script>
+    <script src="board.js" type="module"></script>
+
   </head>
   <body>
     <header class="inner header-component" id="header"></header>
@@ -164,7 +166,7 @@
     </main>
 
     <section class="chatbotWrapper">
-      <div class="chatbotButton">🫡</div>
+      <div class="chatbotButton"><img class='chatbotButtonImage' src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc" alt=""></div>
     </section>
 
     <div class="modalBackground hidden"></div>
@@ -184,6 +186,6 @@
     <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script defer type="modules" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
-   
+
   </body>
 </html>
