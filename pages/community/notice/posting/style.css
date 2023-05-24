@@ -54,10 +54,7 @@
   justify-content: space-between;
 }
 .postingInputTitle {
-  width: 73%;
-}
-.postingInputName {
-  width: 25%;
+  width: 100%;
 }
 .postingInputContext {
   width: 100%;
