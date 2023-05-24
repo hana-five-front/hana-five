@@ -1,6 +1,6 @@
 import { displayPage, displayPagination } from '../community.js';
 
-let postType = 'boardPosts';
+let postType = 'board';
 
 let currentPage = 1;
 
