@@ -39,8 +39,8 @@ export function setBoard(key) {
       title: '좋은아침 이현주입니다',
     },
   ];
-  if (!localStorage.getItem('boardPosts'))
-    localStorage.setItem('boardPosts', JSON.stringify(initBoard));
+  if (!localStorage.getItem('board'))
+    localStorage.setItem('board', JSON.stringify(initBoard));
 }
 
 export function setLocalStorageItems(key, items) {
