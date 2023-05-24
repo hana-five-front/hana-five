@@ -7,7 +7,7 @@ canvas {
 main {
   position: relative;
   width: 60rem;
-  height: 39.9375rem;
+  height: 37.9375rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +24,9 @@ button:active {
   width: 30%;
   margin-top: 1.25rem;
   display: flex;
+  padding-top: 3.125rem;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .roullet-canvas {
@@ -106,7 +108,7 @@ button:active {
 }
 .rullet-list {
   width: 70%;
-
+  padding-top: 1.875rem;
   height: 400px;
   margin-left: 3.75rem;
 }
