@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="./chatbot/chatbot.css" />
-    <script type="module" defer src="./chatbot/chatbotData.js"></script>
-    <script type="module" defer src="./chatbot/Store.js"></script>
-    <script type="module" defer src="./chatbot/chatbotFunctions.js"></script>
-    <script type="module" defer src="./chatbot/chatbot.js"></script>
-    <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="/components/component.js"></script>
+    <script defer src="slackApi.js"></script>
+    <script defer src="board.js" type="module"></script>
+    <script defer type="module" src="./chatbot/Store.js"></script>
+    <script defer type="module" src="./chatbot/chatbotData.js"></script>
+    <script defer type="module" src="./chatbot/chatbotFunctions.js"></script>
+    <script defer type="module" src="./chatbot/chatbot.js"></script>
     <title>디지털 하나로 메인 페이지</title>
-    <script async src="slackApi.js"></script>
-    <script src="board.js" type="module"></script>
    
   </head>
   <body>
@@ -179,10 +179,10 @@
     </section>
 
     <footer class="inner footer-component" id="footer"></footer>
-    <script src="today.js"> </script>
-    <script src="index.js"></script>
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script type="modules" src="/scripts/apikey.js"></script>
+    <script defer src="today.js"> </script>
+    <script defer src="index.js"></script>
+    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script defer type="modules" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
    
   </body>
