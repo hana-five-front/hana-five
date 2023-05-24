@@ -1,58 +1,125 @@
-.header-component {
-  font-family: 'Hana2';
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  border-bottom: 0.0625rem solid #008484;
-  height: 5rem;
+@media (min-width: 75.625rem) {
+  .header-component {
+    font-family: 'Hana2';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    border-bottom: 0.0625rem solid #008484;
+    height: 5rem;
+  
+  }
+  .header-component > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    height: 5rem;
+    width: 60rem;
+  }
+  .header-component > div > a {
+    width: 11.5rem;
+    height: 5rem;
+  }
+  .header-component > div > a > img {
+    width: 11.5rem;
+    height: 5rem;
+  }
+  .imo {
+    display: none;
+  }
+  .imo > img {
+    display:none;
+  }
+  .header-component > div > ul {
+    font-size: 1.125rem;
+    line-height: 150%;
+    width: 30.4375rem;
+    height: 5rem;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .header-component > div > ul > li {
+    cursor: pointer;
+  }
+  .header-component > div > ul > li:hover {
+    color: #008484;
+  }
+  .btnDiv {
+    display: flex;
+    align-items: center;
+  }
+  .header-component > div > div > button {
+    color: #8b95a1;
+    width: 4.0625rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+  .header-component > div > div > button:hover {
+    color: black;
+  }
 
 }
-.header-component > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  height: 5rem;
-  width: 60rem;
-  height: 5rem;
-}
-.header-component > div > a > img {
-  width: 11.5rem;
-  height: 5rem;
-}
-
-.header-component > div > ul {
-  font-size: 1.125rem;
-  line-height: 150%;
-  width: 30.4375rem;
-  height: 5rem;
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.header-component > div > ul > li {
-  cursor: pointer;
-}
-.header-component > div > ul > li:hover {
-  color: #008484;
-}
-.header-component > div > div {
-  display: flex;
-  align-items: center;
-}
-.header-component > div > div > button {
-  color: #8b95a1;
-  width: 4.0625rem;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  font-size: 0.875rem;
-}
-.header-component > div > div > button:hover {
-  color: black;
+@media ((min-width: 22.5rem) and (max-width: 75.625rem)) {
+  .header-component {
+    position:fixed;
+    top:0;
+    z-index: 9999;
+    background-color: white;
+    font-family: 'Hana2';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    border-bottom: 0.0625rem solid #008484;
+    height: 4rem;
+  
+  }
+  .header-component > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    height: 4rem;
+    width: 95%;
+  }
+  .header-component > div > a {
+    display:flex;
+    align-items: center;
+  }
+  .header-component > div > a > img {
+    height: 5rem;
+  }
+  
+  .header-component > div > ul {
+    display:none;
+  }
+  .header-component > div > ul > li {
+    cursor: pointer;
+  }
+  .header-component > div > ul > li:hover {
+    color: #008484;
+  }
+  .header-component > div > div {
+    
+  }
+  .imo {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-component > div > div > button {
+    display:none;
+  }
+  .header-component > div > div > button:hover {
+    color: black;
+  }
 }
