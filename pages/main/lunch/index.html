@@ -15,78 +15,20 @@
     <header class="inner header-component" id="header"></header>
 
     <main class="inner">
+      <div class="rullet-top">
+        <div class="rullet-top-title">오늘 뭐 먹지</div>
+        <div class="rullet-top-subtitle">디지털 하나로 주변 맛집 찾기</div>
+      </div>
       <div class="roullet-component">
-        <div>
-          <canvas width="380" height="380"></canvas>
-          <div class="rul-cursor"></div>
+       
+        <div class = "roullet-canvas">
+          <canvas width="300" height="300"></canvas>
+          <img src="../../../public/images/arrow.svg" width="120" class="rul-cursor"></img>
         </div>
         <div>
-          <div class="rullet-top">
-            <div class="rullet-top-title">오늘 뭐 먹지</div>
-            <div class="rullet-top-subtitle">돌림판 보조 텍스트</div>
-          </div>
           <button class="rullet-button" onclick="rotate()">
             돌림판 돌리기!
           </button>
-        </div>
-      </div>
-      <div class="list-component">
-        <div class="pick-list">
-          <div class="pick-list-title">개발자 추천 맛집 리스트</div>
-
-          <div class="pick-list-name1">
-            <div>어쩌구 식당</div>
-            <div>서울특별시 성동구 아차산로 111</div>
-          </div>
-          <div class="pick-list-name2">
-            <div>어쩌구 식당</div>
-            <div>서울특별시 성동구 아차산로 111</div>
-          </div>
-          <div class="pick-list-name3">
-            <div>어쩌구 식당</div>
-            <div>서울특별시 성동구 아차산로 111</div>
-          </div>
-          <div class="pick-list-name4">
-            <div>어쩌구 식당</div>
-            <div>서울특별시 성동구 아차산로 111</div>
-          </div>
-        </div>
-        <div class="rullet-list">
-          <div class="pick-list-title">
-            성수동 <span class="rullet-keyword"></span> 맛집 리스트
-          </div>
-          <a class="rullet-a-name1" href="">
-            <div class="rullet-list-name1">
-              <div class="rulletlist-list-name">어쩌구 식당</div>
-              <div class="rulletlist-list-address">
-                서울특별시 성동구 아차산로 111
-              </div>
-            </div>
-          </a>
-          <a class="rullet-a-name2" href="">
-            <div class="rullet-list-name2">
-              <div class="rulletlist-list-name">어쩌구 식당</div>
-              <div class="rulletlist-list-address">
-                서울특별시 성동구 아차산로 111
-              </div>
-            </div>
-          </a>
-          <a class="rullet-a-name3" href="">
-            <div class="rullet-list-name3">
-              <div class="rulletlist-list-name">어쩌구 식당</div>
-              <div class="rulletlist-list-address">
-                서울특별시 성동구 아차산로 111
-              </div>
-            </div>
-          </a>
-          <a class="rullet-a-name4" href="">
-            <div class="rullet-list-name4">
-              <div class="rulletlist-list-name">어쩌구 식당</div>
-              <div class="rulletlist-list-address">
-                서울특별시 성동구 아차산로 111
-              </div>
-            </div>
-          </a>
         </div>
       </div>
     </main>

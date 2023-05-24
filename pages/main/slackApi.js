@@ -4,8 +4,9 @@ function markDowntoPlainWords(message) {
   return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
 }
 
-function makeNotice(title, date) {
-  const outerDiv = document.createElement('div');
+function makeNotice(title, date, id) {
+  const outerDiv = document.createElement('a');
+  outerDiv.href = `../community/notice/detail/index.html#${id}`;
   const innerDiv1 = document.createElement('div');
   const innerDiv2 = document.createElement('div');
 
@@ -23,7 +24,17 @@ function dateToText(date) {
 }
 
 function getSlackNotice() {
-  fetch('http://43.200.63.91:3000/slackapi')
+  const data = JSON.parse(localStorage.getItem('notice'));
+  if (data) {
+    noticeContainer.innerHTML = '';
+    for (let i = 0; i < 5; i++) {
+      let { title, date, id } = data[i];
+      date = dateToText(date);
+      title = markDowntoPlainWords(title);
+      makeNotice(title, date, id);
+    }
+  }
+  fetch('http://localhost:3000/slackapi')
     .then(function (response) {
       if (response.ok) {
         return response.json();
@@ -31,11 +42,21 @@ function getSlackNotice() {
       throw new Error('Error: ' + response.status);
     })
     .then(function (data) {
-      for (let i = 2; i >= 0; i--) {
-        let { title, date } = data[i];
+      data = data.map((e, idx) => {
+        e.title = markDowntoPlainWords(e.title);
+        e.content = e.content.map(e => markDowntoPlainWords(e));
+        e.date = dateToText(e.date);
+        e.name = e.name === '' ? '익명' : e.name;
+        return (e = { ...e, id: idx });
+      });
+      localStorage.setItem('notice', JSON.stringify(data));
+      noticeContainer.innerHTML = '';
+      for (let i = 0; i < 5; i++) {
+        let { title, date, id } = data[i];
         date = dateToText(date);
         title = markDowntoPlainWords(title);
-        makeNotice(title, date);
+
+        makeNotice(title, date, id);
       }
     })
     .catch(function (error) {
@@ -44,4 +65,3 @@ function getSlackNotice() {
 }
 
 getSlackNotice();
-

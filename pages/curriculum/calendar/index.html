@@ -46,29 +46,30 @@
               </div>
               <div class="calendar-day">
                 <table id="calendar">
-                  <thead>
-                    <tr class="">
-                      <th class="day-week">일</th>
-                      <th class="day-week">월</th>
-                      <th class="day-week">화</th>
-                      <th class="day-week">수</th>
-                      <th class="day-week">목</th>
-                      <th class="day-week">금</th>
-                      <th class="day-week">토</th>
-                    </tr>
-                  </thead>
+                  <tr class="day-week">
+                    <th class="day-week">일</th>
+                    <th class="day-week">월</th>
+                    <th class="day-week">화</th>
+                    <th class="day-week">수</th>
+                    <th class="day-week">목</th>
+                    <th class="day-week">금</th>
+                    <th class="day-week">토</th>
+                  </tr>
                 </table>
               </div>
             </div>
             <div class="calendar2">
+              <div class="calendar2-row1">
                 <div id="monthly-schedule">
                   <p id="summaryMonth">mm월 주요 활동</p>
                   <ul></ul>
                 </div>
-                <div id="special-lecture"><p>특강</p>
+                <div id="special-time"><p>시간 특이사항</p>
                   <ul></ul>
                 </div>
-                <div id="special-time"><p>시간 특이사항</p>
+              </div>
+              <div class="calendar2-row2">
+                <div id="special-lecture"><p>특강</p>
                   <ul></ul>
                 </div>
               </div>
@@ -76,13 +77,13 @@
           </div>
         </div>
       </div>
+    </div>
     </main>
     <script src="./index.js"></script>
 
     <footer class="inner footer-component" id="footer"></footer>
 
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-     
     <script type="modules" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
   </body>
