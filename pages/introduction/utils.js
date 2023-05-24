@@ -10,6 +10,10 @@ export const setFadeIn = $target => {
   }, 100);
 };
 
+export const rotateImage = arr => {
+  return arr.unshift(arr.pop());
+};
+
 export const flipImages = arr => {
   [arr[0], arr[4]] = [arr[4], arr[0]];
   [arr[1], arr[5]] = [arr[5], arr[1]];

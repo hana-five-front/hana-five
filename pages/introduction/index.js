@@ -1,4 +1,4 @@
-import { flipImages, makeImageTags } from './utils.js';
+import { flipImages, makeImageTags, rotateImage } from './utils.js';
 
 const main = () => {
   const images = [
@@ -13,7 +13,7 @@ const main = () => {
   makeImageTags(images);
 
   setInterval(() => {
-    flipImages(images);
+    rotateImage(images);
     makeImageTags(images);
   }, 3000);
 };

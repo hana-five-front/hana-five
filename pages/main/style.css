@@ -1,11 +1,10 @@
 .main-component {
-  margin: 1.25rem;
-  height: 33.6875rem;
+  height: 38.6875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   justify-content: center;
+  width: 100%;
 }
 .middle-component {
   width: 60rem;
@@ -40,11 +39,10 @@
 .carousel-item {
   width: 36.25rem;
   height: 100%;
-  border: 1px solid;
+  border-radius: 0.3125rem;
   flex: 0 0 100%;
   display: flex;
   justify-content: space-between;
-  /* 각 슬라이드 아이템의 크기 조정 */
 }
 .mainCarouselTop {
   /*캐러셀 윗부분*/
@@ -54,30 +52,40 @@
   justify-content: space-between;
 }
 .mainCarouselText {
-  /* border: 1px solid green; */
   width: 26.25rem;
   height: 12.5rem;
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  padding-bottom: 0.625rem;
 }
 .mainCarouselText > :first-child {
+  width: 90%;
+  height: 2.5625rem;
+  font-size: 2.1875rem;
+  font-weight: bold;
+}
+
+.extraText {
   width: 70%;
   height: 3.5625rem;
   font-size: 2.1875rem;
+  color: #008485;
+  font-weight: bold;
 }
 .mainCarouselText > :last-child {
   width: 15.375rem;
   height: 1.4375rem;
   font-size: 0.9375rem;
+  color: #8b95a1;
 }
 .mainCarouselImage {
-  /* border: 1px solid red; */
-  width: 12.5rem;
-  height: 200px;
+  width: 14.5rem;
+  height: 16.5rem;
+  border-radius: 0.3125rem;
   background: #d9d9d9;
 }
 .middle-bottom {
-  /* border: 2px solid goldenrod; */
   width: 36.25rem;
   height: 1.875rem;
   display: flex;
@@ -115,7 +123,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
 }
 .todayTableTitle {
   width: 8.0625rem;
@@ -138,7 +146,7 @@
   height: 1.5rem;
   display: flex;
   align-items: center;
-  line-height: 150%;
+  text-align: center;
 }
 .whatShouldIEatButton {
   width: 5rem;
@@ -175,14 +183,14 @@
   justify-content: center;
 }
 
-.link-component > div > :first-child {
+.link-component > div > a > :first-child {
   margin-top: 0.3125rem;
   font-size: 1rem;
   height: 1.7rem;
   text-align: center;
 }
 
-.link-component > div > :last-child {
+.link-component > div > a > :last-child {
   font-size: 0.8125rem;
   color: #697684;
   height: 1.5rem;
@@ -192,6 +200,7 @@
 
 .list-component {
   margin-top: 1.25rem;
+  margin-bottom: 2.8125rem;
   width: 60rem;
   height: 6.8125rem;
   display: flex;
@@ -213,12 +222,14 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.3125rem;
+  border-bottom: 0.0625rem solid #008485;
 }
 
 .mainBottomNoticeText {
   width: 4.75rem;
   height: 1.5625rem;
   font-size: 1rem;
+  font-weight: bold;
 }
 
 .mainBottomNoticeLearnButton {
@@ -227,6 +238,7 @@
   border: none;
   font-size: 0.75rem;
   outline: none;
+  cursor: pointer;
 }
 
 .mainBottomNoticeBottom {
@@ -237,7 +249,7 @@
   align-items: center;
 }
 
-.mainBottomNoticeBottom > div {
+.mainBottomNoticeBottom > a {
   display: flex;
   width: 26.25rem;
   justify-content: space-between;
@@ -260,12 +272,14 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.3125rem;
+  border-bottom: 0.0625rem solid #008485;
 }
 
 .mainBottomBoardText {
   width: 4.75rem;
   height: 1.5625rem;
   font-size: 1rem;
+  font-weight: bold;
 }
 
 .mainBottomBoardLearnButton {
@@ -284,14 +298,91 @@
   align-items: center;
 }
 
-.mainBottomBoardBottom > div {
+.mainBottomBoardBottom > a {
   display: flex;
   width: 26.25rem;
   justify-content: space-between;
   height: 1.125rem;
   margin: 0.3125rem 0;
   font-size: 0.8125rem;
+  cursor: pointer;
 }
 a {
   text-decoration: none;
+}
+
+.mainBottomNoticeBottom > div {
+  display: flex;
+  width: 26.25rem;
+  justify-content: space-between;
+  height: 1.125rem;
+  margin: 0.3125rem 0;
+  font-size: 0.8125rem;
+  position: relative;
+}
+
+.wave-title {
+  display: flex;
+  width: 20.25rem;
+  justify-content: space-between;
+  height: 1.125rem;
+  margin: 0.3125rem 0;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  background-color: #d2d8e0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.3125rem;
+}
+.wave-date {
+  display: flex;
+  width: 4.25rem;
+  justify-content: space-between;
+  height: 1.125rem;
+  margin: 0.3125rem 0;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  background-color: #d2d8e0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.3125rem;
+}
+.wave-date::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.708) 0%,
+    rgba(201, 197, 197, 0.8) 50%,
+    rgba(255, 255, 255, 0.708) 100%
+  );
+  animation: wave-animation 3s infinite;
+}
+.wave-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.708) 0%,
+    rgba(201, 197, 197, 0.8) 50%,
+    rgba(255, 255, 255, 0.708) 100%
+  );
+  animation: wave-animation 3s linear infinite;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
 }
