@@ -1,4 +1,8 @@
-import { getLocalStorageItems,displayPage, displayPagination } from '../community.js';
+import {
+  getLocalStorageItems,
+  displayPage,
+  displayPagination,
+} from '../community.js';
 
 function markDowntoPlainWords(message) {
   return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
@@ -44,4 +48,4 @@ let pagination = document.querySelector('.boardPage');
 let posts = getLocalStorageItems(postType);
 
 displayPage(posts, currentPage, boardList);
-displayPagination(posts, currentPage, pagination, boardList);
+displayPagination(postType, currentPage, pagination, boardList);
