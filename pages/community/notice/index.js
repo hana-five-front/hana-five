@@ -1,7 +1,7 @@
 import {
+  getLocalStorageItems,
   displayPage,
   displayPagination,
-  getLocalStorageItems,
 } from '../community.js';
 
 function markDowntoPlainWords(message) {
@@ -48,4 +48,4 @@ let pagination = document.querySelector('.boardPage');
 let posts = getLocalStorageItems(postType);
 
 displayPage(posts, currentPage, boardList);
-displayPagination(posts, currentPage, pagination, boardList);
+displayPagination(postType, currentPage, pagination, boardList);
