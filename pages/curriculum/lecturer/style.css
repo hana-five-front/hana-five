@@ -62,7 +62,7 @@ a {
   align-self: stretch;
 }
 .lecturer-text {
-  font-size: 38px;
+  font-size: 2.375rem;
   font-weight: bold;
   color: #191f29;
 }
@@ -85,7 +85,7 @@ a {
   margin-bottom: 1.25rem;
 }
 .sub-title {
-  font-size: 30px;
+  font-size: 1.875rem;
   color: #008485;
   margin: 0 0 0.325rem 0;
 }
