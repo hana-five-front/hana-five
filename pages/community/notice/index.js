@@ -1,4 +1,8 @@
-import { getLocalStorageItems,displayPage, displayPagination } from '../community.js';
+import {
+  displayPage,
+  displayPagination,
+  getLocalStorageItems,
+} from '../community.js';
 
 function markDowntoPlainWords(message) {
   return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
