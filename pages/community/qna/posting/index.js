@@ -6,7 +6,7 @@ import {
   modifyPost,
 } from '../../community.js';
 
-let postType = 'qnaPosts';
+let postType = 'qna';
 let postingButton = document.querySelector('.postingButton');
 
 let postId = getPostId();

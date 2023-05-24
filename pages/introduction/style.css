@@ -32,9 +32,12 @@ header img {
 section {
   margin: var(--component-margin);
 }
+.talent {
+  margin-top: 10rem;
+}
 .intro {
   min-height: 27.5rem;
-  margin-bottom: 18rem;
+  margin: 15vh 0;
 }
 .introHeading {
   font-size: 2.75rem;
@@ -49,6 +52,12 @@ section {
 .introCard {
   width: 25rem;
   min-height: 12.5rem;
+}
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 .cardContent {
   color: #6b7684;
@@ -107,14 +116,14 @@ section {
 .images {
   width: 60rem;
   margin-bottom: 10rem;
-  transition: all 0.5s;
+  transition: all 0.8s ease-out;
 }
 .animationHidden {
   opacity: 0;
 }
 .animationFadeIn {
   opacity: 1;
-  transition: all 0.5s ease-out;
+  transition: all 0.8s ease-out;
 }
 .imagesContainer {
   display: grid;
@@ -136,6 +145,9 @@ section {
 }
 .timeline {
   margin-bottom: 4rem;
+}
+.timelineHeader {
+  box-shadow: 10px 0 5px -5px #999;
 }
 .timelineHeader p {
   position: absolute;

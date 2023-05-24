@@ -39,8 +39,8 @@ export function setBoard(key) {
       title: '좋은아침 이현주입니다',
     },
   ];
-  if (!localStorage.getItem('boardPosts'))
-    localStorage.setItem('boardPosts', JSON.stringify(initBoard));
+  if (!localStorage.getItem('board'))
+    localStorage.setItem('board', JSON.stringify(initBoard));
 }
 
 export function setLocalStorageItems(key, items) {
@@ -49,6 +49,10 @@ export function setLocalStorageItems(key, items) {
 
 export function getPostId() {
   return window.location.hash.substring(1).split('#');
+}
+
+export function getPostType() {
+  return window.location.href.split('/')[5];
 }
 
 export function getNextId(items) {
@@ -250,7 +254,7 @@ export function renderPost(postType) {
     } else {
       detailContext.textContent = post.content;
     }
-    renderComments((post.comments || []).reverse());
+    renderComments(postType, (post.comments || []).reverse());
   } else {
     alert('해당 게시글을 찾을 수 없습니다.');
     redirectTo('index');
@@ -323,14 +327,31 @@ export function submitComment(postType) {
   }
 
   post.comments.push({
+    id: getNextId(post.comments),
     name: commentName,
     content: commentContent,
   });
   setLocalStorageItems(postType, posts);
 
-  renderComments((post.comments || []).reverse());
+  renderComments(postType, (post.comments || []).reverse());
 
   resetInputs([detailCommentInputWriter, detailCommentInputContext]);
+}
+
+export function deleteComment(commentId) {
+  let postId = getPostId();
+  let postType = getPostType();
+  let posts = getLocalStorageItems(postType);
+  let post = findLocalStorageItemById(posts, postId);
+
+  post.comments = post.comments.filter(comment => comment.id != commentId);
+  findAndChangeLocalStorageItem(postType, posts, postId, post);
+  renderComments(postType, (post.comments || []).reverse());
+}
+
+export function deleteCommentHandler(event) {
+  const commentId = event.target.dataset.commentId;
+  deleteComment(commentId);
 }
 
 export function submitPost(postType) {
@@ -390,7 +411,7 @@ export function submitPost(postType) {
   }
 }
 
-function renderComments(comments) {
+function renderComments(postType, comments) {
   let detailCommentList = document.querySelector('.detailCommentList');
 
   resetElementContent([detailCommentList]);
@@ -407,8 +428,15 @@ function renderComments(comments) {
     contextElement.className = 'detailCommentContext';
     contextElement.textContent = comment.content;
 
+    let deleteCommentBtnElement = document.createElement('img');
+    deleteCommentBtnElement.className = 'deleteCommentBtn';
+    deleteCommentBtnElement.src = '/public/images/delete.svg';
+    deleteCommentBtnElement.dataset.commentId = comment.id;
+    deleteCommentBtnElement.addEventListener('click', deleteCommentHandler);
+
     commentElement.appendChild(writerElement);
     commentElement.appendChild(contextElement);
+    commentElement.appendChild(deleteCommentBtnElement);
     detailCommentList.appendChild(commentElement);
   }
 }

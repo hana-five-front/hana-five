@@ -10,7 +10,7 @@ const postType = 'notice';
 
 const modifyBtn = document.querySelector('.modifyBtn');
 const deleteBtn = document.querySelector('.deleteBtn');
-const detailCommentSubmit = document.querySelector('.detailCommentSubmit');
+const submitCommentBtn = document.querySelector('.submitCommentBtn');
 
 renderPost(postType);
 
@@ -22,6 +22,6 @@ deleteBtn.addEventListener('click', function () {
   deletePost(postType);
 });
 
-detailCommentSubmit.addEventListener('click', function () {
+submitCommentBtn.addEventListener('click', function () {
   submitComment(postType);
 });
