@@ -268,6 +268,15 @@ button {
   border-radius: 20%;
   cursor: pointer;
 }
+.sendImage.disabled:hover {
+  /* 조건이 충족되지 않을 때의 스타일 */
+  background-color: initial;
+  opacity: initial;
+  border-color: initial;
+  z-index: initial;
+  border-radius: initial;
+  cursor: initial;
+}
 .sendButton {
   z-index: 2;
 }

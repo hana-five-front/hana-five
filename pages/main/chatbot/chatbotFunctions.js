@@ -197,6 +197,7 @@ export const handleSubmitMessage = e => {
   const messageInput = document.getElementById('sendMessage');
   const value = messageInput.value;
   if (value === '') {
+    document.querySelector('.sendImage').classList.add('disabled');
     return;
   }
 
@@ -238,9 +239,38 @@ export const ChatbotFooter = () => {
   $chatbotFooter.style.bottom = 0;
 
   const sendImage = document.querySelector('.sendImage');
+  const messageInput = document.getElementById('sendMessage');
+
   sendImage.addEventListener('click', handleSubmitMessage);
 
-  document
-    .querySelector('.messageInputForm')
-    .addEventListener('submit', handleSubmitMessage);
+  const updateStyle = () => {
+    const value = messageInput.value;
+
+    if (value === '') {
+      sendImage.classList.add('disabled');
+    } else {
+      sendImage.classList.remove('disabled');
+    }
+  };
+
+  messageInput.addEventListener('input', updateStyle);
+  messageInput.addEventListener('change', updateStyle);
+
+  messageInput.addEventListener('input', function (event) {
+    const value = event.target.value;
+
+    if (value === '') {
+      sendImage.classList.add('disabled');
+    } else {
+      sendImage.classList.remove('disabled');
+    }
+  });
+
+  const messageForm = document.querySelector('.messageInputForm');
+  messageForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    handleSubmitMessage(e);
+  });
+
+  updateStyle();
 };
