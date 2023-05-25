@@ -89,7 +89,7 @@ export const ChatbotList = () => {
             </div>
           </li>
         `;
-    } else {
+    } else if (message.type === 'res') {
       tempInnerHTML += `
         <li class="resItem">
           <button 
@@ -104,6 +104,21 @@ export const ChatbotList = () => {
           </button>
         </li>
       `;
+    } else {
+      tempInnerHTML += `
+      <li class="resItem">
+        <button 
+          key=${message.resId} 
+          class="qnaButtonSelected" 
+          data-resId=${message.resId}
+          data-nextReqGroup=${message.nextReqGroup}
+          data-contents=${message.contents}
+        >
+          <span class="buttonIcon">🙋‍♂️</span>
+          <span class="buttonText">${message.contents}</span>
+        </button>
+      </li>
+    `;
     }
   });
 
@@ -177,14 +192,28 @@ export const ChatbotFAQButtons = () => {
 
 const handleSubmitMessage = e => {
   e.preventDefault();
-  const { value } = e.target;
+
+  const messageInput = document.getElementById('sendMessage');
+  const value = messageInput.value;
+
+  const resId = 10;
+  const contents = value;
+
+  e.target.setAttribute('data-resId', resId);
+  e.target.setAttribute('data-contents', contents);
 
   messages.push({
     id: messages.length,
-    type: 'res',
+    resId: 10,
+    type: 'manualRes',
     contents: value,
     createdAt: getFormatTime(Date.now()),
   });
+
+  const temp = ANSWER_LIST.filter(x => parseInt(x.resId) === 10);
+
+  temp[0].createdAt = getFormatTime(Date.now());
+  messages.push(temp[0]);
 
   renderContents();
 };
@@ -193,7 +222,7 @@ export const ChatbotFooter = () => {
   const $chatbotFooter = document.querySelector('.chatbotFooter');
   $chatbotFooter.innerHTML = `
     <form class="messageInputForm" onsubmit="handleSubmitMessage">
-      <input type="text" disabled id="sendMessage" placeholder="버튼으로 문의 해주세요..!"/>
+      <input type="text" id="sendMessage" placeholder="문의 사항을 입력해 주세요"/>
     </form>
     <div class="sendImage">
       <img src="/public/images/send.png" width="22px" height="22px"/>
@@ -202,6 +231,9 @@ export const ChatbotFooter = () => {
 
   $chatbotFooter.style.position = 'sticky';
   $chatbotFooter.style.bottom = 0;
+
+  const sendImage = document.querySelector('.sendImage');
+  sendImage.addEventListener('click', handleSubmitMessage);
 
   document
     .querySelector('.messageInputForm')
