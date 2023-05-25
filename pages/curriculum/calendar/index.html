@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="/styles/base-styles.css" />
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
-    <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
-
     <title>교육 과정</title>
     <style></style>
   </head>
@@ -42,9 +40,6 @@
           <div class="calendar-container">
             <div class="calendar1">
               <div class="calendar-month">
-                <button class="previous" onclick="prevCalendar()"><</button>
-                <div id="month">mm월</div>
-                <button class="next" onclick="nextCalendar()">></button>
               </div>
               <div class="calendar-day">
                 <table id="calendar">
@@ -66,14 +61,7 @@
                   <p id="summaryMonth">mm월 주요 활동</p>
                   <ul></ul>
                 </div>
-                <div id="special-time"><p>시간 특이사항</p>
-                  <ul></ul>
-                </div>
               </div>
-              <div class="calendar2-row2">
-                <div id="special-lecture"><p>특강</p>
-                  <ul></ul>
-                </div>
               </div>
             </div>
           </div>
@@ -91,10 +79,7 @@
         </a>
       </button>
     </div>
-   
-    <script src="./index.js"></script>
     <footer class="inner footer-component" id="footer"></footer>
-
     <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script defer type="modules" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>

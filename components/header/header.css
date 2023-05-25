@@ -125,28 +125,30 @@
   }
   .sideBar {
      position:fixed;
-     top: 4rem;
-     right: 3vw;
+     top: 3rem;
+     right: 4.5vw;
      background-color:white;
      width:8rem;
      border-radius: .3125rem;
      height: 9rem;
-     border: 1px solid #008484;
      display:none;
+     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
   .sideBar > ul {
-    height:100%;
+    padding-top: .5625rem;
+    height:8.375rem;
     display:flex;
     flex-direction: column;
     list-style-type: none;
-   
+    justify-content: space-evenly;
   }
   .sideBar > ul> li {
-    height:3rem;
-    border-bottom: 1px solid #008484;
+    height: 2.75em;
     display:flex;
     align-items: center;
     padding-left:3vw;
+
+   
   }
   .sideBar > ul > li > a {
     width:100%;
@@ -154,9 +156,10 @@
     display:flex;
     align-items: center;
     padding-left:2vw;
+    font-size: 0.9rem;
   }
   .sideBar > ul > :last-child {
-    border: none;
+    border:none;
   }
   ul, ol, li, a, input, select, textarea {
     margin: 0;
