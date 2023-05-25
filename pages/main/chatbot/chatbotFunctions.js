@@ -6,7 +6,6 @@ import {
   GEAR_ICON_SVG_TAG,
   messages,
 } from './chatbotData.js';
-import { sendQnaToSlack } from './chatbotSlackApi.js';
 
 export const setOpenModal = () => {
   const $modalContainer = document.querySelector('.modalContainer');
@@ -196,10 +195,9 @@ export const handleSubmitMessage = e => {
 
   const messageInput = document.getElementById('sendMessage');
   const value = messageInput.value;
-
-  const resId = 10;
-  const contents = value;
-  sendQnaToSlack(contents);
+  if (value === '') {
+    return;
+  }
 
   e.target.setAttribute('data-resId', resId);
   e.target.setAttribute('data-contents', contents);

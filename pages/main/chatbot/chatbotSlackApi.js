@@ -1,5 +1,5 @@
 export const sendQnaToSlack = content => {
-  fetch('http://43.200.63.91:3000/qna', {
+  fetch('http://localhost:3000/qna', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
