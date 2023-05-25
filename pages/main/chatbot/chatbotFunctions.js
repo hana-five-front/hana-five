@@ -6,6 +6,7 @@ import {
   GEAR_ICON_SVG_TAG,
   messages,
 } from './chatbotData.js';
+import { sendQnaToSlack } from './chatbotSlackApi.js';
 
 export const setOpenModal = () => {
   const $modalContainer = document.querySelector('.modalContainer');
@@ -190,7 +191,7 @@ export const ChatbotFAQButtons = () => {
   $qnaButtons.forEach(x => x.addEventListener('click', handleClickFAQButton));
 };
 
-const handleSubmitMessage = e => {
+export const handleSubmitMessage = e => {
   e.preventDefault();
 
   const messageInput = document.getElementById('sendMessage');
@@ -198,6 +199,7 @@ const handleSubmitMessage = e => {
 
   const resId = 10;
   const contents = value;
+  sendQnaToSlack(contents);
 
   e.target.setAttribute('data-resId', resId);
   e.target.setAttribute('data-contents', contents);
