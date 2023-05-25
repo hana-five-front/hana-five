@@ -10,6 +10,7 @@ function makeHeader() {
     })
     .then(function (headerContent) {
       document.getElementById('header').innerHTML = headerContent;
+      onClickSideBar();
     })
     .catch(function (error) {
       console.log(error);
@@ -17,6 +18,18 @@ function makeHeader() {
     .finally(() => {
       kakaoLoginInit();
     });
+}
+
+function onClickSideBar() {
+  const sideBar = document.querySelector('.sideBar');
+  const sideIcon = document.querySelector('.imo');
+  sideIcon.addEventListener('click', function () {
+    if (sideBar.style.display === 'none' || sideBar.style.display == '') {
+      sideBar.style.display = 'block';
+    } else {
+      sideBar.style.display = 'none';
+    }
+  });
 }
 // Footer 삽입
 function makeFooter() {

@@ -17,7 +17,7 @@
   }
 }
 
-@media ((min-width: 22.5rem) and (max-width: 75.625rem)) {
+@media (max-width: 75.625rem) {
   .intro {
   }
   img,

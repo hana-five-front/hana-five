@@ -31,6 +31,9 @@
   .imo > img {
     display:none;
   }
+  .sideBar{
+    display:none;
+  }
   .header-component > div > ul {
     font-size: 1.125rem;
     line-height: 150%;
@@ -68,7 +71,7 @@
 
 }
 
-@media ((min-width: 22.5rem) and (max-width: 75.625rem)) {
+@media ( max-width: 75.625rem) {
   .header-component {
     position:fixed;
     top:0;
@@ -108,10 +111,8 @@
   .header-component > div > ul > li:hover {
     color: #008484;
   }
-  .header-component > div > div {
-    
-  }
   .imo {
+    
     display:flex;
     justify-content: center;
     align-items: center;
@@ -122,4 +123,44 @@
   .header-component > div > div > button:hover {
     color: black;
   }
+  .sideBar {
+     position:fixed;
+     top: 4rem;
+     right: 3vw;
+     background-color:white;
+     width:8rem;
+     border-radius: .3125rem;
+     height: 9rem;
+     border: 1px solid #008484;
+     display:none;
+  }
+  .sideBar > ul {
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    list-style-type: none;
+   
+  }
+  .sideBar > ul> li {
+    height:3rem;
+    border-bottom: 1px solid #008484;
+    display:flex;
+    align-items: center;
+    padding-left:3vw;
+  }
+  .sideBar > ul > li > a {
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items: center;
+    padding-left:2vw;
+  }
+  .sideBar > ul > :last-child {
+    border: none;
+  }
+  ul, ol, li, a, input, select, textarea {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+}
 }
