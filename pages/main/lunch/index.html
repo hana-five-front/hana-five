@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/styles/base-styles.css" />
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
-    <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
@@ -20,10 +19,13 @@
         <div class="rullet-top-subtitle">디지털 하나로 주변 맛집 찾기</div>
       </div>
       <div class="roullet-component">
-       
-        <div class = "roullet-canvas">
+        <div class="roullet-canvas">
           <canvas width="300" height="300"></canvas>
-          <img src="../../../public/images/arrow.svg" width="120" class="rul-cursor"></img>
+          <img
+            src="../../../public/images/arrow.svg"
+            width="120"
+            class="rul-cursor"
+          />
         </div>
         <div>
           <button class="rullet-button" onclick="rotate()">
@@ -34,16 +36,14 @@
     </main>
 
     <footer class="inner footer-component" id="footer"></footer>
-
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-
-    <script type="modules" src="/scripts/apikey.js"></script>
-    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
-
     <script
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0ac5b958752d7cb070f6e4eb29c305bc&libraries=services"
     ></script>
-    <script src="index.js"></script>
+    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script defer type="modules" src="/scripts/apikey.js"></script>
+    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
+    <script defer type="module" src="/components/component.js"></script>
+    <script defer type="module" src="index.js"></script>
   </body>
 </html>

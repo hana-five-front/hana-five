@@ -1,16 +1,104 @@
 function buildCalendar(calendarData, holidayData, timeData, specialData) {
   let calendarTable = document.getElementById('calendar');
   let calendarTableTitle = document.getElementById('month');
-  let cell;
-  calendarTableTitle.innerHTML = today.getMonth() + 1 + '월';
+
+  var monthKey = today.getMonth() + 1 + '월';
 
   if (!calendarTable || !calendarTableTitle) {
     console.error('Error: Cannot find calendar table or month element.');
     return;
   }
 
+  renderCalendarTitle(calendarTableTitle);
+  renderCalendarTemplate();
+
+  renderCalendarContents(calendarData);
+
+  renderSpecialSchedules(specialData, monthKey, 'special-lecture');
+  renderSpecialSchedules(specialData, monthKey, 'monthly-schedule');
+  renderSpecialSchedules(specialData, monthKey, 'special-time');
+}
+
+let timetableData;
+let holidayData;
+let timeData;
+let specialData;
+let dataFetched = false;
+
+const fetchData = async () => {
+  try {
+    const timetableResponse = await fetch('./data/data.json');
+    const holidayResponse = await fetch('./data/holiday.json');
+    const timeResponse = await fetch('./data/time.json');
+    const specialResponse = await fetch('./data/info.json');
+
+    timetableData = await timetableResponse.json();
+    holidayData = await holidayResponse.json();
+    timeData = await timeResponse.json();
+    specialData = await specialResponse.json();
+
+    dataFetched = true;
+
+    buildCalendar(timetableData, holidayData, timeData, specialData);
+  } catch (error) {
+    console.error('Error fetching JSON:', error);
+  }
+};
+
+const fetchOrBuildCalendar = () => {
+  if (dataFetched) {
+    buildCalendar(timetableData, holidayData, timeData, specialData);
+  } else {
+    fetchData();
+  }
+};
+
+fetchOrBuildCalendar();
+
+var today = new Date();
+
+let currentDate = new Date();
+
+const prevCalendar = () => {
+  const targetYear = 2023;
+  const targetMonth = 3;
+
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+
+  if (currentYear === targetYear && currentMonth > targetMonth) {
+    today = new Date(
+      today.getFullYear(),
+      today.getMonth() - 1,
+      today.getDate()
+    );
+    fetchOrBuildCalendar();
+  }
+};
+
+const nextCalendar = () => {
+  const targetYear = 2023;
+  const targetMonth = 9;
+
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+
+  if (currentYear == targetYear && currentMonth < targetMonth) {
+    today = new Date(
+      today.getFullYear(),
+      today.getMonth() + 1,
+      today.getDate()
+    );
+    fetchOrBuildCalendar();
+  }
+};
+
+const renderCalendarTemplate = () => {
+  let calendarTable = document.getElementById('calendar');
+
   let firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
   let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+  let cell;
 
   while (calendarTable.rows.length > 1) {
     calendarTable.deleteRow(calendarTable.rows.length - 1);
@@ -19,6 +107,7 @@ function buildCalendar(calendarData, holidayData, timeData, specialData) {
   let row = null;
   let cnt = 0;
 
+  // 처음부터 1일의 첫 요일까지 셀 만들기
   row = calendarTable.insertRow();
   for (let i = 0; i < firstDate.getDay(); i++) {
     cell = row.insertCell();
@@ -26,6 +115,7 @@ function buildCalendar(calendarData, holidayData, timeData, specialData) {
     cnt += 1;
   }
 
+  // 1일 부터 마지막 날까지 셀 만들기
   for (let i = 1; i <= lastDate.getDate(); i++) {
     cell = row.insertCell();
     cnt += 1;
@@ -60,15 +150,27 @@ function buildCalendar(calendarData, holidayData, timeData, specialData) {
     }
   }
 
+  // 나머지 요일 그리기
   if (cnt % 7 != 0) {
-    for (i = 0; i < 7 - (cnt % 7); i++) {
+    for (let i = 0; i < 7 - (cnt % 7); i++) {
       cell = row.insertCell();
     }
   }
+};
+
+const renderCalendarTitle = $title => {
+  $title.innerHTML = `
+  ${(today.getMonth() + 1).toString().padStart(2, ' ')}월`;
+
+  document.querySelector('.previous').addEventListener('click', prevCalendar);
+  document.querySelector('.next').addEventListener('click', nextCalendar);
+};
+
+const renderCalendarContents = calendarData => {
+  let firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
+  let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 
   let monthKey = today.getMonth() + 1 + '월';
-  calendarTableTitle.innerHTML = monthKey;
-
   for (let i = 1; i < lastDate.getDate() + 1; i++) {
     let dayKey = document.getElementById(`${i}`);
     let divElement = dayKey.querySelector('div');
@@ -133,135 +235,30 @@ function buildCalendar(calendarData, holidayData, timeData, specialData) {
     }
 
     if (typeof time !== 'undefined') {
-      timeSpanElement.textContent = time.split(" ").join("");
+      timeSpanElement.textContent = time.split(' ').join('');
     } else {
       timeSpanElement.textContent = '';
     }
   }
+};
 
-  let scheduleInfo = specialData?.[monthKey]['monthly-schedule'];
-  let lectureInfo = specialData?.[monthKey]['special-lecture'];
-  let timeInfo = specialData?.[monthKey]['special-time'];
+const renderSpecialSchedules = (specialData, monthKey, specialScheduleName) => {
+  let lectureInfo = specialData?.[monthKey][specialScheduleName];
+  let $specialLecture = document.getElementById(specialScheduleName);
+  const $ulElements = $specialLecture.querySelector('ul');
+  $specialLecture.removeChild($ulElements);
+  let $ulElement = document.createElement('ul');
+  $specialLecture.appendChild($ulElement);
 
-  let monthlySchedule = document.getElementById('monthly-schedule');
-  let specialLecture = document.getElementById('special-lecture');
-  let specialTime = document.getElementById('special-time');
-
-  const ulElements1 = monthlySchedule.querySelector('ul');
-  const ulElements2 = specialLecture.querySelector('ul');
-  const ulElements3 = specialTime.querySelector('ul');
-
-  monthlySchedule.removeChild(ulElements1);
-  specialLecture.removeChild(ulElements2);
-  specialTime.removeChild(ulElements3);
-
-  let ulElement1 = document.createElement('ul');
-  let ulElement2 = document.createElement('ul');
-  let ulElement3 = document.createElement('ul');
-
-  monthlySchedule.appendChild(ulElement1);
-  specialLecture.appendChild(ulElement2);
-  specialTime.appendChild(ulElement3);
-
-  let summaryMonth = document.getElementById('summaryMonth');
-  summaryMonth.innerHTML = `${monthKey} 주요 활동`;
-
-  if (Array.isArray(scheduleInfo) && scheduleInfo.length > 0) {
-    scheduleInfo.forEach(item => {
-      const liElement = document.createElement('li');
-      liElement.textContent = item;
-      ulElement1.appendChild(liElement);
-    });
+  if (specialScheduleName === 'monthly-schedule') {
+    $specialLecture.children[0].innerHTML = `${monthKey} 주요 활동`;
   }
 
   if (Array.isArray(lectureInfo) && lectureInfo.length > 0) {
     lectureInfo.forEach(item => {
       const liElement = document.createElement('li');
       liElement.textContent = item;
-      ulElement2.appendChild(liElement);
+      $ulElement.appendChild(liElement);
     });
-  }
-
-  if (Array.isArray(timeInfo) && timeInfo.length > 0) {
-    timeInfo.forEach(item => {
-      const liElement = document.createElement('li');
-      liElement.textContent = item;
-      ulElement3.appendChild(liElement);
-    });
-  }
-}
-
-let timetableData;
-let holidayData;
-let timeData;
-let specialData;
-let dataFetched = false;
-
-const fetchData = async () => {
-  try {
-    const timetableResponse = await fetch('./data/data.json');
-    const holidayResponse = await fetch('./data/holiday.json');
-    const timeResponse = await fetch('./data/time.json');
-    const specialResponse = await fetch('./data/info.json');
-
-    timetableData = await timetableResponse.json();
-    holidayData = await holidayResponse.json();
-    timeData = await timeResponse.json();
-    specialData = await specialResponse.json();
-
-    dataFetched = true;
-
-    buildCalendar(timetableData, holidayData, timeData, specialData);
-  } catch (error) {
-    console.error('Error fetching JSON:', error);
-  }
-};
-
-const fetchOrBuildCalendar = () => {
-  if (dataFetched) {
-    buildCalendar(timetableData, holidayData, timeData, specialData);
-  } else {
-    fetchData();
-  }
-};
-
-fetchOrBuildCalendar();
-
-var today = new Date();
-var monthKey = today.getMonth() + 1 + '월';
-
-let currentDate = new Date();
-
-const prevCalendar = () => {
-  const targetYear = 2023;
-  const targetMonth = 3;
-
-  const currentYear = today.getFullYear();
-  const currentMonth = today.getMonth();
-
-  if (currentYear === targetYear && currentMonth > targetMonth) {
-    today = new Date(
-      today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate()
-    );
-    fetchOrBuildCalendar();
-  }
-};
-
-const nextCalendar = () => {
-  const targetYear = 2023;
-  const targetMonth = 9;
-
-  const currentYear = today.getFullYear();
-  const currentMonth = today.getMonth();
-
-  if (currentYear == targetYear && currentMonth < targetMonth) {
-    today = new Date(
-      today.getFullYear(),
-      today.getMonth() + 1,
-      today.getDate()
-    );
-    fetchOrBuildCalendar();
   }
 };

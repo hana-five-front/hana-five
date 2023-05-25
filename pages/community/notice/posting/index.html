@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="index.js"></script>
-    <script type="module" src="/components/component.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -46,11 +44,6 @@
                 type="text"
                 placeholder="제목을 입력하세요."
               />
-              <input
-                class="postingInputName"
-                type="text"
-                placeholder="이름 (미입력시 익명)"
-              />
             </div>
             <textarea class="postingInputContext"></textarea>
           </div>
@@ -72,9 +65,10 @@
 
     <footer class="inner footer-component" id="footer"></footer>
 
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-
-    <script type="modules" src="/scripts/apikey.js"></script>
+    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script defer type="modules" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
+    <script defer type="module" src="/components/component.js"></script>
+    <script defer type="module" src="index.js"></script>
   </body>
 </html>

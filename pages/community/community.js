@@ -84,6 +84,10 @@ export function changeLocalStorageItem(items, index, newItem) {
   }
 }
 
+export function filterPostsByKeyword(posts, keyword) {
+  return posts.filter(post => post.title.includes(keyword));
+}
+
 export function findAndDeleteLocalStorageItem(key, items, id) {
   let index = findLocalStorageItemIndexById(items, id);
   deleteLocalStorageItem(items, index);
@@ -155,14 +159,7 @@ export function displayPage(posts, currentPage, boardList) {
   }
 }
 
-export function displayPagination(
-  postType,
-  currentPage,
-  pagination,
-  boardList
-) {
-  let posts = getLocalStorageItems(postType);
-
+export function displayPagination(posts, currentPage, pagination, boardList) {
   let postsPerPage = 10;
   let totalPages = Math.ceil(posts.length / postsPerPage);
 
@@ -338,6 +335,18 @@ export function submitComment(postType) {
   resetInputs([detailCommentInputWriter, detailCommentInputContext]);
 }
 
+export function searchPost(postType, currentPage, pagination, boardList) {
+  let searchInput = document.querySelector('.boardSearchInput');
+  let keyword = searchInput.value;
+
+  let posts = filterPostsByKeyword(
+    getLocalStorageItems(postType).reverse(),
+    keyword
+  );
+
+  displayPage(posts, currentPage, boardList);
+  displayPagination(posts, currentPage, pagination, boardList);
+}
 export function deleteComment(commentId) {
   let postId = getPostId();
   let postType = getPostType();
@@ -356,13 +365,18 @@ export function deleteCommentHandler(event) {
 
 export function submitPost(postType) {
   let titleInput = document.querySelector('.postingInputTitle');
-  let nameInput = document.querySelector('.postingInputName');
+  let nameInput = null;
+  let name = null;
+  if (postType !== 'notice') {
+    nameInput = document.querySelector('.postingInputName');
+    name = nameInput.value;
+  }
   let contentInput = document.querySelector('.postingInputContext');
 
   let title = titleInput.value;
-  let name = nameInput.value;
-  if (name === '') {
-    name = '익명';
+
+  if (name == null) {
+    name = '관리자';
   }
   let content = contentInput.value;
   let date = new Date().toISOString().split('T')[0];
@@ -392,7 +406,7 @@ export function submitPost(postType) {
         },
         body: JSON.stringify({ text }),
       });
-      resetInputs([titleInput, nameInput, contentInput]);
+      resetInputs([titleInput, contentInput]);
       redirectTo('detail/index', post.id);
     } else {
       let post = {

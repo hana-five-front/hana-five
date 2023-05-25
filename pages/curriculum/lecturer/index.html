@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/styles/base-styles.css" />
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
-    <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>강사 소개</title>
     <style></style>
@@ -51,8 +50,19 @@
               <div class="name">
                 <h1 class="sub-title">정현희 지도 강사</h1>
                 <ul class="brief">
-                  <li>단국대 IT 석사</li>
+                  <li>단국대학교 IT 석사</li>
                   <li>강의 경력 25년 / 개발 경력 8년</li>
+                </ul>
+              </div>
+              <div class="lecture">
+                <h1 class="sub-title">강의 이력</h1>
+                <ul class="brief">
+                  <li>
+                    前 오산대학교 / 광운대학교 / 성신여대 외래교수 및 시간강사
+                  </li>
+                  <li>前 대한상공회의소 전임교수</li>
+                  <li>前 삼성 멀티캠퍼스 / LG / SK 기업 지도 강사</li>
+                  <li>現 알파코 금융서비스 개발 지도 강사</li>
                 </ul>
               </div>
               <div class="textbook">
@@ -63,17 +73,6 @@
                   <li>알기 쉬운 파이썬/SQL 코딩하기 2회 - 크라운 출판사</li>
                 </ul>
               </div>
-              <div class="lecture">
-                <h1 class="sub-title">강의 이력</h1>
-                <ul class="brief">
-                  <li>
-                    (전) 오산대학교 / 광운대학교 / 성신여대 외래교수 및 시간강사
-                  </li>
-                  <li>(전) 대한상공회의소 전임교수</li>
-                  <li>(전) 삼성 멀티캠퍼스 / LG SK 기업 강사/</li>
-                  <li>(현) 알파코 강사</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -82,9 +81,10 @@
 
     <footer class="inner footer-component" id="footer"></footer>
 
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-
-    <script type="modules" src="/scripts/apikey.js"></script>
+    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script defer type="modules" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
+    <script defer type="module" src="/components/component.js"></script>
+    <script defer type="module" src="index.js"></script>
   </body>
 </html>

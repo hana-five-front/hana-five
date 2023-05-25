@@ -1,4 +1,9 @@
-import { getLocalStorageItems,displayPage, displayPagination } from '../community.js';
+import {
+  getLocalStorageItems,
+  displayPage,
+  displayPagination,
+  searchPost,
+} from '../community.js';
 
 function markDowntoPlainWords(message) {
   return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
@@ -40,8 +45,22 @@ let currentPage = 1;
 
 let boardList = document.querySelector('.boardList');
 let pagination = document.querySelector('.boardPage');
+let searchBtn = document.querySelector('.boardButton');
+let searchInput = document.querySelector('.boardSearchInput');
 
-let posts = getLocalStorageItems(postType);
+let posts = getLocalStorageItems(postType).reverse();
+
+searchBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+  searchPost(postType, currentPage, pagination, boardList);
+});
+
+searchInput.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    searchBtn.click();
+  }
+});
 
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);

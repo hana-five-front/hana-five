@@ -11,16 +11,8 @@
     <link rel="stylesheet" href="introduce.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="module" defer src="./chatbot/chatbotData.js"></script>
-    <script type="module" defer src="./chatbot/Store.js"></script>
-    <script type="module" defer src="./chatbot/chatbotFunctions.js"></script>
-    <script type="module" defer src="./chatbot/chatbot.js"></script>
-    <script type="module" src="/components/component.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>디지털 하나로 메인 페이지</title>
-    <script async src="slackApi.js"></script>
-    <script src="board.js" type="module"></script>
-   
   </head>
   <body>
     <header class="inner header-component" id="header"></header>
@@ -35,7 +27,10 @@
                   <div class="extraText">디지털 하나로</div>
                   <div>#금융 #개발 #풀스택개발자</div>
                 </div>
-                <img class="mainCarouselImage" src="../../public/images/캐러셀1.png"></img>
+                <img
+                  class="mainCarouselImage"
+                  src="../../public/images/캐러셀1.png"
+                />
               </div>
 
               <div class="carousel-item bg-carousel2">
@@ -44,7 +39,10 @@
                   <div class="extraText">디지털 하나로</div>
                   <div>#청춘 #미래 #행복</div>
                 </div>
-                <img class="mainCarouselImage" src="../../public/images/캐러셀2.png"></img>
+                <img
+                  class="mainCarouselImage"
+                  src="../../public/images/캐러셀2.png"
+                />
                 <!-- 두 번째 슬라이드 내용 -->
               </div>
 
@@ -52,9 +50,12 @@
                 <div class="mainCarouselText">
                   <div>하나의 팀이 되는</div>
                   <div class="extraText">디지털 하나로</div>
-                  <div>#원팀 #좋은동료 </div>
+                  <div>#원팀 #좋은동료</div>
                 </div>
-                <img class="mainCarouselImage" src="../../public/images/캐러셀3.png"></img>
+                <img
+                  class="mainCarouselImage"
+                  src="../../public/images/캐러셀3.png"
+                />
                 <!-- 세 번째 슬라이드 내용 -->
               </div>
 
@@ -64,7 +65,10 @@
                   <div class="extraText">디지털 하나로~</div>
                   <div>#열공 #화이팅 #워라밸</div>
                 </div>
-                <img class="mainCarouselImage" src="../../public/images/캐러셀4.png"></img>
+                <img
+                  class="mainCarouselImage"
+                  src="../../public/images/캐러셀4.png"
+                />
                 <!-- 네 번째 슬라이드 내용 -->
               </div>
               <!-- 추가 슬라이드 아이템들 -->
@@ -85,9 +89,7 @@
         <div class="middle-right">
           <div class="todayTable">
             <div class="todayTableTitle">오늘 시간표</div>
-            <div class="todayTableContent">
-
-            </div>
+            <div class="todayTableContent"></div>
           </div>
           <a href="./lunch/index.html">
             <div class="whatShouldIEatButton" onclick="index.html">
@@ -131,7 +133,6 @@
             <a href="../community/notice" class="mainBottomNoticeLearnButton"
               >+더보기</a
             >
-          
           </div>
           <div class="mainBottomNoticeBottom">
             <div class="">
@@ -159,7 +160,9 @@
         <div class="mainBottomBoard">
           <div class="mainBottomBoardTop">
             <div class="mainBottomBoardText">자유게시판</div>
-            <a href="../community/board" class="mainBottomBoardLearnButton">+더보기</a>
+            <a href="../community/board" class="mainBottomBoardLearnButton"
+              >+더보기</a
+            >
           </div>
           <div class="mainBottomBoardBottom"></div>
         </div>
@@ -531,7 +534,13 @@
     </main>
 
     <section class="chatbotWrapper">
-      <div class="chatbotButton">🫡</div>
+      <div class="chatbotButton">
+        <img
+          class="chatbotButtonImage"
+          src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+          alt=""
+        />
+      </div>
     </section>
 
     <div class="modalBackground hidden"></div>
@@ -546,13 +555,22 @@
     </section>
 
     <footer class="inner footer-component" id="footer"></footer>
-    <script src="today.js"> </script>
-    <script src="index.js"></script>
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script type="modules" src="/scripts/apikey.js"></script>
+
+    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script defer type="modules" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
     <script>
       AOS.init();
     </script>
+
+    <script defer type="module" src="/components/component.js"></script>
+    <script defer src="slackApi.js"></script>
+    <script defer src="board.js" type="module"></script>
+    <script defer type="module" src="./chatbot/Store.js"></script>
+    <script defer type="module" src="./chatbot/chatbotData.js"></script>
+    <script defer type="module" src="./chatbot/chatbotFunctions.js"></script>
+    <script defer type="module" src="./chatbot/chatbot.js"></script>
+    <script defer src="today.js"></script>
+    <script defer src="index.js"></script>
   </body>
 </html>

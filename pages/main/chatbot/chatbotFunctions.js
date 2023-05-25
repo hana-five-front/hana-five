@@ -49,13 +49,13 @@ export const ChatbotHeader = () => {
   const $chatbotHeader = document.querySelector('.chatbotHeader');
   $chatbotHeader.innerHTML = `
     <img class="chevronLeft" src="/public/images/Chevron Left.svg" width="18px" height="18px"/>
+    <div class="chatLogoBox">
     <img
       class="headerLogo"
       alt="headerLogo"
-      src="https://cf.channel.io/avatar/emoji/mouse.91a2dc.png"
-      width="30px"
-      height="30px"
+      src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
     />
+    </div>
     <p class="headerTitle">하나은행 문의채널</p>
     ${GEAR_ICON_SVG_TAG}
   `;
@@ -77,13 +77,12 @@ export const ChatbotList = () => {
         tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
       }
       tempInnerHTML += `<div class="chatItemWrapper">
+      <div class="chatLogoBox" >
           <img
             class="headerLogo"
             alt="headerLogo"
-            src="https://cf.channel.io/avatar/emoji/mouse.91a2dc.png"
-            width="30px"
-            height="30px"
-          />
+            src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+          /></div>
             <div class="">
               <p class="chatName">하나은행 문의채널</p>
               <p class="chatItemContainer">${message.contents}</p>
@@ -114,13 +113,13 @@ export const ChatbotList = () => {
 export const ChatbotCharacter = () => {
   const $chatbotCharacter = document.querySelector('.chatbotCharacter');
   $chatbotCharacter.innerHTML = `
-    <img
-      class="profileImage"
-      alt="profileImage"
-      src="https://cf.channel.io/avatar/emoji/mouse.91a2dc.png"
-      width="96px"
-      height="96px"
-    />
+  <div class="profileImageBox">
+  <img
+    class="profileImage"
+    alt="profileImage"
+    src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+  />
+  </div>
     <p class="profileTitle">하나은행 문의채널에 문의하기</p>
     <p><span class="response">보통 수십 분 내 답변</span></p>
   `;
@@ -141,6 +140,7 @@ export const handleClickFAQButton = e => {
     x => parseInt(x.resId) === parseInt(question.resId)
   )[0];
   temp.createdAt = getFormatTime(Date.now());
+  temp.contents = temp.contents.replace(/\n/g, '<br>');
   messages.push(temp);
 
   renderContents();
@@ -178,6 +178,7 @@ export const ChatbotFAQButtons = () => {
 const handleSubmitMessage = e => {
   e.preventDefault();
   const { value } = e.target;
+
   messages.push({
     id: messages.length,
     type: 'res',
