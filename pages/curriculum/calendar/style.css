@@ -182,7 +182,7 @@ th {
 }
 .calendar2-row1 > div,
 .calendar2-row2 > div {
-  width: 50%;
+  width: 25%;
 }
 .calendar2-row2 {
   display: flex;
@@ -201,10 +201,11 @@ th {
 #special-lecture > ul {
   font-size: 1rem;
   margin: 0.625rem 0;
-  padding-inline-start: 1rem;
+  padding: 0;
 }
 .calendar2-row1 > div > ul > li {
   margin: 0.625rem 0;
+  list-style-type: none;
 }
 .sat {
   color: blue;

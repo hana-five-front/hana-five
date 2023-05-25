@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="style.css" />
-    <script defer type="module" src="/components/component.js"></script>
-    <script defer src="./index.js"></script>
     <title>교육 과정</title>
     <style></style>
   </head>
   <body>
     <header class="inner header-component" id="header"></header>
-    
+
     <main class="inner">
       <div class="container">
         <div class="aside">
@@ -35,14 +33,16 @@
         </div>
         <div class="page-container">
           <header>
-            <div class="calendar-head"><span class="calendar-text">교육 과정</span></div>
+            <div class="calendar-head">
+              <span class="calendar-text">교육 과정</span>
+            </div>
           </header>
           <div class="calendar-container">
             <div class="calendar1">
               <div class="calendar-month">
-                <button class="previous" onclick="prevCalendar()"><</button>
-                <div id="month">mm월</div>
-                <button class="next" onclick="nextCalendar()">></button>
+                <button class="previous">&lt;</button>
+                <div id="month"> 5월</div>
+                <button class="next">&gt;</button>
               </div>
               <div class="calendar-day">
                 <table id="calendar">
@@ -68,23 +68,23 @@
                   <p id="specialCommute">시간 특이사항</p>
                   <ul></ul>
                 </div>
-              </div>
-              <div class="calendar2-row2">
                 <div id="special-lecture">
                   <p id="specialLecture">특강</p>
                   <ul></ul>
                 </div>
+              </div>                
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </main>
     <footer class="inner footer-component" id="footer"></footer>
 
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script type="modules" src="/scripts/apikey.js"></script>
+    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script defer type="modules" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
+    <script defer type="module" src="/components/component.js"></script>
+    <script defer type="module" src="index.js"></script>
   </body>
 </html>

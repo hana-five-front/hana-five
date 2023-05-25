@@ -3,10 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width:100%;
+  width: 100%;
   border-bottom: 0.0625rem solid #008484;
   height: 5rem;
-
 }
 .header-component > div {
   display: flex;
@@ -31,6 +30,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 0px;
+  padding: 0px;
 }
 .header-component > div > ul > li {
   cursor: pointer;
