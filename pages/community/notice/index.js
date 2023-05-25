@@ -56,7 +56,7 @@ searchBtn.addEventListener('click', function (event) {
 });
 
 searchInput.addEventListener('keypress', function (e) {
-  if (e.keyCode === 13) {
+  if (e.key === 'Enter') {
     e.preventDefault();
     searchBtn.click();
   }
