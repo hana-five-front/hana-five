@@ -1,6 +1,6 @@
 .middle-component {
   display: flex;
-  padding-top: 50px;
+  padding-top: 3.125rem;
   justify-content: center;
   min-height: 50rem;
 }
@@ -20,8 +20,8 @@
   border-bottom: 0.1875rem solid #008485;
 }
 .asideContentList {
-  margin: 0rem;
-  padding: 0rem;
+  margin: 0r;
+  padding: 0;
 }
 .asideContent {
   width: 100%;
@@ -80,8 +80,8 @@
 }
 .boardList {
   min-height: 34.375rem;
-  margin: 0rem;
-  padding: 0rem 0.625rem;
+  margin: 0;
+  padding: 0 0.625rem;
 }
 .boardContent {
   height: 3.125rem;
@@ -111,11 +111,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: #ffffff 1px solid;
+  border: #ffffff 0.0625rem solid;
 }
 .boardPage > a:hover {
-  width: 23px;
-  border: #008485 1px solid;
+  width: 1.4375rem;
+  border: #008485 0.0625rem solid;
 }
 .firstPage {
   background-position: 3px -146px;

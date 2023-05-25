@@ -1,6 +1,6 @@
 .middle-component {
   display: flex;
-  padding-top: 50px;
+  padding-top: 3.125rem;
   justify-content: center;
   min-height: 50rem;
 }
@@ -20,8 +20,8 @@
   border-bottom: 0.1875rem solid #008485;
 }
 .asideContentList {
-  margin: 0rem;
-  padding: 0rem;
+  margin: 0;
+  padding: 0;
 }
 .asideContent {
   width: 100%;
@@ -61,7 +61,7 @@
 }
 .postingInputContext {
   width: 100%;
-  height: 400px;
+  height: 25rem;
   margin-top: 1.25rem;
 }
 .detailButtonBox {
