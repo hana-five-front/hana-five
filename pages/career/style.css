@@ -1,4 +1,7 @@
 @media (min-width: 75.625rem) {
+  .careerBoxAll-component > img {
+    display:none;
+  }
   .career-component {
     margin-top: 1.875rem;
     width: 16.0625rem;
