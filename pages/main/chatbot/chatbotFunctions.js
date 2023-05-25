@@ -227,7 +227,7 @@ export const ChatbotFooter = () => {
       <input type="text" id="sendMessage" placeholder="문의 사항을 입력해 주세요"/>
     </form>
     <div class="sendImage">
-      <img src="/public/images/send.png" width="22px" height="22px"/>
+      <img class="sendButton" src="/public/images/send.png" width="22px" height="22px"/>
     </div>
   `;
 
