@@ -152,7 +152,7 @@ const renderCalendarTemplate = () => {
 
   // 나머지 요일 그리기
   if (cnt % 7 != 0) {
-    for (i = 0; i < 7 - (cnt % 7); i++) {
+    for (let i = 0; i < 7 - (cnt % 7); i++) {
       cell = row.insertCell();
     }
   }
@@ -161,6 +161,9 @@ const renderCalendarTemplate = () => {
 const renderCalendarTitle = $title => {
   $title.innerHTML = `
   ${(today.getMonth() + 1).toString().padStart(2, ' ')}월`;
+
+  document.querySelector('.previous').addEventListener('click', prevCalendar);
+  document.querySelector('.next').addEventListener('click', nextCalendar);
 };
 
 const renderCalendarContents = calendarData => {
