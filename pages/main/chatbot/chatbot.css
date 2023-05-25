@@ -269,7 +269,6 @@ button {
   cursor: pointer;
 }
 .sendImage.disabled:hover {
-  /* 조건이 충족되지 않을 때의 스타일 */
   background-color: initial;
   opacity: initial;
   border-color: initial;

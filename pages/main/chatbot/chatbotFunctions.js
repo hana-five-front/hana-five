@@ -195,11 +195,8 @@ export const handleSubmitMessage = e => {
   e.preventDefault();
 
   const messageInput = document.getElementById('sendMessage');
-  const value = messageInput.value;
-  if (value === '') {
-    document.querySelector('.sendImage').classList.add('disabled');
-    return;
-  }
+  const value = messageInput.value.trim();
+  if (value === '') return;
 
   const resId = 10;
   const contents = value;
@@ -216,10 +213,11 @@ export const handleSubmitMessage = e => {
     createdAt: getFormatTime(Date.now()),
   });
 
-  const temp = ANSWER_LIST.filter(x => parseInt(x.resId) === 10);
-
-  temp[0].createdAt = getFormatTime(Date.now());
-  messages.push(temp[0]);
+  const temp = ANSWER_LIST.find(x => parseInt(x.resId) === 10);
+  if (temp) {
+    temp.createdAt = getFormatTime(Date.now());
+    messages.push(temp);
+  }
 
   renderContents();
 };
