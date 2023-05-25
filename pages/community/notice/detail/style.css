@@ -135,6 +135,11 @@
 .deleteCommentBtn {
   width: 15px;
   margin: 0px 12px;
+  opacity: 40%;
+}
+.deleteCommentBtn:hover {
+  cursor: pointer;
+  opacity: 90%;
 }
 .detailButtonBox {
   display: flex;
