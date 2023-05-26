@@ -50,17 +50,33 @@ let searchInput = document.querySelector('.boardSearchInput');
 
 let posts = getLocalStorageItems(postType).reverse();
 
-searchBtn.addEventListener('click', function (event) {
-  event.preventDefault();
-  searchPost(postType, currentPage, pagination, boardList);
-});
+let writeBtn = document.querySelector('.boardPostingButton');
 
-searchInput.addEventListener('keypress', function (e) {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-    searchBtn.click();
+export function postingButton() {
+  const sessionUser = sessionStorage.getItem('userName');
+  console.log(sessionUser);
+  if (!sessionUser) {
+    writeBtn.style.visibility = 'hidden';
+  } else {
+    writeBtn.style.visibility = 'visible';
   }
-});
+}
+
+postingButton();
+
+window.onload = function () {
+  searchBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    searchPost(postType, currentPage, pagination, boardList);
+  });
+
+  searchInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      searchBtn.click();
+    }
+  });
+};
 
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);
