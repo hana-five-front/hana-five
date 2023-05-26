@@ -5,7 +5,6 @@ document.getElementById('login').onclick = function () {
     window.Kakao.Auth.login({
       scope: 'profile_nickname, account_email',
       success: authObj => {
-
         window.Kakao.API.request({
           url: '/v2/user/me',
           success: res => {
@@ -14,7 +13,7 @@ document.getElementById('login').onclick = function () {
             alert('login success');
           },
           fail: res => {
-            console.log(res);
+            console.error(res);
           },
         });
       },

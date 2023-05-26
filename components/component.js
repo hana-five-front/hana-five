@@ -13,7 +13,7 @@ function makeHeader() {
       onClickSideBar();
     })
     .catch(function (error) {
-      console.log(error);
+      console.error(error);
     })
     .finally(() => {
       kakaoLoginInit();
@@ -44,7 +44,7 @@ function makeFooter() {
       document.getElementById('footer').innerHTML = footerContent;
     })
     .catch(function (error) {
-      console.log(error);
+      console.error(error);
     });
 }
 
