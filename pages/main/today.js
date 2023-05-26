@@ -10,7 +10,6 @@ const planData = async () => {
   const todayText = document.createElement('div')
   todayText.innerText = `${today[0]}년 ${today[1]}월 ${today[2]}일`
   todayTableTitle.appendChild(todayText)
-  console.log(today)
   let todayData = data[`${today[1]}월`][today[2]];
   if (todayData) {
     todayData.forEach(timeSchedule => {
