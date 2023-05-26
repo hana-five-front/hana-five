@@ -1,0 +1,161 @@
+@media (min-width: 75.625rem) {
+ 
+  .intro {
+    display: none;
+  }
+  .blind {
+    display: none;
+  }
+  .introCardsContainer {
+    display: none;
+  }
+  .talent {
+    display: none;
+  }
+  .timeline{
+    display:none;
+  }
+}
+
+@media (max-width: 75.625rem) {
+  .intro {
+    margin:0;
+  }
+  img,
+  video {
+    
+    max-width: 95vw;
+    overflow: hidden;
+  }
+  .introHeader{
+    margin:0;
+    height:5.5vh;
+  }
+  .blind {
+    display:none;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+  }
+  .introHeading {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+   
+  }
+  .introCardsContainer {
+    display: grid;
+
+    overflow: hidden;
+  }
+  .introCard {
+    width: 95vw;
+    display:flex;
+ 
+  }
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #008485;
+    padding: 4vh 0;
+
+  }
+  .cardContainer > :first-child{
+    padding-top:0;
+  }
+  .cardContent {
+    color: #6b7684;
+
+  
+  }
+  .introCardHeader {
+     
+    color: #008485;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom:3vh;
+  }
+  
+  .talent {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:95vw;
+  }
+  .sectionHeader {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .talentSubtitle {
+    width:100%;
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+  .talentText {
+    color: #6b7684;
+    font-size:1rem;
+    margin-bottom: 2rem;
+  }
+  .talentImgContainer {
+    margin-bottom: 2rem;
+  }
+
+  .animationHidden {
+    opacity: 0;
+  }
+  .animationFadeIn {
+    opacity: 1;
+    transition: all 0.8s ease-out;
+  }
+
+  .timelineItem {
+   
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .timelineHeader {
+    grid-column: span 2 / span 2;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #b1b1b1;
+    position: relative;
+    box-shadow: 10px 0 5px -5px #999;
+  }
+  .timeline {
+    margin-bottom: 4rem;
+  }
+  .timelineHeader p {
+    position: absolute;
+    left:2vw;
+    top: 0;
+    margin: 0;
+  }
+  .timelineContents {
+    position: relative;
+    grid-column: span 9 / span 9;
+    border-left: 3px solid var(--primary-color);
+    width: 100%;
+  }
+  .timelineDot {
+    position: absolute;
+    left: -1rem;
+    top: -0.9rem;
+  }
+  .timelineList {
+    padding: 1.5rem;
+    padding-bottom: 3rem;
+    margin: 0;
+    border-top: 2px solid #eee;
+    color: #6b7684;
+  }
+  .timelineListItem::marker {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+  }
+}

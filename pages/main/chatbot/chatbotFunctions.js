@@ -6,6 +6,7 @@ import {
   GEAR_ICON_SVG_TAG,
   messages,
 } from './chatbotData.js';
+import { sendQnaToSlack } from './chatbotSlackApi.js';
 
 export const setOpenModal = () => {
   const $modalContainer = document.querySelector('.modalContainer');
@@ -89,7 +90,7 @@ export const ChatbotList = () => {
             </div>
           </li>
         `;
-    } else {
+    } else if (message.type === 'res') {
       tempInnerHTML += `
         <li class="resItem">
           <button 
@@ -104,6 +105,21 @@ export const ChatbotList = () => {
           </button>
         </li>
       `;
+    } else {
+      tempInnerHTML += `
+      <li class="resItem">
+        <button 
+          key=${message.resId} 
+          class="qnaButtonSelected" 
+          data-resId=${message.resId}
+          data-nextReqGroup=${message.nextReqGroup}
+          data-contents=${message.contents}
+        >
+          <span class="buttonIcon">🙋‍♂️</span>
+          <span class="buttonText">${message.contents}</span>
+        </button>
+      </li>
+    `;
     }
   });
 
@@ -175,35 +191,91 @@ export const ChatbotFAQButtons = () => {
   $qnaButtons.forEach(x => x.addEventListener('click', handleClickFAQButton));
 };
 
-const handleSubmitMessage = e => {
+export const handleSubmitMessage = e => {
   e.preventDefault();
-  const { value } = e.target;
+
+  const messageInput = document.getElementById('sendMessage');
+  const value = messageInput.value.trim();
+  if (value === '') return;
+
+  const resId = 10;
+  const contents = value;
+  const userName = sessionStorage.getItem('userName');
+  sendQnaToSlack(userName, contents);
+
+  e.target.setAttribute('data-resId', resId);
+  e.target.setAttribute('data-contents', contents);
 
   messages.push({
     id: messages.length,
-    type: 'res',
+    resId: 10,
+    type: 'manualRes',
     contents: value,
     createdAt: getFormatTime(Date.now()),
   });
+
+  const temp = ANSWER_LIST.find(x => parseInt(x.resId) === 10);
+  if (temp) {
+    temp.createdAt = getFormatTime(Date.now());
+    messages.push(temp);
+  }
 
   renderContents();
 };
 
 export const ChatbotFooter = () => {
   const $chatbotFooter = document.querySelector('.chatbotFooter');
+  const userName = sessionStorage.getItem('userName');
+  const isLoggedin = Boolean(userName);
+  const inputDisabled = isLoggedin
+    ? 'placeholder="문의 사항을 입력해 주세요"'
+    : 'placeholder="로그인 후 이용해 주세요" disabled';
+
   $chatbotFooter.innerHTML = `
     <form class="messageInputForm" onsubmit="handleSubmitMessage">
-      <input type="text" disabled id="sendMessage" placeholder="버튼으로 문의 해주세요..!"/>
+      <input type="text" id="sendMessage" ${inputDisabled}/>
     </form>
     <div class="sendImage">
-      <img src="/public/images/send.png" width="22px" height="22px"/>
+      <img class="sendButton" src="/public/images/send.png" width="22px" height="22px"/>
     </div>
   `;
 
   $chatbotFooter.style.position = 'sticky';
   $chatbotFooter.style.bottom = 0;
 
-  document
-    .querySelector('.messageInputForm')
-    .addEventListener('submit', handleSubmitMessage);
+  const sendImage = document.querySelector('.sendImage');
+  const messageInput = document.getElementById('sendMessage');
+
+  sendImage.addEventListener('click', handleSubmitMessage);
+
+  const updateStyle = () => {
+    const value = messageInput.value;
+
+    if (value === '') {
+      sendImage.classList.add('disabled');
+    } else {
+      sendImage.classList.remove('disabled');
+    }
+  };
+
+  messageInput.addEventListener('input', updateStyle);
+  messageInput.addEventListener('change', updateStyle);
+
+  messageInput.addEventListener('input', function (event) {
+    const value = event.target.value;
+
+    if (value === '') {
+      sendImage.classList.add('disabled');
+    } else {
+      sendImage.classList.remove('disabled');
+    }
+  });
+
+  const messageForm = document.querySelector('.messageInputForm');
+  messageForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    handleSubmitMessage(e);
+  });
+
+  updateStyle();
 };

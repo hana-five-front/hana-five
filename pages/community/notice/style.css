@@ -1,167 +1,380 @@
-.middle-component {
-  display: flex;
-  padding-top: 3.125rem;
-  justify-content: center;
-  min-height: 50rem;
+@media (min-width: 75.625rem) {
+  .middle-component {
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    min-height: 50rem;
+  }
+  .aside {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.8125rem;
+  }
+  .asideTitle {
+    font-size: 1.375rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.625rem;
+    color: #008485;
+    border-bottom: 0.1875rem solid #008485;
+  }
+  .asideContentList {
+    margin: 0rem;
+    padding: 0rem;
+  }
+  .asideContent {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #191f29;
+    border-bottom: 0.0313rem #d1d6db solid;
+  }
+  .asideCommunityNotice {
+    color: #008485;
+  }
+  .boardComponent {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 4.375rem;
+  }
+  .boardSubject {
+    padding-bottom: 2.5rem;
+    font-size: 2.375rem;
+    font-weight: bold;
+    color: #191f29;
+  }
+  .boardTop {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.25rem;
+    border-bottom: 0.0313rem #6b7684 solid;
+  }
+  .boardSearchBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+  .boardSearchInput {
+    width: 16.75rem;
+    height: 1.8125rem;
+    margin-right: 0.625rem;
+  }
+  .boardPostingButton {
+    width: auto;
+  }
+  .boardPosting:hover {
+    color: #008485;
+  }
+  .boardList {
+    min-height: 34.375rem;
+    margin: 0rem;
+    padding: 0rem 0.625rem;
+  }
+  .boardContent {
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    border-bottom: 0.03rem #d1d6db solid;
+  }
+  .boardContent > a {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .boardContentInformation {
+    display: flex;
+  }
+  .boardContentDate {
+    margin-left: 1.25rem;
+  }
+  .boardPage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .boardPage > a {
+    width: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #ffffff 1px solid;
+  }
+  .boardPage > a:hover {
+    width: 23px;
+    border: #008485 1px solid;
+  }
+  .firstPage {
+    background-position: 3px -146px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    font-size: 0;
+    line-height: 0;
+  }
+  .firstPage:hover {
+    background-position: 3px -171px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  }
+  .prevPage {
+    background-position: 4px -96px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    font-size: 0;
+    line-height: 0;
+  }
+  .prevPage:hover {
+    background-position: 4px -121px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  }
+  .nextPage {
+    background-position: -33px -96px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    font-size: 0;
+    line-height: 0;
+  }
+  .nextPage:hover {
+    background-position: -33px -121px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  }
+  .endPage {
+    background-position: -32px -146px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    font-size: 0;
+    line-height: 0;
+  }
+  .endPage:hover {
+    background-position: -32px -171px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  }
+  button {
+    width: 6.125rem;
+    height: 1.8125rem;
+    color: #008485;
+    border: #008485 0.0625rem solid;
+    border-radius: 0.1563rem;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
 }
-.aside {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.8125rem;
+
+@media (max-width: 75.625rem) {
+  .middle-component {
+    display: flex;
+    margin-top: 5rem;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50rem;
+  }
+  .aside {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .asideTitle {
+    display: none;
+  }
+  .asideContentList {
+    margin: 0rem;
+    padding: 0rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .asideContentList > :last-child {
+    border-right: 0.0313rem #d1d6db solid;
+  }
+  .asideContent {
+    width: 33%;
+    height: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #191f29;
+    border-left: 0.0313rem #d1d6db solid;
+  }
+
+  .asideContent > a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .asideCommunityNotice {
+    color: #008485;
+  }
+  .boardComponent {
+    margin-top: 2rem;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .boardSubject {
+    padding-bottom: 2.5rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #191f29;
+  }
+  .boardTop {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+  }
+  .boardSearchBar {
+    display: flex;
+    width:73vw;
+    align-items: end;
+  }
+  .boardSearchInput {
+    width: 40vw;
+    height: 1.8125rem;
+    font-weight: bold;
+    border-bottom: 1px solid;
+  }
+  .boardSearchInput:focus {
+    outline: none;
+  }
+  .boardSearchButton {
+    width: 20vw;
+    height: 1.8125rem;
+    color: #008485;
+    border: #008485 0.0625rem solid;
+    border-radius: 0.1563rem;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+  .boardButton {
+    margin-left: 2vw;
+    width: 15vw;
+    height: 1.8125rem;
+    color: #008485;
+    border: #008485 0.0625rem solid;
+    border-radius: 0.1563rem;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+  .boardPosting:hover {
+    color: #008485;
+  }
+  .boardList {
+    width:100%;
+    min-height: 34.375rem;
+    margin: 0rem;
+    padding: 0rem 0.625rem;
+  }
+  .boardContent {
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+    border-bottom: 0.03rem #d1d6db solid;
+  }
+  .boardContentTitle {
+    font-size: 0.8rem;
+    max-width:60vw;
+  }
+  .boardContentName {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0.8rem;
+  }
+  .boardContentDate {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0.8rem;
+  }
+  .boardContent > a {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .boardContentInformation {
+    display: flex;
+  }
+  .boardContentDate {
+    margin-left: 1.25rem;
+  }
+  .boardPage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .boardPage > a {
+    width: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #ffffff 1px solid;
+  }
+  .boardPage > a:hover {
+    width: 23px;
+    border: #008485 1px solid;
+  }
+  .firstPage {
+    background-position: 3px -146px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    font-size: 0;
+    line-height: 0;
+  }
+  .firstPage:hover {
+    background-position: 3px -171px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  }
+  .prevPage {
+    background-position: 4px -96px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    font-size: 0;
+    line-height: 0;
+  }
+  .prevPage:hover {
+    background-position: 4px -121px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  }
+  .nextPage {
+    background-position: -33px -96px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    font-size: 0;
+    line-height: 0;
+  }
+  .nextPage:hover {
+    background-position: -33px -121px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  }
+  .endPage {
+    background-position: -32px -146px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    font-size: 0;
+    line-height: 0;
+  }
+  .endPage:hover {
+    background-position: -32px -171px;
+    background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  }
+  
 }
-.asideTitle {
-  font-size: 1.375rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  padding-bottom: 0.625rem;
-  color: #008485;
-  border-bottom: 0.1875rem solid #008485;
-}
-.asideContentList {
-  margin: 0;
-  padding: 0;
-}
-.asideContent {
-  width: 100%;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  color: #191f29;
-  border-bottom: 0.0313rem #d1d6db solid;
-}
-.asideCommunityNotice {
-  color: #008485;
-}
-.boardComponent {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 4.375rem;
-}
-.boardSubject {
-  padding-bottom: 2.5rem;
-  font-size: 2.375rem;
-  font-weight: bold;
-  color: #191f29;
-}
-.boardTop {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 1.25rem;
-  border-bottom: 0.0313rem #6b7684 solid;
-}
-.boardButton {
-  width: 6.125rem;
-  height: 1.8125rem;
-  color: #008485;
-  border: #008485 0.0625rem solid;
-  border-radius: 0.1563rem;
-  background-color: #ffffff;
-  cursor: pointer;
-}
-.boardSearchBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-}
-.boardSearchInput {
-  width: 16.75rem;
-  height: 1.8125rem;
-  margin-right: 0.625rem;
-}
-.boardPostingButton {
-  width: auto;
-}
-.boardPosting:hover {
-  color: #008485;
-}
-.boardList {
-  min-height: 34.375rem;
-  margin: 0;
-  padding: 0 0.625rem;
-}
-.boardContent {
-  height: 3.125rem;
-  display: flex;
-  align-items: center;
-  list-style: none;
-  border-bottom: 0.03rem #d1d6db solid;
-}
-.boardContent > a {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.boardContentInformation {
-  display: flex;
-}
-.boardContentDate {
-  margin-left: 1.25rem;
-}
-.boardPage {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.boardPage > a {
-  width: 23px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: #ffffff 0.0625rem solid;
-}
-.boardPage > a:hover {
-  width: 1.4375rem;
-  border: #008485 0.0625rem solid;
-}
-.firstPage {
-  background-position: 3px -146px;
-  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
-  background-repeat: no-repeat;
-  border: 1px solid #fff;
-  font-size: 0;
-  line-height: 0;
-}
-.firstPage:hover {
-  background-position: 3px -171px;
-  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
-}
-.prevPage {
-  background-position: 4px -96px;
-  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
-  background-repeat: no-repeat;
-  border: 1px solid #fff;
-  font-size: 0;
-  line-height: 0;
-}
-.prevPage:hover {
-  background-position: 4px -121px;
-  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
-}
-.nextPage {
-  background-position: -33px -96px;
-  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
-  background-repeat: no-repeat;
-  border: 1px solid #fff;
-  font-size: 0;
-  line-height: 0;
-}
-.nextPage:hover {
-  background-position: -33px -121px;
-  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
-}
-.endPage {
-  background-position: -32px -146px;
-  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
-  background-repeat: no-repeat;
-  border: 1px solid #fff;
-  font-size: 0;
-  line-height: 0;
-}
-.endPage:hover {
-  background-position: -32px -171px;
-  background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
-}
+

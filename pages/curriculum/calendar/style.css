@@ -1,212 +1,430 @@
-body {
-  display: flex;
-  flex-direction: column;
+@media(min-width: 75.625rem) {
+  .goToTeacher{
+    display:none;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    display: flex;
+  }
+  a {
+    text-decoration: none;
+    color: #191f29;
+  }
+  .container {
+    display: flex;
+    width: 62.5rem;
+    min-height: 50rem;
+    justify-content: center;
+    padding-top: 3.125rem;
+  }
+  .aside {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.8125rem;
+  }
+  .asideTitle {
+    font-size: 1.375rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.625rem;
+    color: #008485;
+    border-bottom: 0.1875rem solid #008485;
+  }
+  .asideContentList {
+    margin: 0rem;
+    padding: 0rem;
+  }
+  .asideContent {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #191f29;
+    border-bottom: 0.0313rem #d1d6db solid;
+  }
+  .aside-curriculum {
+    color: #008485;
+  }
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-bottom: 1.625rem;
+    margin-left: 4.375rem;
+  }
+  .calendar-head {
+    padding: 0 0 10px 0;
+    display: flex;
+    align-self: stretch;
+  }
+  .calendar-text {
+    font-size: 2.375rem;
+    font-weight: bold;
+    color: #191f29;
+  }
+  #month {
+    width: 6rem;
+    text-align: center;
+  }
+  .calendar-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #calendar .day {
+    text-align: left;
+    vertical-align: top;
+  }
+  .calendar1 {
+    width: 100%;
+    height: 100%;
+    min-height: 36.75rem;
+  }
+  .calendar-month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 0.625rem;
+  }
+  .calendar-month > button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.875rem;
+    font-weight: bold;
+    padding: 0 1.625rem;
+    cursor: pointer;
+  }
+  .calendar-month > button:hover {
+    color: #008484;
+  }
+  .calendar-day {
+    min-height: 25rem;
+    display: flex;
+    justify-content: center;
+    width: auto;
+  }
+  #calendar {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  td,
+  th {
+    border: 0.4px solid black;
+    padding: 0.3125rem;
+    box-sizing: border-box;
+    height: 6.25rem;
+    width: 5.125rem;
+  }
+  .cal-div {
+    width: 100%;
+    height: 100%;
+  }
+  .day > div {
+    position: relative;
+    height: 100%;
+    padding-top: 1rem;
+  }
+  .day-week {
+    height: 2.5rem;
+    background-color: #008484;
+    color: #f2f4f6;
+    font-size: 0.8rem;
+  }
+  .d-day {
+    font-size: 0.8125rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+  }
+  .holiday {
+    font-size: 0.7rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #333d4b;
+  }
+  .time {
+    font-size: 0.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: blue;
+  }
+  .day > div > ul {
+    list-style-type: none;
+    margin: 0;
+    padding-inline-start: 0;
+    font-size: 0.625rem;
+    display: block;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    overflow: hidden;
+  }
+  .day > div > ul > li {
+    width: 100%;
+    text-align: left;
+    font-size: 0.7rem;
+    word-break: break-all;
+  }
+  .calendar2-row1 {
+    display: flex;
+    justify-content: space-around;
+  }
+  .calendar2-row1 > div,
+  .calendar2-row2 > div {
+    width: 25%;
+  }
+  .calendar2-row2 {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 3.875rem;
+  }
+  #monthly-schedule > p,
+  #special-time > p,
+  #special-lecture > p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 2.25rem 0 1rem 0;
+  }
+  #monthly-schedule > ul,
+  #special-time > ul,
+  #special-lecture > ul {
+    font-size: 1rem;
+    margin: 0.625rem 0;
+    padding: 0;
+  }
+  .calendar2-row1 > div > ul > li {
+    margin: 0.625rem 0;
+    list-style-type: none;
+  }
+  .sat {
+    color: blue;
+  }
+  
 }
-main {
-  display: flex;
-}
-a {
-  text-decoration: none;
-  color: #191f29;
-}
-.container {
-  display: flex;
-  width: 62.5rem;
-  min-height: 50rem;
-  justify-content: center;
-  padding-top: 3.125rem;
-}
-.aside {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.8125rem;
-}
-.asideTitle {
-  font-size: 1.375rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  padding-bottom: 0.625rem;
-  color: #008485;
-  border-bottom: 0.1875rem solid #008485;
-}
-.asideContentList {
-  margin: 0rem;
-  padding: 0rem;
-}
-.asideContent {
-  width: 100%;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  color: #191f29;
-  border-bottom: 0.0313rem #d1d6db solid;
-}
-.aside-curriculum {
-  color: #008485;
-}
-.page-container {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  padding-bottom: 1.625rem;
-  margin-left: 4.375rem;
-}
-.calendar-head {
-  padding: 0 0 10px 0;
-  display: flex;
-  align-self: stretch;
-}
-.calendar-text {
-  font-size: 2.375rem;
-  font-weight: bold;
-  color: #191f29;
-}
-#month {
-  width: 6rem;
-  text-align: center;
-}
-.calendar-container {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-}
-#calendar .day {
-  text-align: left;
-  vertical-align: top;
-}
-.calendar1 {
-  width: 100%;
-  height: 100%;
-  min-height: 36.75rem;
-}
-.calendar-month {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.875rem;
-  font-weight: bold;
-  margin-bottom: 0.625rem;
-}
-.calendar-month > button {
-  background-color: transparent;
-  border: none;
-  font-size: 1.875rem;
-  font-weight: bold;
-  padding: 0 1.625rem;
-  cursor: pointer;
-}
-.calendar-month > button:hover {
-  color: #008484;
-}
-.calendar-day {
-  min-height: 25rem;
-  display: flex;
-  justify-content: center;
-  width: auto;
-}
-#calendar {
-  width: 100%;
-  height: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-}
-td,
-th {
-  border: 0.4px solid black;
-  padding: 0.3125rem;
-  box-sizing: border-box;
-  height: 6.25rem;
-  width: 5.125rem;
-}
-.cal-div {
-  width: 100%;
-  height: 100%;
-}
-.day > div {
-  position: relative;
-  height: 100%;
-  padding-top: 1rem;
-}
-.day-week {
-  height: 2.5rem;
-  background-color: #008484;
-  color: #f2f4f6;
-  font-size: 0.8rem;
-}
-.d-day {
-  font-size: 0.8125rem;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-}
-.holiday {
-  font-size: 0.7rem;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: #333d4b;
-}
-.time {
-  font-size: 0.5rem;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: blue;
-}
-.day > div > ul {
-  list-style-type: none;
-  margin: 0;
-  padding-inline-start: 0;
-  font-size: 0.625rem;
-  display: block;
-  flex-direction: column;
-  height: 100%;
-  align-items: center;
-  overflow: hidden;
-}
-.day > div > ul > li {
-  width: 100%;
-  text-align: left;
-  font-size: 0.7rem;
-  word-break: break-all;
-}
-.calendar2-row1 {
-  display: flex;
-  justify-content: space-around;
-}
-.calendar2-row1 > div,
-.calendar2-row2 > div {
-  width: 25%;
-}
-.calendar2-row2 {
-  display: flex;
-  justify-content: start;
-  margin-bottom: 3.875rem;
-}
-#monthly-schedule > p,
-#special-time > p,
-#special-lecture > p {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin: 2.25rem 0 1rem 0;
-}
-#monthly-schedule > ul,
-#special-time > ul,
-#special-lecture > ul {
-  font-size: 1rem;
-  margin: 0.625rem 0;
-  padding: 0;
-}
-.calendar2-row1 > div > ul > li {
-  margin: 0.625rem 0;
-  list-style-type: none;
-}
-.sat {
-  color: blue;
+
+@media (max-width: 75.625rem) {
+  .goToTeacher{
+    width:95%;
+    margin: 2rem 0;
+    display:flex;
+    justify-content: center;
+  }
+  .goToTeacherButton{
+    width:50%;
+    height: 5vh;
+    background-color: #008484;
+    border:none;
+    border-radius: .3125rem;
+    font-size:1rem;
+    color:white;
+  }
+  .goToTeacherButton > a{
+    width:100%;
+    height:100%;
+  }
+  body{
+    width:100%;
+  }
+  .calendar-main {
+    display: flex;
+    width:95%;
+    justify-content: center;
+  }
+  a {
+    text-decoration: none;
+    color: #191f29;
+  }
+  .container {
+    display: flex;
+    width: 100%;
+    min-height: 50rem;
+    padding-top: 3.125rem;
+  }
+  .aside {
+    display:none;
+  }
+  .calendar2{
+    display:none;
+  }
+
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 1.625rem;
+  }
+  .page-container > header {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+  }
+  .calendar-head {
+    margin-top:4rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-self: stretch;
+    text-align: center;
+    width:100vw;
+  }
+  .calendar-text {
+     width:100%;
+    text-align: center;;
+    font-size: 2.375rem;
+    font-weight: bold;
+    color: #191f29;
+  }
+  #month {
+    width: 6rem;
+    text-align: center;
+  }
+  .calendar-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #calendar .day {
+    text-align: left;
+    vertical-align: top;
+  }
+  .calendar1 {
+    width: 100%;
+    height: 100%;
+    min-height: 36.75rem;
+  }
+  .calendar-month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 0.625rem;
+  }
+  .calendar-month > button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.875rem;
+    font-weight: bold;
+    padding: 0 1.625rem;
+    cursor: pointer;
+  }
+  .calendar-month > button:hover {
+    color: #008484;
+  }
+  /* 여기가 고칠 곳 */
+  .calendar-day {
+    min-height: 25rem;
+    display: flex;
+    justify-content: center;
+    width:100%;
+  }
+  #calendar {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  td,
+  th {
+    border: 0.4px solid black;
+    padding: 0.3125rem;
+    box-sizing: border-box;
+    height: 3rem;
+    width: 3rem;
+    overflow:hidden;
+  }
+  .day{
+    height: 5rem;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+  }
+  .cal-div {
+    width: 100%;
+    height: 1rem;
+    -webkit-line-clamp: 4;
+  }
+  .day > div {
+    position: relative;
+    height: 100%;
+    padding-top: 1rem;
+    -webkit-line-clamp: 1;
+  }
+  .day-week {
+    height: 2.5rem;
+    background-color: #008484;
+    color: #f2f4f6;
+    font-size: 0.5rem;
+  }
+
+  .d-day {
+    font-size: 0.3125rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+  }
+  .holiday {
+    font-size: 0.01rem;
+    position: absolute;
+    top: 10;
+    left: 0;
+    color: #333d4b;
+  }
+  .time {
+    display:none;
+    font-size: 0.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: blue;
+  }
+  .day > div > ul {
+    list-style-type: none;
+    font-size: 0.625rem;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    overflow: hidden;
+  }
+  .day > div > ul > li {
+    width: 100%;
+    text-align: left;
+    font-size: 0.4rem;
+    -webkit-line-clamp: 4;
+  }
+  #monthly-schedule > p,
+  #special-time > p,
+  #special-lecture > p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 2.25rem 0 1rem 0;
+  }
+  #monthly-schedule > ul,
+  #special-time > ul,
+  #special-lecture > ul {
+    font-size: 1rem;
+    margin: 0.625rem 0;
+    padding-inline-start: 1rem;
+  }
+  .calendar2-row1 > div > ul > li {
+    margin: 0.625rem 0;
+  }
+  .sat {
+    color: blue;
+  }
 }

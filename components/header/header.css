@@ -1,59 +1,171 @@
-.header-component {
-  font-family: 'Hana2';
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border-bottom: 0.0625rem solid #008484;
-  height: 5rem;
-}
-.header-component > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media (min-width: 75.625rem) {
+  .header-component {
+    font-family: 'Hana2';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 0.0625rem solid #008484;
+    height: 5rem;
+  }
+  .header-component > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  height: 5rem;
-  width: 60rem;
-  height: 5rem;
-}
-.header-component > div > a > img {
-  width: 11.5rem;
-  height: 5rem;
+    height: 5rem;
+    width: 60rem;
+  }
+  .header-component > div > a {
+    width: 11.5rem;
+    height: 5rem;
+  }
+  .header-component > div > a > img {
+    width: 11.5rem;
+    height: 5rem;
+  }
+  .imo {
+    display: none;
+  }
+  .imo > img {
+    display: none;
+  }
+  .sideBar {
+    display: none;
+  }
+  .header-component > div > ul {
+    font-size: 1.125rem;
+    line-height: 150%;
+    width: 30.4375rem;
+    height: 5rem;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .header-component > div > ul > li {
+    cursor: pointer;
+  }
+  .header-component > div > ul > li:hover {
+    color: #008484;
+  }
+  .btnDiv {
+    display: flex;
+    align-items: center;
+  }
+  .header-component > div > div > button {
+    color: #8b95a1;
+    width: 4.0625rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+  .header-component > div > div > button:hover {
+    color: black;
+  }
 }
 
-.header-component > div > ul {
-  font-size: 1.125rem;
-  line-height: 150%;
-  width: 30.4375rem;
-  height: 5rem;
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0px;
-  padding: 0px;
-}
-.header-component > div > ul > li {
-  cursor: pointer;
-}
-.header-component > div > ul > li:hover {
-  color: #008484;
-}
-.header-component > div > div {
-  display: flex;
-  align-items: center;
-}
-.header-component > div > div > button {
-  color: #8b95a1;
-  width: 4.0625rem;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  font-size: 0.875rem;
-}
-.header-component > div > div > button:hover {
-  color: black;
+@media (max-width: 75.625rem) {
+  .header-component {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    background-color: white;
+    font-family: 'Hana2';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    border-bottom: 0.0625rem solid #008484;
+    height: 4rem;
+  }
+  .header-component > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 4rem;
+    width: 95%;
+  }
+  .header-component > div > a {
+    display: flex;
+    align-items: center;
+  }
+  .header-component > div > a > img {
+    height: 5rem;
+  }
+
+  .header-component > div > ul {
+    display: none;
+  }
+  .header-component > div > ul > li {
+    cursor: pointer;
+  }
+  .header-component > div > ul > li:hover {
+    color: #008484;
+  }
+  .imo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-component > div > div > button {
+    display: none;
+  }
+  .header-component > div > div > button:hover {
+    color: black;
+  }
+  .sideBar {
+    position: fixed;
+    top: 3rem;
+    right: 4.5vw;
+    background-color: white;
+    width: 8rem;
+    border-radius: 0.3125rem;
+    height: 9rem;
+    display: none;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  .sideBar > ul {
+    padding-top: 0.5625rem;
+    height: 8.375rem;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: space-evenly;
+  }
+  .sideBar > ul > li {
+    height: 2.75em;
+    display: flex;
+    align-items: center;
+    padding-left: 3vw;
+  }
+  .sideBar > ul > li > a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 2vw;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .sideBar > ul > :last-child {
+    border: none;
+  }
+  ul,
+  ol,
+  li,
+  a,
+  input,
+  select,
+  textarea {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+  }
 }

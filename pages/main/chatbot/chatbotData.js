@@ -93,6 +93,12 @@ export const ANSWER_LIST = [
     contents:
       '안녕하세요, 디지털 하나로 문의하기 화면입니다. 궁금한 사항을 클릭해주세요..!',
   },
+  {
+    id: 10,
+    resId: 10,
+    type: 'req',
+    contents: '문의해주신 내용은 담당자가 검토 후에 게시판에 게시하겠습니다.',
+  },
 ];
 
 export const messages = [
