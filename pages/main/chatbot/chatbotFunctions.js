@@ -150,6 +150,7 @@ export const ChatbotCharacter = () => {
 };
 
 export const handleClickFAQButton = e => {
+  const $modalContainer = document.querySelector('.modalContainer');
   const question = {};
   question['resId'] = e.target.dataset.resid;
   question['nextReqGroup'] = e.target.dataset.nextreqgroup;
@@ -168,6 +169,7 @@ export const handleClickFAQButton = e => {
   messages.push(temp);
 
   renderContents();
+  $modalContainer.scrollTop = $modalContainer.scrollHeight;
 };
 
 export const ChatbotFAQButtons = () => {
