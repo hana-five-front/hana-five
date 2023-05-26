@@ -1,4 +1,4 @@
-@media(min-width: 75.625rem) {
+@media (min-width: 75.625rem) {
   body {
     display: flex;
     flex-direction: column;
@@ -78,7 +78,6 @@
     width: 14.0625rem;
   }
   .info2 {
-    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -101,37 +100,35 @@
   }
 }
 
-@media(max-width: 75.625rem) {
-
+@media (max-width: 75.625rem) {
   ul li {
     list-style-type: none;
   }
-  .aside{
-    display:none;
+  .aside {
+    display: none;
   }
   .lecturer-main {
     width: 95vw;
-    display:flex;
+    display: flex;
     justify-content: center;
     flex-direction: column;
   }
   .lecture-info {
-    margin-top: 6rem;
     padding-bottom: 1.625rem;
-    width: 100%;
+    width: 95vw;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .lecturer-head{
-    font-size:2rem;
+  .lecturer-head {
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom:2vh;
+    margin-bottom: 2vh;
   }
-  
-  .info-container{
+
+  .info-container {
     width: 95vw;
-    display:flex;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -140,30 +137,38 @@
     height: 9.75rem;
     width: 7.0625rem;
   }
-  .info2{
-    display:flex;
+  .info2 {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
   .name {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .textbook{
-    display:flex;
+  .textbook {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
   .lecture {
-    display:flex;
+    max-width: 95vw;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
-  .sub-title{
-    font-size:1.5rem;
+  .sub-title {
+    font-size: 1.5rem;
+  }
+  .brief {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    justify-content: center;
+  }
+  .brief > li {
+    margin-left: 2.5vw;
   }
 }
-
-
-

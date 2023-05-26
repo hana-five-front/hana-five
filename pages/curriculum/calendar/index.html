@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../lecturer/style.css"/>
     <title>교육 과정</title>
     <style></style>
   </head>
@@ -43,23 +44,13 @@
               </div>
               <div class="calendar-day">
                 <table id="calendar">
-                  <tr class="day-week">
-                    <th class="day-week">일</th>
-                    <th class="day-week">월</th>
-                    <th class="day-week">화</th>
-                    <th class="day-week">수</th>
-                    <th class="day-week">목</th>
-                    <th class="day-week">금</th>
-                    <th class="day-week">토</th>
-                  </tr>
                 </table>
               </div>
             </div>
             <div class="calendar2">
               <div class="calendar2-row1">
                 <div id="monthly-schedule">
-                  <p id="summaryMonth">mm월 주요 활동</p>
-                  <ul></ul>
+
                 </div>
               </div>
               </div>
@@ -73,11 +64,70 @@
 
     </main>
     <div class="goToTeacher">
-      <button class="goToTeacherButton" >
-        <a href="../lecturer/index.html">
-          강사 소개
-        </a>
-      </button>
+      <main class="inner lecturer-main">
+        <div class="container">
+          <div class="aside">
+            <div class="asideTitle">교육</div>
+            <ul class="asideContentList">
+              <li class="asideContent">
+                <a class="asideMenu" href="../calendar/index.html">
+                  <p class="aside-curriculum">교육 과정</p>
+                </a>
+              </li>
+              <li class="asideContent">
+                <a class="asideMenu" href="../lecturer/index.html">
+                  <p class="aside-lecturer">강사 소개</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="lecture-info">
+            <header>
+              <div class="lecturer-head">
+                <span class="lecturer-text">강사 소개</span>
+              </div>
+            </header>
+            <div class="info-container">
+              <div class="info1">
+                <div class="profile-image">
+                  <img
+                    src="/public/images/lecturerProfileImage.png"
+                    alt="강사 프로필 사진"
+                  />
+                </div>
+              </div>
+              <div class="info2">
+                <div class="name">
+                  <h1 class="sub-title">정현희 지도 강사</h1>
+                  <ul class="brief">
+                    <li>단국대학교 IT 석사</li>
+                    <li>강의 경력 25년 / 개발 경력 8년</li>
+                  </ul>
+                </div>
+                <div class="lecture">
+                  <h1 class="sub-title">강의 이력</h1>
+                  <ul class="brief">
+                    <li>
+                      前 오산대학교 / 광운대학교 / 성신여대 외래교수 및 시간강사
+                    </li>
+                    <li>前 대한상공회의소 전임교수</li>
+                    <li>前 삼성 멀티캠퍼스 / LG / SK 기업 지도 강사</li>
+                    <li>現 알파코 금융서비스 개발 지도 강사</li>
+                  </ul>
+                </div>
+                <div class="textbook">
+                  <h1 class="sub-title" id="textbook">교재 집필 이력</h1>
+                  <ul class="brief">
+                    <li>알기 쉬운 스크래치 C코딩 - 크라운 출판사</li>
+                    <li>알기 쉬운 파이썬/SQL 코딩하기 1회 - 크라운 출판사</li>
+                    <li>알기 쉬운 파이썬/SQL 코딩하기 2회 - 크라운 출판사</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
     <footer class="inner footer-component" id="footer"></footer>
     <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>

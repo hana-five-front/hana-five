@@ -235,17 +235,17 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 0.5rem;
-    border-bottom: 0.0313rem #6b7684 solid;
   }
   .boardSearchBar {
     display: flex;
-    justify-content: space-between;
+    width:73vw;
     align-items: end;
   }
   .boardSearchInput {
-    width: 53vw;
+    width: 40vw;
     height: 1.8125rem;
     font-weight: bold;
+    border-bottom: 1px solid;
   }
   .boardSearchInput:focus {
     outline: none;
@@ -259,9 +259,9 @@
     background-color: #ffffff;
     cursor: pointer;
   }
-  .boardPostingButton > button {
+  .boardButton {
     margin-left: 2vw;
-    width: 20vw;
+    width: 15vw;
     height: 1.8125rem;
     color: #008485;
     border: #008485 0.0625rem solid;
@@ -269,6 +269,7 @@
     background-color: #ffffff;
     cursor: pointer;
   }
+
   .boardPosting:hover {
     color: #008485;
   }
