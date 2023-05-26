@@ -5,7 +5,7 @@ import {
   searchPost,
 } from '../community.js';
 
-function markDowntoPlainWords(message) {
+function markDownToPlainWords(message) {
   return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
 }
 
@@ -23,8 +23,8 @@ function getSlackNotice() {
     })
     .then(data => {
       data = data.map((e, idx) => {
-        e.title = markDowntoPlainWords(e.title);
-        e.content = e.content.map(e => markDowntoPlainWords(e));
+        e.title = markDownToPlainWords(e.title);
+        e.content = e.content.map(e => markDownToPlainWords(e));
         e.date = dateToText(e.date);
         e.name = e.name === '' ? '익명' : e.name;
         return (e = { ...e, id: idx });
@@ -33,7 +33,7 @@ function getSlackNotice() {
       return data;
     })
     .catch(function (error) {
-      console.log(error);
+      console.error(error);
     });
 }
 

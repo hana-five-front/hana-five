@@ -7,20 +7,20 @@ export const kakaoLoginInit = () => {
 
   const sessionUser = sessionStorage.getItem('userName');
   if (!sessionUser) {
-    loginBtn.innerText = '카카오\n로그인';
+    loginBtn.innerText = '로그인';
   } else {
-    loginBtn.innerText = '카카오\n로그아웃';
+    loginBtn.innerText = '로그아웃';
   }
 
   document.querySelector('#login').addEventListener('click', function () {
-    if (loginBtn.innerText == '카카오\n로그인') {
+    if (loginBtn.innerText == '로그인') {
       window.Kakao.Auth.login({
         scope: 'profile_nickname, account_email',
         success: authObj => {
           window.Kakao.API.request({
             url: '/v2/user/me',
             success: res => {
-              loginBtn.innerText = '카카오\n로그아웃';
+              loginBtn.innerText = '로그아웃';
               const kakao_account = res.kakao_account;
               alert('login success');
 
@@ -36,7 +36,7 @@ export const kakaoLoginInit = () => {
           });
         },
       });
-    } else if (loginBtn.innerText == '카카오\n로그아웃') {
+    } else if (loginBtn.innerText == '로그아웃') {
       if (!Kakao.Auth.getAccessToken()) {
         alert('Not logged in.');
         return;
@@ -44,7 +44,7 @@ export const kakaoLoginInit = () => {
         Kakao.Auth.logout(function () {
           window.sessionStorage.setItem('userName', '');
           window.sessionStorage.setItem('userMail', '');
-          loginBtn.innerText = '카카오\n로그인';
+          loginBtn.innerText = '로그인';
           alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
         });
       }

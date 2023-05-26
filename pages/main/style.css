@@ -13,7 +13,6 @@
     display: flex;
     justify-content: space-between;
   }
-  
   .middle-left {
     /*캐러셀 부분 전체*/
     width: 36.25rem;
@@ -22,7 +21,6 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  
   .carousel {
     width: 36.25rem;
     height: 12.5rem;
@@ -36,7 +34,6 @@
     display: flex;
     transition: transform 0.3s ease;
   }
-  
   .carousel-item {
     width: 36.25rem;
     height: 100%;
@@ -44,7 +41,6 @@
     flex: 0 0 100%;
     display: flex;
     justify-content: space-between;
-    
   }
   .mainCarouselTop {
     /*캐러셀 윗부분*/
@@ -67,7 +63,6 @@
     font-size: 2.1875rem;
     font-weight: bold;
   }
-  
   .extraText {
     width: 70%;
     height: 3.5625rem;
@@ -109,7 +104,6 @@
     justify-content: center;
     align-items: center;
   }
-  
   .middle-right {
     width: 14.9375rem;
     height: 14.375rem;
@@ -160,21 +154,18 @@
     align-items: center;
     cursor: pointer;
   }
-  
   .whatShouldIEatButton > span {
     color: #fff;
   }
-  
   .link-component {
     margin-top: 1.875rem;
     width: 60rem;
-    height: 6.25rem;
+    height: 7.25rem;
     display: flex;
     align-items: center;
     background: #ecf0f1;
     border-radius: 0.1875rem;
   }
-  
   .link-component > div {
     width: 15rem;
     height: 6.25rem;
@@ -183,14 +174,12 @@
     align-items: center;
     justify-content: center;
   }
-  
   .link-component > div > a > :first-child {
     margin-top: 0.3125rem;
     font-size: 1rem;
     height: 1.7rem;
     text-align: center;
   }
-  
   .link-component > div > a > :last-child {
     font-size: 0.8125rem;
     color: #697684;
@@ -198,24 +187,20 @@
     text-align: center;
     margin-top: 0.5rem;
   }
-  
   .list-component {
-    margin-top: 1.25rem;
+    margin-top: 2rem;
     margin-bottom: 2.8125rem;
     width: 60rem;
-    height: 6.8125rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .mainBottomNotice {
     width: 26.25rem;
-    height: 6.8125rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
   .mainBottomNoticeTop {
     width: 26.25rem;
     height: 1.5625rem;
@@ -225,14 +210,12 @@
     margin-bottom: 0.3125rem;
     border-bottom: 0.0625rem solid #008485;
   }
-  
   .mainBottomNoticeText {
-    width: 4.75rem;
-    height: 1.5625rem;
-    font-size: 1rem;
+    height: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
     font-weight: bold;
   }
-  
   .mainBottomNoticeLearnButton {
     background-color: transparent;
     text-align: right;
@@ -241,7 +224,6 @@
     outline: none;
     cursor: pointer;
   }
-  
   .mainBottomNoticeBottom {
     width: 26.25rem;
     height: 5.25rem;
@@ -249,7 +231,6 @@
     flex-direction: column;
     align-items: center;
   }
-  
   .mainBottomNoticeBottom > a {
     display: flex;
     width: 26.25rem;
@@ -265,7 +246,6 @@
     flex-direction: column;
     justify-content: center;
   }
-  
   .mainBottomBoardTop {
     width: 26.25rem;
     height: 1.5625rem;
@@ -275,14 +255,12 @@
     margin-bottom: 0.3125rem;
     border-bottom: 0.0625rem solid #008485;
   }
-  
   .mainBottomBoardText {
-    width: 4.75rem;
-    height: 1.5625rem;
-    font-size: 1rem;
+    height: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
     font-weight: bold;
   }
-  
   .mainBottomBoardLearnButton {
     background-color: transparent;
     text-align: right;
@@ -290,7 +268,6 @@
     font-size: 0.75rem;
     outline: none;
   }
-  
   .mainBottomBoardBottom {
     width: 26.25rem;
     height: 5.25rem;
@@ -298,7 +275,6 @@
     flex-direction: column;
     align-items: center;
   }
-  
   .mainBottomBoardBottom > a {
     display: flex;
     width: 26.25rem;
@@ -311,7 +287,6 @@
   a {
     text-decoration: none;
   }
-  
   .mainBottomNoticeBottom > div {
     display: flex;
     width: 26.25rem;
@@ -321,7 +296,6 @@
     font-size: 0.8125rem;
     position: relative;
   }
-  
   .wave-title {
     display: flex;
     width: 20.25rem;
@@ -378,7 +352,7 @@
     );
     animation: wave-animation 3s linear infinite;
   }
-  
+
   @keyframes wave-animation {
     0% {
       transform: translateX(0);
@@ -387,15 +361,11 @@
       transform: translateX(50%);
     }
   }
-  
 }
-
-
 
 @media (max-width: 75.625rem) {
   /* header주석처리함 */
   #header {
-    
   }
   .main-component {
     display: flex;
@@ -411,7 +381,7 @@
     display: flex;
     align-items: center;
   }
-  .middle-left { 
+  .middle-left {
     /* 캐러셀파트 */
     /*캐러셀 부분 전체*/
     position: relative;
@@ -434,7 +404,6 @@
     display: flex;
     transition: transform 0.3s ease;
   }
-
   .carousel-item {
     width: 100%;
     height: 100%;
@@ -442,35 +411,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-   
-    
   }
-  
-  .bg-carousel1{
-    background-image:url('../../public/images/캐러셀1.jpg');
+  .bg-carousel1 {
+    background-image: url('../../public/images/캐러셀1.jpg');
     background-size: cover;
     background-position: center;
-    filter:brightness(70%);
-    z-index:-1;
+    filter: brightness(70%);
+    z-index: -1;
   }
-  .bg-carousel2{
-    background-image:url('../../public/images/캐러셀2.jpg');
+  .bg-carousel2 {
+    background-image: url('../../public/images/캐러셀2.jpg');
     background-size: cover;
-    filter:brightness(70%);
+    filter: brightness(70%);
   }
-  .bg-carousel3{
-    background-image:url('../../public/images/캐러셀3.jpg');
+  .bg-carousel3 {
+    background-image: url('../../public/images/캐러셀3.jpg');
     background-size: cover;
-    filter:brightness(70%);
+    filter: brightness(70%);
   }
-  .bg-carousel4{
-    background-image:url('../../public/images/캐러셀4.jpg');
+  .bg-carousel4 {
+    background-image: url('../../public/images/캐러셀4.jpg');
     background-size: cover;
     background-position: center;
-    filter:brightness(70%);
-    
+    filter: brightness(70%);
   }
-
   .mainCarouselText {
     width: 20rem;
     height: 12.5rem;
@@ -479,18 +443,15 @@
     align-items: center;
     flex-direction: column;
     font-size: 0.5rem;
-    filter:brightness(1);
-
-   
+    filter: brightness(1);
   }
-
   .mainCarouselText > :first-child {
     width: 100%;
     height: 2.5625rem;
     font-size: 2rem;
     text-align: center;
     font-weight: bold;
-    color:pink;
+    color: pink;
   }
   .extraText {
     width: 100%;
@@ -501,22 +462,22 @@
     font-weight: bold;
   }
   .mainCarouselText > :last-child {
-    margin-top:3vh;
+    margin-top: 3vh;
     width: 100%;
     height: 1.4375rem;
     font-size: 2rem;
     text-align: center;
     font-weight: bold;
-    color:white;
+    color: white;
   }
   .mainCarouselImage {
-    display:none;
+    display: none;
   }
   .middle-bottom {
-    display:none;
+    display: none;
   }
   .carousel-buttons {
-    display:none;
+    display: none;
   }
   .carousel-buttons > div {
     display: flex;
@@ -524,11 +485,10 @@
     align-items: center;
   }
   .middle-right {
-    margin-top:5vh;
+    margin-top: 5vh;
     width: 100vw;
     height: 45vh;
     display: flex;
-    
   }
   .todayTable {
     width: 100%;
@@ -537,7 +497,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
   }
   .todayTableTitle {
     font-weight: bold;
@@ -563,38 +522,26 @@
     text-align: center;
   }
   .whatShouldIEatButton {
-    display:none;
+    display: none;
   }
-  
   .whatShouldIEatButton > span {
     color: #fff;
   }
-  
   .link-component {
-    display:none;
+    display: none;
   }
-  
-  
   .mainBottomNotice {
-    display:none;
+    display: none;
   }
-  
   .mainBottomBoard {
-    display:none;
+    display: none;
   }
-  #footer{
-    
+  #footer {
   }
   a {
     text-decoration: none;
   }
-  
   .chatbotWrapper {
     display: none;
   }
-  
 }
-
-
-
-
