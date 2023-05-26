@@ -7,21 +7,9 @@ function buildCalendar(calendarData, holidayData, timeData, specialData) {
     console.error('Error: Cannot find calendar table or month element.');
     return;
   }
-  const cal = document.querySelector('#calendar');
-  cal.innerHTML = `
-  <tr class="day-week">
-                    <th class="day-week">일</th>
-                    <th class="day-week">월</th>
-                    <th class="day-week">화</th>
-                    <th class="day-week">수</th>
-                    <th class="day-week">목</th>
-                    <th class="day-week">금</th>
-                    <th class="day-week">토</th>
-                  </tr> 
-  `;
+
   renderCalendarTitle();
   renderCalendarTemplate();
-
   renderCalendarContents(calendarData);
 
   renderSpecialSchedules(specialData, monthKey, 'special-lecture');
@@ -104,7 +92,18 @@ const nextCalendar = () => {
 };
 
 const renderCalendarTemplate = () => {
-  let calendarTable = document.getElementById('calendar');
+  const calendarTable = document.querySelector('#calendar');
+  calendarTable.innerHTML = `
+    <tr class="day-week">
+      <th class="day-week">일</th>
+      <th class="day-week">월</th>
+      <th class="day-week">화</th>
+      <th class="day-week">수</th>
+      <th class="day-week">목</th>
+      <th class="day-week">금</th>
+      <th class="day-week">토</th>
+    </tr> 
+  `;
 
   let firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
   let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
@@ -171,9 +170,9 @@ const renderCalendarTemplate = () => {
 const renderCalendarTitle = () => {
   const calendarMonth = document.querySelector('.calendar-month');
   calendarMonth.innerHTML = `
-  <button class="previous" onclick="prevCalendar()"><</button>
-                <div id="month"></div>
-                <button class="next" onclick="nextCalendar()">></button>
+    <button class="previous"><</button>
+      <div id="month"></div>
+    <button class="next">></button>
   `;
   let $title = document.getElementById('month');
 
