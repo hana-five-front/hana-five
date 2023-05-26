@@ -6,7 +6,7 @@ const resultElement = document.getElementById('result');
 const slideList = document.querySelector('.carousel-items');
 
 let number = resultElement.innerText;
-const slideWidth = slides.clientWidth;
+let slideWidth = slides.clientWidth;
 let currentIndex = 0;
 let slidesLength = slides.children.length;
 
@@ -21,7 +21,28 @@ function goToSlide(index) {
   slides.style.transform = 'translateX(' + -slideWidth * index + 'px)';
   currentIndex = index;
 }
-setInterval(() => {
+
+leftButton.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    number = parseInt(number) - 1;
+    goToSlide(currentIndex - 1);
+  } else if (currentIndex == 0) {
+    number = parseInt(4);
+    goToSlide(3);
+  }
+});
+
+rightButton.addEventListener('click', () => {
+  if (currentIndex < slides.children.length - 1) {
+    number = parseInt(number) + 1;
+    goToSlide(currentIndex + 1);
+  } else if (currentIndex == 3) {
+    number = parseInt(1);
+    goToSlide(0);
+  }
+});
+
+const autoSlideHandler = () => {
   if (currentIndex <= slidesLength + 2) {
     slides.style.transition = 'transform 0.3s ease';
     number = parseInt(number) < 4 ? parseInt(number) + 1 : parseInt(1);
@@ -43,23 +64,17 @@ setInterval(() => {
     resultElement.innerText = number;
     currentIndex = 1;
   }
-}, [5000]);
-leftButton.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    number = parseInt(number) - 1;
-    goToSlide(currentIndex - 1);
-  } else if (currentIndex == 0) {
-    number = parseInt(4);
-    goToSlide(3);
-  }
-});
+};
 
-rightButton.addEventListener('click', () => {
-  if (currentIndex < slides.children.length - 1) {
-    number = parseInt(number) + 1;
-    goToSlide(currentIndex + 1);
-  } else if (currentIndex == 3) {
-    number = parseInt(1);
-    goToSlide(0);
-  }
-});
+let slideInterval = setInterval(autoSlideHandler, [5000]);
+
+const observeScreenResizeEvent = () => {
+  window.addEventListener('resize', () => {
+    slideWidth = slides.clientWidth;
+    clearInterval(slideInterval);
+    slideInterval = setInterval(autoSlideHandler, 5000);
+    slides.style.transform = 'translateX(' + -slideWidth + 'px)';
+  });
+};
+
+observeScreenResizeEvent();
