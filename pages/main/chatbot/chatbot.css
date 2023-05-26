@@ -233,7 +233,8 @@ button {
   line-height: 3rem;
   display: flex;
   justify-content: space-between;
-  border: 0.8px solid #ccc;
+  align-items: center;
+  border: 0.8px solid #a7a0ec;
   background-color: white;
 }
 .chatbotFooter > form {
@@ -255,4 +256,29 @@ button {
   align-items: center;
   margin: 0 1rem 0 0;
   opacity: 0.5;
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+}
+.sendImage:hover {
+  background-color: #a7a0ec;
+  opacity: 0.9;
+  border-color: vivid;
+  z-index: 2;
+  border-radius: 20%;
+  cursor: pointer;
+}
+.sendImage.disabled:hover {
+  background-color: initial;
+  opacity: initial;
+  border-color: initial;
+  z-index: initial;
+  border-radius: initial;
+  cursor: initial;
+}
+.sendButton {
+  z-index: 2;
+}
+#sendMessage {
+  height: 1.875rem;
 }
