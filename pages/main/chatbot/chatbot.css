@@ -1,4 +1,4 @@
-@media(min-width: 75.625rem) {
+@media (min-width: 75.625rem) {
   ul,
   ol,
   li,
@@ -32,10 +32,6 @@
     height: 36.57px;
     margin: 0 28.57px;
   }
-  .response {
-    font-size: 0.8rem;
-    color: #777;
-  }
   .chatTime {
     width: 100%;
     text-align: center;
@@ -63,7 +59,6 @@
     background-image: linear-gradient(#b5abff, #888cf6);
     border-radius: 50%;
   }
-  
   .chatItemContainer {
     background-color: #eee;
     max-width: 90%;
@@ -182,6 +177,9 @@
     align-items: center;
     display: inline-flex;
   }
+  .responseContainer {
+    margin: 0;
+  }
   .response {
     font-size: 0.8rem;
     color: #777;
@@ -228,10 +226,11 @@
     text-align: right;
     padding-bottom: 1rem;
   }
+
   .chatbotFooter {
     position: sticky;
     bottom: 0;
-    margin-top: 100px;
+    margin-top: 3rem;
     height: 3rem;
     line-height: 3rem;
     display: flex;
@@ -285,6 +284,4 @@
   #sendMessage {
     height: 1.875rem;
   }
-  
 }
-
