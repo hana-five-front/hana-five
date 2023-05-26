@@ -8,7 +8,14 @@ import {
 } from './chatbotData.js';
 import { sendQnaToSlack } from './chatbotSlackApi.js';
 
+const handleKeydownEscape = e => {
+  if (e.key == 'Escape' || e.code == 'Escape') {
+    setCloseModal();
+  }
+};
+
 export const setOpenModal = () => {
+  document.addEventListener('keydown', handleKeydownEscape);
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.add('chatbotModal');
   const $modalBackground = document.querySelector('.modalBackground');
@@ -24,6 +31,7 @@ export const setOpenModal = () => {
 };
 
 export const setCloseModal = () => {
+  document.removeEventListener('keydown', handleKeydownEscape);
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.remove('chatbotModal');
   $modalContainer.classList.add('hidden');
