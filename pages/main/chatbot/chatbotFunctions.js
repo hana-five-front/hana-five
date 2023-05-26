@@ -65,8 +65,7 @@ export const ChatbotHeader = () => {
       src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
     />
     </div>
-    <p class="headerTitle">하나은행 문의채널</p>
-    ${GEAR_ICON_SVG_TAG}
+    <p class="headerTitle">디지털 하나로 문의 채널</p>
   `;
 
   const $chevronLeft = document.querySelector('.chevronLeft');
@@ -93,7 +92,7 @@ export const ChatbotList = () => {
             src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
           /></div>
             <div class="">
-              <p class="chatName">하나은행 문의채널</p>
+              <p class="chatName">디지털 하나로 문의 채널</p>
               <p class="chatItemContainer">${message.contents}</p>
             </div>
           </li>
@@ -144,8 +143,8 @@ export const ChatbotCharacter = () => {
     src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
   />
   </div>
-    <p class="profileTitle">하나은행 문의채널에 문의하기</p>
-    <p><span class="response">보통 수십 분 내 답변</span></p>
+    <p class="profileTitle">디지털 하나로 문의 채널</p>
+    <p class="responseContainer"><span class="response">보통 수십 분 내 답변</span></p>
   `;
 };
 
