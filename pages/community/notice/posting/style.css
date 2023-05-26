@@ -183,6 +183,7 @@
     font-size:0.8rem;
     width: 65%;
     padding-bottom: 0.5rem;
+    border-radius: 0;
     border-bottom: 0.0313rem #6b7684 solid;
   }
   .postingInputTitle:focus{
@@ -243,5 +244,13 @@
     background-color: #ffffff;
     border: #008485 0.0625rem solid;
     cursor: pointer;
+  }
+  input,textarea,button {
+    appearance:none;
+    border-radius: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
   }
 }

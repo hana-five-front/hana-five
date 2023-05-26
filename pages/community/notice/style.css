@@ -244,7 +244,9 @@
     width: 40vw;
     height: 1.8125rem;
     font-weight: bold;
-    border-bottom: 1px solid;
+    border-radius: 0;
+    border-bottom: 1px solid;  
+    
   }
   .boardSearchInput:focus {
     outline: none;
@@ -262,10 +264,9 @@
     margin-left: 2vw;
     width: 15vw;
     height: 1.8125rem;
+    background-color: white;
     color: #008485;
     border: #008485 0.0625rem solid;
-    border-radius: 0.1563rem;
-    background-color: #ffffff;
     cursor: pointer;
   }
 
@@ -374,6 +375,15 @@
   .endPage:hover {
     background-position: -32px -171px;
     background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
+  }
+
+  input,textarea,button {
+    appearance:none;
+    border-radius: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
   }
   
 }

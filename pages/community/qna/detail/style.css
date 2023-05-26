@@ -33,7 +33,7 @@
     color: #191f29;
     border-bottom: 0.0313rem #d1d6db solid;
   }
-  .asideCommunityBoard {
+  .asideCommunityQna {
     color: #008485;
   }
   .detailComponent {
@@ -257,12 +257,15 @@
   }
   .detailCommentComponent {
     padding: 1rem 0;
+    width:95vw;
   }
   .detailCommentInput {
     height: 2.8125rem;
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 0.5rem;
+    width:100%;
+    border-radius: 0;
   }
   .detailCommentInputWriter:focus {
     outline: none;
@@ -272,16 +275,16 @@
   }
   .detailCommentInputWriter {
     font-size: 0.8rem;
-    width: 10%;
+    width: 15vw;
     border-bottom: #d1d6db 0.0625rem solid;
   }
   .detailCommentInputContext {
     font-size: 0.8rem;
-    width: 65%;
+    width: 50vw;
     border-bottom: #d1d6db 0.0625rem solid;
   }
   .submitCommentBtn {
-    width: 15%;
+    width: 20vw;
     font-size: 0.8rem;
     color: #fff;
     background-color: #008485;
@@ -337,5 +340,13 @@
   div > img:hover {
     cursor: pointer;
     opacity: 90%;
+  }
+  input,textarea,button {
+    appearance:none;
+    border-radius: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
   }
 }

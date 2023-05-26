@@ -163,6 +163,8 @@
     font-size: 1.5rem;
   }
   .brief {
+    margin-top:3vh;
+    margin-bottom:5vh;
     display: flex;
     flex-direction: column;
     width: 95vw;

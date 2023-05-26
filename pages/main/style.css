@@ -121,11 +121,22 @@
     border-radius: 0.3125rem;
   }
   .todayTableTitle {
-    width: 8.0625rem;
-    height: 1.4375rem;
+    font-weight: bold;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width:100%;
+    border-bottom: 1px solid #008485;
+  }
+  .todayTableTitle > :first-child {
+     
+  }
+  .todayTableTitle > :last-child{
+
+   font-size:0.8rem;
+   color:#8b95a1;
+   padding-top: .3125rem;
   }
   .todayTableContent {
     width: 8.1875rem;
@@ -489,37 +500,51 @@
     width: 100vw;
     height: 45vh;
     display: flex;
+    justify-content: center;
   }
   .todayTable {
-    width: 100%;
+    width: 95%;
     height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    border : 1px solid #008485;
+    border-radius: .3125rem;
   }
   .todayTableTitle {
     font-weight: bold;
-    width: 14rem;
+    width: 95vw;
     font-size: 2.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .todayTableContent {
-    width: 15rem;
-    height: 15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #ecf0f1;
+    padding:2vh;
+    background-color: #008485;
+    border-bottom: 1px solid #008485;
+  }
+  .todayTableTitle > :first-child {
+     
+  }
+  .todayTableTitle > :last-child{
+    font-size:1.2rem;
+    margin-top: 1vh;
+    color: #fff;
+  }
+  .todayTableContent {
+    width:95vw;
+    height: 15rem;
+    display: flex;
+   
+    flex-direction: column;
   }
   .todayTableContent > div {
-    font-size: 1.5rem;
+    font-size:1rem;
+    margin-top:3vh;
+    padding-left: 1vh;
     display: flex;
     align-items: center;
-    text-align: center;
   }
   .whatShouldIEatButton {
     display: none;
