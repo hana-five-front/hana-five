@@ -1,180 +1,363 @@
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-  vertical-align: middle;
+@media (min-width: 75.625rem) {
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    display: block;
+    vertical-align: middle;
+  }
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+  header img {
+    display: inline-block;
+    vertical-align: unset;
+  }
+  .blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+  }
+  .boxCheck {
+    border: 1px solid black;
+  }
+  section {
+    margin: var(--component-margin);
+  }
+  .talent {
+    margin-top: 10rem;
+  }
+  .intro {
+    min-height: 27.5rem;
+    margin: 15vh 0;
+  }
+  .introHeading {
+    font-size: 2.75rem;
+    font-weight: bold;
+  }
+  .introCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    margin: var(--component-margin);
+  }
+  .introCard {
+    width: 25rem;
+    min-height: 12.5rem;
+  }
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .cardContent {
+    color: #6b7684;
+  }
+  .introCardHeader {
+    width: 23.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .btn {
+    background: inherit;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+    cursor: pointer;
+  }
+  .btnLearnMore {
+    width: 6.25rem;
+    height: 1.5rem;
+  }
+  .btnWrapper {
+    text-align: right;
+  }
+  .learnMoreBtn {
+    color: var(--primary-color);
+  }
+  .learnMoreBtn:hover,
+  .learnMoreBtn:active {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .talent {
+    min-height: 60.625rem;
+    margin-bottom: 10rem;
+  }
+  .sectionHeader {
+    font-size: 2.75rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .talentSubtitle {
+    font-size: 1.75rem;
+    font-weight: bold;
+    line-height: 0.75;
+  }
+  .talentText {
+    color: #6b7684;
+    margin-bottom: 2rem;
+  }
+  .talentImgContainer {
+    margin: var(--component-margin);
+  }
+  .images {
+    width: 60rem;
+    margin-bottom: 10rem;
+    transition: all 0.8s ease-out;
+  }
+  .animationHidden {
+    opacity: 0;
+  }
+  .animationFadeIn {
+    opacity: 1;
+    transition: all 0.8s ease-out;
+  }
+  .imagesContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    width: 60rem;
+    gap: 2rem;
+  }
+  .timelineItem {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .timelineHeader {
+    grid-column: span 2 / span 2;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b1b1b1;
+    position: relative;
+  }
+  .timeline {
+    margin-bottom: 4rem;
+  }
+  .timelineHeader {
+    box-shadow: 10px 0 5px -5px #999;
+  }
+  .timelineHeader p {
+    position: absolute;
+    left: 1.5rem;
+    top: -1rem;
+    margin: 0;
+  }
+  .timelineContents {
+    position: relative;
+    grid-column: span 9 / span 9;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 2rem;
+    width: 100%;
+  }
+  .timelineDot {
+    position: absolute;
+    left: -1rem;
+    top: -0.9rem;
+  }
+  .timelineList {
+    padding: 1.5rem;
+    padding-bottom: 3rem;
+    margin: 0;
+    border-top: 2px solid #eee;
+    color: #6b7684;
+  }
+  .timelineListItem::marker {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+  }
 }
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-header img {
-  display: inline-block;
-  vertical-align: unset;
-}
-.blind {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-}
-.boxCheck {
-  border: 1px solid black;
-}
-section {
-  margin: var(--component-margin);
-}
-.talent {
-  margin-top: 10rem;
-}
-.intro {
-  min-height: 27.5rem;
-  margin: 15vh 0;
-}
-.introHeading {
-  font-size: 2.75rem;
-  font-weight: bold;
-}
-.introCardsContainer {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  margin: var(--component-margin);
-}
-.introCard {
-  width: 25rem;
-  min-height: 12.5rem;
-}
-.cardContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-.cardContent {
-  color: #6b7684;
-}
-.introCardHeader {
-  width: 23.5rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.btn {
-  background: inherit;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  overflow: visible;
-  cursor: pointer;
-}
-.btnLearnMore {
-  width: 6.25rem;
-  height: 1.5rem;
-}
-.btnWrapper {
-  text-align: right;
-}
-.learnMoreBtn {
-  color: var(--primary-color);
-}
-.learnMoreBtn:hover,
-.learnMoreBtn:active {
-  color: var(--primary-color);
-  font-weight: bold;
-  text-decoration: underline;
-}
-.talent {
-  min-height: 60.625rem;
-  margin-bottom: 10rem;
-}
-.sectionHeader {
-  font-size: 2.75rem;
-  font-weight: bold;
-  text-align: center;
-}
-.talentSubtitle {
-  font-size: 1.75rem;
-  font-weight: bold;
-  line-height: 0.75;
-}
-.talentText {
-  color: #6b7684;
-  margin-bottom: 2rem;
-}
-.talentImgContainer {
-  margin: var(--component-margin);
-}
-.images {
-  width: 60rem;
-  margin-bottom: 10rem;
-  transition: all 0.8s ease-out;
-}
-.animationHidden {
-  opacity: 0;
-}
-.animationFadeIn {
-  opacity: 1;
-  transition: all 0.8s ease-out;
-}
-.imagesContainer {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  width: 60rem;
-  gap: 2rem;
-}
-.timelineItem {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-.timelineHeader {
-  grid-column: span 2 / span 2;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #b1b1b1;
-  position: relative;
-}
-.timeline {
-  margin-bottom: 4rem;
-}
-.timelineHeader {
-  box-shadow: 10px 0 5px -5px #999;
-}
-.timelineHeader p {
-  position: absolute;
-  left: 1.5rem;
-  top: -1rem;
-  margin: 0;
-}
-.timelineContents {
-  position: relative;
-  grid-column: span 9 / span 9;
-  border-left: 3px solid var(--primary-color);
-  padding-left: 2rem;
-  width: 100%;
-}
-.timelineDot {
-  position: absolute;
-  left: -1rem;
-  top: -0.9rem;
-}
-.timelineList {
-  padding: 1.5rem;
-  padding-bottom: 3rem;
-  margin: 0;
-  border-top: 2px solid #eee;
-  color: #6b7684;
-}
-.timelineListItem::marker {
-  color: var(--primary-color);
-  font-size: 1.5rem;
+
+@media (max-width: 75.625rem) {
+  .introductionMain {
+    width:95vw;
+  }
+  .intro {
+    width: 100%;
+    margin-top: 6rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  img
+  video {
+  
+  }
+  ul li {
+    text-decoration: none;
+  }
+  .introHeader {
+    margin: 0;
+    height: 5.5vh;
+  }
+  .blind {
+    display: none;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+  }
+  .learnMoreBtn {
+    color: var(--primary-color);
+  }
+  .introHeading {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .introCardsContainer {
+    display: grid;
+    width:100%;
+    justify-content: center;
+
+  }
+  .introCard {
+    width: 95vw;
+    display: flex;
+  }
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #008485;
+    width:100%;
+  }
+
+  .cardContainer > :first-child {
+    padding-top: 0;
+  }
+  .cardContent {
+    width:100%;
+    font-size:1.2rem;
+     color: #6b7684;
+  }
+  .introCardHeader {
+    color: #008485;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width:100%;
+    margin-bottom: 3vh;
+    text-align: center;
+  }
+  .btn{
+
+  }
+
+  .talent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95vw;
+  }
+  .sectionHeader {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .talentSubtitle {
+    width: 95vw;
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+  .talentText {
+    color: #6b7684;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .talentImgContainer {
+    margin-bottom: 2rem;
+    width:95vw;
+  }
+  .talentImgContainer > img {
+    width:100%;
+  }
+
+  .animationHidden {
+    opacity: 0;
+  }
+  .animationFadeIn {
+    opacity: 1;
+    transition: all 0.8s ease-out;
+  }
+
+  .timelineItem {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .timelineHeader {
+    grid-column: span 2 / span 2;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #b1b1b1;
+    position: relative;
+    box-shadow: 10px 0 5px -5px #999;
+  }
+  .timeline {
+    margin-bottom: 4rem;
+  }
+  .timelineHeader p {
+    position: absolute;
+    left: 2vw;
+    top: 0;
+    margin: 0;
+  }
+  .btn {
+    background: inherit;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+    cursor: pointer;
+  }
+  .timelineContents {
+    position: relative;
+    grid-column: span 9 / span 9;
+    border-left: 3px solid var(--primary-color);
+    width: 100%;
+  }
+  .timelineDot {
+    position: absolute;
+    left: -1rem;
+    top: -0.9rem;
+  }
+  .timelineList {
+    padding-bottom: 3rem;
+    margin: 0;
+    border-top: 2px solid #eee;
+    color: #6b7684;
+    list-style-type: none;
+  }
+  .timelineListItem::marker {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+  }
+  .images{
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .imagesContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
