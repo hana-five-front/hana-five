@@ -245,6 +245,7 @@
     width: 40vw;
     height: 1.8125rem;
     font-weight: bold;
+    border-radius: 0;
     border-bottom: 1px solid;
   }
   .boardSearchInput:focus {
