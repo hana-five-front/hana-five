@@ -160,7 +160,7 @@
   .link-component {
     margin-top: 1.875rem;
     width: 60rem;
-    height: 6.25rem;
+    height: 7.25rem;
     display: flex;
     align-items: center;
     background: #ecf0f1;
@@ -188,17 +188,15 @@
     margin-top: 0.5rem;
   }
   .list-component {
-    margin-top: 1.25rem;
+    margin-top: 2rem;
     margin-bottom: 2.8125rem;
     width: 60rem;
-    height: 6.8125rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .mainBottomNotice {
     width: 26.25rem;
-    height: 6.8125rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
