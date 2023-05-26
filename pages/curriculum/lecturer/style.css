@@ -1,99 +1,174 @@
-body {
-  display: flex;
-  flex-direction: column;
+@media (min-width: 75.625rem) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    display: flex;
+  }
+  a {
+    text-decoration: none;
+    color: #191f29;
+  }
+  .container {
+    display: flex;
+    width: 62.5rem;
+    min-height: 50rem;
+    justify-content: center;
+    padding-top: 3.125rem;
+  }
+  .aside {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.8125rem;
+  }
+  .asideTitle {
+    font-size: 1.375rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.625rem;
+    color: #008485;
+    border-bottom: 0.1875rem solid #008485;
+  }
+  .asideContentList {
+    margin: 0rem;
+    padding: 0rem;
+  }
+  .asideContent {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #191f29;
+    border-bottom: 0.0313rem #d1d6db solid;
+  }
+  .aside-lecturer {
+    color: #008485;
+  }
+  .lecture-info {
+    padding-bottom: 1.625rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow: 0;
+    margin-left: 4.375rem;
+  }
+  .lecturer-head {
+    padding: 0 0 2.5rem 0;
+    display: flex;
+    align-self: stretch;
+  }
+  .lecturer-text {
+    font-size: 2.375rem;
+    font-weight: bold;
+    color: #191f29;
+  }
+  .info-container {
+    display: flex;
+  }
+  .info-container > div {
+    margin-right: 2.625rem;
+  }
+  .profile-image > img {
+    height: 18.75rem;
+    width: 14.0625rem;
+  }
+  .info2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .info2 > div {
+    margin-bottom: 1.25rem;
+  }
+  .sub-title {
+    font-size: 1.875rem;
+    color: #008485;
+    margin: 0 0 0.325rem 0;
+  }
+  .brief {
+    color: #191f29;
+    list-style-type: none;
+    padding: 0 0 0.3125rem 0.625rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }
-main {
-  display: flex;
-}
-a {
-  text-decoration: none;
-  color: #191f29;
-}
-.container {
-  display: flex;
-  width: 62.5rem;
-  min-height: 50rem;
-  justify-content: center;
-  padding-top: 3.125rem;
-}
-.aside {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.8125rem;
-}
-.asideTitle {
-  font-size: 1.375rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  padding-bottom: 0.625rem;
-  color: #008485;
-  border-bottom: 0.1875rem solid #008485;
-}
-.asideContentList {
-  margin: 0rem;
-  padding: 0rem;
-}
-.asideContent {
-  width: 100%;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  color: #191f29;
-  border-bottom: 0.0313rem #d1d6db solid;
-}
-.aside-lecturer {
-  color: #008485;
-}
-.lecture-info {
-  padding-bottom: 1.625rem;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  flex-grow: 0;
-  margin-left: 4.375rem;
-}
-.lecturer-head {
-  padding: 0 0 2.5rem 0;
-  display: flex;
-  align-self: stretch;
-}
-.lecturer-text {
-  font-size: 2.375rem;
-  font-weight: bold;
-  color: #191f29;
-}
-.info-container {
-  display: flex;
-}
-.info-container > div {
-  margin-right: 2.625rem;
-}
-.profile-image > img {
-  height: 18.75rem;
-  width: 14.0625rem;
-}
-.info2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.info2 > div {
-  margin-bottom: 1.25rem;
-}
-.sub-title {
-  font-size: 1.875rem;
-  color: #008485;
-  margin: 0 0 0.325rem 0;
-}
-.brief {
-  color: #191f29;
-  list-style-type: none;
-  padding: 0 0 0.3125rem 0.625rem;
-  margin: 0;
-  font-size: 1rem;
-  font-weight: bold;
+
+@media (max-width: 75.625rem) {
+  ul li {
+    list-style-type: none;
+  }
+  .aside {
+    display: none;
+  }
+  .lecturer-main {
+    width: 95vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .lecture-info {
+    padding-bottom: 1.625rem;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lecturer-head {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2vh;
+  }
+
+  .info-container {
+    width: 95vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile-image > img {
+    height: 9.75rem;
+    width: 7.0625rem;
+  }
+  .info2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .textbook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lecture {
+    max-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sub-title {
+    font-size: 1.5rem;
+  }
+  .brief {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    justify-content: center;
+  }
+  .brief > li {
+    margin-left: 2.5vw;
+  }
 }

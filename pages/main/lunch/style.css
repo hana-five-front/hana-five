@@ -1,139 +1,261 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-canvas {
-  transition: 2s;
+@media (min-width: 75.625rem) {
+  canvas {
+    transition: 2s;
+  }
+
+  main {
+    position: relative;
+    width: 60rem;
+    height: 37.9375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.875rem;
+  }
+
+  button:active {
+    background: #444;
+    color: #f9f9f9;
+  }
+
+  .roullet-component {
+    height: 24.125rem;
+    width: 30%;
+    margin-top: 1.25rem;
+    display: flex;
+    padding-top: 3.125rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .roullet-canvas {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rullet-top {
+    position: absolute;
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5.625rem;
+    margin-bottom: 1.875rem;
+  }
+
+  .rullet-top-title {
+    font-size: 3.1875rem;
+    height: 3.5625rem;
+  }
+
+  .rullet-top-subtitle {
+    margin-top: 0.625rem;
+    font-size: 0.9375rem;
+    color: #6b7684;
+  }
+
+  .rul-cursor {
+    position: absolute;
+    right: -2rem;
+    top: -2.2rem;
+  }
+
+  .rullet-button {
+    width: 13.75rem;
+    height: 3.125rem;
+    margin: 0 auto;
+    margin-top: 1.875rem;
+    border: none;
+    list-style: none;
+    background-color: #008375;
+    color: white;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+  }
+  .rullet-button:hover {
+    font-weight: bold;
+  }
+
+  .list-component {
+    height: 12rem;
+    width: 70%;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pick-list {
+    width: 28rem;
+    height: 100%;
+  }
+  .pick-list-title {
+    width: 100%;
+    height: 3.2rem;
+    text-align: center;
+    font-size: 2.1875rem;
+    border-bottom: 0.0625rem solid #008375;
+  }
+  .rullet-a-name {
+    width: 60rem;
+  }
+  .rullet-list {
+    width: 70%;
+    padding-top: 1.875rem;
+    height: 400px;
+    margin-left: 3.75rem;
+  }
+  .rulletlist-list-name {
+    width: 30%;
+    color: #008375;
+  }
+  .rulletlist-list-address {
+    width: 70%;
+    text-align: right;
+  }
+  .rullet-list-name {
+    display: flex;
+    margin-top: 0.5rem;
+    width: 100%;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .rullet-keyword {
+    color: #008375;
+  }
 }
 
-main {
-  position: relative;
-  width: 60rem;
-  height: 37.9375rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 1.875rem;
-}
+@media (max-width: 75.625rem) {
+  canvas {
+    transition: 2s;
+  }
+  main {
+    width: 95vw;
+    height: 155vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* 룰렛 텍스트 */
+  .rullet-top {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rullet-top-title {
+    font-size: 2.5rem;
+    height: 3.5625rem;
+  }
 
-button:active {
-  background: #444;
-  color: #f9f9f9;
-}
+  .rullet-top-subtitle {
+    margin-top: 0.625rem;
+    font-size: 0.9375rem;
+    color: #6b7684;
+  }
+  .roullet-component {
+    height: 24.125rem;
+    width: 95vw;
+    margin-top: 1.25rem;
+    display: flex;
 
-.roullet-component {
-  height: 24.125rem;
-  width: 30%;
-  margin-top: 1.25rem;
-  display: flex;
-  padding-top: 3.125rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.roullet-canvas {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .roullet-canvas {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .rul-cursor {
+    position: absolute;
+    right: -2rem;
+    top: -2.2rem;
+  }
+  .rullet-button {
+    width: 13.75rem;
+    height: 3.125rem;
+    margin: 0 auto;
+    margin-top: 1.875rem;
+    border: none;
+    list-style: none;
+    background-color: #008375;
+    color: white;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+  }
+  /* 이게 리스트 부모 */
+  .rullet-list {
+    width: 95vw;
+    padding-top: 1.875rem;
+    height: 40vh;
+  }
+  .list-component {
+    height: 80vh;
+    width: 95vw;
 
-.rullet-top {
-  position: absolute;
-  top: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 5.625rem;
-  margin-bottom: 1.875rem;
-}
+    display: flex;
+    justify-content: space-between;
+  }
 
-.rullet-top-title {
-  font-size: 3.1875rem;
-  height: 3.5625rem;
-}
+  .pick-list {
+    width: 100%;
+    height: 100%;
+  }
+  .pick-list-title {
+    width: 100%;
+    height: 3.2rem;
+    text-align: center;
+    font-size: 1.8rem;
+    border-bottom: 0.0625rem solid #008375;
+  }
+  .rullet-a-name {
+    width: 60rem;
+  }
 
-.rullet-top-subtitle {
-  margin-top: 0.625rem;
-  font-size: 0.9375rem;
-  color: #6b7684;
-}
+  .rulletlist-list-name {
+    width: 30%;
+    color: #008375;
+  }
+  .rulletlist-list-address {
+    width: 70%;
+    text-align: right;
+  }
+  .rullet-list-name {
+    display: flex;
+    margin-top: 0.5rem;
+    width: 100%;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.rul-cursor {
-  position: absolute;
-  right: -2rem;
-  top: -2.2rem;
-}
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-.rullet-button {
-  width: 13.75rem;
-  height: 3.125rem;
-  margin: 0 auto;
-  margin-top: 1.875rem;
-  border: none;
-  list-style: none;
-  background-color: #008375;
-  color: white;
-  font-size: 1.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.3125rem;
-  cursor: pointer;
-}
-.rullet-button:hover {
-  font-weight: bold;
-}
-
-.list-component {
-  height: 12rem;
-  width: 70%;
-
-  display: flex;
-  justify-content: space-between;
-}
-
-.pick-list {
-  width: 28rem;
-  height: 100%;
-}
-.pick-list-title {
-  width: 100%;
-  height: 3.2rem;
-  text-align: center;
-  font-size: 2.1875rem;
-  border-bottom: 0.0625rem solid #008375;
-}
-.rullet-a-name {
-  width: 60rem;
-}
-.rullet-list {
-  width: 70%;
-  padding-top: 1.875rem;
-  height: 400px;
-  margin-left: 3.75rem;
-}
-.rulletlist-list-name {
-  width: 30%;
-  color: #008375;
-}
-.rulletlist-list-address {
-  width: 70%;
-  text-align: right;
-}
-.rullet-list-name {
-  display: flex;
-  margin-top: 0.5rem;
-  width: 100%;
-  height: 2.5rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.rullet-keyword {
-  color: #008375;
+  .rullet-keyword {
+    color: #008375;
+  }
 }

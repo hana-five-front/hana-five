@@ -43,7 +43,7 @@ setInterval(() => {
     resultElement.innerText = number;
     currentIndex = 1;
   }
-}, [3000]);
+}, [5000]);
 leftButton.addEventListener('click', () => {
   if (currentIndex > 0) {
     number = parseInt(number) - 1;

@@ -1,15 +1,25 @@
 function buildCalendar(calendarData, holidayData, timeData, specialData) {
   let calendarTable = document.getElementById('calendar');
-  let calendarTableTitle = document.getElementById('month');
 
   var monthKey = today.getMonth() + 1 + '월';
 
-  if (!calendarTable || !calendarTableTitle) {
+  if (!calendarTable) {
     console.error('Error: Cannot find calendar table or month element.');
     return;
   }
-
-  renderCalendarTitle(calendarTableTitle);
+  const cal = document.querySelector('#calendar');
+  cal.innerHTML = `
+  <tr class="day-week">
+                    <th class="day-week">일</th>
+                    <th class="day-week">월</th>
+                    <th class="day-week">화</th>
+                    <th class="day-week">수</th>
+                    <th class="day-week">목</th>
+                    <th class="day-week">금</th>
+                    <th class="day-week">토</th>
+                  </tr> 
+  `;
+  renderCalendarTitle();
   renderCalendarTemplate();
 
   renderCalendarContents(calendarData);
@@ -158,7 +168,15 @@ const renderCalendarTemplate = () => {
   }
 };
 
-const renderCalendarTitle = $title => {
+const renderCalendarTitle = () => {
+  const calendarMonth = document.querySelector('.calendar-month');
+  calendarMonth.innerHTML = `
+  <button class="previous" onclick="prevCalendar()"><</button>
+                <div id="month"></div>
+                <button class="next" onclick="nextCalendar()">></button>
+  `;
+  let $title = document.getElementById('month');
+
   $title.innerHTML = `
   ${(today.getMonth() + 1).toString().padStart(2, ' ')}월`;
 
