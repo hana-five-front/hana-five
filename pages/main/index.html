@@ -8,13 +8,23 @@
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="./chatbot/chatbot.css" />
-    <link rel="stylesheet" href="introduce.css"/>
+    <link rel="stylesheet" href="introduce.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script defer type="module" src="/scripts/apikey.js"></script>
+    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
+    <script defer type="module" src="/components/component.js"></script>
+    <script defer src="slackApi.js"></script>
+    <script defer src="board.js" type="module"></script>
+    <script defer type="module" src="./chatbot/Store.js"></script>
+    <script defer type="module" src="./chatbot/chatbotData.js"></script>
+    <script defer type="module" src="./chatbot/chatbotFunctions.js"></script>
+    <script defer type="module" src="./chatbot/chatbot.js"></script>
+    <script defer src="today.js"></script>
+    <script defer src="index.js"></script>
     <title>디지털 하나로 메인 페이지</title>
-    <script async src="slackApi.js"></script>
-    <script src="board.js" type="module"></script>
   </head>
   <body>
     <header class="inner header-component" id="header"></header>
@@ -194,7 +204,8 @@
               <div class="introCardHeader">은행권 최초 K-Digital 프로그램</div>
               <div class="cardContent">
                 디지털 금융으로의 바람에 힘입어 하나 금융 그룹이 은행권 최초로
-                K-Digital 프로그램을 시작했습니다. 금융 개발자 양성을 위해 힘쓰겠습니다.
+                K-Digital 프로그램을 시작했습니다. 금융 개발자 양성을 위해
+                힘쓰겠습니다.
               </div>
             </div>
           </div>
@@ -254,40 +265,43 @@
         </article>
       </section>
       <section
-      class="talent"
-      data-aos="fade-up"
-      data-aos-once="false"
-      data-aos-offset="300"
-      data-aos-duration="1200"
-    >
-      <header>
-        <h2 class="blind">디지털 하나로 인재상</h2>
-        <p class="sectionHeader">디지털 하나로 인재상</p>
-      </header>
-      <article>
-        <p class="talentSubtitle">하나금융그룹이 추구하는 인재상은<br/>
-          비전 달성을 위한 전문역량과 리더십을<br/> 겸비한 리더를 말합니다.
-        </p>
-        <p class="talentText">
-          구체적으로 Integrity와 5가지 핵심가치를<br/> 바탕으로 성과 리더십, 조직
-          리더십, 혁신 리더십을 실현하는 리더를 뜻합니다.
-        </p>
-        <div
-          class="talentImgContainer"
-          data-aos="fade-up"
-          data-aos-once="false"
-          data-aos-duration="1200"
-          data-aos-delay="200"
-          data-aos-offset="200"
-          data-aos-easing="ease-in-out"
-        >
-          <img src="/public/images/인재상1.png" alt="인재상1" />
-          <img src="/public/images/인재상2.png" alt="인재상2" />
-          <img src="/public/images/인재상3.png" alt="인재상3" />
-        </div>
-      </article>
-    </section>
-         <section class="timeline">
+        class="talent"
+        data-aos="fade-up"
+        data-aos-once="false"
+        data-aos-offset="300"
+        data-aos-duration="1200"
+      >
+        <header>
+          <h2 class="blind">디지털 하나로 인재상</h2>
+          <p class="sectionHeader">디지털 하나로 인재상</p>
+        </header>
+        <article>
+          <p class="talentSubtitle">
+            하나금융그룹이 추구하는 인재상은<br />
+            비전 달성을 위한 전문역량과 리더십을<br />
+            겸비한 리더를 말합니다.
+          </p>
+          <p class="talentText">
+            구체적으로 Integrity와 5가지 핵심가치를<br />
+            바탕으로 성과 리더십, 조직 리더십, 혁신 리더십을 실현하는 리더를
+            뜻합니다.
+          </p>
+          <div
+            class="talentImgContainer"
+            data-aos="fade-up"
+            data-aos-once="false"
+            data-aos-duration="1200"
+            data-aos-delay="200"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-out"
+          >
+            <img src="/public/images/인재상1.png" alt="인재상1" />
+            <img src="/public/images/인재상2.png" alt="인재상2" />
+            <img src="/public/images/인재상3.png" alt="인재상3" />
+          </div>
+        </article>
+      </section>
+      <section class="timeline">
         <header
           data-aos="fade-up"
           data-aos-once="false"
@@ -558,22 +572,8 @@
     </section>
 
     <footer class="inner footer-component" id="footer"></footer>
-
-    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script defer type="modules" src="/scripts/apikey.js"></script>
-    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
     <script>
       AOS.init();
     </script>
-
-    <script defer type="module" src="/components/component.js"></script>
-    <script defer src="slackApi.js"></script>
-    <script defer src="board.js" type="module"></script>
-    <script defer type="module" src="./chatbot/Store.js"></script>
-    <script defer type="module" src="./chatbot/chatbotData.js"></script>
-    <script defer type="module" src="./chatbot/chatbotFunctions.js"></script>
-    <script defer type="module" src="./chatbot/chatbot.js"></script>
-    <script defer src="today.js"></script>
-    <script defer src="index.js"></script>
   </body>
 </html>

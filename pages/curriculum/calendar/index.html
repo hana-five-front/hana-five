@@ -8,16 +8,20 @@
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../lecturer/style.css"/>
+    <link rel="stylesheet" href="../lecturer/style.css" />
+    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script defer type="module" src="/scripts/apikey.js"></script>
+    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
+    <script defer type="module" src="/components/component.js"></script>
+    <script defer type="module" src="index.js"></script>
     <title>교육 과정</title>
     <style></style>
   </head>
   <body>
     <header class="inner header-component" id="header"></header>
-    
+
     <main class="inner calendar-main">
       <div class="container">
-        
         <div class="aside">
           <div class="asideTitle">교육</div>
           <ul class="asideContentList">
@@ -36,33 +40,27 @@
 
         <div class="page-container">
           <header>
-            <div class="calendar-head"><span class="calendar-text">교육 과정</span></div>
+            <div class="calendar-head">
+              <span class="calendar-text">교육 과정</span>
+            </div>
           </header>
           <div class="calendar-container">
             <div class="calendar1">
-              <div class="calendar-month">
-              </div>
+              <div class="calendar-month"></div>
               <div class="calendar-day">
-                <table id="calendar">
-                </table>
+                <table id="calendar"></table>
               </div>
             </div>
             <div class="calendar2">
               <div class="calendar2-row1">
-                <div id="monthly-schedule">
-
-                </div>
-              </div>
+                <div id="monthly-schedule"></div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-
-    </div>
-
     </main>
+
     <div class="goToTeacher">
       <main class="inner lecturer-main">
         <div class="container">
@@ -129,11 +127,7 @@
         </div>
       </main>
     </div>
+
     <footer class="inner footer-component" id="footer"></footer>
-    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script defer type="modules" src="/scripts/apikey.js"></script>
-    <script defer type="module" src="/scripts/kakaoLogin.js"></script>
-    <script defer type="module" src="/components/component.js"></script>
-    <script defer type="module" src="index.js"></script>
   </body>
 </html>

@@ -18,4 +18,5 @@ const main = () => {
   }, 3000);
 };
 
+AOS.init();
 main();

@@ -1,6 +1,6 @@
 @media (min-width: 75.625rem) {
   .careerBoxAll-component > img {
-    display:none;
+    display: none;
   }
   .career-component {
     margin-top: 1.875rem;
@@ -50,7 +50,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .benefit-component {
     margin-top: 1.25rem;
     width: 60rem;
@@ -108,20 +108,19 @@
     font-size: 1rem;
     line-height: 170%;
   }
-  
 }
 @media (max-width: 75.625rem) {
-  .career-main{
-    display:flex;
+  .career-main {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    height:220vh;
+    height: 220vh;
   }
   .career-component {
     margin-top: 6rem;
     margin-bottom: 3vh;
     width: 16.0625rem;
-    height:5vh;
+    height: 5vh;
     font-size: 2.2rem;
     font-weight: bold;
     text-align: center;
@@ -133,7 +132,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
   }
   .careerBoxAll-component > img {
     margin-bottom: 3vh;
@@ -148,7 +146,7 @@
   }
   .process {
     width: 95vw;
-    height:5vh;
+    height: 5vh;
     font-weight: bold;
     font-size: 1.5rem;
     line-height: 150%;
@@ -161,34 +159,32 @@
     width: 13.75rem;
     height: 12vh;
     line-height: 180%;
-    display:flex;
+    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    
   }
-  .benefit-component{
-    font-size:2rem;
+  .benefit-component {
+    font-size: 2rem;
     font-weight: bold;
     margin-top: 6vh;
-    height:1vh;
+    height: 1vh;
   }
-  
+
   .benefitBoxAll-component {
-    margin-top:8vh;
-    width:95vw;
+    margin-top: 8vh;
+    width: 95vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
-  } 
+  }
   .benefitBox-component {
     width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
-  
   }
   .benefitBox {
     width: 100%;
@@ -197,10 +193,8 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 4vh;
-   
   }
   .benefitBoxTitle {
-
     color: #008485;
     width: 100%;
     font-weight: bold;
@@ -212,6 +206,5 @@
     width: 100%;
     font-size: 1rem;
     line-height: 170%;
-  } 
- 
+  }
 }
