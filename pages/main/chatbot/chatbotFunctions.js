@@ -200,7 +200,8 @@ export const handleSubmitMessage = e => {
 
   const resId = 10;
   const contents = value;
-  sendQnaToSlack(contents);
+  const userName = sessionStorage.getItem('userName');
+  sendQnaToSlack(userName, contents);
 
   e.target.setAttribute('data-resId', resId);
   e.target.setAttribute('data-contents', contents);
@@ -224,9 +225,15 @@ export const handleSubmitMessage = e => {
 
 export const ChatbotFooter = () => {
   const $chatbotFooter = document.querySelector('.chatbotFooter');
+  const userName = sessionStorage.getItem('userName');
+  const isLoggedin = Boolean(userName);
+  const inputDisabled = isLoggedin
+    ? 'placeholder="문의 사항을 입력해 주세요"'
+    : 'placeholder="로그인 후 이용해 주세요" disabled';
+
   $chatbotFooter.innerHTML = `
     <form class="messageInputForm" onsubmit="handleSubmitMessage">
-      <input type="text" id="sendMessage" placeholder="문의 사항을 입력해 주세요"/>
+      <input type="text" id="sendMessage" ${inputDisabled}/>
     </form>
     <div class="sendImage">
       <img class="sendButton" src="/public/images/send.png" width="22px" height="22px"/>
