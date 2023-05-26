@@ -377,4 +377,12 @@
     background-position: -32px -171px;
     background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
   }
+  input,textarea,button {
+    appearance:none;
+    border-radius: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+  }
 }
