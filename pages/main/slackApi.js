@@ -1,6 +1,6 @@
 const noticeContainer = document.querySelector('.mainBottomNoticeBottom');
 
-function markDowntoPlainWords(message) {
+function markDownToPlainWords(message) {
   return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
 }
 
@@ -30,7 +30,7 @@ function getSlackNotice() {
     for (let i = 0; i < 5; i++) {
       let { title, date, id } = data[i];
       date = dateToText(date);
-      title = markDowntoPlainWords(title);
+      title = markDownToPlainWords(title);
       makeNotice(title, date, id);
     }
   }
@@ -43,8 +43,8 @@ function getSlackNotice() {
     })
     .then(function (data) {
       data = data.map((e, idx) => {
-        e.title = markDowntoPlainWords(e.title);
-        e.content = e.content.map(e => markDowntoPlainWords(e));
+        e.title = markDownToPlainWords(e.title);
+        e.content = e.content.map(e => markDownToPlainWords(e));
         e.date = dateToText(e.date);
         e.name = e.name === '' ? '익명' : e.name;
         return (e = { ...e, id: idx });
@@ -54,7 +54,7 @@ function getSlackNotice() {
       for (let i = 0; i < 5; i++) {
         let { title, date, id } = data[i];
         date = dateToText(date);
-        title = markDowntoPlainWords(title);
+        title = markDownToPlainWords(title);
 
         makeNotice(title, date, id);
       }
