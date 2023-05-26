@@ -150,7 +150,6 @@ export const ChatbotCharacter = () => {
 };
 
 export const handleClickFAQButton = e => {
-  const $chatbotButtons = document.querySelector('.chatbotButtons');
   const $modalContainer = document.querySelector('.modalContainer');
   const question = {};
   question['resId'] = e.target.dataset.resid;
