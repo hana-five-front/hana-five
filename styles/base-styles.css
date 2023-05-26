@@ -74,7 +74,7 @@ a:active {
 @media (max-width: 75.625rem) {
   body {
     margin:0;
-    min-width: var(--mobile-width); /* 1210px */
+    min-width: var(--mobile-width); 
   }
   
   .inner {
