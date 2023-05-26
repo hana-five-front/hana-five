@@ -4,7 +4,7 @@ export const sendQnaToSlack = (userName, content) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ text: `${userName}\n\n${content}` }),
+    body: JSON.stringify({ text: `문의자: ${userName}\n\n내용: ${content}` }),
   })
     .then(response => response.json())
     .catch(error => console.error('Error sending message:', error));
