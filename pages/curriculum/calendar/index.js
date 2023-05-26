@@ -1,6 +1,5 @@
 function buildCalendar(calendarData, holidayData, timeData, specialData) {
   let calendarTable = document.getElementById('calendar');
-  // let calendarTableTitle = document.getElementById('month');
 
   var monthKey = today.getMonth() + 1 + '월';
 
