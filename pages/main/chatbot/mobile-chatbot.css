@@ -199,7 +199,8 @@
         border: 0.5px solid #ccc;
         color: #444;
         margin: 0.25rem;
-        border-radius: 2rem;
+        width:50vw;
+        border-radius: .25rem;
         font-weight: bold;
         display: inline-block;
         justify-content: space-between;
