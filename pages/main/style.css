@@ -81,6 +81,27 @@
     height: 16.5rem;
     border-radius: 0.3125rem;
   }
+  .wbg-carousel1 {
+    background-image: url('../../public/images/캐러셀1.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  .wbg-carousel2 {
+    background-image: url('../../public/images/캐러셀2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .wbg-carousel3 {
+    background-image: url('../../public/images/캐러셀3.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .wbg-carousel4 {
+    background-image: url('../../public/images/캐러셀4.jpg');
+    background-size: cover;
+    background-position: center;
+  }
   .middle-bottom {
     width: 36.25rem;
     height: 1.875rem;
