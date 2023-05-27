@@ -562,29 +562,4 @@
   a {
     text-decoration: none;
   }
-  .chatbotWrapper{
-    position: fixed;
-    bottom: 2vh;
-    right: 2vw;
-    z-index: 9999;
-
-  }
-  .chatbotButton{
-    width: 2.625rem;
-    height: 2.625rem;
-    text-align: center;
-    line-height: 4rem;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 50%;
-    transition: all 0.2s;
-    cursor: pointer;
-    background-image: linear-gradient(#b5abff, #888cf6);
-    align-items: center;
-    display: inline-flex;
-  }
-  .chatbotButtonImage {
-    width: 1.0625rem;
-    height: 1rem;
-    margin: 0 0.7813rem;
-  }
 }
