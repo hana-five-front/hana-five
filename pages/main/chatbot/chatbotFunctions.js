@@ -1,12 +1,9 @@
 import { store } from './Store.js';
 import { renderContents } from './chatbot.js';
-import {
-  ANSWER_LIST,
-  FAQ_LIST,
-  GEAR_ICON_SVG_TAG,
-  messages,
-} from './chatbotData.js';
+import { ANSWER_LIST, FAQ_LIST, messages } from './chatbotData.js';
 import { sendQnaToSlack } from './chatbotSlackApi.js';
+
+const SCROLL_ANIMATION_DURATION = 400;
 
 const handleKeydownEscape = e => {
   if (e.key == 'Escape' || e.code == 'Escape') {
@@ -21,13 +18,12 @@ export const setOpenModal = () => {
   const $modalBackground = document.querySelector('.modalBackground');
   $modalBackground.classList.remove('hidden');
   $modalBackground.addEventListener('click', e => {
-    if (!e.target.classList.contains('modalBackground')) {
-      return;
-    }
-    $modalBackground.classList.add('hidden');
-    $modalContainer.classList.remove('chatbotModal');
-    $modalContainer.classList.add('hidden');
+    if (!e.target.classList.contains('modalBackground')) return;
+    setCloseModal();
   });
+
+  $('html, body').animate({ scrollTop: '0' }, 500);
+  document.body.style.overflow = 'hidden';
 };
 
 export const setCloseModal = () => {
@@ -38,13 +34,11 @@ export const setCloseModal = () => {
   const $modalBackground = document.querySelector('.modalBackground');
   $modalBackground.classList.add('hidden');
   $modalBackground.removeEventListener('click', e => {
-    if (!e.target.classList.contains('modalBackground')) {
-      return;
-    }
-    $modalBackground.classList.add('hidden');
-    $modalContainer.classList.remove('chatbotModal');
-    $modalContainer.classList.add('hidden');
+    if (!e.target.classList.contains('modalBackground')) return;
+    setOpenModal();
   });
+
+  document.body.style.overflow = 'unset';
 };
 
 export const getFormatTime = () => {
@@ -65,8 +59,7 @@ export const ChatbotHeader = () => {
       src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
     />
     </div>
-    <p class="headerTitle">하나은행 문의채널</p>
-    ${GEAR_ICON_SVG_TAG}
+    <p class="headerTitle">디지털 하나로 문의 채널</p>
   `;
 
   const $chevronLeft = document.querySelector('.chevronLeft');
@@ -93,7 +86,7 @@ export const ChatbotList = () => {
             src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
           /></div>
             <div class="">
-              <p class="chatName">하나은행 문의채널</p>
+              <p class="chatName">디지털 하나로 문의 채널</p>
               <p class="chatItemContainer">${message.contents}</p>
             </div>
           </li>
@@ -144,8 +137,8 @@ export const ChatbotCharacter = () => {
     src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
   />
   </div>
-    <p class="profileTitle">하나은행 문의채널에 문의하기</p>
-    <p><span class="response">보통 수십 분 내 답변</span></p>
+    <p class="profileTitle">디지털 하나로 문의 채널</p>
+    <p class="responseContainer"><span class="response">보통 수십 분 내 답변</span></p>
   `;
 };
 
@@ -156,49 +149,63 @@ export const handleClickFAQButton = e => {
   question['nextReqGroup'] = e.target.dataset.nextreqgroup;
   question['contents'] = e.target.dataset.contents;
   question['type'] = 'res';
-  question['id'] = messages.length;
+  question['id'] = messages[messages.length - 1].id + 1;
   question['createdAt'] = getFormatTime(Date.now());
   messages.push(question);
   store.setState('nextReqGroup', question.nextReqGroup);
 
-  const temp = ANSWER_LIST.filter(
-    x => parseInt(x.resId) === parseInt(question.resId)
-  )[0];
-  temp.createdAt = getFormatTime(Date.now());
-  temp.contents = temp.contents.replace(/\n/g, '<br>');
-  messages.push(temp);
+  // 선택한 버튼만 남기기
+  const temp = ANSWER_LIST.filter(response => {
+    return parseInt(response.resId) === parseInt(question.resId);
+  })[0];
+  if (temp) {
+    temp.createdAt = getFormatTime(Date.now());
+    temp.contents = temp.contents.replace(/\n/g, '<br>');
+    messages.push(temp);
+  }
 
   renderContents();
-  $modalContainer.scrollTop = $modalContainer.scrollHeight;
+
+  const $chatbotList = document.querySelector('.chatbotList');
+  $('.modalContainer').animate(
+    { scrollTop: $chatbotList.scrollHeight, easing: 'ease-in-out' },
+    SCROLL_ANIMATION_DURATION
+  );
 };
 
 export const ChatbotFAQButtons = () => {
-  const $chatbotButtons = document.querySelector('.chatbotButtons');
   let tempInnerHTML = '';
   FAQ_LIST.forEach(question => {
-    if (
-      parseInt(question.reqGroup) === parseInt(store.getState('nextReqGroup'))
-    ) {
-      const { resId, nextReqGroup, contents } = question;
+    const { resId, reqGroup, nextReqGroup, contents } = question;
+    if (parseInt(reqGroup) === parseInt(store.getState('nextReqGroup'))) {
+      // 첫 질문에 처음으로 돌아가기 삭제
+      if (messages.length === 1 && resId === 0) return;
+
+      // 방금 선택한 버튼 생성 방지
+      if (messages[messages.length - 1].resId === resId) return;
+
       tempInnerHTML += `
-      <button 
-        key=${resId} 
-        class="qnaButton" 
+      <button key=${resId + '-' + Date.now()} class="qnaButton" 
         data-resId=${resId}
-        data-nextReqGroup=${nextReqGroup}
+        data-nextReqGroup=${nextReqGroup} 
         data-contents=${JSON.stringify(contents)}
       >
         <span class="buttonIcon">🏷️</span>
         <span class="buttonText">${contents}</span>
       </button>
-    `;
+      `;
     }
   });
 
+  const $chatbotButtons = document.querySelector('.chatbotButtons');
   $chatbotButtons.innerHTML = tempInnerHTML;
-  const $qnaButtons = document.querySelectorAll('.qnaButton');
 
-  $qnaButtons.forEach(x => x.addEventListener('click', handleClickFAQButton));
+  const $qnaButtons = document.querySelectorAll('.qnaButton');
+  setTimeout(() => {
+    $qnaButtons.forEach(button =>
+      button.addEventListener('click', handleClickFAQButton)
+    );
+  }, SCROLL_ANIMATION_DURATION);
 };
 
 export const handleSubmitMessage = e => {
@@ -224,7 +231,7 @@ export const handleSubmitMessage = e => {
     createdAt: getFormatTime(Date.now()),
   });
 
-  const temp = ANSWER_LIST.find(x => parseInt(x.resId) === 10);
+  const temp = ANSWER_LIST.find(x => parseInt(x.resId) === 999);
   if (temp) {
     temp.createdAt = getFormatTime(Date.now());
     messages.push(temp);
@@ -252,6 +259,9 @@ export const ChatbotFooter = () => {
 
   $chatbotFooter.style.position = 'sticky';
   $chatbotFooter.style.bottom = 0;
+  if (messages.length > 1) {
+    $chatbotFooter.style.marginTop = '1rem';
+  }
 
   const sendImage = document.querySelector('.sendImage');
   const messageInput = document.getElementById('sendMessage');

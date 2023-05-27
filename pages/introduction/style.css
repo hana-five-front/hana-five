@@ -40,6 +40,7 @@
   .introHeading {
     font-size: 2.75rem;
     font-weight: bold;
+    margin: 0 2rem;
   }
   .introCardsContainer {
     display: grid;
@@ -213,7 +214,6 @@
     font-size: 2.2rem;
     font-weight: bold;
     text-align: center;
-    margin: 0 2rem;
   }
   .introCardsContainer {
     display: grid;
