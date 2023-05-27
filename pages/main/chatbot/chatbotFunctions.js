@@ -1,11 +1,6 @@
 import { store } from './Store.js';
 import { renderContents } from './chatbot.js';
-import {
-  ANSWER_LIST,
-  FAQ_LIST,
-  GEAR_ICON_SVG_TAG,
-  messages,
-} from './chatbotData.js';
+import { ANSWER_LIST, FAQ_LIST, messages } from './chatbotData.js';
 import { sendQnaToSlack } from './chatbotSlackApi.js';
 
 const handleKeydownEscape = e => {
@@ -160,44 +155,51 @@ export const handleClickFAQButton = e => {
   messages.push(question);
   store.setState('nextReqGroup', question.nextReqGroup);
 
-  const temp = ANSWER_LIST.filter(
-    x => parseInt(x.resId) === parseInt(question.resId)
-  )[0];
-  temp.createdAt = getFormatTime(Date.now());
-  temp.contents = temp.contents.replace(/\n/g, '<br>');
-  messages.push(temp);
+  // 선택한 버튼만 남기기
+  const temp = ANSWER_LIST.filter(response => {
+    return parseInt(response.resId) === parseInt(question.resId);
+  })[0];
+  if (temp) {
+    temp.createdAt = getFormatTime(Date.now());
+    temp.contents = temp.contents.replace(/\n/g, '<br>');
+    messages.push(temp);
+  }
 
   renderContents();
   $modalContainer.scrollTop = $modalContainer.scrollHeight;
 };
 
 export const ChatbotFAQButtons = () => {
-  const $chatbotButtons = document.querySelector('.chatbotButtons');
   let tempInnerHTML = '';
   FAQ_LIST.forEach(question => {
-    if (
-      parseInt(question.reqGroup) === parseInt(store.getState('nextReqGroup'))
-    ) {
-      const { resId, nextReqGroup, contents } = question;
+    const { resId, reqGroup, nextReqGroup, contents } = question;
+    if (parseInt(reqGroup) === parseInt(store.getState('nextReqGroup'))) {
+      // 첫 질문에 처음으로 돌아가기 삭제
+      if (messages.length === 1 && resId === 0) return;
+
+      // 방금 선택한 버튼 생성 방지
+      if (messages[messages.length - 1].resId === resId) return;
+
       tempInnerHTML += `
-      <button 
-        key=${resId} 
-        class="qnaButton" 
+      <button key=${resId} class="qnaButton" 
         data-resId=${resId}
-        data-nextReqGroup=${nextReqGroup}
+        data-nextReqGroup=${nextReqGroup} 
         data-contents=${JSON.stringify(contents)}
       >
         <span class="buttonIcon">🏷️</span>
         <span class="buttonText">${contents}</span>
       </button>
-    `;
+      `;
     }
   });
 
+  const $chatbotButtons = document.querySelector('.chatbotButtons');
   $chatbotButtons.innerHTML = tempInnerHTML;
-  const $qnaButtons = document.querySelectorAll('.qnaButton');
 
-  $qnaButtons.forEach(x => x.addEventListener('click', handleClickFAQButton));
+  const $qnaButtons = document.querySelectorAll('.qnaButton');
+  $qnaButtons.forEach(button =>
+    button.addEventListener('click', handleClickFAQButton)
+  );
 };
 
 export const handleSubmitMessage = e => {
@@ -223,7 +225,7 @@ export const handleSubmitMessage = e => {
     createdAt: getFormatTime(Date.now()),
   });
 
-  const temp = ANSWER_LIST.find(x => parseInt(x.resId) === 10);
+  const temp = ANSWER_LIST.find(x => parseInt(x.resId) === 999);
   if (temp) {
     temp.createdAt = getFormatTime(Date.now());
     messages.push(temp);
