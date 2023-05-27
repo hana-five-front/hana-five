@@ -181,7 +181,7 @@ export const ChatbotFAQButtons = () => {
       if (messages[messages.length - 1].resId === resId) return;
 
       tempInnerHTML += `
-      <button key=${resId} class="qnaButton" 
+      <button key=${resId + '-' + Date.now()} class="qnaButton" 
         data-resId=${resId}
         data-nextReqGroup=${nextReqGroup} 
         data-contents=${JSON.stringify(contents)}
