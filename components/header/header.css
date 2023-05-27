@@ -169,6 +169,8 @@
     align-items: center;
     padding-left: 2vw;
     font-size: 0.9rem;
+    border:none;
+    background-color: transparent;
     text-decoration: none;
   }
   .sideBar > ul > :first-child {
