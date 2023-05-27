@@ -427,24 +427,20 @@
     background-image: url('../../public/images/캐러셀1.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(70%);
     z-index: -1;
   }
   .bg-carousel2 {
     background-image: url('../../public/images/캐러셀2.jpg');
     background-size: cover;
-    filter: brightness(70%);
   }
   .bg-carousel3 {
     background-image: url('../../public/images/캐러셀3.jpg');
     background-size: cover;
-    filter: brightness(70%);
   }
   .bg-carousel4 {
     background-image: url('../../public/images/캐러셀4.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(70%);
   }
   .mainCarouselText {
     width: 20rem;

@@ -148,12 +148,12 @@
     top: -0.9rem;
   }
   .timelineList {
-    padding: 1.5rem;
+    padding-left: 2.5rem;
     padding-bottom: 3rem;
     margin: 0;
     border-top: 2px solid #eee;
     color: #6b7684;
-    list-style-type: none;
+
   }
   .timelineListItem::marker {
     color: var(--primary-color);

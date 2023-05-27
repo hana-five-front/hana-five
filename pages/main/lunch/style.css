@@ -146,7 +146,7 @@
   }
   main {
     width: 95vw;
-    height: 155vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,6 +177,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom:5vh;
   }
   .roullet-canvas {
     position: relative;
@@ -209,6 +210,7 @@
     width: 95vw;
     padding-top: 1.875rem;
     height: 40vh;
+    margin-bottom:10vh;
   }
   .list-component {
     height: 80vh;
