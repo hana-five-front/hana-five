@@ -11,6 +11,15 @@ export const messages = [
   },
 ];
 
+/**
+ * reqGroup
+ * 0: 첫 메뉴, 처음으로 돌아간 메뉴,
+ * 3: 하위 메뉴가 없는 그룹 (처음으로 돌아가기 버튼만 렌더)
+ *
+ * resId
+ * 0: 처음으로 돌아가기 버튼
+ * 999: 채팅창으로 문의하기
+ */
 export const FAQ_LIST = [
   { resId: 1, reqGroup: 0, nextReqGroup: 0, contents: '디지털 하나로 소개' },
   { resId: 2, reqGroup: 0, nextReqGroup: 1, contents: '지원 자격 문의' },
