@@ -183,6 +183,9 @@
     align-items: center;
     display: inline-flex;
   }
+  .chatbotList {
+    padding: 0 0.5rem;
+  }
   .responseContainer {
     margin: 0;
   }
@@ -199,38 +202,41 @@
     overflow: visible;
     cursor: pointer;
   }
+  .resItem {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    padding-bottom: 1rem;
+  }
   .qnaButton,
   .qnaButtonSelected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0.5rem 1rem;
     border: 0.5px solid #ccc;
     color: #444;
     margin: 0.25rem;
     border-radius: 2rem;
     font-weight: bold;
-    display: inline-block;
-    justify-content: space-between;
   }
   .buttonIcon {
-    font-size: 1.125rem;
-    line-height: 1.125rem;
     margin-right: 0.25rem;
+    font-size: 1.125rem;
     pointer-events: none;
   }
   .buttonText {
-    line-height: 1.125rem;
     pointer-events: none;
   }
   .chatbotButtons {
     display: flex;
     justify-content: end;
     flex-wrap: wrap;
+    padding: 0 0.5rem;
+    margin-top: 0.5rem;
   }
   .contentCard {
     width: 100%;
-  }
-  .resItem {
-    text-align: right;
-    padding-bottom: 1rem;
   }
   .chatbotFooter {
     position: sticky;

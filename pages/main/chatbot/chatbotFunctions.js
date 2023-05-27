@@ -254,7 +254,7 @@ export const ChatbotFooter = () => {
   $chatbotFooter.style.position = 'sticky';
   $chatbotFooter.style.bottom = 0;
   if (messages.length > 1) {
-    $chatbotFooter.style.marginTop = '1.5rem';
+    $chatbotFooter.style.marginTop = '1rem';
   }
 
   const sendImage = document.querySelector('.sendImage');
