@@ -164,8 +164,8 @@ export const handleClickFAQButton = e => {
 
   renderContents();
   $('.modalContainer').animate(
-    { scrollTop: $modalContainer.scrollHeight },
-    500
+    { scrollTop: $modalContainer.scrollHeight, easing: 'ease-in-out' },
+    1000
   );
 };
 
