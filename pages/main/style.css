@@ -126,17 +126,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width:100%;
+    width: 100%;
     border-bottom: 1px solid #008485;
   }
   .todayTableTitle > :first-child {
-     
   }
-  .todayTableTitle > :last-child{
-
-   font-size:0.8rem;
-   color:#8b95a1;
-   padding-top: .3125rem;
+  .todayTableTitle > :last-child {
+    font-size: 0.8rem;
+    color: #8b95a1;
+    padding-top: 0.3125rem;
   }
   .todayTableContent {
     width: 8.1875rem;
@@ -505,8 +503,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    border : 1px solid #008485;
-    border-radius: .3125rem;
+    border: 1px solid #008485;
+    border-radius: 0.3125rem;
   }
   .todayTableTitle {
     font-weight: bold;
@@ -516,28 +514,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding:2vh;
+    padding: 2vh;
     background-color: #008485;
     border-bottom: 1px solid #008485;
   }
   .todayTableTitle > :first-child {
-     
   }
-  .todayTableTitle > :last-child{
-    font-size:1.2rem;
+  .todayTableTitle > :last-child {
+    font-size: 1.2rem;
     margin-top: 1vh;
     color: #fff;
   }
   .todayTableContent {
-    width:95vw;
+    width: 95vw;
     height: 15rem;
     display: flex;
-   
+
     flex-direction: column;
   }
   .todayTableContent > div {
-    font-size:1rem;
-    margin-top:3vh;
+    font-size: 1rem;
+    margin-top: 3vh;
     padding-left: 1vh;
     display: flex;
     align-items: center;
@@ -562,4 +559,5 @@
   a {
     text-decoration: none;
   }
+
 }
