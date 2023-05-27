@@ -3,6 +3,8 @@ import { renderContents } from './chatbot.js';
 import { ANSWER_LIST, FAQ_LIST, messages } from './chatbotData.js';
 import { sendQnaToSlack } from './chatbotSlackApi.js';
 
+const SCROLL_ANIMATION_DURATION = 400;
+
 const handleKeydownEscape = e => {
   if (e.key == 'Escape' || e.code == 'Escape') {
     setCloseModal();
@@ -167,7 +169,7 @@ export const handleClickFAQButton = e => {
   const $chatbotList = document.querySelector('.chatbotList');
   $('.modalContainer').animate(
     { scrollTop: $chatbotList.scrollHeight, easing: 'ease-in-out' },
-    400
+    SCROLL_ANIMATION_DURATION
   );
 };
 
@@ -199,9 +201,11 @@ export const ChatbotFAQButtons = () => {
   $chatbotButtons.innerHTML = tempInnerHTML;
 
   const $qnaButtons = document.querySelectorAll('.qnaButton');
-  $qnaButtons.forEach(button =>
-    button.addEventListener('click', handleClickFAQButton)
-  );
+  setTimeout(() => {
+    $qnaButtons.forEach(button =>
+      button.addEventListener('click', handleClickFAQButton)
+    );
+  }, SCROLL_ANIMATION_DURATION);
 };
 
 export const handleSubmitMessage = e => {
