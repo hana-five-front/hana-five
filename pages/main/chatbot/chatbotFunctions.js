@@ -162,8 +162,9 @@ export const handleClickFAQButton = e => {
     messages.push(temp);
   }
 
-  const $chatbotList = document.querySelector('.chatbotList');
   renderContents();
+
+  const $chatbotList = document.querySelector('.chatbotList');
   $('.modalContainer').animate(
     { scrollTop: $chatbotList.scrollHeight, easing: 'ease-in-out' },
     400
