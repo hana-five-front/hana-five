@@ -16,13 +16,12 @@ export const setOpenModal = () => {
   const $modalBackground = document.querySelector('.modalBackground');
   $modalBackground.classList.remove('hidden');
   $modalBackground.addEventListener('click', e => {
-    if (!e.target.classList.contains('modalBackground')) {
-      return;
-    }
-    $modalBackground.classList.add('hidden');
-    $modalContainer.classList.remove('chatbotModal');
-    $modalContainer.classList.add('hidden');
+    if (!e.target.classList.contains('modalBackground')) return;
+    setCloseModal();
   });
+
+  $('html, body').animate({ scrollTop: '0' }, 500);
+  document.body.style.overflow = 'hidden';
 };
 
 export const setCloseModal = () => {
@@ -33,13 +32,11 @@ export const setCloseModal = () => {
   const $modalBackground = document.querySelector('.modalBackground');
   $modalBackground.classList.add('hidden');
   $modalBackground.removeEventListener('click', e => {
-    if (!e.target.classList.contains('modalBackground')) {
-      return;
-    }
-    $modalBackground.classList.add('hidden');
-    $modalContainer.classList.remove('chatbotModal');
-    $modalContainer.classList.add('hidden');
+    if (!e.target.classList.contains('modalBackground')) return;
+    setOpenModal();
   });
+
+  document.body.style.overflow = 'unset';
 };
 
 export const getFormatTime = () => {
@@ -166,7 +163,10 @@ export const handleClickFAQButton = e => {
   }
 
   renderContents();
-  $modalContainer.scrollTop = $modalContainer.scrollHeight;
+  $('.modalContainer').animate(
+    { scrollTop: $modalContainer.scrollHeight },
+    500
+  );
 };
 
 export const ChatbotFAQButtons = () => {
@@ -253,6 +253,9 @@ export const ChatbotFooter = () => {
 
   $chatbotFooter.style.position = 'sticky';
   $chatbotFooter.style.bottom = 0;
+  if (messages.length > 1) {
+    $chatbotFooter.style.marginTop = '1.5rem';
+  }
 
   const sendImage = document.querySelector('.sendImage');
   const messageInput = document.getElementById('sendMessage');

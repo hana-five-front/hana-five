@@ -72,11 +72,15 @@
   }
   .chatbotWrapper {
     position: relative;
+    right: calc(50% - 550px);
   }
   .chatbotButton {
     position: absolute;
-    bottom: 2.5rem;
-    left: 4.5rem;
+    right: 1rem;
+    bottom: -1.5rem;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
     width: 2.625rem;
     height: 2.625rem;
     text-align: center;
@@ -86,8 +90,6 @@
     transition: all 0.2s;
     cursor: pointer;
     background-image: linear-gradient(#b5abff, #888cf6);
-    align-items: center;
-    display: inline-flex;
   }
   .chatbotButtonImage {
     width: 1.0625rem;
@@ -110,15 +112,19 @@
   }
   .modalContainer {
     position: absolute;
-    top: calc(50vh);
-    left: calc(50vw);
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 370px;
     height: 600px;
     border-radius: 10px;
     z-index: 10000;
-    overflow: hidden;
     overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .modalContainer:-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
   }
   .chatbotModal {
     background-color: white;
@@ -226,11 +232,10 @@
     text-align: right;
     padding-bottom: 1rem;
   }
-
   .chatbotFooter {
     position: sticky;
     bottom: 0;
-    margin-top: 3rem;
+    margin-top: 5rem;
     height: 3rem;
     line-height: 3rem;
     display: flex;
