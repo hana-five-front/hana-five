@@ -147,7 +147,7 @@ export const handleClickFAQButton = e => {
   question['nextReqGroup'] = e.target.dataset.nextreqgroup;
   question['contents'] = e.target.dataset.contents;
   question['type'] = 'res';
-  question['id'] = messages.length;
+  question['id'] = messages[messages.length - 1].id + 1;
   question['createdAt'] = getFormatTime(Date.now());
   messages.push(question);
   store.setState('nextReqGroup', question.nextReqGroup);
@@ -162,10 +162,11 @@ export const handleClickFAQButton = e => {
     messages.push(temp);
   }
 
+  const $chatbotList = document.querySelector('.chatbotList');
   renderContents();
   $('.modalContainer').animate(
-    { scrollTop: $modalContainer.scrollHeight, easing: 'ease-in-out' },
-    1000
+    { scrollTop: $chatbotList.scrollHeight, easing: 'ease-in-out' },
+    400
   );
 };
 
