@@ -44,7 +44,7 @@ export function setBoard(key) {
 }
 
 export function getSessionStorageItems(key) {
-  return sessionStorage.getItem(key)
+  return sessionStorage.getItem(key);
 }
 
 export function setLocalStorageItems(key, items) {
@@ -131,7 +131,6 @@ export function displayPage(posts, currentPage, boardList) {
   let end = start + postsPerPage;
 
   resetElementContent([boardList]);
-
   for (let i = start; i < end && i < posts.length; i++) {
     let post = posts[i];
     let listItem = document.createElement('li');
@@ -236,26 +235,25 @@ export function renderPost(postType) {
   let detailWriter = document.querySelector('.detailWriter');
   let detailDate = document.querySelector('.detailDate');
   let detailContext = document.querySelector('.detailContext');
-  let editButtons = document.querySelector('.editButtons')
+  let editButtons = document.querySelector('.editButtons');
   let post = findLocalStorageItemById(
     getLocalStorageItems(postType),
     getPostId()
   );
-  
+
   if (post) {
     detailTitle.textContent = post.title;
     detailWriter.textContent = post.name || '익명';
     detailDate.textContent = post.date;
-    console.log(post.name)
-    if(post.name != getSessionStorageItems('userName')) {
-       editButtons.style.display = 'none'
+    if (post.name != getSessionStorageItems('userName')) {
+      editButtons.style.display = 'none';
     }
-      console.log(post.content)
-      post.content.forEach(e => {
-        const outerDiv = document.createElement('div');
-        outerDiv.textContent = e;
-        detailContext.appendChild(outerDiv);
-      });
+
+    post.content.forEach(e => {
+      const outerDiv = document.createElement('div');
+      outerDiv.textContent = e;
+      detailContext.appendChild(outerDiv);
+    });
 
     renderComments(postType, (post.comments || []).reverse());
   } else {
@@ -269,7 +267,7 @@ export function modifyPost(postType, postId) {
   let contentInput = document.querySelector('.postingInputContext');
 
   let title = titleInput.value;
-  let name = getSessionStorageItems('userName')
+  let name = getSessionStorageItems('userName');
   if (name === '') {
     name = '익명';
   }
@@ -294,7 +292,7 @@ export function modifyPost(postType, postId) {
 
     findAndChangeLocalStorageItem(postType, posts, postId, post);
 
-    resetInputs([titleInput,contentInput]);
+    resetInputs([titleInput, contentInput]);
     redirectTo('detail/index', postId);
   }
 }
@@ -316,7 +314,7 @@ export function submitComment(postType) {
     '.detailCommentInputContext'
   );
 
-  let commentName = detailCommentInputWriter.value || '익명';
+  let commentName = getSessionStorageItems('userName');
   let commentContent = detailCommentInputContext.value;
   if (commentContent === '') {
     alert('댓글 내용을 입력해주세요.');
@@ -339,7 +337,7 @@ export function submitComment(postType) {
 
   renderComments(postType, (post.comments || []).reverse());
 
-  resetInputs([detailCommentInputWriter, detailCommentInputContext]);
+  resetInputs([detailCommentInputContext]);
 }
 
 export function searchPost(postType, currentPage, pagination, boardList) {
@@ -370,10 +368,10 @@ export function deleteCommentHandler(event) {
   deleteComment(commentId);
 }
 
-export function submitPost(postType) {
+export async function submitPost(postType) {
   let titleInput = document.querySelector('.postingInputTitle');
   let name = null;
-  name = getSessionStorageItems('userName')
+  name = getSessionStorageItems('userName');
   let contentInput = document.querySelector('.postingInputContext');
 
   let title = titleInput.value;
@@ -399,10 +397,10 @@ export function submitPost(postType) {
         date: date,
       };
 
-      posts.push(post);
+      posts.unshift(post);
       setLocalStorageItems(postType, posts);
       let text = [title + '\n', ...contentInput.value].join('');
-      fetch('http://localhost:3000/slackapi', {
+      fetch('https://server-eternalclash.koyeb.app/slackapi', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -422,7 +420,7 @@ export function submitPost(postType) {
 
       posts.push(post);
       localStorage.setItem(postType, JSON.stringify(posts));
-      resetInputs([titleInput,contentInput]);
+      resetInputs([titleInput, contentInput]);
       redirectTo('detail/index', post.id);
     }
   }
@@ -445,15 +443,17 @@ function renderComments(postType, comments) {
     contextElement.className = 'detailCommentContext';
     contextElement.textContent = comment.content;
 
-    let deleteCommentBtnElement = document.createElement('img');
-    deleteCommentBtnElement.className = 'deleteCommentBtn';
-    deleteCommentBtnElement.src = '/public/images/delete.svg';
-    deleteCommentBtnElement.dataset.commentId = comment.id;
-    deleteCommentBtnElement.addEventListener('click', deleteCommentHandler);
-
     commentElement.appendChild(writerElement);
     commentElement.appendChild(contextElement);
-    commentElement.appendChild(deleteCommentBtnElement);
+    if (getSessionStorageItems('userName') == comment.name) {
+      let deleteCommentBtnElement = document.createElement('img');
+      deleteCommentBtnElement.className = 'deleteCommentBtn';
+      deleteCommentBtnElement.src = '/public/images/delete.svg';
+      deleteCommentBtnElement.dataset.commentId = comment.id;
+      deleteCommentBtnElement.addEventListener('click', deleteCommentHandler);
+      commentElement.appendChild(deleteCommentBtnElement);
+    }
+
     detailCommentList.appendChild(commentElement);
   }
 }

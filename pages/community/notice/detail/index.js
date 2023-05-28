@@ -4,7 +4,7 @@ import {
   deletePost,
   submitComment,
   redirectTo,
-  getSessionStorageItems
+  getSessionStorageItems,
 } from '../../community.js';
 
 const postType = 'notice';
@@ -14,8 +14,10 @@ const deleteBtn = document.querySelector('.deleteBtn');
 const submitCommentBtn = document.querySelector('.submitCommentBtn');
 
 renderPost(postType);
+let postingUsername = document.querySelector('.postingUsername');
+postingUsername.innerText = `${getSessionStorageItems('userName')}`;
 if (!getSessionStorageItems('userName')) {
-  let commentComponent = document.querySelector('.detailCommentComponent');
+  let commentComponent = document.querySelector('.detailCommentInput');
   commentComponent.style.display = 'none';
 }
 modifyBtn.addEventListener('click', function () {
