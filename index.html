@@ -5,9 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <meta http-equiv="refresh" content="0; URL=/pages/main/index.html">
-  </head>
-  <body>
+    <script>
+      function redirectBasedOnScreenSize() {
+        var screenWidth = window.innerWidth;
 
-  </body>
+        if (screenWidth >= 1210) {
+          window.location.href = '/pages/popup/index.html';
+        } else {
+          window.location.href = '/pages/main/index.html';
+        }
+      }
+    </script>
+  </head>
+  <body onload="redirectBasedOnScreenSize()"></body>
 </html>

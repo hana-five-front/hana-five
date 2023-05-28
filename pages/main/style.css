@@ -81,6 +81,27 @@
     height: 16.5rem;
     border-radius: 0.3125rem;
   }
+  .wbg-carousel1 {
+    background-image: url('../../public/images/캐러셀1.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  .wbg-carousel2 {
+    background-image: url('../../public/images/캐러셀2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .wbg-carousel3 {
+    background-image: url('../../public/images/캐러셀3.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .wbg-carousel4 {
+    background-image: url('../../public/images/캐러셀4.jpg');
+    background-size: cover;
+    background-position: center;
+  }
   .middle-bottom {
     width: 36.25rem;
     height: 1.875rem;
@@ -425,24 +446,20 @@
     background-image: url('../../public/images/캐러셀1.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(70%);
     z-index: -1;
   }
   .bg-carousel2 {
     background-image: url('../../public/images/캐러셀2.jpg');
     background-size: cover;
-    filter: brightness(70%);
   }
   .bg-carousel3 {
     background-image: url('../../public/images/캐러셀3.jpg');
     background-size: cover;
-    filter: brightness(70%);
   }
   .bg-carousel4 {
     background-image: url('../../public/images/캐러셀4.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(70%);
   }
   .mainCarouselText {
     width: 20rem;
@@ -563,28 +580,5 @@
   a {
     text-decoration: none;
   }
-  .chatbotWrapper {
-    position: fixed;
-    bottom: 2vh;
-    right: 2vw;
-    z-index: 9999;
-  }
-  .chatbotButton {
-    width: 2.625rem;
-    height: 2.625rem;
-    text-align: center;
-    line-height: 4rem;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 50%;
-    transition: all 0.2s;
-    cursor: pointer;
-    background-image: linear-gradient(#b5abff, #888cf6);
-    align-items: center;
-    display: inline-flex;
-  }
-  .chatbotButtonImage {
-    width: 1.0625rem;
-    height: 1rem;
-    margin: 0 0.7813rem;
-  }
+
 }

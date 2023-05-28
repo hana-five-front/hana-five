@@ -21,6 +21,12 @@ const planData = async () => {
       todayTable.appendChild(classDiv);
     });
   }
+  else {
+    const classDiv = document.createElement('div');;
+    classDiv.innerText = '오늘은 수업이 없습니다.';
+
+    todayTable.appendChild(classDiv);
+  }
 };
 
 planData();
