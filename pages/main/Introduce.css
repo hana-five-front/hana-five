@@ -150,10 +150,18 @@
   .timelineList {
     padding: 1.5rem;
     padding-bottom: 3rem;
+    padding-left:2rem;
     margin: 0;
     border-top: 2px solid #eee;
     color: #6b7684;
+    width:100%;
+  
 
+  }
+  .timelineiListItem {
+    width:100%;
+    margin-left:3vw;
+    text-decoration: dotted;
   }
   .timelineListItem::marker {
     color: var(--primary-color);
