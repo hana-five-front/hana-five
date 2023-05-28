@@ -129,6 +129,7 @@
     color: black;
   }
   .sideBar {
+    
     position: fixed;
     top: 3rem;
     right: 4.5vw;
@@ -141,6 +142,7 @@
       0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
   .sideBar > ul {
+    
     padding-top: 0.5rem;
     height: 13rem;
     display: flex;

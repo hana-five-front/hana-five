@@ -69,7 +69,7 @@ export const ChatbotHeader = () => {
 export const ChatbotList = () => {
   const $chatbotList = document.querySelector('.chatbotList');
   let tempInnerHTML = '';
-
+   console.log(messages)
   messages.forEach((message, i) => {
     const prevMessage = messages[i - 1];
     const prevTime = prevMessage?.createdAt;
@@ -92,6 +92,7 @@ export const ChatbotList = () => {
           </li>
         `;
     } else if (message.type === 'res') {
+ 
       tempInnerHTML += `
         <li class="resItem">
           <button 
@@ -107,7 +108,9 @@ export const ChatbotList = () => {
         </li>
       `;
     } else {
+      
       tempInnerHTML += `
+      
       <li class="resItem">
         <button 
           key=${message.resId} 
@@ -214,7 +217,7 @@ export const handleSubmitMessage = e => {
   const messageInput = document.getElementById('sendMessage');
   const value = messageInput.value.trim();
   if (value === '') return;
-
+console.log(value)
   const resId = 10;
   const contents = value;
   const userName = sessionStorage.getItem('userName');
@@ -231,7 +234,7 @@ export const handleSubmitMessage = e => {
     createdAt: getFormatTime(Date.now()),
   });
 
-  const temp = ANSWER_LIST.find(x => parseInt(x.resId) === 999);
+  const temp = ANSWER_LIST.find(x => parseInt(x.resId) === 10);
   if (temp) {
     temp.createdAt = getFormatTime(Date.now());
     messages.push(temp);
@@ -244,19 +247,37 @@ export const ChatbotFooter = () => {
   const $chatbotFooter = document.querySelector('.chatbotFooter');
   const userName = sessionStorage.getItem('userName');
   const isLoggedin = Boolean(userName);
-  const inputDisabled = isLoggedin
+  let inputDisabled = 'disabled';
+  console.log(messages)
+  if(messages[messages.length-1].resId==10) {
+    inputDisabled = isLoggedin
     ? 'placeholder="문의 사항을 입력해 주세요"'
     : 'placeholder="로그인 후 이용해 주세요" disabled';
-
+  }
   $chatbotFooter.innerHTML = `
     <form class="messageInputForm" onsubmit="handleSubmitMessage">
-      <input type="text" id="sendMessage" ${inputDisabled}/>
+      <textarea type="textarea" id="sendMessage" ${inputDisabled}> </textarea>
     </form>
     <div class="sendImage">
       <img class="sendButton" src="/public/images/send.png" width="22px" height="22px"/>
     </div>
   `;
+  const textarea = document.getElementById("sendMessage");
+  const placeholderText = "";
+  
+  textarea.addEventListener("focus", function() {
+    if (textarea.value === placeholderText) {
+      textarea.value = "";
+    }
+  });
+  
+  textarea.addEventListener("blur", function() {
+    if (textarea.value === "") {
+      textarea.value = "sfda"
+    }
+  });
 
+  textarea.value = placeholderText;
   $chatbotFooter.style.position = 'sticky';
   $chatbotFooter.style.bottom = 0;
   if (messages.length > 1) {
