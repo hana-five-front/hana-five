@@ -4,6 +4,7 @@ import {
   deletePost,
   submitComment,
   redirectTo,
+  getSessionStorageItems
 } from '../../community.js';
 
 const postType = 'notice';
@@ -13,7 +14,10 @@ const deleteBtn = document.querySelector('.deleteBtn');
 const submitCommentBtn = document.querySelector('.submitCommentBtn');
 
 renderPost(postType);
-
+if (!getSessionStorageItems('userName')) {
+  let commentComponent = document.querySelector('.detailCommentComponent');
+  commentComponent.style.display = 'none';
+}
 modifyBtn.addEventListener('click', function () {
   redirectTo('posting/index', getPostId());
 });

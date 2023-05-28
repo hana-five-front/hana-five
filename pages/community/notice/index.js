@@ -3,6 +3,7 @@ import {
   displayPage,
   displayPagination,
   searchPost,
+  getSessionStorageItems
 } from '../community.js';
 
 function markDownToPlainWords(message) {
@@ -15,7 +16,7 @@ function dateToText(date) {
 
 function getSlackNotice() {
   getLocalStorageItems("board")
-  fetch('http://43.200.63.91:3000/slackapi')
+  fetch('http://localhost:3000/slackapi')
     .then(function (response) {
       if (response.ok) {
         return response.json();
@@ -37,7 +38,8 @@ function getSlackNotice() {
       console.error(error);
     });
 }
-
+if (!getSessionStorageItems('userName')) 
+{document.querySelector('.boardPostingButton').style.display = "none"}
 getSlackNotice();
 
 let postType = 'notice';

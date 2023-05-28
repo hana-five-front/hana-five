@@ -34,7 +34,7 @@ function getSlackNotice() {
       makeNotice(title, date, id);
     }
   }
-  fetch('http://43.200.63.91:3000/slackapi')
+  fetch('http://localhost:3000/slackapi')
     .then(function (response) {
       if (response.ok) {
         return response.json();
