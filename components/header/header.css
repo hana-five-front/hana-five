@@ -129,6 +129,7 @@
     color: black;
   }
   .sideBar {
+    
     position: fixed;
     top: 3rem;
     right: 4.5vw;
