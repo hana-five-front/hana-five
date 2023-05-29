@@ -24,7 +24,7 @@ function goToSlide(index) {
 
 leftButton.addEventListener('click', () => {
   if (currentIndex > 0) {
-    number = parseInt(number) - 1;
+    number = parseInt(number) > 1 ? parseInt(number) - 1 : parseInt(4);
     goToSlide(currentIndex - 1);
   } else if (currentIndex == 0) {
     number = parseInt(4);
@@ -34,7 +34,7 @@ leftButton.addEventListener('click', () => {
 
 rightButton.addEventListener('click', () => {
   if (currentIndex < slides.children.length - 1) {
-    number = parseInt(number) + 1;
+    number = parseInt(number) < 4 ? parseInt(number) + 1 : parseInt(1);
     goToSlide(currentIndex + 1);
   } else if (currentIndex == 3) {
     number = parseInt(1);
