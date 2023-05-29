@@ -5,10 +5,10 @@ const rightButton = document.getElementsByClassName('right-button')[0];
 const resultElement = document.getElementById('result');
 const slideList = document.querySelector('.carousel-items');
 
-let number = resultElement.innerText; //보이는 숫자
+let number = resultElement.innerText;
 let slideWidth = slides.clientWidth;
-let currentIndex = 0; //현재 슬라이드
-let slidesLength = slides.children.length; //4
+let currentIndex = 0;
+let slidesLength = slides.children.length;
 
 let clonedFirst = slideList.firstElementChild.cloneNode(true);
 let clonedLast = slideList.lastElementChild.cloneNode(true);
