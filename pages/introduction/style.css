@@ -329,7 +329,10 @@
     margin: 0;
     border-top: 2px solid #eee;
     color: #6b7684;
-    list-style-type: none;
+    text-decoration: dotted;
+  }
+  .timelineListItem {
+    text-decoration: dotted;
   }
   .timelineListItem::marker {
     color: var(--primary-color);
