@@ -5,10 +5,10 @@ const rightButton = document.getElementsByClassName('right-button')[0];
 const resultElement = document.getElementById('result');
 const slideList = document.querySelector('.carousel-items');
 
-let number = resultElement.innerText;
+let number = resultElement.innerText; //보이는 숫자
 let slideWidth = slides.clientWidth;
-let currentIndex = 0;
-let slidesLength = slides.children.length;
+let currentIndex = 0; //현재 슬라이드
+let slidesLength = slides.children.length; //4
 
 let clonedFirst = slideList.firstElementChild.cloneNode(true);
 let clonedLast = slideList.lastElementChild.cloneNode(true);
@@ -33,12 +33,26 @@ leftButton.addEventListener('click', () => {
 });
 
 rightButton.addEventListener('click', () => {
-  if (currentIndex < slides.children.length - 1) {
+  if (currentIndex <= slidesLength + 2) {
+    slides.style.transition = 'transform 0.3s ease';
     number = parseInt(number) < 4 ? parseInt(number) + 1 : parseInt(1);
     goToSlide(currentIndex + 1);
-  } else if (currentIndex == 3) {
-    number = parseInt(1);
-    goToSlide(0);
+  }
+  if (currentIndex == slidesLength + 2) {
+    setTimeout(
+      function () {
+        slides.style.transition = 'transform 0.3s ease';
+        slides.style.transform = 'translateX(' + -slideWidth + 'px)';
+        number = 2;
+        resultElement.innerText = number;
+      },
+      [300]
+    );
+    slides.style.transition = '0ms';
+    goToSlide(1);
+    number = 2;
+    resultElement.innerText = number;
+    currentIndex = 1;
   }
 });
 
