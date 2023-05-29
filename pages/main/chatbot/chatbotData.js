@@ -118,8 +118,9 @@ export const ANSWER_LIST = [
   {
     id: 10,
     resId: 10,
-    type: 'req',
-    contents: '문의 내용을 적어주시면 담당자에게 전달한 후에 답변을 보내드리겠습니다.',
+    type: 'slack',
+    contents:
+      '문의 내용을 적어주시면 담당자에게 전달한 후에 답변을 보내드리겠습니다.',
   },
 ];
 
