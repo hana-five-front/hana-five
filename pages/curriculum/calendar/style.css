@@ -1,6 +1,6 @@
-@media(min-width: 75.625rem) {
-  .goToTeacher{
-    display:none;
+@media (min-width: 75.625rem) {
+  .goToTeacher {
+    display: none;
   }
   body {
     display: flex;
@@ -183,6 +183,7 @@
   .calendar2-row1 {
     display: flex;
     justify-content: space-around;
+    min-height: 15.1875rem;
   }
   .calendar2-row1 > div,
   .calendar2-row2 > div {
@@ -214,35 +215,34 @@
   .sat {
     color: blue;
   }
-  
 }
 
 @media (max-width: 75.625rem) {
-  .goToTeacher{
-    width:95%;
+  .goToTeacher {
+    width: 95%;
     margin: 2rem 0;
-    display:flex;
+    display: flex;
     justify-content: center;
   }
-  .goToTeacherButton{
-    width:50%;
+  .goToTeacherButton {
+    width: 50%;
     height: 5vh;
     background-color: #008484;
-    border:none;
-    border-radius: .3125rem;
-    font-size:1rem;
-    color:white;
+    border: none;
+    border-radius: 0.3125rem;
+    font-size: 1rem;
+    color: white;
   }
-  .goToTeacherButton > a{
-    width:100%;
-    height:100%;
+  .goToTeacherButton > a {
+    width: 100%;
+    height: 100%;
   }
-  body{
-    width:100%;
+  body {
+    width: 100%;
   }
   .calendar-main {
     display: flex;
-    width:95%;
+    width: 95%;
     justify-content: center;
   }
   a {
@@ -256,10 +256,10 @@
     padding-top: 3.125rem;
   }
   .aside {
-    display:none;
+    display: none;
   }
-  .calendar2{
-    display:none;
+  .calendar2 {
+    display: none;
   }
 
   .page-container {
@@ -271,20 +271,20 @@
   }
   .page-container > header {
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: center;
   }
   .calendar-head {
-    margin-top:4rem;
+    margin-top: 4rem;
     margin-bottom: 2rem;
     display: flex;
     align-self: stretch;
     text-align: center;
-    width:100vw;
+    width: 100vw;
   }
   .calendar-text {
-     width:100%;
-    text-align: center;;
+    width: 100%;
+    text-align: center;
     font-size: 2.375rem;
     font-weight: bold;
     color: #191f29;
@@ -306,7 +306,7 @@
   .calendar1 {
     width: 100%;
     height: 100%;
-    min-height: 36.75rem;
+    min-height: 36.8125rem;
   }
   .calendar-month {
     display: flex;
@@ -315,6 +315,7 @@
     font-size: 1.875rem;
     font-weight: bold;
     margin-bottom: 0.625rem;
+    min-height: 2.375rem;
   }
   .calendar-month > button {
     background-color: transparent;
@@ -332,7 +333,7 @@
     min-height: 25rem;
     display: flex;
     justify-content: center;
-    width:100%;
+    width: 100%;
   }
   #calendar {
     width: 100%;
@@ -346,9 +347,9 @@
     box-sizing: border-box;
     height: 3rem;
     width: 3rem;
-    overflow:hidden;
+    overflow: hidden;
   }
-  .day{
+  .day {
     height: 5rem;
     overflow: hidden;
     -webkit-line-clamp: 4;
@@ -385,7 +386,7 @@
     color: #333d4b;
   }
   .time {
-    display:none;
+    display: none;
     font-size: 0.5rem;
     font-weight: bold;
     position: absolute;
