@@ -237,7 +237,7 @@
   }
   .boardSearchBar {
     display: flex;
-    width:73vw;
+    width: 73vw;
     align-items: end;
   }
   .boardSearchInput {
@@ -245,8 +245,7 @@
     height: 1.8125rem;
     font-weight: bold;
     border-radius: 0;
-    border-bottom: 1px solid;  
-    
+    border-bottom: 1px solid;
   }
   .boardSearchInput:focus {
     outline: none;
@@ -274,7 +273,7 @@
     color: #008485;
   }
   .boardList {
-    width:100%;
+    width: 100%;
     min-height: 34.375rem;
     margin: 0rem;
     padding: 0rem 0.625rem;
@@ -289,7 +288,7 @@
   }
   .boardContentTitle {
     font-size: 0.8rem;
-    max-width:60vw;
+    max-width: 60vw;
   }
   .boardContentName {
     white-space: nowrap;
@@ -377,14 +376,14 @@
     background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
   }
 
-  input,textarea,button {
-    appearance:none;
+  input,
+  textarea,
+  button {
+    appearance: none;
     border-radius: 0;
     -moz-appearance: none;
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
   }
-  
 }
-

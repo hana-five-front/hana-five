@@ -151,6 +151,10 @@
     cursor: pointer;
     opacity: 90%;
   }
+  .postingUsername {
+    display:flex;
+    align-items: center;
+  }
 }
 
 @media (max-width: 75.625rem) {
@@ -348,6 +352,10 @@
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
+  }
+  .postingUsername {
+    display:flex;
+    align-items: center;
   }
 }
 

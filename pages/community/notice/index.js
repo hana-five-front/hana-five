@@ -3,6 +3,7 @@ import {
   displayPage,
   displayPagination,
   searchPost,
+  getSessionStorageItems,
 } from '../community.js';
 
 function markDownToPlainWords(message) {
@@ -14,8 +15,8 @@ function dateToText(date) {
 }
 
 function getSlackNotice() {
-  getLocalStorageItems("board")
-  fetch('http://43.200.63.91:3000/slackapi')
+  getLocalStorageItems('board');
+  fetch('https://server-eternalclash.koyeb.app/slackapi')
     .then(function (response) {
       if (response.ok) {
         return response.json();
@@ -30,14 +31,16 @@ function getSlackNotice() {
         e.name = e.name === '' ? '익명' : e.name;
         return (e = { ...e, id: idx });
       });
-      localStorage.setItem('notice', JSON.stringify(data.reverse()));
-      return data.reverse();
+      localStorage.setItem('notice', JSON.stringify(data));
+      return data;
     })
     .catch(function (error) {
       console.error(error);
     });
 }
-
+if (!getSessionStorageItems('userName')) {
+  document.querySelector('.boardPostingButton').style.display = 'none';
+}
 getSlackNotice();
 
 let postType = 'notice';
@@ -49,7 +52,7 @@ let pagination = document.querySelector('.boardPage');
 let searchBtn = document.querySelector('.boardButton');
 let searchInput = document.querySelector('.boardSearchInput');
 
-let posts = getLocalStorageItems(postType).reverse();
+let posts = getLocalStorageItems(postType)
 
 searchBtn.addEventListener('click', function (event) {
   event.preventDefault();

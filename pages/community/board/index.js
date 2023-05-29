@@ -3,6 +3,7 @@ import {
   displayPagination,
   getLocalStorageItems,
   searchPost,
+  getSessionStorageItems
 } from '../community.js';
 
 let postType = 'board';
@@ -27,6 +28,9 @@ searchInput.addEventListener('keypress', function (e) {
     searchBtn.click();
   }
 });
+
+if (!getSessionStorageItems('userName')) 
+{document.querySelector('.boardPostingButton').style.display = "none"}
 
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);

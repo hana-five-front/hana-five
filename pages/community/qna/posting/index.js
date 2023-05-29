@@ -4,13 +4,15 @@ import {
   findLocalStorageItemById,
   submitPost,
   modifyPost,
+  getSessionStorageItems,
 } from '../../community.js';
 
 let postType = 'qna';
 let postingButton = document.querySelector('.postingButton');
 
 let postId = getPostId();
-
+let postingUsername = document.querySelector('.postingUsername');
+postingUsername.innerText = `작성자: ${getSessionStorageItems('userName')}`;
 if (postId != '') {
   let post = findLocalStorageItemById(getLocalStorageItems(postType), postId);
   let titleInput = document.querySelector('.postingInputTitle');
@@ -23,6 +25,7 @@ if (postId != '') {
   } else {
     nameInput.value = post.name;
   }
+  post.content = post.content.map(e => e + '\n').join('');
   contentInput.value = post.content;
 
   postingButton.addEventListener('click', function (event) {

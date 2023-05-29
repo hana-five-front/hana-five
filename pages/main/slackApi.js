@@ -34,7 +34,7 @@ function getSlackNotice() {
       makeNotice(title, date, id);
     }
   }
-  fetch('http://43.200.63.91:3000/slackapi')
+  fetch('https://server-eternalclash.koyeb.app/slackapi')
     .then(function (response) {
       if (response.ok) {
         return response.json();
