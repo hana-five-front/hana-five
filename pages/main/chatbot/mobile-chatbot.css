@@ -213,7 +213,7 @@
   .chatbotFooter {
     position: sticky;
     bottom: 0;
-    margin-top: 100px;
+    margin-top: 1rem;
     height: 3rem;
     line-height: 3rem;
     display: flex;
