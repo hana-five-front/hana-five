@@ -34,6 +34,7 @@ export const FAQ_LIST = [
   { resId: 0, reqGroup: 1, nextReqGroup: 0, contents: '처음으로 돌아가기' },
   { resId: 0, reqGroup: 2, nextReqGroup: 0, contents: '처음으로 돌아가기' },
   { resId: 0, reqGroup: 3, nextReqGroup: 0, contents: '처음으로 돌아가기' },
+  { resId: 10, reqGroup: 0, nextReqGroup: 3, contents: '1대1 Q&A 문의' },
 ];
 
 export const ANSWER_LIST = [
@@ -115,10 +116,11 @@ export const ANSWER_LIST = [
     `,
   },
   {
-    id: 999,
-    resId: 999,
-    type: 'req',
-    contents: '문의해주신 내용은 담당자가 검토 후에 게시판에 게시하겠습니다.',
+    id: 10,
+    resId: 10,
+    type: 'slack',
+    contents:
+      '문의 내용을 적어주시면 담당자에게 전달한 후에 답변을 보내드리겠습니다.',
   },
 ];
 

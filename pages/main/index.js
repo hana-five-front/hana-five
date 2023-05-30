@@ -24,7 +24,7 @@ function goToSlide(index) {
 
 leftButton.addEventListener('click', () => {
   if (currentIndex > 0) {
-    number = parseInt(number) - 1;
+    number = parseInt(number) > 1 ? parseInt(number) - 1 : parseInt(4);
     goToSlide(currentIndex - 1);
   } else if (currentIndex == 0) {
     number = parseInt(4);
@@ -33,12 +33,26 @@ leftButton.addEventListener('click', () => {
 });
 
 rightButton.addEventListener('click', () => {
-  if (currentIndex < slides.children.length - 1) {
-    number = parseInt(number) + 1;
+  if (currentIndex <= slidesLength + 2) {
+    slides.style.transition = 'transform 0.3s ease';
+    number = parseInt(number) < 4 ? parseInt(number) + 1 : parseInt(1);
     goToSlide(currentIndex + 1);
-  } else if (currentIndex == 3) {
-    number = parseInt(1);
-    goToSlide(0);
+  }
+  if (currentIndex == slidesLength + 2) {
+    setTimeout(
+      function () {
+        slides.style.transition = 'transform 0.3s ease';
+        slides.style.transform = 'translateX(' + -slideWidth + 'px)';
+        number = 2;
+        resultElement.innerText = number;
+      },
+      [300]
+    );
+    slides.style.transition = '0ms';
+    goToSlide(1);
+    number = 2;
+    resultElement.innerText = number;
+    currentIndex = 1;
   }
 });
 

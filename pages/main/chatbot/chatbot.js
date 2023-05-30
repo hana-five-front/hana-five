@@ -6,7 +6,7 @@ import {
   ChatbotFAQButtons,
   ChatbotFooter,
 } from './chatbotFunctions.js';
-
+import { getQnaToSlack } from './chatbotSlackApi.js';
 export const makeChatbotUI = () => {
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.remove('hidden');
@@ -16,12 +16,14 @@ export const makeChatbotUI = () => {
   ChatbotList();
   ChatbotFAQButtons();
   ChatbotFooter();
+  getQnaToSlack();
 };
 
 export const renderContents = () => {
   ChatbotList();
   ChatbotFAQButtons();
   ChatbotFooter();
+  getQnaToSlack();
 };
 
 const handleClickChatbot = () => {
