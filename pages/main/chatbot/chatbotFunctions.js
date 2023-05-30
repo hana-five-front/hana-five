@@ -69,7 +69,6 @@ export const ChatbotHeader = () => {
 export const ChatbotList = () => {
   const $chatbotList = document.querySelector('.chatbotList');
   let tempInnerHTML = '';
-
   messages.forEach((message, i) => {
     const prevMessage = messages[i - 1];
     const prevTime = prevMessage?.createdAt;
@@ -107,20 +106,80 @@ export const ChatbotList = () => {
         </li>
       `;
     } else {
-      tempInnerHTML += `
-      <li class="resItem">
-        <button 
-          key=${message.resId} 
-          class="qnaButtonSelected" 
-          data-resId=${message.resId}
-          data-nextReqGroup=${message.nextReqGroup}
-          data-contents=${message.contents}
-        >
-          <span class="buttonIcon">🙋‍♂️</span>
-          <span class="buttonText">${message.contents}</span>
-        </button>
-      </li>
-    `;
+      const slackInquire = JSON.parse(localStorage.getItem('slackQ&A'));
+
+      if (Array.isArray(slackInquire) && slackInquire.length > 0) {
+        slackInquire.forEach((e, idx) => {
+          if (e.content[0].includes('내용:')) {
+            tempInnerHTML += `
+      
+            <li class="resItem">
+              <button 
+                key=${e.resId} 
+                class="qnaButtonSelected" 
+                data-resId=${e.resId}
+                data-nextReqGroup=${e.nextReqGroup}
+                data-contents=${e.contents}
+              >
+                <span class="buttonIcon">🙋‍♂️</span>
+                <span class="buttonText">${e.content[0].substring(4)}</span>
+              </button>
+            </li>
+          `;
+          } else if (e.content[0].includes('답변')) {
+            tempInnerHTML += `<li key=${message.id} class="chatItem">`;
+            if (prevTime === undefined || prevTime !== message.createdAt) {
+              tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
+            }
+            tempInnerHTML += `<div class="chatItemWrapper">
+            <div class="chatLogoBox" >
+                <img
+                  class="headerLogo"
+                  alt="headerLogo"
+                  src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+                /></div>
+                  <div class="">
+                    <p class="chatName">디지털 하나로 문의 채널</p>
+                    <p class="chatItemContainer">${e.content[0].substr(4)}</p>
+                  </div>
+                </li>
+              `;
+          } else {
+            tempInnerHTML += `
+      
+            <li class="resItem">
+              <button 
+                key=${e.resId} 
+                class="qnaButtonSelected" 
+                data-resId=${e.resId}
+                data-nextReqGroup=${e.nextReqGroup}
+                data-contents=${e.contents}
+              >
+                <span class="buttonIcon">🙋‍♂️</span>
+                <span class="buttonText">${e.content[0]}</span>
+              </button>
+            </li>
+          `;
+          }
+        });
+      } else {
+        tempInnerHTML += `<li key=${message.id} class="chatItem">`;
+        if (prevTime === undefined || prevTime !== message.createdAt) {
+          tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
+        }
+        tempInnerHTML += `<div class="chatItemWrapper">
+      <div class="chatLogoBox" >
+          <img
+            class="headerLogo"
+            alt="headerLogo"
+            src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+          /></div>
+            <div class="">
+              <p class="chatName">디지털 하나로 문의 채널</p>
+              <p class="chatItemContainer">${message.contents}</p>
+            </div>
+          </li>`;
+      }
     }
   });
 
@@ -214,7 +273,6 @@ export const handleSubmitMessage = e => {
   const messageInput = document.getElementById('sendMessage');
   const value = messageInput.value.trim();
   if (value === '') return;
-
   const resId = 10;
   const contents = value;
   const userName = sessionStorage.getItem('userName');
@@ -222,19 +280,22 @@ export const handleSubmitMessage = e => {
 
   e.target.setAttribute('data-resId', resId);
   e.target.setAttribute('data-contents', contents);
-
-  messages.push({
+  const slackMessage = {
     id: messages.length,
     resId: 10,
     type: 'manualRes',
-    contents: value,
+    content: [value],
     createdAt: getFormatTime(Date.now()),
-  });
+  };
 
-  const temp = ANSWER_LIST.find(x => parseInt(x.resId) === 999);
-  if (temp) {
-    temp.createdAt = getFormatTime(Date.now());
-    messages.push(temp);
+  let slackLocalStorage = JSON.parse(localStorage.getItem('slackQ&A'));
+  if (slackLocalStorage) {
+    localStorage.setItem(
+      'slackQ&A',
+      JSON.stringify([...slackLocalStorage, slackMessage])
+    );
+  } else {
+    localStorage.setItem('slackQ&A', JSON.stringify([slackMessage]));
   }
 
   renderContents();
@@ -244,19 +305,36 @@ export const ChatbotFooter = () => {
   const $chatbotFooter = document.querySelector('.chatbotFooter');
   const userName = sessionStorage.getItem('userName');
   const isLoggedin = Boolean(userName);
-  const inputDisabled = isLoggedin
-    ? 'placeholder="문의 사항을 입력해 주세요"'
-    : 'placeholder="로그인 후 이용해 주세요" disabled';
-
+  let inputDisabled = 'disabled';
+  if (messages[messages.length - 1].resId == 10) {
+    inputDisabled = isLoggedin
+      ? 'placeholder="문의 사항을 입력해 주세요"'
+      : 'placeholder="로그인 후 이용해 주세요" disabled';
+  }
   $chatbotFooter.innerHTML = `
     <form class="messageInputForm" onsubmit="handleSubmitMessage">
-      <input type="text" id="sendMessage" ${inputDisabled}/>
+      <textarea type="textarea" id="sendMessage" ${inputDisabled}> </textarea>
     </form>
     <div class="sendImage">
       <img class="sendButton" src="/public/images/send.png" width="22px" height="22px"/>
     </div>
   `;
+  const textarea = document.getElementById('sendMessage');
+  const placeholderText = '';
 
+  textarea.addEventListener('focus', function () {
+    if (textarea.value === placeholderText) {
+      textarea.value = '';
+    }
+  });
+
+  textarea.addEventListener('blur', function () {
+    if (textarea.value === '') {
+      textarea.value = '';
+    }
+  });
+
+  textarea.value = placeholderText;
   $chatbotFooter.style.position = 'sticky';
   $chatbotFooter.style.bottom = 0;
   if (messages.length > 1) {

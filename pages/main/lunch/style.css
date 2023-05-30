@@ -150,6 +150,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10vh;
   }
   /* 룰렛 텍스트 */
   .rullet-top {
@@ -209,11 +210,10 @@
   .rullet-list {
     width: 95vw;
     padding-top: 1.875rem;
-    height: 40vh;
     margin-bottom:10vh;
   }
   .list-component {
-    height: 80vh;
+
     width: 95vw;
 
     display: flex;
@@ -223,6 +223,7 @@
   .pick-list {
     width: 100%;
     height: 100%;
+    padding-bottom:10vh;
   }
   .pick-list-title {
     width: 100%;
