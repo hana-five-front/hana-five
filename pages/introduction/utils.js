@@ -34,4 +34,4 @@ export const makeImageTags = images => {
 };
 
 const imgTagTemplate = src =>
-  `<img src="${src}" alt="별돌이"width="300px" height="300px" />`;
+  `<img src="${src}" alt="별돌이" width="300px" height="300px" />`;
