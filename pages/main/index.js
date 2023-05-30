@@ -13,7 +13,7 @@ let slidesLength = slides.children.length;
 let clonedFirst = slideList.firstElementChild.cloneNode(true);
 let clonedLast = slideList.lastElementChild.cloneNode(true);
 
-let time = 5000;
+const INTERVAL_TIME = 5000;
 
 slideList.appendChild(clonedFirst);
 slideList.insertBefore(clonedLast, slideList.firstElementChild);
@@ -47,7 +47,7 @@ const autoSlideHandler = () => {
     currentIndex = 1;
   }
 };
-let slideInterval = setInterval(autoSlideHandler, [time]);
+let slideInterval = setInterval(autoSlideHandler, [INTERVAL_TIME]);
 
 leftButton.addEventListener('click', () => {
   if (currentIndex > 0) {
@@ -104,5 +104,5 @@ observeScreenResizeEvent();
 
 const resetInterval = () => {
   clearInterval(slideInterval);
-  slideInterval = setInterval(autoSlideHandler, time);
+  slideInterval = setInterval(autoSlideHandler, INTERVAL_TIME);
 };
