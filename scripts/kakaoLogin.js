@@ -6,7 +6,6 @@ fetch('https://server-eternalclash.koyeb.app/header')
       throw new Error('Error: ' + response.status);
     })
     .then(function (data) {
-      console.log(data.header)
       window.Kakao.init(data.header);
     })
     .catch(function (error) {
