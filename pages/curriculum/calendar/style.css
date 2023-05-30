@@ -15,10 +15,9 @@
   }
   .container {
     display: flex;
-    width: 62.5rem;
-    min-height: 50rem;
+    padding: 3.125rem 1.25rem 0 1.25rem;
     justify-content: center;
-    padding-top: 3.125rem;
+    min-height: 50rem;
   }
   .aside {
     width: 20%;
@@ -261,7 +260,6 @@
   .calendar2 {
     display: none;
   }
-
   .page-container {
     display: flex;
     flex-direction: column;
@@ -371,7 +369,6 @@
     color: #f2f4f6;
     font-size: 0.5rem;
   }
-
   .d-day {
     font-size: 0.3125rem;
     font-weight: bold;
