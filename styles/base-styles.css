@@ -5,28 +5,24 @@
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Hana2';
   src: url('../public/fonts/Hana2-Bold.otf') format('woff');
   font-weight: bold;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Hana2';
   src: url('../public/fonts/Hana2-Regular.ttf') format('woff');
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Hana2';
   src: url('../public/fonts/Hana2-Bold.ttf') format('woff');
   font-weight: bold;
   font-style: normal;
 }
-
 * {
   font-family: 'Hana2', 'Notosans_Regular', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
@@ -42,18 +38,6 @@
     width: var(--inner-width);
     margin: 0 auto;
   }
-  a {
-    color: #191f29;
-    text-decoration: none;
-    outline: none;
-    font-size: 1.0625rem;
-  }
-  a:hover,
-  a:active {
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: none;
-  }
 }
 
 @media (max-width: 75.625rem) {
@@ -65,16 +49,16 @@
     width: var(--mobile-width);
     margin: 0 auto;
   }
-  a {
-    font-size: 1.0625rem;
-    color: #191f29;
-    text-decoration: none;
-    outline: none;
-  }
-  a:hover,
-  a:active {
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--primary-color);
-  }
+}
+a {
+  color: #191f29;
+  text-decoration: none;
+  outline: none;
+  font-size: 1.0625rem;
+}
+a:hover,
+a:active {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
 }
