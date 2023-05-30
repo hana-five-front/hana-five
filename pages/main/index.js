@@ -27,8 +27,15 @@ leftButton.addEventListener('click', () => {
     number = parseInt(number) > 1 ? parseInt(number) - 1 : parseInt(4);
     goToSlide(currentIndex - 1);
   } else if (currentIndex == 0) {
-    number = parseInt(4);
-    goToSlide(3);
+    slides.style.transition = '0ms';
+    slides.style.transform = 'translateX(' + -slideWidth * slidesLength + 'px)';
+    number = 4;
+    resultElement.innerText = number;
+    currentIndex = slidesLength + 1;
+    setTimeout(() => {
+      slides.style.transition = 'transform 0.3s ease';
+      goToSlide(3);
+    }, 0);
   }
 });
 
