@@ -30,11 +30,11 @@ export const FAQ_LIST = [
   { resId: 7, reqGroup: 2, nextReqGroup: 3, contents: '교육 특전 문의' },
   { resId: 8, reqGroup: 2, nextReqGroup: 3, contents: '강사님 정보' },
   { resId: 9, reqGroup: 2, nextReqGroup: 3, contents: '시간표 문의' },
+  { resId: 10, reqGroup: 0, nextReqGroup: 3, contents: '1대1 Q&A 문의' },
   { resId: 0, reqGroup: 0, nextReqGroup: 0, contents: '처음으로 돌아가기' },
   { resId: 0, reqGroup: 1, nextReqGroup: 0, contents: '처음으로 돌아가기' },
   { resId: 0, reqGroup: 2, nextReqGroup: 0, contents: '처음으로 돌아가기' },
   { resId: 0, reqGroup: 3, nextReqGroup: 0, contents: '처음으로 돌아가기' },
-  { resId: 10, reqGroup: 0, nextReqGroup: 3, contents: '1대1 Q&A 문의' },
 ];
 
 export const ANSWER_LIST = [
