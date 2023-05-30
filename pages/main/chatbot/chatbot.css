@@ -225,7 +225,6 @@
   .qnaButtonSelected:hover {
     box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.25),
       0 1px 1px rgba(0, 0, 0, 0.1);
-      
   }
   .buttonIcon {
     margin-right: 0.25rem;
@@ -233,14 +232,13 @@
     pointer-events: none;
   }
   .buttonText {
-  
-      height:auto;
-      overflow: auto;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      line-height: 1.125rem;
-      pointer-events: none;
+    height: auto;
+    overflow: auto;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.125rem;
+    pointer-events: none;
   }
   .chatbotButtons {
     display: flex;
@@ -267,24 +265,21 @@
   .chatbotFooter > form {
     display: block;
     width: 80%;
-    display:flex;
+    display: flex;
     align-content: center;
   }
   .messageInputForm {
-    
     margin: 0 0 0 1rem;
-    display:flex;
+    display: flex;
     align-content: center;
   }
   .messageInputForm > textarea {
     width: 100%;
     height: 90%;
     padding: 0 0.5rem;
-
   }
-  
   .messageInputForm > textarea:focus {
-    outline:none;
+    outline: none;
   }
   .sendImage {
     display: flex;
@@ -323,4 +318,11 @@
   #sendMessage {
     height: 1.875rem;
   }
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+.scroll {
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
 }
