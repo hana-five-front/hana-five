@@ -1,20 +1,21 @@
+ul,
+ol,
+li,
+a,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+
 @media (min-width: 75.625rem) {
-  ul,
-  ol,
-  li,
-  a,
-  input,
-  select,
-  textarea {
-    margin: 0;
-    padding: 0;
-    border: 0 none;
-  }
-  ul,
-  ol,
-  li {
-    list-style: none;
-  }
   .characterContainer {
     display: flex;
     flex-direction: column;
