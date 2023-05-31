@@ -297,11 +297,10 @@ export const handleSubmitMessage = e => {
   e.target.setAttribute('data-resId', resId);
   e.target.setAttribute('data-contents', contents);
   const slackMessage = {
-    id: messages.length,
-    resId: RES_ID_QNA,
-    type: 'manualRes',
-    content: [value],
+    title: `문의자: ${userName}`,
+    content: [`내용: ${value}`],
     createdAt: getFormatTime(Date.now()),
+    id: messages.length,
   };
 
   let slackLocalStorage = JSON.parse(localStorage.getItem('slackQ&A'));

@@ -63,7 +63,6 @@ export const kakaoLoginInit = () => {
       alert('logout ok');
       location.reload();
     } else {
-      console.log(window.sessionStorage.getItem('userName'));
       Kakao.Auth.logout(function () {
         window.sessionStorage.setItem('userName', '');
         window.sessionStorage.setItem('userMail', '');
