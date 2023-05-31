@@ -246,7 +246,7 @@ export function renderPost(postType) {
     detailWriter.textContent = post.name || '익명';
     detailDate.textContent = post.date;
     if (post.name != getSessionStorageItems('userName')) {
-      editButtons.style.display = 'none';
+      editButtons.style.visibility = 'hidden';
     }
 
     post.content.forEach(e => {
@@ -400,7 +400,7 @@ export async function submitPost(postType) {
       posts.unshift(post);
       setLocalStorageItems(postType, posts);
       let text = [title + '\n', ...contentInput.value].join('');
-      fetch('https://server-eternalclash.koyeb.app/slackapi', {
+      fetch('http://localhost:3000/slackapi', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

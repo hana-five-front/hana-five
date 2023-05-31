@@ -1,28 +1,27 @@
-fetch('https://server-eternalclash.koyeb.app/header')
-    .then(function (response) {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error('Error: ' + response.status);
-    })
-    .then(function (data) {
-      window.Kakao.init(data.header);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-
+fetch('http://localhost:3000/header')
+  .then(function (response) {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error('Error: ' + response.status);
+  })
+  .then(function (data) {
+    window.Kakao.init(data.header);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
 
 export const kakaoLoginInit = () => {
   const loginBtn = document.querySelector('#login');
-  const loginBtnMobile = document.querySelector('#login2')
+  const loginBtnMobile = document.querySelector('#login2');
   const sessionUser = sessionStorage.getItem('userName');
   if (!sessionUser) {
     loginBtn.innerText = '로그인';
-    loginBtnMobile.innerText = '로그인'
+    loginBtnMobile.innerText = '로그인';
   } else {
     loginBtn.innerText = '로그아웃';
-    loginBtnMobile.innerText= '로그아웃'
+    loginBtnMobile.innerText = '로그아웃';
   }
 
   document.querySelector('#login').addEventListener('click', function () {
