@@ -1,7 +1,7 @@
 @media (min-width: 75.625rem) {
   .middle-component {
     display: flex;
-    padding-top: 50px;
+    padding: 3.125rem 1.25rem 0 1.25rem;
     justify-content: center;
     min-height: 50rem;
   }
@@ -269,7 +269,6 @@
     background-color: #ffffff;
     cursor: pointer;
   }
-
   .boardPosting:hover {
     color: #008485;
   }
@@ -283,7 +282,6 @@
     height: 3.125rem;
     display: flex;
     align-items: center;
-
     list-style: none;
     border-bottom: 0.03rem #d1d6db solid;
   }

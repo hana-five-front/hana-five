@@ -3,7 +3,7 @@
     display: none;
   }
   .career-component {
-    margin-top: 1.875rem;
+    margin-top: 10rem;
     width: 16.0625rem;
     height: 4.25rem;
     font-size: 2.5rem;
@@ -14,7 +14,7 @@
     text-align: center;
   }
   .careerBoxAll-component {
-    margin-top: 1.875rem;
+    margin-top: 3.75rem;
     width: 60rem;
     height: 9.6875rem;
     margin-left: auto;
@@ -52,7 +52,7 @@
   }
 
   .benefit-component {
-    margin-top: 1.25rem;
+    margin-top: 12.5rem;
     width: 60rem;
     height: 4.25rem;
     line-height: 4.25rem;
@@ -64,7 +64,7 @@
     text-align: center;
   }
   .benefitBoxAll-component {
-    margin-top: 1.875rem;
+    margin-top: 3.125rem;
     margin-bottom: 1.875rem;
     width: 60rem;
     height: 21.25rem;
@@ -124,6 +124,7 @@
     font-size: 2.2rem;
     font-weight: bold;
     text-align: center;
+    justify-content: center;
   }
   .careerBoxAll-component {
     margin-top: 1.875rem;
@@ -185,6 +186,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
   .benefitBox {
     width: 100%;
