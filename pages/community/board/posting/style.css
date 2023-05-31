@@ -1,9 +1,9 @@
-@media(min-width: 75.625rem) {
+@media (min-width: 75.625rem) {
   .middle-component {
     display: flex;
-    padding-top: 50px;
+    padding: 3.125rem 1.25rem 0 1.25rem;
     justify-content: center;
-    min-height: 30rem;
+    min-height: 50rem;
   }
   .aside {
     width: 20%;
@@ -104,12 +104,12 @@
     cursor: pointer;
   }
   .postingUsername {
-    display:flex;
+    display: flex;
     align-items: center;
   }
 }
 
-@media(max-width: 75.625rem) {
+@media (max-width: 75.625rem) {
   .middle-component {
     display: flex;
     margin-top: 5rem;
@@ -148,7 +148,6 @@
     color: #191f29;
     border-left: 0.0313rem #d1d6db solid;
   }
-
   .asideContent > a {
     width: 100%;
     display: flex;
@@ -172,34 +171,33 @@
     color: #191f29;
   }
   .postingInput {
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
   .postingInputTop {
     display: flex;
-    width:100%;
+    width: 100%;
     justify-content: space-between;
     padding-bottom: 0.5rem;
-
   }
   .postingInputTitle {
-    font-size:0.8rem;
+    font-size: 0.8rem;
     width: 65%;
     padding-bottom: 0.5rem;
     border-bottom: 0.0313rem #6b7684 solid;
   }
-  .postingInputTitle:focus{
-    outline:none;
+  .postingInputTitle:focus {
+    outline: none;
   }
   .postingInputName {
-    font-size:0.7rem;
+    font-size: 0.7rem;
     width: 30%;
     padding-bottom: 0.5rem;
     border-bottom: 0.0313rem #6b7684 solid;
   }
   .postingInputName {
-    outline:none;
+    outline: none;
   }
   .postingInputContext {
     width: 100%;
@@ -208,8 +206,8 @@
     padding: 1rem;
     border: 0.0313rem #6b7684 solid;
   }
-  .postingInputContext:focus{
-    outline:none;
+  .postingInputContext:focus {
+    outline: none;
   }
   .detailButtonBox {
     display: flex;
@@ -248,8 +246,10 @@
     border: #008485 0.0625rem solid;
     cursor: pointer;
   }
-  input,textarea,button {
-    appearance:none;
+  input,
+  textarea,
+  button {
+    appearance: none;
     border-radius: 0;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -257,8 +257,7 @@
     -moz-border-radius: 0;
   }
   .postingUsername {
-    display:flex;
+    display: flex;
     align-items: center;
   }
 }
-

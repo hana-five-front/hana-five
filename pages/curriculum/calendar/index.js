@@ -65,11 +65,7 @@ const prevCalendar = () => {
   const currentMonth = today.getMonth();
 
   if (currentYear === targetYear && currentMonth > targetMonth) {
-    today = new Date(
-      today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate()
-    );
+    today = new Date(today.getFullYear(), today.getMonth() - 1, 1);
     fetchOrBuildCalendar();
   }
 };
@@ -82,11 +78,7 @@ const nextCalendar = () => {
   const currentMonth = today.getMonth();
 
   if (currentYear == targetYear && currentMonth < targetMonth) {
-    today = new Date(
-      today.getFullYear(),
-      today.getMonth() + 1,
-      today.getDate()
-    );
+    today = new Date(today.getFullYear(), today.getMonth() + 1, 1);
     fetchOrBuildCalendar();
   }
 };

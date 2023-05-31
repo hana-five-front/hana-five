@@ -11,11 +11,11 @@
     color: #191f29;
   }
   .container {
+    width: 100%;
     display: flex;
-    width: 62.5rem;
-    min-height: 50rem;
+    padding: 3.125rem 1.25rem 0 1.25rem;
     justify-content: center;
-    padding-top: 3.125rem;
+    min-height: 50rem;
   }
   .aside {
     width: 20%;
@@ -70,8 +70,8 @@
   .info-container {
     display: flex;
   }
-  .info-container > div {
-    margin-right: 2.625rem;
+  .info1 {
+    margin-right: 40px;
   }
   .profile-image > img {
     height: 18.75rem;
@@ -125,7 +125,6 @@
     font-weight: bold;
     margin-bottom: 2vh;
   }
-
   .info-container {
     width: 95vw;
     display: flex;
@@ -163,8 +162,8 @@
     font-size: 1.5rem;
   }
   .brief {
-    margin-top:3vh;
-    margin-bottom:5vh;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
     display: flex;
     flex-direction: column;
     width: 95vw;
