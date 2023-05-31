@@ -55,8 +55,6 @@ let searchInput = document.querySelector('.boardSearchInput');
 
 let posts = getLocalStorageItems(postType);
 
-checkContentsEmpty();
-
 searchBtn.addEventListener('click', function (event) {
   event.preventDefault();
   searchPost(postType, currentPage, pagination, boardList);
@@ -71,3 +69,5 @@ searchInput.addEventListener('keypress', function (e) {
 
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);
+
+checkContentsEmpty();

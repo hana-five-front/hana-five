@@ -1,10 +1,10 @@
 import {
+  checkContentsEmpty,
   displayPage,
   displayPagination,
   getLocalStorageItems,
-  searchPost,
   getSessionStorageItems,
-  checkContentsEmpty,
+  searchPost,
 } from '../community.js';
 
 let postType = 'board';
@@ -17,8 +17,6 @@ let searchBtn = document.querySelector('.boardButton');
 let searchInput = document.querySelector('.boardSearchInput');
 
 let posts = getLocalStorageItems(postType).reverse();
-
-checkContentsEmpty();
 
 searchBtn.addEventListener('click', function (event) {
   event.preventDefault();
@@ -38,3 +36,5 @@ if (!getSessionStorageItems('userName')) {
 
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);
+
+checkContentsEmpty();
