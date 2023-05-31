@@ -114,9 +114,9 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 370px;
-  height: 600px;
-  border-radius: 10px;
+  width: 23.125rem;
+  height: 37.5rem;
+  border-radius: 0.625rem;
   z-index: 10000;
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
@@ -150,20 +150,20 @@ li {
   transform: scale(1.1);
 }
 .headerLogo {
-  width: 13px;
-  height: 12.24px;
+  width: 0.8125rem;
+  height: 0.765rem;
   margin: 0 0.5rem;
 }
 .headerTitle {
-  line-height: 30px;
+  line-height: 1.875rem;
   width: 100%;
   margin: 0 0 0 0.5rem;
   font-weight: bold;
   text-align: left;
 }
 .headerGear {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   vertical-align: center;
   color: rgb(145, 162, 220);
 }
@@ -179,8 +179,8 @@ li {
   margin: 1rem 0 0 0;
 }
 .profileImageBox {
-  width: 96px;
-  height: 96px;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   background-image: linear-gradient(#b5abff, #888cf6);
   align-items: center;
@@ -277,7 +277,7 @@ li {
   resize: none;
 }
 #sendMessage:disabled {
-  /* background-color: #eee; */
+  background-color: #eee;
   cursor: not-allowed;
 }
 #sendMessage:focus {

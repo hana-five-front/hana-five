@@ -21,7 +21,8 @@
   .modalContainer {
     top: calc(47vh);
     left: calc(50vw);
-    width: 85vw;
+    width: 23.125rem;
+    height: 37.5rem;
     overflow: scroll;
   }
   button {
