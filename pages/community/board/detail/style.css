@@ -74,6 +74,7 @@
   .detailInformation {
     width: 10.625rem;
     display: flex;
+    align-items: center;
   }
   .detailInformation > p {
     margin: 0px;
@@ -87,7 +88,7 @@
     border-bottom: #6b7684 0.0625rem solid;
   }
   .detailCommentComponent {
-    padding: 1rem 2rem 0rem 2rem;
+    padding: 1rem 0rem 0rem 0rem;
   }
   .detailCommentInput {
     height: 2.8125rem;
@@ -255,6 +256,7 @@
   .detailInformation {
     font-size: 0.8rem;
     display: flex;
+    align-items: center;
   }
   .detailInformation > p {
     margin: 0px;
