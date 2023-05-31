@@ -30,14 +30,16 @@ export const renderContentsWithSlack = () => {
   ChatbotList();
   ChatbotFAQButtons();
   ChatbotFooter();
+  getQnaToSlack();
 
-  if (slackInterval == null) {
-    slackInterval = setInterval(() => {
-      getQnaToSlack();
-      ChatbotList();
-      ChatbotFAQButtons();
-    }, 5000);
-  }
+  // if (slackInterval == null) {
+  //   slackInterval = setInterval(() => {
+  //     getQnaToSlack();  ChatbotList();
+  ChatbotFAQButtons();
+  //     ChatbotList();
+  //     ChatbotFAQButtons();
+  //   }, 5000);
+  // }
 };
 
 const handleClickChatbot = () => {
