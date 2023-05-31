@@ -96,6 +96,8 @@
     margin-bottom: 0.625rem;
   }
   .calendar-month > button {
+    display: flex;
+    align-items: center;
     background-color: transparent;
     border: none;
     font-size: 1.875rem;
@@ -103,8 +105,8 @@
     padding: 0 1.625rem;
     cursor: pointer;
   }
-  .calendar-month > button:hover {
-    color: #008484;
+  .calendar-month > button > img {
+    height: 20px;
   }
   .calendar-day {
     min-height: 25rem;
