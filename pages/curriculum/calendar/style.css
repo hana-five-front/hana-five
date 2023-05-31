@@ -85,6 +85,7 @@
     width: 100%;
     height: 100%;
     min-height: 36.75rem;
+    margin-bottom: 1.25rem;
   }
   .calendar-month {
     display: flex;
@@ -95,6 +96,8 @@
     margin-bottom: 0.625rem;
   }
   .calendar-month > button {
+    display: flex;
+    align-items: center;
     background-color: transparent;
     border: none;
     font-size: 1.875rem;
@@ -102,8 +105,8 @@
     padding: 0 1.625rem;
     cursor: pointer;
   }
-  .calendar-month > button:hover {
-    color: #008484;
+  .calendar-month > button > img {
+    height: 20px;
   }
   .calendar-day {
     min-height: 25rem;
@@ -181,31 +184,41 @@
   }
   .calendar2-row1 {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     min-height: 15.1875rem;
+    padding: 1rem;
+  }
+  .specialTitle {
+    border-bottom: #008484 1px solid;
+  }
+  .specialTitle > p {
+    margin: 1.25rem 0 10px 0.3125rem;
   }
   .calendar2-row1 > div,
-  .calendar2-row2 > div {
-    width: 25%;
-  }
-  .calendar2-row2 {
-    display: flex;
-    justify-content: start;
-    margin-bottom: 3.875rem;
-  }
   #monthly-schedule > p,
   #special-time > p,
   #special-lecture > p {
     font-size: 1.25rem;
     font-weight: bold;
-    margin: 2.25rem 0 1rem 0;
+    margin-bottom: 0;
+    min-height: 6.25rem;
   }
-  #monthly-schedule > ul,
-  #special-time > ul,
-  #special-lecture > ul {
+  .specialScheduleList,
+  .specialLectureList,
+  .specialTimeList {
+    padding: 0.3125rem 0 0 3.125rem;
+  }
+  .specialContent {
+    display: flex;
+  }
+  .specialContent > p {
     font-size: 1rem;
-    margin: 0.625rem 0;
-    padding: 0;
+    color: #333;
+    margin: 0.3125rem;
+  }
+  .specialContentDays {
+    width: 30%;
   }
   .calendar2-row1 > div > ul > li {
     margin: 0.625rem 0;
