@@ -63,6 +63,13 @@
   .detailTitle {
     font-size: 1rem;
     color: #008485;
+    width: 30rem;
+    max-height: 2.5rem;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    padding-right: 0.625rem;
   }
   .detailInformation {
     display: flex;
@@ -71,7 +78,7 @@
     margin: 0px;
   }
   .detailInformation > .detailDate {
-    margin-left: 1.875rem;
+    margin-left: 1rem;
   }
   .detailContext {
     min-height: 18.75rem;
