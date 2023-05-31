@@ -1,9 +1,9 @@
 @media (min-width: 75.625rem) {
-  .sideBar{
-    display:none;
+  .sideBar {
+    display: none;
   }
   .sideBar > ul {
-    display:none;
+    display: none;
   }
   .header-component {
     font-family: 'Hana2';
@@ -94,7 +94,7 @@
     align-items: center;
     width: 100vw;
     height: 4rem;
-    border-bottom: .0625rem solid #008484;
+    border-bottom: 0.0625rem solid #008484;
   }
   .header-component > div {
     display: flex;

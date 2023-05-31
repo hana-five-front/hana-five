@@ -11,7 +11,7 @@ function makeHeader() {
     .then(function (headerContent) {
       document.getElementById('header').innerHTML = headerContent;
       onClickSideBar();
-      onClickShutDownSideBar()
+      onClickShutDownSideBar();
     })
     .catch(function (error) {
       console.error(error);
@@ -34,16 +34,13 @@ function onClickSideBar() {
 }
 
 function onClickShutDownSideBar() {
-  
-  const sideBar = document.querySelector('.sideBar')
-  const main = document.querySelector('main')
-  main.addEventListener('click',function(){
+  const sideBar = document.querySelector('.sideBar');
+  const main = document.querySelector('main');
+  main.addEventListener('click', function () {
     if (!sideBar.style.display === 'none' || !sideBar.style.display == '') {
-      sideBar.style.display= 'none'
+      sideBar.style.display = 'none';
     }
-  })
-
-
+  });
 }
 // Footer 삽입
 function makeFooter() {
