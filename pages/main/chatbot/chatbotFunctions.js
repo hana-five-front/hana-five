@@ -1,5 +1,5 @@
 import { store } from './Store.js';
-import { renderContents } from './chatbot.js';
+import { renderContents, renderContentsWithSlack } from './chatbot.js';
 import { ANSWER_LIST, FAQ_LIST, RES_ID_QNA, messages } from './chatbotData.js';
 import { getQnaToSlack, sendQnaToSlack } from './chatbotSlackApi.js';
 
@@ -235,10 +235,10 @@ export const handleClickFAQButton = e => {
     messages.push(temp);
   }
 
-  renderContents();
-
   if (question['resId'] == RES_ID_QNA) {
-    getQnaToSlack();
+    renderContentsWithSlack();
+  } else {
+    renderContents();
   }
 
   const $chatbotList = document.querySelector('.chatbotList');
@@ -314,7 +314,6 @@ export const handleSubmitMessage = e => {
   }
 
   renderContents();
-  getQnaToSlack();
 };
 
 export const ChatbotFooter = () => {

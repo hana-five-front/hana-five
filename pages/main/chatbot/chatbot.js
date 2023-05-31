@@ -24,6 +24,22 @@ export const renderContents = () => {
   ChatbotFooter();
 };
 
+export let slackInterval = null;
+
+export const renderContentsWithSlack = () => {
+  ChatbotList();
+  ChatbotFAQButtons();
+  ChatbotFooter();
+
+  if (slackInterval == null) {
+    slackInterval = setInterval(() => {
+      getQnaToSlack();
+      ChatbotList();
+      ChatbotFAQButtons();
+    }, 5000);
+  }
+};
+
 const handleClickChatbot = () => {
   setOpenModal();
   makeChatbotUI();
