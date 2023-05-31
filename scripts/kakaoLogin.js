@@ -1,6 +1,17 @@
-import { config } from './apikey.js';
+fetch('https://server-eternalclash.koyeb.app/header')
+    .then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Error: ' + response.status);
+    })
+    .then(function (data) {
+      window.Kakao.init(data.header);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
 
-window.Kakao.init(config.apikey);
 
 export const kakaoLoginInit = () => {
   const loginBtn = document.querySelector('#login');
