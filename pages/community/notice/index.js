@@ -17,7 +17,7 @@ function dateToText(date) {
 
 function getSlackNotice() {
   getLocalStorageItems('board');
-  fetch('https://server-eternalclash.koyeb.app/slackapi')
+  fetch('http://localhost:3000/slackapi')
     .then(function (response) {
       if (response.ok) {
         return response.json();
