@@ -16,14 +16,12 @@ export const makeChatbotUI = () => {
   ChatbotList();
   ChatbotFAQButtons();
   ChatbotFooter();
-  getQnaToSlack();
 };
 
 export const renderContents = () => {
   ChatbotList();
   ChatbotFAQButtons();
   ChatbotFooter();
-  getQnaToSlack();
 };
 
 const handleClickChatbot = () => {
@@ -38,5 +36,5 @@ const main = () => {
 
 main();
 const obj = {
-  name: ''
-}
+  name: '',
+};

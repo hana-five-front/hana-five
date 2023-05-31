@@ -20,6 +20,8 @@ export const messages = [
  * 0: 처음으로 돌아가기 버튼
  * 999: 채팅창으로 문의하기
  */
+
+export const RES_ID_QNA = 10;
 export const FAQ_LIST = [
   { resId: 1, reqGroup: 0, nextReqGroup: 0, contents: '디지털 하나로 소개' },
   { resId: 2, reqGroup: 0, nextReqGroup: 1, contents: '지원 자격 문의' },

@@ -1,7 +1,7 @@
 import { store } from './Store.js';
 import { renderContents } from './chatbot.js';
-import { ANSWER_LIST, FAQ_LIST, messages } from './chatbotData.js';
-import { sendQnaToSlack } from './chatbotSlackApi.js';
+import { ANSWER_LIST, FAQ_LIST, RES_ID_QNA, messages } from './chatbotData.js';
+import { getQnaToSlack, sendQnaToSlack } from './chatbotSlackApi.js';
 
 const SCROLL_ANIMATION_DURATION = 400;
 
@@ -215,7 +215,6 @@ export const ChatbotCharacter = () => {
 };
 
 export const handleClickFAQButton = e => {
-  const $modalContainer = document.querySelector('.modalContainer');
   const question = {};
   question['resId'] = e.target.dataset.resid;
   question['nextReqGroup'] = e.target.dataset.nextreqgroup;
@@ -237,6 +236,10 @@ export const handleClickFAQButton = e => {
   }
 
   renderContents();
+
+  if (question['resId'] == RES_ID_QNA) {
+    getQnaToSlack();
+  }
 
   const $chatbotList = document.querySelector('.chatbotList');
   $('.modalContainer').animate(
@@ -286,7 +289,7 @@ export const handleSubmitMessage = e => {
   const messageInput = document.getElementById('sendMessage');
   const value = messageInput.value.trim();
   if (value === '') return;
-  const resId = 10;
+  const resId = RES_ID_QNA;
   const contents = value;
   const userName = sessionStorage.getItem('userName');
   sendQnaToSlack(userName, contents);
@@ -295,7 +298,7 @@ export const handleSubmitMessage = e => {
   e.target.setAttribute('data-contents', contents);
   const slackMessage = {
     id: messages.length,
-    resId: 10,
+    resId: RES_ID_QNA,
     type: 'manualRes',
     content: [value],
     createdAt: getFormatTime(Date.now()),
@@ -312,6 +315,7 @@ export const handleSubmitMessage = e => {
   }
 
   renderContents();
+  getQnaToSlack();
 };
 
 export const ChatbotFooter = () => {
@@ -319,7 +323,7 @@ export const ChatbotFooter = () => {
   const userName = sessionStorage.getItem('userName');
   const isLoggedIn = Boolean(userName);
   let inputDisabled = 'disabled';
-  if (messages[messages.length - 1].resId == 10) {
+  if (messages[messages.length - 1].resId == RES_ID_QNA) {
     inputDisabled = isLoggedIn
       ? 'placeholder="문의 사항을 입력해 주세요"'
       : 'placeholder="로그인 후 이용해 주세요" disabled';
