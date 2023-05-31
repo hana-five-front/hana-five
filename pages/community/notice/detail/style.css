@@ -55,7 +55,7 @@
   .detailContentTop {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem 0.75rem 1.875rem;
+    padding: 1rem 2rem 1rem 1.875rem;
     background-color: #f2f4f6;
     border-top: #d1d6db 0.0625rem solid;
     border-bottom: #d1d6db 0.0625rem solid;
@@ -63,15 +63,24 @@
   .detailTitle {
     font-size: 1rem;
     color: #008485;
+    width: 32rem;
+    max-height: 2.5rem;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    padding-right: 0.625rem;
   }
   .detailInformation {
+    width: 10.625rem;
     display: flex;
+    justify-content: end;
   }
   .detailInformation > p {
     margin: 0px;
   }
   .detailInformation > .detailDate {
-    margin-left: 1.875rem;
+    margin-left: 1rem;
   }
   .detailContext {
     min-height: 18.75rem;
@@ -241,6 +250,10 @@
   .detailTitle {
     font-size: 0.8rem;
     color: #008485;
+    max-height: 2rem;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
   }
   .detailInformation {
     font-size: 0.8rem;
