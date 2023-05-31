@@ -405,7 +405,6 @@
 }
 
 @media (max-width: 75.625rem) {
-  /* header주석처리함 */
   #header {
   }
   .main-component {
@@ -423,8 +422,6 @@
     align-items: center;
   }
   .middle-left {
-    /* 캐러셀파트 */
-    /*캐러셀 부분 전체*/
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -477,25 +474,25 @@
     background-size: cover;
     background-position: center;
     z-index: -1;
-    filter: brightness(40%);
+    filter: brightness(30%);
   }
   .bg-carousel1 {
     background-image: url('../../public/images/모바일캐러셀2.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(40%);
+    filter: brightness(30%);
   }
   .bg-carousel3 {
     background-image: url('../../public/images/모바일캐러셀1.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(40%);
+    filter: brightness(30%);
   }
   .bg-carousel4 {
     background-image: url('../../public/images/모바일캐러셀3.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(40%);
+    filter: brightness(30%);
   }
   .mainCarouselText {
     display: none;
