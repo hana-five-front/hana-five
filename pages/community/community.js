@@ -351,7 +351,14 @@ export function searchPost(postType, currentPage, pagination, boardList) {
 
   displayPage(posts, currentPage, boardList);
   displayPagination(posts, currentPage, pagination, boardList);
+
+  if (posts.length === 0) {
+    const noPostsElement = document.createElement('p');
+    noPostsElement.innerText = '게시글이 존재하지 않습니다';
+    boardList.appendChild(noPostsElement);
+  }
 }
+
 export function deleteComment(commentId) {
   let postId = getPostId();
   let postType = getPostType();
