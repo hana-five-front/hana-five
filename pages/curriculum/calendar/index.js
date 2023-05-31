@@ -162,9 +162,9 @@ const renderCalendarTemplate = () => {
 const renderCalendarTitle = () => {
   const calendarMonth = document.querySelector('.calendar-month');
   calendarMonth.innerHTML = `
-    <button class="previous"><</button>
+    <button ><img class="previous" src="/public/images/leftBtnImg.svg" alt="이전달"></button>
       <div id="month"></div>
-    <button class="next">></button>
+    <button class="next"><img src="/public/images/rightBtnImg.svg" alt="다음달"></button>
   `;
   let $title = document.getElementById('month');
 
@@ -254,20 +254,36 @@ const renderCalendarContents = calendarData => {
 const renderSpecialSchedules = (specialData, monthKey, specialScheduleName) => {
   let lectureInfo = specialData?.[monthKey][specialScheduleName];
   let $specialLecture = document.getElementById(specialScheduleName);
-  const $ulElements = $specialLecture.querySelector('ul');
-  $specialLecture.removeChild($ulElements);
-  let $ulElement = document.createElement('ul');
-  $specialLecture.appendChild($ulElement);
+  let specialList;
 
   if (specialScheduleName === 'monthly-schedule') {
-    $specialLecture.children[0].innerHTML = `${monthKey} 주요 활동`;
+    $specialLecture.children[1].innerHTML = `${monthKey} 주요 활동`;
+    specialList = document.querySelector('.specialScheduleList');
+  } else if (specialScheduleName === 'special-lecture') {
+    specialList = document.querySelector('.specialLectureList');
+  } else {
+    specialList = document.querySelector('.specialTimeList');
   }
+
+  specialList.innerHTML = '';
 
   if (Array.isArray(lectureInfo) && lectureInfo.length > 0) {
     lectureInfo.forEach(item => {
-      const liElement = document.createElement('li');
-      liElement.textContent = item;
-      $ulElement.appendChild(liElement);
+      let specialContent = document.createElement('div');
+      specialContent.className = 'specialContent';
+
+      let specialContentDays = document.createElement('p');
+      specialContentDays.className = 'specialContentDays';
+      specialContentDays.textContent = item[0];
+
+      let specialContentText = document.createElement('p');
+      specialContentText.className = 'specialContentText';
+      specialContentText.textContent = item[1];
+
+      specialContent.appendChild(specialContentDays);
+      specialContent.appendChild(specialContentText);
+
+      specialList.appendChild(specialContent);
     });
   }
 };

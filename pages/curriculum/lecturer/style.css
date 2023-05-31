@@ -98,6 +98,9 @@
     font-size: 1rem;
     font-weight: bold;
   }
+  .brief > li {
+    font-weight: lighter;
+  }
 }
 
 @media (max-width: 75.625rem) {
@@ -171,5 +174,6 @@
   }
   .brief > li {
     margin-left: 2.5vw;
+    font-weight: lighter;
   }
 }
