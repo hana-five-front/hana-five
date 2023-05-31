@@ -171,10 +171,15 @@
   }
   .todayTableContent > div {
     font-size: 0.8125rem;
-    height: 1.5rem;
+    width: 8.1875rem;
     display: flex;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0.3rem 0 0.3rem 0;
+  }
+  .todayTableContent > div:before {
+    content: '• ';
+    margin: 0 0.5rem 0 0.5rem;
   }
   .whatShouldIEatButton {
     width: 5rem;
@@ -594,7 +599,7 @@
 
     flex-direction: column;
   }
-  .todayTableContent > div {
+  .todayTableContent > li {
     font-size: 1rem;
     margin-top: 3vh;
     padding-left: 1vh;
