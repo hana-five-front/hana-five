@@ -6,6 +6,20 @@ const typingTextElement2 = document.getElementById('typing-text2');
 function type(text, text2) {
   let charIndex = 0; // 현재 타이핑 중인 글자의 인덱스
   let charIndex2 = 0;
+
+
+  function typeNextChar(charIndex,text) {
+    if (charIndex < text.length) {
+      typingTextElement.textContent += text.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeNextChar, typingDelay);
+    } else {
+      setTimeout(() => {
+        typingTextElement.textContent = text;
+        setTimeout(typeNextChar2, typingDelay);
+      }, );
+    }
+  }
   function typeNextChar() {
     if (charIndex < text.length) {
       typingTextElement.textContent += text.charAt(charIndex);
@@ -18,6 +32,8 @@ function type(text, text2) {
       }, );
     }
   }
+
+
   function typeNextChar2() {
     if (charIndex2 < text2.length) {
       typingTextElement2.textContent += text2.charAt(charIndex2);
@@ -32,6 +48,7 @@ function type(text, text2) {
   }
   setTimeout(typeNextChar, 2000);
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
   type(typingtext, typingtext2);
