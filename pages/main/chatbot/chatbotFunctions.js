@@ -363,15 +363,14 @@ export const ChatbotFooter = () => {
   const messageInput = document.getElementById('sendMessage');
   const messageInputForm = document.querySelector('.messageInputForm');
 
-  if (
-    messageInput.disabled &&
-    messageInput.placeholder === LOGIN_FIRST_MESSAGE
-  ) {
+  // 비로그인일 경우, 클릭시 로그인
+  const isInputDisabled = messageInput.disabled;
+  if (isInputDisabled && messageInput.placeholder === LOGIN_FIRST_MESSAGE) {
     messageInput.style.cursor = 'pointer';
     messageInputForm.addEventListener('click', () => {
       handleLogin(document.querySelector('#login'));
     });
-  } else if (messageInput.disabled) {
+  } else if (isInputDisabled) {
     messageInput.style.cursor = 'not-allowed';
   }
 
