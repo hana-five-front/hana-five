@@ -24,12 +24,8 @@ export const kakaoLoginInit = () => {
     loginBtnMobile.innerText = '로그아웃';
   }
 
-  document
-    .querySelector('#login')
-    .addEventListener('click', () => handleLogin(loginBtn));
-  document
-    .querySelector('#login2')
-    .addEventListener('click', () => handleLogin(loginBtnMobile));
+  loginBtn.addEventListener('click', () => handleLogin(loginBtn));
+  loginBtnMobile.addEventListener('click', () => handleLogin(loginBtnMobile));
 
   const handleLogin = $target => {
     if ($target.innerText == '로그인') {
