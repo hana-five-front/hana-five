@@ -390,11 +390,11 @@ const updateStyle = () => {
     document.querySelector('.sendImage').classList.remove('disabled');
   }
 };
-const setHasInquires = inquire => Array.isArray(inquire) && inquire.length > 0;
+const setHasInquires = arr => Array.isArray(arr) && arr.length > 0;
 
 const setUserMessageInfo = inquire => ({
   isUserMessage: inquire.content[0].substr(0, 3) == '내용:',
   isAdminMessage: inquire.content[0].substr(0, 3) == '답변:',
-  userName: inquire.title.substr(4),
+  userName: inquire?.title.substr(4),
   messageContents: inquire.content[0].substr(4),
 });
