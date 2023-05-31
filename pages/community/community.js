@@ -457,3 +457,16 @@ function renderComments(postType, comments) {
     detailCommentList.appendChild(commentElement);
   }
 }
+export function checkContentsEmpty() {
+  const boardContent = document.querySelector('.boardContent');
+
+  if (!boardContent) {
+    const noPostsElement = document.createElement('p');
+    noPostsElement.innerText = '게시글이 존재하지 않습니다';
+
+    const boardList = document.querySelector('.boardList');
+    document.addEventListener('DOMContentLoaded', function () {
+      boardList.appendChild(noPostsElement);
+    });
+  }
+}

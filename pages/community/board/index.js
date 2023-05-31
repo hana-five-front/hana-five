@@ -3,7 +3,8 @@ import {
   displayPagination,
   getLocalStorageItems,
   searchPost,
-  getSessionStorageItems
+  getSessionStorageItems,
+  checkContentsEmpty,
 } from '../community.js';
 
 let postType = 'board';
@@ -17,6 +18,8 @@ let searchInput = document.querySelector('.boardSearchInput');
 
 let posts = getLocalStorageItems(postType).reverse();
 
+checkContentsEmpty();
+
 searchBtn.addEventListener('click', function (event) {
   event.preventDefault();
   searchPost(postType, currentPage, pagination, boardList);
@@ -29,8 +32,9 @@ searchInput.addEventListener('keypress', function (e) {
   }
 });
 
-if (!getSessionStorageItems('userName')) 
-{document.querySelector('.boardPostingButton').style.display = "none"}
+if (!getSessionStorageItems('userName')) {
+  document.querySelector('.boardPostingButton').style.display = 'none';
+}
 
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);

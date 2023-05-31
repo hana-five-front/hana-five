@@ -1,9 +1,10 @@
 import {
+  checkContentsEmpty,
   displayPage,
   displayPagination,
   getLocalStorageItems,
-  searchPost,
   getSessionStorageItems,
+  searchPost,
 } from '../community.js';
 
 let postType = 'qna';
@@ -16,6 +17,8 @@ let searchBtn = document.querySelector('.boardButton');
 let searchInput = document.querySelector('.boardSearchInput');
 
 let posts = getLocalStorageItems(postType).reverse();
+
+checkContentsEmpty();
 
 searchBtn.addEventListener('click', function (event) {
   event.preventDefault();
