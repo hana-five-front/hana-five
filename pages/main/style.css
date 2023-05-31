@@ -40,7 +40,7 @@
   .carousel-item {
     width: 36.25rem;
     height: 100%;
-    border-radius: 0.3125rem;
+
     flex: 0 0 100%;
     display: flex;
     justify-content: space-between;
@@ -80,30 +80,30 @@
     color: #8b95a1;
   }
   .mainCarouselImage {
-    width: 14.5rem;
-    height: 16.5rem;
+    width: 13.5rem;
+    height: 100%;
     border-radius: 0.3125rem;
+    background-position: center;
   }
   .wbg-carousel1 {
     background-image: url('../../public/images/캐러셀1.jpg');
     background-size: cover;
-    background-position: center;
-    z-index: -1;
+    background-position: contain;
   }
   .wbg-carousel2 {
     background-image: url('../../public/images/캐러셀2.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: contain;
   }
   .wbg-carousel3 {
     background-image: url('../../public/images/캐러셀3.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: contain;
   }
   .wbg-carousel4 {
     background-image: url('../../public/images/캐러셀4.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: contain;
   }
   .middle-bottom {
     width: 36.25rem;
@@ -180,6 +180,14 @@
   .todayTableContent > div:before {
     content: '• ';
     margin: 0 0.5rem 0 0.5rem;
+  }
+  .todayTableContent > li {
+    list-style-type: dot;
+    font-size: 0.8125rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
   }
   .whatShouldIEatButton {
     width: 5rem;
@@ -422,7 +430,6 @@
 }
 
 @media (max-width: 75.625rem) {
-  /* header주석처리함 */
   #header {
   }
   .main-component {
@@ -440,8 +447,6 @@
     align-items: center;
   }
   .middle-left {
-    /* 캐러셀파트 */
-    /*캐러셀 부분 전체*/
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -494,25 +499,25 @@
     background-size: cover;
     background-position: center;
     z-index: -1;
-    filter: brightness(60%);
+    filter: brightness(30%);
   }
   .bg-carousel1 {
     background-image: url('../../public/images/모바일캐러셀2.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(60%);
+    filter: brightness(30%);
   }
   .bg-carousel3 {
     background-image: url('../../public/images/모바일캐러셀1.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(60%);
+    filter: brightness(30%);
   }
   .bg-carousel4 {
     background-image: url('../../public/images/모바일캐러셀3.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(60%);
+    filter: brightness(30%);
   }
   .mainCarouselText {
     display: none;
@@ -596,10 +601,11 @@
     width: 95vw;
     height: 15rem;
     display: flex;
-
+    padding-left: 1rem;
+    padding-top: 1rem;
     flex-direction: column;
   }
-  .todayTableContent > li {
+  .todayTableContent > div {
     font-size: 1rem;
     margin-top: 3vh;
     padding-left: 1vh;

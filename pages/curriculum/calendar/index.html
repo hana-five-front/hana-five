@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/components/header/header.css" />
     <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../lecturer/style.css" />
     <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script defer type="module" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
@@ -54,16 +53,22 @@
             <div class="calendar2">
               <div class="calendar2-row1">
                 <div id="monthly-schedule">
-                  <p id="summaryMonth">5월 주요 활동</p>
-                  <ul></ul>
+                  <div class="specialTitle">
+                    <p id="summaryMonth">5월 주요 활동</p>
+                  </div>
+                  <div class="specialScheduleList"></div>
                 </div>
                 <div id="special-time">
-                  <p id="specialCommute">시간 특이사항</p>
-                  <ul></ul>
+                  <div class="specialTitle">
+                    <p id="specialCommute">시간 특이사항</p>
+                  </div>
+                  <div class="speciaTimelList"></div>
                 </div>
                 <div id="special-lecture">
-                  <p id="specialLecture">특강</p>
-                  <ul></ul>
+                  <div class="specialTitle">
+                    <p id="specialLecture">특강</p>
+                  </div>
+                  <div class="specialLectureList"></div>
                 </div>
               </div>
             </div>

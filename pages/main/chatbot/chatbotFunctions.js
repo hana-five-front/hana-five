@@ -53,12 +53,12 @@ export const ChatbotHeader = () => {
   $chatbotHeader.innerHTML = `
     <img class="chevronLeft" src="/public/images/Chevron Left.svg" width="18px" height="18px" alt="뒤로가기" />
     <div class="chatLogoBox">
-    <img
-      class="headerLogo"
-      alt="headerLogo"
-      src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-      alt="챗봇 캐릭터"
-    />
+      <img
+        class="headerLogo"
+        alt="headerLogo"
+        src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+        alt="챗봇 캐릭터"
+      />
     </div>
     <p class="headerTitle">디지털 하나로 문의 채널</p>
   `;
@@ -78,20 +78,23 @@ export const ChatbotList = () => {
       if (prevTime === undefined || prevTime !== message.createdAt) {
         tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
       }
-      tempInnerHTML += `<div class="chatItemWrapper">
-      <div class="chatLogoBox" >
-          <img
-            class="headerLogo"
-            alt="headerLogo"
-            src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-            alt="챗봇 캐릭터"
-          /></div>
-            <div class="">
-              <p class="chatName">디지털 하나로 문의 채널</p>
-              <p class="chatItemContainer">${message.contents}</p>
-            </div>
-          </li>
-        `;
+      tempInnerHTML += `
+        <div class="chatItemWrapper">
+          <div class="chatLogoBox" >
+            <img
+              class="headerLogo"
+              alt="headerLogo"
+              src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+              alt="챗봇 캐릭터"
+            />
+          </div>
+          <div class="">
+            <p class="chatName">디지털 하나로 문의 채널</p>
+            <p class="chatItemContainer">${message.contents}</p>
+          </div>
+        </div>
+      </li>
+      `;
     } else if (message.type === 'res') {
       tempInnerHTML += `
         <li class="resItem">
@@ -109,56 +112,59 @@ export const ChatbotList = () => {
       `;
     } else {
       const slackInquire = JSON.parse(localStorage.getItem('slackQ&A'));
+      const hasInquires = setHasInquires(slackInquire);
 
-      if (Array.isArray(slackInquire) && slackInquire.length > 0) {
-        slackInquire.forEach((e, idx) => {
-          if (e.content[0].includes('내용:')) {
-            tempInnerHTML += `
-      
-            <li class="resItem">
-              <button 
-                key=${e.resId} 
-                class="qnaButtonSelected" 
-                data-resId=${e.resId}
-                data-nextReqGroup=${e.nextReqGroup}
-                data-contents=${e.contents}
-              >
-                <span class="buttonIcon">🙋‍♂️</span>
-                <span class="buttonText">${e.content[0].substring(4)}</span>
-              </button>
-            </li>
-          `;
-          } else if (e.content[0].includes('답변')) {
+      if (hasInquires) {
+        slackInquire.forEach((inquire, idx, inquires) => {
+          const { isUserMessage, isAdminMessage, userName, messageContents } =
+            setUserMessageInfo(inquire);
+
+          if (isUserMessage) {
+            tempInnerHTML += `<li class="resItem"><div class="">`;
+            const prevInquire = inquires[idx - 1] ?? {
+              content: [''],
+              title: 'uniqueTitle',
+            };
+            const isDiffType =
+              (prevInquire.content[0].substr(0, 3) == '내용:') != isUserMessage;
+            if (isDiffType || prevInquire.title !== inquire.title) {
+              tempInnerHTML += `<p class="chatName">${userName}</p>`;
+            }
+            tempInnerHTML += `<p class="chatItemContainer userChatItemContainer">${messageContents}</p></div></li>`;
+          } else if (isAdminMessage) {
             tempInnerHTML += `<li key=${message.id} class="chatItem">`;
             if (prevTime === undefined || prevTime !== message.createdAt) {
               tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
             }
-            tempInnerHTML += `<div class="chatItemWrapper">
-            <div class="chatLogoBox" >
-                <img
-                  class="headerLogo"
-                  alt="headerLogo"
-                  src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-                /></div>
+            tempInnerHTML += `
+                <div class="chatItemWrapper">
+                  <div class="chatLogoBox" >
+                    <img
+                      class="headerLogo"
+                      alt="headerLogo"
+                      src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+                      alt="챗봇 캐릭터"
+                    />
+                  </div>
                   <div class="">
                     <p class="chatName">디지털 하나로 문의 채널</p>
-                    <p class="chatItemContainer">${e.content[0].substr(4)}</p>
+                    <p class="chatItemContainer">${messageContents}</p>
                   </div>
-                </li>
+                </div>
+              </li>
               `;
           } else {
             tempInnerHTML += `
-      
             <li class="resItem">
               <button 
-                key=${e.resId} 
+                key=${inquire.resId} 
                 class="qnaButtonSelected" 
-                data-resId=${e.resId}
-                data-nextReqGroup=${e.nextReqGroup}
-                data-contents=${e.contents}
+                data-resId=${inquire.resId}
+                data-nextReqGroup=${inquire.nextReqGroup}
+                data-contents=${inquire.contents}
               >
                 <span class="buttonIcon">🙋‍♂️</span>
-                <span class="buttonText">${e.content[0]}</span>
+                <span class="buttonText">${inquire.content[0]}</span>
               </button>
             </li>
           `;
@@ -169,16 +175,20 @@ export const ChatbotList = () => {
         if (prevTime === undefined || prevTime !== message.createdAt) {
           tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
         }
-        tempInnerHTML += `<div class="chatItemWrapper">
-      <div class="chatLogoBox" >
-          <img
-            class="headerLogo"
-            alt="headerLogo"
-            src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-          /></div>
-            <div class="">
-              <p class="chatName">디지털 하나로 문의 채널</p>
-              <p class="chatItemContainer">${message.contents}</p>
+        tempInnerHTML += `
+            <div class="chatItemWrapper">
+              <div class="chatLogoBox" >
+                <img
+                  class="headerLogo"
+                  alt="headerLogo"
+                  src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+                  alt="챗봇 캐릭터"
+                />
+              </div>
+              <div class="">
+                <p class="chatName">디지털 하나로 문의 채널</p>
+                <p class="chatItemContainer">${message.contents}</p>
+              </div>
             </div>
           </li>`;
       }
@@ -307,21 +317,22 @@ export const handleSubmitMessage = e => {
 export const ChatbotFooter = () => {
   const $chatbotFooter = document.querySelector('.chatbotFooter');
   const userName = sessionStorage.getItem('userName');
-  const isLoggedin = Boolean(userName);
+  const isLoggedIn = Boolean(userName);
   let inputDisabled = 'disabled';
   if (messages[messages.length - 1].resId == 10) {
-    inputDisabled = isLoggedin
+    inputDisabled = isLoggedIn
       ? 'placeholder="문의 사항을 입력해 주세요"'
       : 'placeholder="로그인 후 이용해 주세요" disabled';
   }
   $chatbotFooter.innerHTML = `
     <form class="messageInputForm" onsubmit="handleSubmitMessage">
       <textarea type="textarea" id="sendMessage" ${inputDisabled}> </textarea>
+      <div class="sendImage">
+        <img class="sendButton" src="/public/images/send.png" alt="문의 등록" width="22px" height="22px"/>
+      </div>
     </form>
-    <div class="sendImage">
-      <img class="sendButton" src="/public/images/send.png" alt="문의 등록" width="22px" height="22px"/>
-    </div>
   `;
+
   const textarea = document.getElementById('sendMessage');
   const placeholderText = '';
 
@@ -349,19 +360,8 @@ export const ChatbotFooter = () => {
 
   sendImage.addEventListener('click', handleSubmitMessage);
 
-  const updateStyle = () => {
-    const value = messageInput.value;
-
-    if (value === '') {
-      sendImage.classList.add('disabled');
-    } else {
-      sendImage.classList.remove('disabled');
-    }
-  };
-
   messageInput.addEventListener('input', updateStyle);
   messageInput.addEventListener('change', updateStyle);
-
   messageInput.addEventListener('input', function (event) {
     const value = event.target.value;
 
@@ -380,3 +380,21 @@ export const ChatbotFooter = () => {
 
   updateStyle();
 };
+
+const updateStyle = () => {
+  const value = document.getElementById('sendMessage').value;
+
+  if (value === '') {
+    document.querySelector('.sendImage').classList.add('disabled');
+  } else {
+    document.querySelector('.sendImage').classList.remove('disabled');
+  }
+};
+const setHasInquires = inquire => Array.isArray(inquire) && inquire.length > 0;
+
+const setUserMessageInfo = inquire => ({
+  isUserMessage: inquire.content[0].substr(0, 3) == '내용:',
+  isAdminMessage: inquire.content[0].substr(0, 3) == '답변:',
+  userName: inquire.title.substr(4),
+  messageContents: inquire.content[0].substr(4),
+});

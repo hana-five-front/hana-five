@@ -1,4 +1,10 @@
 @media (min-width: 75.625rem) {
+  .sideBar {
+    display: none;
+  }
+  .sideBar > ul {
+    display: none;
+  }
   .header-component {
     font-family: 'Hana2';
     display: flex;
@@ -86,8 +92,8 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    border-bottom: 0.0625rem solid #008484;
     height: 4rem;
+    border-bottom: 0.0625rem solid #008484;
   }
   .header-component > div {
     display: flex;
@@ -187,5 +193,14 @@
     margin: 0;
     padding: 0;
     border: 0 none;
+  }
+  .whateat {
+    width: 50vw;
+    color: #8b95a1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .whateat > a {
+    color: #8b95a1;
   }
 }
