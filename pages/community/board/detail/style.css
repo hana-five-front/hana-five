@@ -74,6 +74,7 @@
   .detailInformation {
     width: 10.625rem;
     display: flex;
+    align-items: center;
   }
   .detailInformation > p {
     margin: 0px;
@@ -255,6 +256,7 @@
   .detailInformation {
     font-size: 0.8rem;
     display: flex;
+    align-items: center;
   }
   .detailInformation > p {
     margin: 0px;

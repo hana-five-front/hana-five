@@ -80,6 +80,7 @@
     height: 3.125rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     list-style: none;
     border-bottom: 0.03rem #d1d6db solid;
   }
@@ -98,6 +99,7 @@
   .boardContentInformation {
     display: flex;
     width: 10.25rem;
+    justify-content: end;
   }
   .boardContentDate {
     margin-left: 1.25rem;
