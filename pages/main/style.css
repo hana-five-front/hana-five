@@ -35,7 +35,7 @@
     transition: transform 0.3s ease;
   }
   .carousel-items-text {
-    display:none;
+    display: none;
   }
   .carousel-item {
     width: 36.25rem;
@@ -272,6 +272,16 @@
     margin: 0.3125rem 0;
     font-size: 0.8125rem;
   }
+  .mainBottomNoticeBottom > a > div:nth-child(1) {
+    width: 21.5715rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0.3125rem;
+  }
+  .mainBottomNoticeBottom > a > div:nth-child(2) {
+    width: 4.6875rem;
+  }
   .mainBottomBoard {
     width: 26.25rem;
     height: 5.5625rem;
@@ -316,6 +326,16 @@
     margin: 0.3125rem 0;
     font-size: 0.8125rem;
     cursor: pointer;
+  }
+  .mainBottomBoardBottom > a > div:nth-child(1) {
+    width: 21.5715rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0.3125rem;
+  }
+  .mainBottomBoardBottom > a > div:nth-child(2) {
+    width: 4.6875rem;
   }
   a {
     text-decoration: none;
@@ -450,19 +470,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width:100vw;
+    width: 100vw;
     font-size: 3rem;
-   position:absolute;
-   text-align: center;
-   z-index: 999;
-    }
+    position: absolute;
+    text-align: center;
+    z-index: 999;
+  }
   .carousel-items-text > :first-child {
-    font-weight:bold;
+    font-weight: bold;
     color: White;
   }
   .carousel-items-text > :last-child {
-    font-weight:bold;
-    color:#008485;
+    font-weight: bold;
+    color: #008485;
   }
   .bg-carousel2 {
     background-image: url('../../public/images/originalPopUp.jpg');
@@ -476,7 +496,6 @@
     background-size: cover;
     background-position: center;
     filter: brightness(60%);
-
   }
   .bg-carousel3 {
     background-image: url('../../public/images/모바일캐러셀1.jpg');
@@ -485,15 +504,13 @@
     filter: brightness(60%);
   }
   .bg-carousel4 {
-
     background-image: url('../../public/images/모바일캐러셀3.jpg');
     background-size: cover;
     background-position: center;
     filter: brightness(60%);
-
   }
   .mainCarouselText {
-    display:none;
+    display: none;
   }
   .mainCarouselText > :first-child {
     width: 100%;
@@ -604,5 +621,4 @@
   a {
     text-decoration: none;
   }
-
 }
