@@ -284,6 +284,9 @@ li {
   background-color: #eee;
   cursor: not-allowed;
 }
+#sendMessage:disabled:hover::placeholder {
+  color: #008485;
+}
 #sendMessage:focus {
   outline: none;
 }

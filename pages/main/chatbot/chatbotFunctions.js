@@ -1,3 +1,4 @@
+import { handleLogin } from '../../../scripts/kakaoLogin.js';
 import { store } from './Store.js';
 import { renderContents, renderContentsWithSlack } from './chatbot.js';
 import { ANSWER_LIST, FAQ_LIST, RES_ID_QNA, messages } from './chatbotData.js';
@@ -235,7 +236,7 @@ export const handleClickFAQButton = e => {
     messages.push(temp);
   }
 
-  if (question['resId'] == RES_ID_QNA) {
+  if (question['resId'] == RES_ID_QNA && sessionStorage.getItem('userName')) {
     renderContentsWithSlack();
   } else {
     renderContents();
@@ -321,10 +322,11 @@ export const ChatbotFooter = () => {
   const userName = sessionStorage.getItem('userName');
   const isLoggedIn = Boolean(userName);
   let inputDisabled = 'disabled';
+  const LOGIN_FIRST_MESSAGE = '로그인 후 이용해 주세요';
   if (messages[messages.length - 1].resId == RES_ID_QNA) {
     inputDisabled = isLoggedIn
       ? 'placeholder="문의 사항을 입력해 주세요"'
-      : 'placeholder="로그인 후 이용해 주세요" disabled';
+      : `placeholder="${LOGIN_FIRST_MESSAGE}" disabled`;
   }
   $chatbotFooter.innerHTML = `
     <form class="messageInputForm" onsubmit="handleSubmitMessage">
@@ -359,6 +361,19 @@ export const ChatbotFooter = () => {
 
   const sendImage = document.querySelector('.sendImage');
   const messageInput = document.getElementById('sendMessage');
+  const messageInputForm = document.querySelector('.messageInputForm');
+
+  if (
+    messageInput.disabled &&
+    messageInput.placeholder === LOGIN_FIRST_MESSAGE
+  ) {
+    messageInput.style.cursor = 'pointer';
+    messageInputForm.addEventListener('click', () => {
+      handleLogin(document.querySelector('#login'));
+    });
+  } else if (messageInput.disabled) {
+    messageInput.style.cursor = 'not-allowed';
+  }
 
   sendImage.addEventListener('click', handleSubmitMessage);
 
