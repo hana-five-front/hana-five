@@ -1,9 +1,10 @@
 import {
-  getLocalStorageItems,
+  checkContentsEmpty,
   displayPage,
   displayPagination,
-  searchPost,
+  getLocalStorageItems,
   getSessionStorageItems,
+  searchPost,
 } from '../community.js';
 
 function markDownToPlainWords(message) {
@@ -52,7 +53,7 @@ let pagination = document.querySelector('.boardPage');
 let searchBtn = document.querySelector('.boardButton');
 let searchInput = document.querySelector('.boardSearchInput');
 
-let posts = getLocalStorageItems(postType)
+let posts = getLocalStorageItems(postType);
 
 searchBtn.addEventListener('click', function (event) {
   event.preventDefault();
@@ -68,3 +69,5 @@ searchInput.addEventListener('keypress', function (e) {
 
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);
+
+checkContentsEmpty();

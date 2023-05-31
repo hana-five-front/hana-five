@@ -14,9 +14,9 @@ const planData = async () => {
   if (todayData) {
     todayData.forEach(timeSchedule => {
       let timeText = timeSchedule.split(' ')[0][1];
-      let classText = timeSchedule.split(' ').slice(1).join('');
-      const classLi = document.createElement('li');
-      classLi.innerText = classText + ' ' + `(${timeText}H)`;
+      let classText = timeSchedule.substring(3);
+      const classDiv = document.createElement('div');
+      classDiv.innerText = classText + ' ' + `(${timeText}H)`;
 
       todayTable.appendChild(classLi);
     });

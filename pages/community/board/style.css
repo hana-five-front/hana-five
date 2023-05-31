@@ -76,6 +76,7 @@
     padding: 0rem 0.625rem;
   }
   .boardContent {
+    width: 100%;
     height: 3.125rem;
     display: flex;
     align-items: center;
@@ -86,6 +87,13 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+  }
+  .boardContentTitle {
+    width: 33rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 1rem;
   }
   .boardContentInformation {
     display: flex;
@@ -286,7 +294,11 @@
   }
   .boardContentTitle {
     font-size: 0.8rem;
-    max-width: 60vw;
+    max-width: 70vw;
+    padding-right: 1.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .boardContentName {
     white-space: nowrap;

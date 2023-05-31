@@ -171,10 +171,15 @@
   }
   .todayTableContent > div {
     font-size: 0.8125rem;
-    height: 1.5rem;
+    width: 8.1875rem;
     display: flex;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0.3rem 0 0.3rem 0;
+  }
+  .todayTableContent > div:before {
+    content: '• ';
+    margin: 0 0.5rem 0 0.5rem;
   }
   .todayTableContent > li {
     list-style-type: dot;
@@ -280,6 +285,16 @@
     margin: 0.3125rem 0;
     font-size: 0.8125rem;
   }
+  .mainBottomNoticeBottom > a > div:nth-child(1) {
+    width: 21.5715rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0.3125rem;
+  }
+  .mainBottomNoticeBottom > a > div:nth-child(2) {
+    width: 4.6875rem;
+  }
   .mainBottomBoard {
     width: 26.25rem;
     height: 5.5625rem;
@@ -324,6 +339,16 @@
     margin: 0.3125rem 0;
     font-size: 0.8125rem;
     cursor: pointer;
+  }
+  .mainBottomBoardBottom > a > div:nth-child(1) {
+    width: 21.5715rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0.3125rem;
+  }
+  .mainBottomBoardBottom > a > div:nth-child(2) {
+    width: 4.6875rem;
   }
   a {
     text-decoration: none;
@@ -580,7 +605,6 @@
     padding-top: 1rem;
     flex-direction: column;
   }
-
   .todayTableContent > div {
     font-size: 1rem;
     margin-top: 3vh;

@@ -1,9 +1,10 @@
 import {
+  checkContentsEmpty,
   displayPage,
   displayPagination,
   getLocalStorageItems,
-  searchPost,
   getSessionStorageItems,
+  searchPost,
 } from '../community.js';
 
 let postType = 'qna';
@@ -33,3 +34,5 @@ if (!getSessionStorageItems('userName')) {
 }
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);
+
+checkContentsEmpty();
