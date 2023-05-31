@@ -51,12 +51,13 @@ export const getFormatTime = () => {
 export const ChatbotHeader = () => {
   const $chatbotHeader = document.querySelector('.chatbotHeader');
   $chatbotHeader.innerHTML = `
-    <img class="chevronLeft" src="/public/images/Chevron Left.svg" width="18px" height="18px"/>
+    <img class="chevronLeft" src="/public/images/Chevron Left.svg" width="18px" height="18px" alt="뒤로가기" />
     <div class="chatLogoBox">
     <img
       class="headerLogo"
       alt="headerLogo"
       src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+      alt="챗봇 캐릭터"
     />
     </div>
     <p class="headerTitle">디지털 하나로 문의 채널</p>
@@ -83,6 +84,7 @@ export const ChatbotList = () => {
             class="headerLogo"
             alt="headerLogo"
             src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+            alt="챗봇 캐릭터"
           /></div>
             <div class="">
               <p class="chatName">디지털 하나로 문의 채널</p>
@@ -194,6 +196,7 @@ export const ChatbotCharacter = () => {
     class="profileImage"
     alt="profileImage"
     src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+    alt="챗봇 캐릭터"
   />
   </div>
     <p class="profileTitle">디지털 하나로 문의 채널</p>
@@ -316,7 +319,7 @@ export const ChatbotFooter = () => {
       <textarea type="textarea" id="sendMessage" ${inputDisabled}> </textarea>
     </form>
     <div class="sendImage">
-      <img class="sendButton" src="/public/images/send.png" width="22px" height="22px"/>
+      <img class="sendButton" src="/public/images/send.png" alt="문의 등록" width="22px" height="22px"/>
     </div>
   `;
   const textarea = document.getElementById('sendMessage');
