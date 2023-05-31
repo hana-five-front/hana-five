@@ -317,6 +317,7 @@
   }
   .boardContentInformation {
     display: flex;
+    justify-content: end;
   }
   .boardContentDate {
     margin-left: 1.25rem;
