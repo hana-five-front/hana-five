@@ -1,4 +1,4 @@
-@media(min-width: 75.625rem) {
+@media (min-width: 75.625rem) {
   .middle-component {
     display: flex;
     padding-top: 3.125rem;
@@ -76,6 +76,7 @@
     padding: 0rem 0.625rem;
   }
   .boardContent {
+    width: 45.25rem;
     height: 3.125rem;
     display: flex;
     align-items: center;
@@ -87,7 +88,15 @@
     display: flex;
     justify-content: space-between;
   }
+  .boardContentTitle {
+    width: 35rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 1rem;
+  }
   .boardContentInformation {
+    width: 10.25rem;
     display: flex;
   }
   .boardContentDate {
@@ -237,7 +246,7 @@
   }
   .boardSearchBar {
     display: flex;
-    width:73vw;
+    width: 73vw;
     align-items: end;
   }
   .boardSearchInput {
@@ -274,7 +283,7 @@
     color: #008485;
   }
   .boardList {
-    width:100%;
+    width: 100%;
     min-height: 34.375rem;
     margin: 0rem;
     padding: 0rem 0.625rem;
@@ -289,7 +298,11 @@
   }
   .boardContentTitle {
     font-size: 0.8rem;
-    max-width:60vw;
+    max-width: 70vw;
+    padding-right: 1.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .boardContentName {
     white-space: nowrap;
@@ -376,8 +389,10 @@
     background-position: -32px -171px;
     background-image: url(https://image.kebhana.com/cont/common/img/common/sp_paging.png);
   }
-  input,textarea,button {
-    appearance:none;
+  input,
+  textarea,
+  button {
+    appearance: none;
     border-radius: 0;
     -moz-appearance: none;
     -webkit-appearance: none;
