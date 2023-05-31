@@ -1,4 +1,10 @@
 @media (min-width: 75.625rem) {
+  .sideBar{
+    display:none;
+  }
+  .sideBar > ul {
+    display:none;
+  }
   .header-component {
     font-family: 'Hana2';
     display: flex;
@@ -17,7 +23,7 @@
     width: 60rem;
   }
   .header-component > div > a {
-    display:flex;
+    display: flex;
     align-items: center;
     width: 11.5rem;
     height: 5rem;
@@ -71,8 +77,8 @@
   .header-component > div > div > button:hover {
     color: black;
   }
-  .whateat{
-    display:none;
+  .whateat {
+    display: none;
   }
 }
 
@@ -87,8 +93,8 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    border-bottom: 0.0625rem solid #008484;
     height: 4rem;
+    border-bottom: .0625rem solid #008484;
   }
   .header-component > div {
     display: flex;
@@ -120,7 +126,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right:1vw;
+    margin-right: 1vw;
   }
   .header-component > div > div > button {
     display: none;
@@ -129,7 +135,6 @@
     color: black;
   }
   .sideBar {
-    
     position: fixed;
     top: 3rem;
     right: 4.5vw;
@@ -169,12 +174,12 @@
     display: flex;
     align-items: center;
     font-size: 0.9rem;
-    border:none;
+    border: none;
     background-color: transparent;
     text-decoration: none;
   }
   .sideBar > ul > :first-child {
-    width:100%;
+    width: 100%;
     border-bottom: 1px solid #8b95a1;
   }
   .sideBar > ul > :last-child {
@@ -190,14 +195,14 @@
     margin: 0;
     padding: 0;
     border: 0 none;
-  } 
+  }
   .whateat {
-    width:50vw;
+    width: 50vw;
     color: #8b95a1;
-    display:flex;
+    display: flex;
     justify-content: flex-end;
   }
   .whateat > a {
-    color:#8b95a1;
+    color: #8b95a1;
   }
 }

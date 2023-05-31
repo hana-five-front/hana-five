@@ -176,6 +176,14 @@
     align-items: center;
     text-align: center;
   }
+  .todayTableContent > li {
+    list-style-type: dot;
+    font-size: 0.8125rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
   .whatShouldIEatButton {
     width: 5rem;
     height: 14.375rem;
@@ -469,25 +477,25 @@
     background-size: cover;
     background-position: center;
     z-index: -1;
-    filter: brightness(50%);
+    filter: brightness(40%);
   }
   .bg-carousel1 {
     background-image: url('../../public/images/모바일캐러셀2.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(50%);
+    filter: brightness(40%);
   }
   .bg-carousel3 {
     background-image: url('../../public/images/모바일캐러셀1.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(50%);
+    filter: brightness(40%);
   }
   .bg-carousel4 {
     background-image: url('../../public/images/모바일캐러셀3.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(50%);
+    filter: brightness(40%);
   }
   .mainCarouselText {
     display: none;
@@ -571,9 +579,11 @@
     width: 95vw;
     height: 15rem;
     display: flex;
-
+    padding-left: 1rem;
+    padding-top:1rem;
     flex-direction: column;
   }
+
   .todayTableContent > div {
     font-size: 1rem;
     margin-top: 3vh;
