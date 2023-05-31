@@ -12,12 +12,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     height: 5rem;
     width: 60rem;
   }
   .header-component > div > a {
-    display:flex;
+    display: flex;
     align-items: center;
     width: 11.5rem;
     height: 5rem;
@@ -69,10 +68,10 @@
     font-size: 0.875rem;
   }
   .header-component > div > div > button:hover {
-    color: black;
+    color: #191f29;
   }
-  .whateat{
-    display:none;
+  .whateat {
+    display: none;
   }
 }
 
@@ -94,7 +93,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     height: 4rem;
     width: 95%;
   }
@@ -105,7 +103,6 @@
   .header-component > div > a > img {
     height: 3.5rem;
   }
-
   .header-component > div > ul {
     display: none;
   }
@@ -115,45 +112,45 @@
   .header-component > div > ul > li:hover {
     color: #008484;
   }
-
   .imo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right:1vw;
+    margin-right: 1vw;
   }
   .header-component > div > div > button {
     display: none;
   }
   .header-component > div > div > button:hover {
-    color: black;
+    color: #191f29;
   }
   .sideBar {
-    
     position: fixed;
     top: 3rem;
-    right: 4.5vw;
+    right: 3vw;
     background-color: white;
     width: 8rem;
+    padding: 0.3125rem 0;
     border-radius: 0.3125rem;
-    height: 13rem;
     display: none;
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
       0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
   .sideBar > ul {
-    padding-top: 0.5rem;
-    height: 13rem;
     display: flex;
     flex-direction: column;
     list-style-type: none;
     justify-content: space-evenly;
   }
   .sideBar > ul > li {
-    height: 3rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
-    padding-left: 3vw;
+    justify-content: center;
+    padding: 0 0.625rem;
+  }
+  .sideBar > ul > li:hover {
+    background-color: #f2f4f6;
   }
   .sideBar > ul > li > a {
     width: 100%;
@@ -169,12 +166,12 @@
     display: flex;
     align-items: center;
     font-size: 0.9rem;
-    border:none;
+    border: none;
     background-color: transparent;
     text-decoration: none;
   }
   .sideBar > ul > :first-child {
-    width:100%;
+    width: 100%;
     border-bottom: 1px solid #8b95a1;
   }
   .sideBar > ul > :last-child {
@@ -190,14 +187,5 @@
     margin: 0;
     padding: 0;
     border: 0 none;
-  } 
-  .whateat {
-    width:50vw;
-    color: #8b95a1;
-    display:flex;
-    justify-content: flex-end;
-  }
-  .whateat > a {
-    color:#8b95a1;
   }
 }
