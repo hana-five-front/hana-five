@@ -40,7 +40,6 @@
   .carousel-item {
     width: 36.25rem;
     height: 100%;
-
     flex: 0 0 100%;
     display: flex;
     justify-content: space-between;
@@ -56,9 +55,9 @@
     width: 26.25rem;
     height: 12.5rem;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
-    padding-bottom: 0.625rem;
+    padding: 0.5rem 0 0 0.5rem;
   }
   .mainCarouselText > :first-child {
     width: 90%;
@@ -127,6 +126,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .carousel-buttons > img {
+    height: 10px;
+    opacity: 50%;
+  }
+  .carousel-buttons > img:hover {
+    opacity: 80%;
+    cursor: pointer;
   }
   .middle-right {
     height: 14.375rem;
