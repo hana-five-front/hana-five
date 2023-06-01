@@ -1,4 +1,3 @@
-
 fetch('https://server-eternalclash.koyeb.app/header')
   .then(function (response) {
     if (response.ok) {
@@ -39,7 +38,6 @@ export const handleLogin = $target => {
           success: res => {
             $target.innerText = '로그아웃';
             const kakao_account = res.kakao_account;
-            alert('login success');
 
             window.sessionStorage.setItem(
               'userName',
@@ -58,14 +56,12 @@ export const handleLogin = $target => {
     window.sessionStorage.setItem('userName', '');
     window.sessionStorage.setItem('userMail', '');
     $target.innerText = '로그인';
-    alert('logout ok');
     location.reload();
   } else {
     Kakao.Auth.logout(function () {
       window.sessionStorage.setItem('userName', '');
       window.sessionStorage.setItem('userMail', '');
       $target.innerText = '로그인';
-      alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
       location.reload();
     });
   }
