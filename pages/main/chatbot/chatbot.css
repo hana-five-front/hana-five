@@ -69,6 +69,7 @@ li {
 }
 .userChatItemContainer {
   margin: 0 0.25rem 0.5rem 4rem;
+  text-align: left;
 }
 .messageSpan {
   display: block;

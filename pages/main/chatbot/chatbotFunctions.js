@@ -1,7 +1,7 @@
 import { store } from './Store.js';
-import { renderContents } from './chatbot.js';
-import { ANSWER_LIST, FAQ_LIST, messages } from './chatbotData.js';
-import { sendQnaToSlack } from './chatbotSlackApi.js';
+import { renderContents, renderContentsWithSlack } from './chatbot.js';
+import { ANSWER_LIST, FAQ_LIST, RES_ID_QNA, messages } from './chatbotData.js';
+import { getQnaToSlack, sendQnaToSlack } from './chatbotSlackApi.js';
 
 const SCROLL_ANIMATION_DURATION = 400;
 
@@ -215,7 +215,6 @@ export const ChatbotCharacter = () => {
 };
 
 export const handleClickFAQButton = e => {
-  const $modalContainer = document.querySelector('.modalContainer');
   const question = {};
   question['resId'] = e.target.dataset.resid;
   question['nextReqGroup'] = e.target.dataset.nextreqgroup;
@@ -236,7 +235,11 @@ export const handleClickFAQButton = e => {
     messages.push(temp);
   }
 
-  renderContents();
+  if (question['resId'] == RES_ID_QNA) {
+    renderContentsWithSlack();
+  } else {
+    renderContents();
+  }
 
   const $chatbotList = document.querySelector('.chatbotList');
   $('.modalContainer').animate(
@@ -286,7 +289,7 @@ export const handleSubmitMessage = e => {
   const messageInput = document.getElementById('sendMessage');
   const value = messageInput.value.trim();
   if (value === '') return;
-  const resId = 10;
+  const resId = RES_ID_QNA;
   const contents = value;
   const userName = sessionStorage.getItem('userName');
   sendQnaToSlack(userName, contents);
@@ -294,11 +297,10 @@ export const handleSubmitMessage = e => {
   e.target.setAttribute('data-resId', resId);
   e.target.setAttribute('data-contents', contents);
   const slackMessage = {
-    id: messages.length,
-    resId: 10,
-    type: 'manualRes',
-    content: [value],
+    title: `문의자: ${userName}`,
+    content: [`내용: ${value}`],
     createdAt: getFormatTime(Date.now()),
+    id: messages.length,
   };
 
   let slackLocalStorage = JSON.parse(localStorage.getItem('slackQ&A'));
@@ -319,7 +321,7 @@ export const ChatbotFooter = () => {
   const userName = sessionStorage.getItem('userName');
   const isLoggedIn = Boolean(userName);
   let inputDisabled = 'disabled';
-  if (messages[messages.length - 1].resId == 10) {
+  if (messages[messages.length - 1].resId == RES_ID_QNA) {
     inputDisabled = isLoggedIn
       ? 'placeholder="문의 사항을 입력해 주세요"'
       : 'placeholder="로그인 후 이용해 주세요" disabled';
@@ -390,11 +392,11 @@ const updateStyle = () => {
     document.querySelector('.sendImage').classList.remove('disabled');
   }
 };
-const setHasInquires = inquire => Array.isArray(inquire) && inquire.length > 0;
+const setHasInquires = arr => Array.isArray(arr) && arr.length > 0;
 
 const setUserMessageInfo = inquire => ({
   isUserMessage: inquire.content[0].substr(0, 3) == '내용:',
   isAdminMessage: inquire.content[0].substr(0, 3) == '답변:',
-  userName: inquire.title.substr(4),
+  userName: inquire?.title.substr(4),
   messageContents: inquire.content[0].substr(4),
 });

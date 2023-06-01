@@ -16,14 +16,30 @@ export const makeChatbotUI = () => {
   ChatbotList();
   ChatbotFAQButtons();
   ChatbotFooter();
-  getQnaToSlack();
 };
 
 export const renderContents = () => {
   ChatbotList();
   ChatbotFAQButtons();
   ChatbotFooter();
+};
+
+export let slackInterval = null;
+
+export const renderContentsWithSlack = () => {
+  ChatbotList();
+  ChatbotFAQButtons();
+  ChatbotFooter();
   getQnaToSlack();
+
+  // if (slackInterval == null) {
+  //   slackInterval = setInterval(() => {
+  //     getQnaToSlack();  ChatbotList();
+  ChatbotFAQButtons();
+  //     ChatbotList();
+  //     ChatbotFAQButtons();
+  //   }, 5000);
+  // }
 };
 
 const handleClickChatbot = () => {
@@ -38,5 +54,5 @@ const main = () => {
 
 main();
 const obj = {
-  name: ''
-}
+  name: '',
+};
