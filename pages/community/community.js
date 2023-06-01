@@ -347,10 +347,7 @@ export function searchPost(postType, currentPage, pagination, boardList) {
   let searchInput = document.querySelector('.boardSearchInput');
   let keyword = searchInput.value;
 
-  let posts = filterPostsByKeyword(
-    getLocalStorageItems(postType).reverse(),
-    keyword
-  );
+  let posts = filterPostsByKeyword(getLocalStorageItems(postType), keyword);
 
   displayPage(posts, currentPage, boardList);
   displayPagination(posts, currentPage, pagination, boardList);
