@@ -95,18 +95,14 @@
     font-weight: bold;
     margin-bottom: 0.625rem;
   }
-  .calendar-month > button {
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    border: none;
-    font-size: 1.875rem;
-    font-weight: bold;
-    padding: 0 1.625rem;
-    cursor: pointer;
-  }
-  .calendar-month > button > img {
+  .calendar-month > img {
+    width: 20px;
     height: 20px;
+    opacity: 30%;
+  }
+  .calendar-month > img:hover {
+    cursor: pointer;
+    opacity: 90%;
   }
   .calendar-day {
     min-height: 25rem;
@@ -328,16 +324,14 @@
     margin-bottom: 0.625rem;
     min-height: 2.375rem;
   }
-  .calendar-month > button {
-    background-color: transparent;
-    border: none;
-    font-size: 1.875rem;
-    font-weight: bold;
-    padding: 0 1.625rem;
-    cursor: pointer;
+  .calendar-month > img {
+    width: 20px;
+    height: 20px;
+    opacity: 30%;
   }
-  .calendar-month > button:hover {
-    color: #008484;
+  .calendar-month > img:hover {
+    cursor: pointer;
+    opacity: 90%;
   }
   /* 여기가 고칠 곳 */
   .calendar-day {
