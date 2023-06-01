@@ -1,7 +1,7 @@
 @media (max-width: 75.625rem) {
   .chatbotWrapper {
     position: fixed;
-    bottom: 2vh;
+    bottom: 7vh;
     right: 2vw;
     z-index: 9999;
   }
