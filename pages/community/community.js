@@ -246,7 +246,7 @@ export function renderPost(postType) {
     detailWriter.textContent = post.name || '익명';
     detailDate.textContent = post.date;
     if (post.name != getSessionStorageItems('userName')) {
-      editButtons.style.display = 'none';
+      editButtons.style.visibility = 'hidden';
     }
 
     post.content.forEach(e => {
@@ -351,7 +351,14 @@ export function searchPost(postType, currentPage, pagination, boardList) {
 
   displayPage(posts, currentPage, boardList);
   displayPagination(posts, currentPage, pagination, boardList);
+
+  if (posts.length === 0) {
+    const noPostsElement = document.createElement('p');
+    noPostsElement.innerText = '게시글이 존재하지 않습니다';
+    boardList.appendChild(noPostsElement);
+  }
 }
+
 export function deleteComment(commentId) {
   let postId = getPostId();
   let postType = getPostType();
@@ -384,6 +391,8 @@ export async function submitPost(postType) {
 
   if (title === '' || content === '') {
     alert('제목과 내용을 모두 입력해주세요.');
+  } else if (title.length > 75) {
+    alert('제목은 최대 ' + 75 + '글자까지 입력할 수 있습니다.');
   } else {
     let posts = getLocalStorageItems(postType);
     let nextId = getNextId(posts);
@@ -400,7 +409,7 @@ export async function submitPost(postType) {
       posts.unshift(post);
       setLocalStorageItems(postType, posts);
       let text = [title + '\n', ...contentInput.value].join('');
-      fetch('https://server-eternalclash.koyeb.app/slackapi', {
+      fetch('http://localhost:3000/slackapi', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

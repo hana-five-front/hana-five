@@ -1,3 +1,4 @@
+
 fetch('https://server-eternalclash.koyeb.app/header')
   .then(function (response) {
     if (response.ok) {
@@ -24,15 +25,22 @@ export const kakaoLoginInit = () => {
     loginBtnMobile.innerText = '로그아웃';
   }
 
-  document.querySelector('#login').addEventListener('click', function () {
-    if (loginBtn.innerText == '로그인') {
+  document
+    .querySelector('#login')
+    .addEventListener('click', () => handleLogin(loginBtn));
+  document
+    .querySelector('#login2')
+    .addEventListener('click', () => handleLogin(loginBtnMobile));
+
+  const handleLogin = $target => {
+    if ($target.innerText == '로그인') {
       window.Kakao.Auth.login({
         scope: 'profile_nickname, account_email',
         success: authObj => {
           window.Kakao.API.request({
             url: '/v2/user/me',
             success: res => {
-              loginBtn.innerText = '로그아웃';
+              $target.innerText = '로그아웃';
               const kakao_account = res.kakao_account;
               alert('login success');
 
@@ -49,59 +57,20 @@ export const kakaoLoginInit = () => {
           });
         },
       });
-    } else if (loginBtn.innerText == '로그아웃') {
-      if (!Kakao.Auth.getAccessToken()) {
-        alert('Not logged in.');
-        return;
-      } else {
-        Kakao.Auth.logout(function () {
-          window.sessionStorage.setItem('userName', '');
-          window.sessionStorage.setItem('userMail', '');
-          loginBtn.innerText = '로그인';
-          alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
-          location.reload();
-        });
-      }
-    }
-  });
-  document.querySelector('#login2').addEventListener('click', function () {
-    if (loginBtnMobile.innerText == '로그인') {
-      window.Kakao.Auth.login({
-        scope: 'profile_nickname, account_email',
-        success: authObj => {
-          window.Kakao.API.request({
-            url: '/v2/user/me',
-            success: res => {
-              loginBtnMobile.innerText = '로그아웃';
-              const kakao_account = res.kakao_account;
-              alert('login success');
-
-              window.sessionStorage.setItem(
-                'userName',
-                kakao_account.profile.nickname
-              );
-              window.sessionStorage.setItem('userMail', kakao_account.email);
-              location.reload();
-            },
-            fail: res => {
-              console.error(res);
-            },
-          });
-        },
+    } else if (!window.sessionStorage.getItem('userName')) {
+      window.sessionStorage.setItem('userName', '');
+      window.sessionStorage.setItem('userMail', '');
+      $target.innerText = '로그인';
+      alert('logout ok');
+      location.reload();
+    } else {
+      Kakao.Auth.logout(function () {
+        window.sessionStorage.setItem('userName', '');
+        window.sessionStorage.setItem('userMail', '');
+        $target.innerText = '로그인';
+        alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
+        location.reload();
       });
-    } else if (loginBtnMobile.innerText == '로그아웃') {
-      if (!Kakao.Auth.getAccessToken()) {
-        alert('Not logged in.');
-        return;
-      } else {
-        Kakao.Auth.logout(function () {
-          window.sessionStorage.setItem('userName', '');
-          window.sessionStorage.setItem('userMail', '');
-          loginBtnMobile.innerText = '로그인';
-          alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
-          location.reload();
-        });
-      }
     }
-  });
+  };
 };

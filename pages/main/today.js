@@ -18,7 +18,7 @@ const planData = async () => {
       const classLi = document.createElement('div');
       classLi.innerText = classText + ' ' + `(${timeText}H)`;
 
-      todayTable.appendChild(classLi);
+      todayTable.appendChild(classDiv);
     });
   } else {
     const classDiv = document.createElement('div');
