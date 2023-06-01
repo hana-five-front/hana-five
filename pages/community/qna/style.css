@@ -243,6 +243,10 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 0.5rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: 0;
+    padding-left: 0.625rem;
   }
   .boardSearchBar {
     display: flex;

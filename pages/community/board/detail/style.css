@@ -72,9 +72,9 @@
     padding-right: 0.625rem;
   }
   .detailInformation {
-    width: 10.625rem;
     display: flex;
     align-items: center;
+    justify-content: end;
   }
   .detailInformation > p {
     margin: 0px;
@@ -252,17 +252,19 @@
     overflow: hidden;
     white-space: normal;
     text-overflow: ellipsis;
+    padding-right: 0.625rem;
   }
   .detailInformation {
     font-size: 0.8rem;
     display: flex;
     align-items: center;
+    white-space: nowrap;
   }
   .detailInformation > p {
     margin: 0px;
   }
   .detailInformation > .detailDate {
-    margin-left: 1.875rem;
+    margin-left: 1rem;
   }
   .detailContext {
     width: 100%;
