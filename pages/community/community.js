@@ -319,6 +319,9 @@ export function submitComment(postType) {
   if (commentContent === '') {
     alert('댓글 내용을 입력해주세요.');
     return;
+  } else if (commentContent.length > 300) {
+    alert('제목은 최대 ' + 300 + '자까지 입력할 수 있습니다.');
+    return;
   }
 
   let posts = getLocalStorageItems(postType);
@@ -392,7 +395,7 @@ export async function submitPost(postType) {
   if (title === '' || content === '') {
     alert('제목과 내용을 모두 입력해주세요.');
   } else if (title.length > 75) {
-    alert('제목은 최대 ' + 75 + '글자까지 입력할 수 있습니다.');
+    alert('제목은 최대 ' + 75 + '자까지 입력할 수 있습니다.');
   } else {
     let posts = getLocalStorageItems(postType);
     let nextId = getNextId(posts);
