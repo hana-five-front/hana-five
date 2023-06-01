@@ -28,8 +28,8 @@
     height: 5rem;
   }
   .header-component > div > a > img {
-    width: 6.5rem;
-    height: 3.5rem;
+    width: 11.5rem;
+    height: 5rem;
   }
   .imo {
     display: none;
@@ -47,9 +47,9 @@
     height: 5rem;
     list-style-type: none;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-around;
-    margin: 0;
+    margin-bottom: 2.5rem;
     padding: 0;
   }
   .header-component > div > ul > li {
@@ -59,12 +59,15 @@
     color: #008484;
   }
   .btnDiv {
+    height: 5rem;
     display: flex;
-    align-items: center;
+    align-items: end;
+    justify-content: end;
+    margin-bottom: 2.8125rem;
   }
   .header-component > div > div > button {
     color: #8b95a1;
-    width: 4.0625rem;
+    width: 3rem;
     background-color: transparent;
     border: none;
     outline: none;
