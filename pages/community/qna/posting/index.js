@@ -5,10 +5,13 @@ import {
   submitPost,
   modifyPost,
   getSessionStorageItems,
+  asideHighLighter,
 } from '../../community.js';
 
 let postType = 'qna';
 let postingButton = document.querySelector('.postingButton');
+
+asideHighLighter(postType);
 
 let postId = getPostId();
 let postingUsername = document.querySelector('.postingUsername');

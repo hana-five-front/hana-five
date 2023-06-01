@@ -475,6 +475,7 @@ function renderComments(postType, comments) {
     detailCommentList.appendChild(commentElement);
   }
 }
+
 export function checkContentsEmpty() {
   const boardContent = document.querySelector('.boardContent');
 
@@ -487,4 +488,17 @@ export function checkContentsEmpty() {
       boardList.appendChild(noPostsElement);
     });
   }
+}
+
+export function asideHighLighter(postType) {
+  let currentAsideSubject;
+  if (postType === 'board') {
+    currentAsideSubject = document.querySelector('.asideCommunityBoard');
+  } else if (postType === 'notice') {
+    currentAsideSubject = document.querySelector('.asideCommunityNotice');
+  } else if (postType === 'qna') {
+    currentAsideSubject = document.querySelector('.asideCommunityQna');
+  }
+
+  currentAsideSubject.style.color = '#008485';
 }

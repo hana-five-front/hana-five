@@ -5,6 +5,7 @@ import {
   getLocalStorageItems,
   getSessionStorageItems,
   searchPost,
+  asideHighLighter,
 } from '../community.js';
 
 let postType = 'board';
@@ -17,6 +18,8 @@ let searchBtn = document.querySelector('.boardButton');
 let searchInput = document.querySelector('.boardSearchInput');
 
 let posts = getLocalStorageItems(postType).reverse();
+
+asideHighLighter(postType);
 
 searchBtn.addEventListener('click', function (event) {
   event.preventDefault();

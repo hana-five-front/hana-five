@@ -5,6 +5,7 @@ import {
   getLocalStorageItems,
   getSessionStorageItems,
   searchPost,
+  asideHighLighter,
 } from '../community.js';
 
 function markDownToPlainWords(message) {
@@ -53,6 +54,8 @@ let boardList = document.querySelector('.boardList');
 let pagination = document.querySelector('.boardPage');
 let searchBtn = document.querySelector('.boardButton');
 let searchInput = document.querySelector('.boardSearchInput');
+
+asideHighLighter(postType);
 
 let posts = getLocalStorageItems(postType);
 
