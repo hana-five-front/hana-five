@@ -240,12 +240,11 @@ export function renderPost(postType) {
     getLocalStorageItems(postType),
     getPostId()
   );
-
   if (post) {
     detailTitle.textContent = post.title;
     detailWriter.textContent = post.name || '익명';
     detailDate.textContent = post.date;
-    if (post.name != getSessionStorageItems('userName')) {
+    if (post.mail != getSessionStorageItems('userMail')) {
       editButtons.style.visibility = 'hidden';
     }
 
@@ -268,6 +267,7 @@ export function modifyPost(postType, postId) {
 
   let title = titleInput.value;
   let name = getSessionStorageItems('userName');
+  let mail = getSessionStorageItems('userMail');
   if (name === '') {
     name = '익명';
   }
@@ -285,6 +285,7 @@ export function modifyPost(postType, postId) {
       id: parseInt(postId),
       title: title,
       name: name,
+      mail: mail,
       content: content,
       date: date,
       comments: getCommentsByPostId(posts, postId),
@@ -315,6 +316,7 @@ export function submitComment(postType) {
   );
 
   let commentName = getSessionStorageItems('userName');
+  let commentMail = getSessionStorageItems('userMail');
   let commentContent = detailCommentInputContext.value;
   if (commentContent === '') {
     alert('댓글 내용을 입력해주세요.');
@@ -334,6 +336,7 @@ export function submitComment(postType) {
   post.comments.push({
     id: getNextId(post.comments),
     name: commentName,
+    mail: commentMail,
     content: commentContent,
   });
   setLocalStorageItems(postType, posts);
@@ -379,6 +382,7 @@ export async function submitPost(postType) {
   let titleInput = document.querySelector('.postingInputTitle');
   let name = null;
   name = getSessionStorageItems('userName');
+  let mail = getSessionStorageItems('userMail');
   let contentInput = document.querySelector('.postingInputContext');
 
   let title = titleInput.value;
@@ -402,6 +406,7 @@ export async function submitPost(postType) {
         id: nextId,
         title: titleInput.value,
         name: name,
+        mail: mail,
         content: contentInput.value.split('\n'),
         date: date,
       };
@@ -423,6 +428,7 @@ export async function submitPost(postType) {
         id: nextId,
         title: titleInput.value,
         name: name,
+        mail: mail,
         content: contentInput.value.split('\n'),
         date: date,
       };
@@ -459,7 +465,7 @@ function renderComments(postType, comments) {
     commentElement.appendChild(contextElement);
     commentElement.appendChild(divElement);
 
-    if (getSessionStorageItems('userName') == comment.name) {
+    if (getSessionStorageItems('userMail') == comment.mail) {
       let deleteCommentBtnElement = document.createElement('img');
       deleteCommentBtnElement.className = 'deleteCommentBtn';
       deleteCommentBtnElement.src = '/public/images/delete.svg';
