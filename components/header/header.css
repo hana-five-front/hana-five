@@ -44,12 +44,12 @@
     font-size: 1.125rem;
     line-height: 150%;
     width: 30.4375rem;
-    height: 5rem;
     list-style-type: none;
     display: flex;
-    align-items: end;
+    align-items: start;
     justify-content: space-around;
-    margin-bottom: 2.5rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
     padding: 0;
   }
   .header-component > div > ul > li {
@@ -59,11 +59,10 @@
     color: #008484;
   }
   .btnDiv {
-    height: 5rem;
     display: flex;
-    align-items: end;
+    align-items: start;
     justify-content: end;
-    margin-bottom: 2.8125rem;
+    margin-top: 12px;
   }
   .header-component > div > div > button {
     color: #8b95a1;
