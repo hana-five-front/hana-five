@@ -409,7 +409,7 @@ export async function submitPost(postType) {
       posts.unshift(post);
       setLocalStorageItems(postType, posts);
       let text = [title + '\n', ...contentInput.value].join('');
-      fetch('http://localhost:3000/slackapi', {
+      fetch('https://server-eternalclash.koyeb.app/slackapi', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -17,7 +17,7 @@ function dateToText(date) {
 
 function getSlackNotice() {
   getLocalStorageItems('board');
-  fetch('http://localhost:3000/slackapi')
+  fetch('https://server-eternalclash.koyeb.app/slackapi')
     .then(function (response) {
       if (response.ok) {
         return response.json();
@@ -25,7 +25,7 @@ function getSlackNotice() {
       throw new Error('Error: ' + response.status);
     })
     .then(data => {
-      data= JSON.parse(data)
+      data = JSON.parse(data);
       data = data.map((e, idx) => {
         e.title = markDownToPlainWords(e.title);
         e.content = e.content.map(e => markDownToPlainWords(e));
