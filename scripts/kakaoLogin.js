@@ -1,4 +1,5 @@
-fetch('http://localhost:3000/header')
+
+fetch('https://server-eternalclash.koyeb.app/header')
   .then(function (response) {
     if (response.ok) {
       return response.json();

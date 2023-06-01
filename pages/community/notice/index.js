@@ -25,6 +25,7 @@ function getSlackNotice() {
       throw new Error('Error: ' + response.status);
     })
     .then(data => {
+      data= JSON.parse(data)
       data = data.map((e, idx) => {
         e.title = markDownToPlainWords(e.title);
         e.content = e.content.map(e => markDownToPlainWords(e));
