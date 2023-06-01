@@ -320,7 +320,7 @@ export function submitComment(postType) {
     alert('댓글 내용을 입력해주세요.');
     return;
   } else if (commentContent.length > 300) {
-    alert('제목은 최대 ' + 300 + '자까지 입력할 수 있습니다.');
+    alert('댓글은 최대 ' + 300 + '자까지 입력할 수 있습니다.');
     return;
   }
 
@@ -455,8 +455,13 @@ function renderComments(postType, comments) {
     contextElement.className = 'detailCommentContext';
     contextElement.textContent = comment.content;
 
+    let divElement = document.createElement('div');
+    divElement.className = 'deleteDivBox';
+
     commentElement.appendChild(writerElement);
     commentElement.appendChild(contextElement);
+    commentElement.appendChild(divElement);
+
     if (getSessionStorageItems('userName') == comment.name) {
       let deleteCommentBtnElement = document.createElement('img');
       deleteCommentBtnElement.className = 'deleteCommentBtn';
@@ -464,9 +469,6 @@ function renderComments(postType, comments) {
       deleteCommentBtnElement.dataset.commentId = comment.id;
       deleteCommentBtnElement.addEventListener('click', deleteCommentHandler);
 
-      let divElement = document.createElement('div');
-      divElement.className = 'deleteDivBox';
-      commentElement.appendChild(divElement);
       divElement.appendChild(deleteCommentBtnElement);
     }
 
