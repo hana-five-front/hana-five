@@ -33,9 +33,6 @@
     color: #191f29;
     border-bottom: 0.0313rem #d1d6db solid;
   }
-  .asideCommunityBoard {
-    color: #008485;
-  }
   .detailComponent {
     width: 80%;
     display: flex;
@@ -214,9 +211,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .asideCommunityBoard {
-    color: #008485;
   }
   .detailComponent {
     margin-top: 2rem;

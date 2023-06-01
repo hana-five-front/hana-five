@@ -5,12 +5,16 @@ import {
   submitPost,
   modifyPost,
   getSessionStorageItems,
+  asideHighLighter,
 } from '../../community.js';
 
 let postType = 'board';
 let postingButton = document.querySelector('.postingButton');
 let postingUsername = document.querySelector('.postingUsername');
 postingUsername.innerText = `작성자: ${getSessionStorageItems('userName')}`;
+
+asideHighLighter(postType);
+
 let postId = getPostId();
 
 if (postId != '') {

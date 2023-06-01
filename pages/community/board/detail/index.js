@@ -5,6 +5,7 @@ import {
   submitComment,
   redirectTo,
   getSessionStorageItems,
+  asideHighLighter,
 } from '../../community.js';
 
 const postType = 'board';
@@ -13,7 +14,10 @@ const modifyBtn = document.querySelector('.modifyBtn');
 const deleteBtn = document.querySelector('.deleteBtn');
 const submitCommentBtn = document.querySelector('.submitCommentBtn');
 
+asideHighLighter(postType);
+
 renderPost(postType);
+
 let postingUsername = document.querySelector('.postingUsername');
 postingUsername.innerText = `${getSessionStorageItems('userName')}`;
 if (!getSessionStorageItems('userName')) {
