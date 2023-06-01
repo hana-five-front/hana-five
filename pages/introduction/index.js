@@ -2,12 +2,12 @@ import { flipImages, makeImageTags, rotateImage } from './utils.js';
 
 const main = () => {
   const images = [
-    '/public/images/별돌이1.png',
-    '/public/images/별돌이2.png',
-    '/public/images/별돌이3.png',
-    '/public/images/별돌이4.png',
-    '/public/images/별돌이5.png',
-    '/public/images/별돌이6.jpeg',
+    '/public/images/분위기1.png',
+    '/public/images/분위기2.png',
+    '/public/images/분위기3.png',
+    '/public/images/분위기4.png',
+    '/public/images/분위기5.png',
+    '/public/images/분위기6.png',
   ];
 
   makeImageTags(images);
