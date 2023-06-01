@@ -460,7 +460,11 @@ function renderComments(postType, comments) {
       deleteCommentBtnElement.src = '/public/images/delete.svg';
       deleteCommentBtnElement.dataset.commentId = comment.id;
       deleteCommentBtnElement.addEventListener('click', deleteCommentHandler);
-      commentElement.appendChild(deleteCommentBtnElement);
+
+      let divElement = document.createElement('div');
+      divElement.className = 'deleteDivBox';
+      commentElement.appendChild(divElement);
+      divElement.appendChild(deleteCommentBtnElement);
     }
 
     detailCommentList.appendChild(commentElement);

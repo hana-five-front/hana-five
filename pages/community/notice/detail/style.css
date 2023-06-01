@@ -123,7 +123,6 @@
     margin: 0px;
   }
   .detailCommentWriter {
-    width: 15%;
     display: flex;
     justify-content: center;
   }
@@ -133,9 +132,14 @@
     justify-content: start;
     margin-left: 0.625rem;
   }
+  .deleteDivBox {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+  }
   .deleteCommentBtn {
     width: 15px;
-    margin: 0px 12px;
+    margin: 0px 0px 0px 0.25rem;
   }
   .detailButtonBox {
     display: flex;
@@ -323,19 +327,23 @@
     margin: 0px;
   }
   .detailCommentWriter {
-    width: 15%;
     display: flex;
     justify-content: center;
   }
   .detailCommentContext {
-    width: 70%;
+    width: 50vw;
     display: flex;
     justify-content: start;
     margin-left: 0.625rem;
   }
+  .deleteDivBox {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+  }
   .deleteCommentBtn {
     width: 15px;
-    margin: 0px 12px;
+    margin: 0px 0px 0px 0.25rem;
   }
   .detailButtonBox {
     display: flex;
