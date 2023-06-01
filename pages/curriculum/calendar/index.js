@@ -257,7 +257,7 @@ const renderSpecialSchedules = (specialData, monthKey, specialScheduleName) => {
   let specialList;
 
   if (specialScheduleName === 'monthly-schedule') {
-    $specialLecture.children[1].innerHTML = `${monthKey} 주요 활동`;
+    $specialLecture.children[0].innerHTML = `${monthKey} 주요 활동`;
     specialList = document.querySelector('.specialScheduleList');
   } else if (specialScheduleName === 'special-lecture') {
     specialList = document.querySelector('.specialLectureList');
