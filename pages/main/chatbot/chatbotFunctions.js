@@ -116,6 +116,7 @@ export const ChatbotList = () => {
 
       if (hasInquires) {
         slackInquire.forEach((inquire, idx, inquires) => {
+          console.log(inquire);
           const { isUserMessage, isAdminMessage, userName, messageContents } =
             setUserMessageInfo(inquire);
 
@@ -131,7 +132,7 @@ export const ChatbotList = () => {
               tempInnerHTML += `<p class="chatName">${userName}</p>`;
             }
             tempInnerHTML += `<p class="chatItemContainer userChatItemContainer">${messageContents}</p></div></li>`;
-          } else if (isAdminMessage) {
+          } else {
             tempInnerHTML += `<li key=${message.id} class="chatItem">`;
             if (prevTime === undefined || prevTime !== message.createdAt) {
               tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
@@ -153,22 +154,7 @@ export const ChatbotList = () => {
                 </div>
               </li>
               `;
-          } else {
-            tempInnerHTML += `
-            <li class="resItem">
-              <button 
-                key=${inquire.resId} 
-                class="qnaButtonSelected" 
-                data-resId=${inquire.resId}
-                data-nextReqGroup=${inquire.nextReqGroup}
-                data-contents=${inquire.contents}
-              >
-                <span class="buttonIcon">🙋‍♂️</span>
-                <span class="buttonText">${inquire.content[0]}</span>
-              </button>
-            </li>
-          `;
-          }
+          } 
         });
       } else {
         tempInnerHTML += `<li key=${message.id} class="chatItem">`;
@@ -390,11 +376,11 @@ const updateStyle = () => {
     document.querySelector('.sendImage').classList.remove('disabled');
   }
 };
-const setHasInquires = inquire => Array.isArray(inquire) && inquire.length > 0;
+const setHasInquires = arr => Array.isArray(arr) && arr.length > 0;
 
 const setUserMessageInfo = inquire => ({
   isUserMessage: inquire.content[0].substr(0, 3) == '내용:',
   isAdminMessage: inquire.content[0].substr(0, 3) == '답변:',
-  userName: inquire.title.substr(4),
+  userName: inquire?.title?.substr(4),
   messageContents: inquire.content[0].substr(4),
 });

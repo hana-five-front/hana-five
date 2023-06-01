@@ -1,5 +1,5 @@
 export const sendQnaToSlack = (userName, content) => {
-  fetch('https://server-eternalclash.koyeb.app/qna', {
+  fetch('http://localhost:3000/qna', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ export const sendQnaToSlack = (userName, content) => {
 export const getQnaToSlack = () => {
   const username = sessionStorage.getItem('userName');
   if (!username) return localStorage.removeItem('slackQ&A');
-  fetch('https://server-eternalclash.koyeb.app/qna')
+  fetch('http://localhost:3000/qna')
     .then(response => {
       return response.json();
     })
