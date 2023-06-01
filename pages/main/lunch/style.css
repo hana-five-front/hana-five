@@ -1,13 +1,18 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 @media (min-width: 75.625rem) {
+  *{
+    width:100vw;
+    overflow: hidden;
+  }
   canvas {
     transition: 2s;
   }
-
+ 
   main {
     position: relative;
-    width: 60rem;
+    width:95vw;
+    overflow: hidden;
     height: 37.9375rem;
     display: flex;
     align-items: center;
