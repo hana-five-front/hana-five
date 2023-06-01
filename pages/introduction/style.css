@@ -105,7 +105,13 @@
     margin-top: 10rem;
     min-height: 60rem;
   }
+  .talentSubtitleContainer {
+    width: 45rem;
+    margin: 0 auto;
+  }
   .talentSubtitle {
+    display: inline-block;
+    margin: 1rem 0;
     font-size: 1.75rem;
     font-weight: bold;
     line-height: 0.75;
