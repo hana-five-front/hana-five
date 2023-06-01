@@ -35,7 +35,7 @@ export const renderContentsWithSlack = () => {
   // if (slackInterval == null) {
   //   slackInterval = setInterval(() => {
   //     getQnaToSlack();  ChatbotList();
-  ChatbotFAQButtons();
+  // ChatbotFAQButtons();
   //     ChatbotList();
   //     ChatbotFAQButtons();
   //   }, 5000);

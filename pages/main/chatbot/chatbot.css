@@ -276,13 +276,16 @@ li {
 #sendMessage {
   width: 100%;
   height: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 3.5rem 0.5rem 1rem;
   border: none;
   resize: none;
 }
 #sendMessage:disabled {
   background-color: #eee;
   cursor: not-allowed;
+}
+#sendMessage:disabled:hover::placeholder {
+  color: #008485;
 }
 #sendMessage:focus {
   outline: none;
