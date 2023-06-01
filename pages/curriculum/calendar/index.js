@@ -162,9 +162,9 @@ const renderCalendarTemplate = () => {
 const renderCalendarTitle = () => {
   const calendarMonth = document.querySelector('.calendar-month');
   calendarMonth.innerHTML = `
-    <button ><img class="previous" src="/public/images/leftBtnImg.svg" alt="이전달"></button>
+    <img class="previous" src="/public/images/leftBtnImg.svg" alt="이전달">
       <div id="month"></div>
-    <button class="next"><img src="/public/images/rightBtnImg.svg" alt="다음달"></button>
+    <img class="next" src="/public/images/rightBtnImg.svg" alt="다음달">
   `;
   let $title = document.getElementById('month');
 

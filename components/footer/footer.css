@@ -21,8 +21,6 @@
     flex-direction: column;
     margin: 0;
   }
-  .about-link {
-  }
   .about-link > a {
     display: inline-block;
     font-size: 13px;
@@ -68,6 +66,7 @@
   .right-up > :last-child {
     height: 1.75rem;
     font-size: 1.375rem;
+    font-weight: bold;
   }
   .right-down {
     display: flex;
@@ -85,6 +84,7 @@
   .right-down > :last-child {
     height: 1.75rem;
     font-size: 1.375rem;
+    font-weight: bold;
   }
 }
 
@@ -141,16 +141,13 @@
     height: 4rem;
     width: 100%;
   }
-
   .left-p_black {
     text-align: center;
     font-size: 0.8125rem;
   }
-
   .left-p_gray {
     text-align: center;
     font-size: 0.75rem;
-
     color: #d1d6db;
   }
 }

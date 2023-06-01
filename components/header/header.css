@@ -28,8 +28,8 @@
     height: 5rem;
   }
   .header-component > div > a > img {
-    width: 6.5rem;
-    height: 3.5rem;
+    width: 11.5rem;
+    height: 5rem;
   }
   .imo {
     display: none;
@@ -44,12 +44,12 @@
     font-size: 1.125rem;
     line-height: 150%;
     width: 30.4375rem;
-    height: 5rem;
     list-style-type: none;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-around;
-    margin: 0;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
     padding: 0;
   }
   .header-component > div > ul > li {
@@ -60,11 +60,13 @@
   }
   .btnDiv {
     display: flex;
-    align-items: center;
+    align-items: start;
+    justify-content: end;
+    margin-top: 12px;
   }
   .header-component > div > div > button {
     color: #8b95a1;
-    width: 4.0625rem;
+    width: 4rem;
     background-color: transparent;
     border: none;
     outline: none;
