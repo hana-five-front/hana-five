@@ -5,6 +5,7 @@ import {
   getLocalStorageItems,
   getSessionStorageItems,
   searchPost,
+  asideHighLighter,
 } from '../community.js';
 
 let postType = 'board';
@@ -16,7 +17,9 @@ let pagination = document.querySelector('.boardPage');
 let searchBtn = document.querySelector('.boardButton');
 let searchInput = document.querySelector('.boardSearchInput');
 
-let posts = getLocalStorageItems(postType).reverse();
+let posts = getLocalStorageItems(postType);
+
+asideHighLighter(postType);
 
 searchBtn.addEventListener('click', function (event) {
   event.preventDefault();

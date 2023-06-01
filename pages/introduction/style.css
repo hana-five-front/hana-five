@@ -19,6 +19,9 @@
     display: inline-block;
     vertical-align: unset;
   }
+  .introPageMain {
+    padding: 0 20px;
+  }
   .blind {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -40,29 +43,31 @@
   .introHeading {
     font-size: 2.75rem;
     font-weight: bold;
-    margin: 0 2rem;
   }
   .introCardsContainer {
     display: grid;
+    gap: 4rem;
+    justify-content: space-around;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, 1fr));
-    margin: var(--component-margin);
   }
   .introCard {
-    width: 25rem;
+    width: 28rem;
     min-height: 12.5rem;
   }
   .cardContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    font-size: 1.25rem;
     height: 100%;
   }
   .cardContent {
+    height: 100%;
     color: #6b7684;
   }
   .introCardHeader {
-    width: 23.5rem;
+    margin: 0;
     font-size: 1.5rem;
     font-weight: bold;
   }
@@ -100,7 +105,13 @@
     margin-top: 10rem;
     min-height: 60rem;
   }
+  .talentSubtitleContainer {
+    width: 45rem;
+    margin: 0 auto;
+  }
   .talentSubtitle {
+    display: inline-block;
+    margin: 1rem 0;
     font-size: 1.75rem;
     font-weight: bold;
     line-height: 0.75;
