@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding-top: 1.875rem;
   }
   .middle-component {
     width: 60rem;
@@ -250,6 +251,7 @@
   }
   .mainBottomNotice {
     width: 26.25rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -279,10 +281,8 @@
   }
   .mainBottomNoticeBottom {
     width: 26.25rem;
-    height: 5.25rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
   .mainBottomNoticeBottom > a {
     display: flex;
@@ -304,10 +304,10 @@
   }
   .mainBottomBoard {
     width: 26.25rem;
-    height: 5.5625rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
   }
   .mainBottomBoardTop {
     width: 26.25rem;
@@ -333,10 +333,8 @@
   }
   .mainBottomBoardBottom {
     width: 26.25rem;
-    height: 5.25rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
   .mainBottomBoardBottom > a {
     display: flex;
@@ -437,8 +435,6 @@
 }
 
 @media (max-width: 75.625rem) {
-  #header {
-  }
   .main-component {
     display: flex;
     flex-direction: column;
