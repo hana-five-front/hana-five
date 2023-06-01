@@ -129,7 +129,6 @@
     align-items: center;
   }
   .middle-right {
-    width: 14.9375rem;
     height: 14.375rem;
     display: flex;
     justify-content: space-between;
@@ -137,7 +136,7 @@
   .todayTable {
     width: 9.3125rem;
     height: 14.375rem;
-    border: 0.0625rem solid #191f29;
+    border: 0.0625rem solid #d2d8e0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,20 +152,19 @@
     width: 100%;
     border-bottom: 1px solid #008485;
   }
-  .todayTableTitle > :first-child {
-  }
   .todayTableTitle > :last-child {
     font-size: 0.8rem;
     color: #8b95a1;
-    padding-top: 0.3125rem;
+    padding: 0.3125rem;
   }
   .todayTableContent {
-    width: 8.1875rem;
+    width: 8.6rem;
     height: 10.5625rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
+    padding: 2px 0;
     background: #ecf0f1;
   }
   .todayTableContent > div {
@@ -190,7 +188,7 @@
     text-align: center;
   }
   .whatShouldIEatButton {
-    width: 5rem;
+    width: 8.6rem;
     height: 14.375rem;
     background-color: #008485;
     border-radius: 0.3125rem;
@@ -198,9 +196,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 15px;
     cursor: pointer;
   }
   .whatShouldIEatButton > span {
+    font-size: 1.3rem;
     color: #fff;
   }
   .link-component {
@@ -590,8 +590,6 @@
     background-color: #008485;
     border-bottom: 1px solid #008485;
   }
-  .todayTableTitle > :first-child {
-  }
   .todayTableTitle > :last-child {
     font-size: 1.2rem;
     margin-top: 1vh;
@@ -626,8 +624,6 @@
   }
   .mainBottomBoard {
     display: none;
-  }
-  #footer {
   }
   a {
     text-decoration: none;
