@@ -1,3 +1,9 @@
+import { ChatbotList } from './chatbotFunctions.js';
+
+const serverUrl = 'https://hon-adria-eternalclash.koyeb.app/';
+
+let socket;
+
 export const sendQnaToSlack = (userName, content) => {
   fetch('https://server-eternalclash.koyeb.app/qna', {
     method: 'POST',
@@ -11,23 +17,34 @@ export const sendQnaToSlack = (userName, content) => {
     })
     .catch(error => console.error('Error sending message:', error));
 };
-export const getQnaToSlack = () => {
+
+export const openSocketConnection = () => {
+  socket = io.connect(serverUrl);
+  socket.on('chat', data => {
+    const username = sessionStorage.getItem('userName');
+    if (!username) return localStorage.removeItem('slackQ&A');
+    data = data.filter(e => e.title.includes(`${username}`));
+    data.forEach(e => {
+      e.content = [e.content.join('\n')];
+    });
+    // 최신 순으로 Reverse
+    localStorage.setItem('slackQ&A', JSON.stringify(data));
+    ChatbotList();
+  });
+};
+
+export const rerenderSocketConnection = () => {};
+
+export const closeSocketConnection = () => {
+  if (socket) {
+    socket.disconnect();
+    socket = null;
+  }
+};
+
+export const makeUIWithQnaToSlack = () => {
   const username = sessionStorage.getItem('userName');
   if (!username) return localStorage.removeItem('slackQ&A');
-  fetch('https://server-eternalclash.koyeb.app/qna')
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      const username = sessionStorage.getItem('userName');
-      if (username) {
-      }
-      data = data.filter(e => e.title.includes(`${username}`)).reverse();
-      data.forEach(e => {
-        e.content = [e.content.join('\n')];
-      });
-      //최신 순으로 Reverse
-      localStorage.setItem('slackQ&A', JSON.stringify(data));
-    })
-    .catch(error => console.error('Error sending message:', error));
+  const data = JSON.parse(localStorage.getItem('slackQ&A'));
+  // UI 생성 로직
 };

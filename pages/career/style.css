@@ -115,6 +115,7 @@
     flex-direction: column;
     align-items: center;
     height: auto;
+    z-index:999999;
   }
   .career-component {
     margin-top: 6rem;
