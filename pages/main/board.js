@@ -5,7 +5,6 @@ let boardList = document.querySelector('.mainBottomBoardBottom');
 let postType = 'board';
 document.addEventListener('DOMContentLoaded', setBoard);
 let posts = getLocalStorageItems(postType).reverse().slice(0, 6);
-console.log(posts);
 for (let post of posts) {
   const { title, date, id } = post;
   const outerDiv = document.createElement('a');
