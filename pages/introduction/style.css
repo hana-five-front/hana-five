@@ -125,14 +125,9 @@
   }
   .images {
     width: 60rem;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 10rem;
-    transition: all 0.8s ease-out;
-  }
-  .animationHidden {
-    opacity: 0;
-  }
-  .animationFadeIn {
-    opacity: 1;
     transition: all 0.8s ease-out;
   }
   .imagesContainer {
@@ -189,7 +184,6 @@
     font-size: 1.5rem;
   }
 }
-
 @media (max-width: 75.625rem) {
   .introductionMain {
     width: 95vw;
@@ -287,13 +281,6 @@
   .talentImgContainer > img {
     width: 100%;
   }
-  .animationHidden {
-    opacity: 0;
-  }
-  .animationFadeIn {
-    opacity: 1;
-    transition: all 0.8s ease-out;
-  }
   .timelineItem {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -360,4 +347,12 @@
     flex-direction: column;
     align-items: center;
   }
+}
+.animationHidden {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+.animationFadeIn {
+  opacity: 1;
+  transition: all 1s ease-out;
 }
