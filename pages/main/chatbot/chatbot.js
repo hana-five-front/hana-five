@@ -7,13 +7,14 @@ import {
   ChatbotFooter,
 } from './chatbotFunctions.js';
 import { openSocketConnection } from './chatbotSlackApi.js';
-export const makeChatbotUI =  () => {
+
+export const makeChatbotUI = () => {
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.remove('hidden');
   ChatbotHeader();
   ChatbotCharacter();
   ChatbotList();
-  openSocketConnection()
+  openSocketConnection();
   ChatbotFAQButtons();
   ChatbotFooter();
 };
@@ -24,13 +25,10 @@ export const renderContents = () => {
   ChatbotFooter();
 };
 
-export let slackInterval = null;
-
 export const renderContentsWithSlack = () => {
   ChatbotList();
   ChatbotFAQButtons();
   ChatbotFooter();
-
 };
 
 const handleClickChatbot = () => {
@@ -44,6 +42,3 @@ const main = () => {
 };
 
 main();
-const obj = {
-  name: '',
-};
