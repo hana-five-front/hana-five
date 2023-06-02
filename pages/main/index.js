@@ -135,8 +135,10 @@ const setLogoToWhite = $target => {
   $target.classList.remove('transparentLogo');
 };
 
+const carouselHeight = document.querySelector('.carousel').scrollHeight - 64;
+
 const setLogoByScreenWidth = () => {
-  if (window.innerWidth > 1210 || window.scrollY > 1250) {
+  if (window.innerWidth > 1210 || window.scrollY > carouselHeight) {
     setHeaderWhite();
   } else {
     setHeaderTransparent();
@@ -153,7 +155,7 @@ const observeScreenResizeEvent = () => {
 window.addEventListener('load', () => {
   setLogoByScreenWidth();
   document.addEventListener('scroll', () => {
-    if (window.scrollY > 1250 || window.innerWidth > 1210) {
+    if (window.scrollY > carouselHeight || window.innerWidth > 1210) {
       setHeaderWhite();
     } else {
       setHeaderTransparent();
