@@ -75,7 +75,7 @@ export const ChatbotList = () => {
   messages.forEach((message, i) => {
     const prevMessage = messages[i - 1];
     const prevTime = prevMessage?.createdAt;
-    if (message.type === 'req') {
+    if (message.type === 'FAQ_REQ') {
       tempInnerHTML += `<li key=${message.id} class="chatItem">`;
       if (prevTime === undefined || prevTime !== message.createdAt) {
         tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
@@ -90,14 +90,14 @@ export const ChatbotList = () => {
               alt="챗봇 캐릭터"
             />
           </div>
-          <div class="">
+          <div>
             <p class="chatName">디지털 하나로 문의 채널</p>
             <p class="chatItemContainer">${message.contents}</p>
           </div>
         </div>
       </li>
       `;
-    } else if (message.type === 'res') {
+    } else if (message.type === 'FAQ_RES') {
       tempInnerHTML += `
         <li class="resItem">
           <button 
@@ -122,7 +122,7 @@ export const ChatbotList = () => {
             setUserMessageInfo(inquire);
 
           if (isUserMessage) {
-            tempInnerHTML += `<li class="resItem"><div class="">`;
+            tempInnerHTML += `<li class="resItem"><div>`;
             const prevInquire = inquires[idx - 1] ?? {
               content: [''],
               title: 'uniqueTitle',
@@ -148,7 +148,7 @@ export const ChatbotList = () => {
                       alt="챗봇 캐릭터"
                     />
                   </div>
-                  <div class="">
+                  <div>
                     <p class="chatName">디지털 하나로 문의 채널</p>
                     <p class="chatItemContainer">${messageContents}</p>
                   </div>
@@ -172,7 +172,7 @@ export const ChatbotList = () => {
                   alt="챗봇 캐릭터"
                 />
               </div>
-              <div class="">
+              <div>
                 <p class="chatName">디지털 하나로 문의 채널</p>
                 <p class="chatItemContainer">${message.contents}</p>
               </div>
@@ -206,7 +206,7 @@ export const handleClickFAQButton = e => {
   question['resId'] = e.target.dataset.resid;
   question['nextReqGroup'] = e.target.dataset.nextreqgroup;
   question['contents'] = e.target.dataset.contents;
-  question['type'] = 'res';
+  question['type'] = 'FAQ_RES';
   question['id'] = messages[messages.length - 1].id + 1;
   question['createdAt'] = getFormatTime(Date.now());
   messages.push(question);
