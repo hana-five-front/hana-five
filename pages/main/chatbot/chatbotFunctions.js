@@ -228,11 +228,7 @@ export const handleClickFAQButton = e => {
     renderContents();
   }
 
-  const $chatbotList = document.querySelector('.chatbotList');
-  $('.modalContainer').animate(
-    { scrollTop: $chatbotList.scrollHeight, easing: 'ease-in-out' },
-    SCROLL_ANIMATION_DURATION
-  );
+  scrollDownChatbotContainer();
 };
 
 export const ChatbotFAQButtons = () => {
@@ -301,6 +297,7 @@ export const handleSubmitMessage = e => {
   }
 
   renderContents();
+  scrollDownChatbotContainer();
 };
 
 export const ChatbotFooter = () => {
@@ -399,4 +396,12 @@ const handleKeydownMessage = e => {
   if (e.key === 'Enter' && !e.shiftKey) {
     document.querySelector('.sendImage').click();
   }
+};
+
+const scrollDownChatbotContainer = () => {
+  const $chatbotList = document.querySelector('.chatbotList');
+  $('.modalContainer').animate(
+    { scrollTop: $chatbotList.scrollHeight, easing: 'ease-in-out' },
+    SCROLL_ANIMATION_DURATION
+  );
 };
