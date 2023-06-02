@@ -2,7 +2,7 @@ import { handleLogin } from '../../../scripts/kakaoLogin.js';
 import { store } from './Store.js';
 import { renderContents, renderContentsWithSlack } from './chatbot.js';
 import { ANSWER_LIST, FAQ_LIST, RES_ID_QNA, messages } from './chatbotData.js';
-import { getQnaToSlack, sendQnaToSlack } from './chatbotSlackApi.js';
+import { sendQnaToSlack, closeSocketConnection } from './chatbotSlackApi.js';
 
 const SCROLL_ANIMATION_DURATION = 400;
 
@@ -28,6 +28,7 @@ export const setOpenModal = () => {
 };
 
 export const setCloseModal = () => {
+  closeSocketConnection();
   document.removeEventListener('keydown', handleKeydownEscape);
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.remove('chatbotModal');
@@ -154,7 +155,7 @@ export const ChatbotList = () => {
                 </div>
               </li>
               `;
-          } 
+          }
         });
       } else {
         tempInnerHTML += `<li key=${message.id} class="chatItem">`;

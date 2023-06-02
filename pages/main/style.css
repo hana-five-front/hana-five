@@ -441,6 +441,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    overflow: hidden;
+    background-color: #f2f4f6;
   }
   .middle-component {
     overflow: hidden;
@@ -565,16 +567,14 @@
     align-items: center;
   }
   .middle-right {
-    margin-top: 5vh;
-    width: 100vw;
-    height: 45vh;
-    display: flex;
-    justify-content: center;
+    display:none;
+;
   }
   .todayTable {
+   
     width: 95%;
     height: 40vh;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -582,36 +582,18 @@
     border-radius: 0.3125rem;
   }
   .todayTableTitle {
-    font-weight: bold;
-    width: 95vw;
-    font-size: 2.2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2vh;
-    background-color: #008485;
-    border-bottom: 1px solid #008485;
+
+    display: none;
+
   }
   .todayTableTitle > :last-child {
-    font-size: 1.2rem;
-    margin-top: 1vh;
-    color: #fff;
+   display:none;
   }
   .todayTableContent {
-    width: 95vw;
-    height: 15rem;
-    display: flex;
-    padding-left: 1rem;
-    padding-top: 1rem;
-    flex-direction: column;
+    display:none;
   }
   .todayTableContent > div {
-    font-size: 1rem;
-    margin-top: 3vh;
-    padding-left: 1vh;
-    display: flex;
-    align-items: center;
+    display:none;
   }
   .whatShouldIEatButton {
     display: none;

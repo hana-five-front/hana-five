@@ -6,14 +6,14 @@ import {
   ChatbotFAQButtons,
   ChatbotFooter,
 } from './chatbotFunctions.js';
-import { getQnaToSlack } from './chatbotSlackApi.js';
-export const makeChatbotUI = () => {
+import { openSocketConnection } from './chatbotSlackApi.js';
+export const makeChatbotUI =  () => {
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.remove('hidden');
-
   ChatbotHeader();
   ChatbotCharacter();
   ChatbotList();
+  openSocketConnection()
   ChatbotFAQButtons();
   ChatbotFooter();
 };
@@ -30,16 +30,7 @@ export const renderContentsWithSlack = () => {
   ChatbotList();
   ChatbotFAQButtons();
   ChatbotFooter();
-  getQnaToSlack();
 
-  // if (slackInterval == null) {
-  //   slackInterval = setInterval(() => {
-  //     getQnaToSlack();  ChatbotList();
-  // ChatbotFAQButtons();
-  //     ChatbotList();
-  //     ChatbotFAQButtons();
-  //   }, 5000);
-  // }
 };
 
 const handleClickChatbot = () => {

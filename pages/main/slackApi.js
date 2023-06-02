@@ -1,7 +1,7 @@
 const noticeContainer = document.querySelector('.mainBottomNoticeBottom');
 
 function markDownToPlainWords(message) {
-  return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
+  return message.replace(/&gt;|&lt;|:[a-zA-Z0-9_]+:|[\*_`]/g, '');
 }
 
 function makeNotice(title, date, id) {

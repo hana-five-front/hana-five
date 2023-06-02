@@ -186,7 +186,6 @@ const renderCalendarContents = calendarData => {
     let spanElement = dayKey.querySelector('.holiday');
     let timeSpanElement = dayKey.querySelector('.time');
     let ulElement = document.createElement('ul');
-
     divElement.appendChild(ulElement);
 
     const timetableData = calendarData?.[monthKey][`${i}`];
@@ -266,7 +265,7 @@ const renderSpecialSchedules = (specialData, monthKey, specialScheduleName) => {
   }
 
   specialList.innerHTML = '';
-
+  
   if (Array.isArray(lectureInfo) && lectureInfo.length > 0) {
     lectureInfo.forEach(item => {
       let specialContent = document.createElement('div');
