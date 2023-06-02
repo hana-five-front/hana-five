@@ -18,8 +18,8 @@
 
 @media (max-width: 75.625rem) {
   .intro {
-    width:95vw;
-    margin-top:5vh;
+    width: 100%;
+    padding: 6.25rem 1.5rem;
   }
   img,
   video {
@@ -48,72 +48,70 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
   }
   .introCard {
-    width: 95vw;
-
-    display: flex;
-    justify-content: center;
-  }
-
-  .introCard > :nth-child(1){
-    
-    display: flex;
-    width:90vw;
-    justify-content: center;
-    align-items: center;
-    height: 27vh;
-    background-color: #fff;
-    border-radius: .3125rem;
-    margin-top: 5vh;
-  }
-  .introCard > :nth-child(2){
-    display: flex;
-    width:90vw;
-    justify-content: center;
-    align-items: center;
-    height: 27vh;
-    background-color: #fff;
-    border-radius: .3125rem;
-    margin-top: 4vh;
-  } 
-  .cardText{
-   height:25vh;
-   padding-left: 2vw;
-   padding-right: 2vw;
-  }
-  .cardImage > img {
-    width: 30vw;
-    height:22vh;
-  }
-  .cardContent {
-    font-size: 0.9rem;
-    color: #6B7684;
-  }
-
-  .introCardHeader {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    color: #008485;
-    text-align: center;
-    margin: auto 0;
-    height:7vh;
-    font-size: 1.2rem;
-    margin-bottom: 2vh;
-  }
-
-  .talent {
-    margin-top:6vh;
     display: flex;
     flex-direction: column;
-    width:95vw;
-
+    align-items: center;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 30px 50px 0px rgba(5, 1, 64, 0.06);
   }
-  .white-article{
-    background-color: #Fff;
-
-
+  .introCard > :nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+  }
+  .introCard > :nth-child(2) {
+    display: flex;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+    height: 27vh;
+    background-color: #fff;
+    border-radius: 0.3125rem;
+    margin-top: 4vh;
+  }
+  .cardText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.625rem;
+  }
+  .cardImage {
+    width: 150px;
+    height: 9.375rem;
+    display: flex;
+    justify-content: center;
+  }
+  .cardContent {
+    font-size: 1rem;
+    color: #4e5968;
+  }
+  .introCardHeader {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #008485;
+    margin-bottom: 0.625rem;
+  }
+  .talent {
+    width: 100%;
+    padding: 4rem 1.5rem;
+    background-color: #fff;
+    box-shadow: 0px 30px 50px 0px rgba(5, 1, 64, 0.06);
+  }
+  .talentImgContainer > img {
+    width: 100%;
+  }
+  .white-article {
+    background-color: #fff;
   }
   .sectionHeader {
     font-size: 2.2rem;
@@ -133,7 +131,6 @@
   .talentImgContainer {
     margin-bottom: 2rem;
   }
-
   .animationHidden {
     opacity: 0;
   }
@@ -141,10 +138,7 @@
     opacity: 1;
     transition: all 0.8s ease-out;
   }
-
   .timelineItem {
-    padding: 3vh 0;
-    background-color: #fff;
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -157,8 +151,9 @@
     box-shadow: 10px 0 5px -5px #999;
   }
   .timeline {
-    margin-top:6vh;
-    margin-bottom: 4rem;
+    width: 100%;
+    padding: 4rem 1.5rem;
+    background-color: #fff;
   }
   .timelineHeader p {
     position: absolute;
@@ -178,8 +173,7 @@
     top: -0.9rem;
   }
   .timelineList {
-    padding: 1.5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
     padding-left: 2rem;
     margin: 0;
     border-top: 2px solid #eee;
