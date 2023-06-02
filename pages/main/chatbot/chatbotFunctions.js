@@ -364,15 +364,6 @@ export const ChatbotFooter = () => {
 
   messageInput.addEventListener('input', updateStyle);
   messageInput.addEventListener('change', updateStyle);
-  messageInput.addEventListener('input', function (event) {
-    const value = event.target.value;
-
-    if (value === '') {
-      sendImage.classList.add('disabled');
-    } else {
-      sendImage.classList.remove('disabled');
-    }
-  });
 
   const messageForm = document.querySelector('.messageInputForm');
   messageForm.addEventListener('submit', function (e) {
@@ -392,6 +383,7 @@ const updateStyle = () => {
     document.querySelector('.sendImage').classList.remove('disabled');
   }
 };
+
 const setHasInquires = arr => Array.isArray(arr) && arr.length > 0;
 
 const setUserMessageInfo = inquire => ({
