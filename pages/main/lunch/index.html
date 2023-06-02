@@ -8,113 +8,46 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <link rel="stylesheet" href="/styles/base-styles.css" />
-    <link rel="stylesheet" href="/components/footer/footer.css" />
     <link rel="stylesheet" href="/components/header/header.css" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/components/footer/footer.css" />
+    <link rel="stylesheet" href="style.css" />
     <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script defer type="module" src="/scripts/apikey.js"></script>
     <script defer type="module" src="/scripts/kakaoLogin.js"></script>
     <script defer type="module" src="/components/component.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <title>디지털 하나로 채용 관련</title>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0ac5b958752d7cb070f6e4eb29c305bc&libraries=services"
+    ></script>
+    <script defer src="index.js"></script>
+    <title>Document</title>
   </head>
   <body>
     <header class="inner header-component" id="header"></header>
 
-    <main class="inner career-main">
-      <div data-aos="fade-up" data-aos-duration="1000">
-        <div class="career-component">선발 프로세스</div>
+    <main class="inner">
+      <div class="rullet-top">
+        <div class="rullet-top-title">오늘 뭐 먹지</div>
+        <div class="rullet-top-subtitle">디지털 하나로 주변 맛집 찾기</div>
       </div>
-      <div data-aos="fade-up" data-aos-duration="1600">
-        <div class="careerBoxAll-component">
-          <div class="careerBoxOne-component">
-            <div class="process">서류 전형</div>
-            <p class="processText">
-              지원 접수 : ~4/6 (목) 16시 <br />
-              합격 발표 : 4/10 (월)
-            </p>
-          </div>
-          <img src="../../public/images/careerArrow.png" alt="아래 화살표" />
-          <div class="careerBoxOne-component">
-            <div class="process">기초 역량평가</div>
-            <p class="processText">
-              시험 일자 : 4/12 (수) 15시 <br />
-              합격 발표 : 4/14 (금)
-            </p>
-          </div>
-          <img src="../../public/images/careerArrow.png" alt="아래 화살표" />
-          <div class="careerBoxOne-component">
-            <div class="process">면접 전형</div>
-            <p class="processText">
-              대면 면접 : 4/17 (월) <br />
-              합격 발표 : 4/19 (수)
-            </p>
-          </div>
-          <img src="../../public/images/careerArrow.png" alt="아래 화살표" />
-          <div class="careerBoxOne-component">
-            <div class="process">디지털 하나 훈련</div>
-            <p class="processText">
-              입학식 : 4/27 (목) <br />
-              훈련 진행 : 4/28~10/26
-            </p>
-          </div>
+      <div class="roullet-component">
+        <div class="roullet-canvas">
+          <canvas width="300" height="300"></canvas>
+          <img
+            src="../../../public/images/arrow.svg"
+            width="120"
+            class="rul-cursor"
+            alt="돌림판 화살표"
+          />
         </div>
-      </div>
-      <div data-aos="fade-up" data-aos-duration="800">
-        <div class="benefit-component">Digital Hana 路 특전</div>
-      </div>
-      <div data-aos="fade-up" data-aos-duration="1700">
-        <div class="benefitBoxAll-component">
-          <div class="benefitBox-component">
-            <div class="benefitBox">
-              <p class="benefitBoxTitle">1. 하나금융그룹 채용우대 혜택 부여</p>
-              <p class="benefitBoxText">
-                하나금융그룹 14개사에 채용 우대 혜택 <br />
-                상기 관계사 인턴, 공개채용 지원시 우대 <br />
-                유효기간: 훈련 수료일로부터 2년 이내
-              </p>
-            </div>
-            <div class="benefitBox">
-              <p class="benefitBoxTitle">2. 하나은행 현직자 프로그램</p>
-              <p class="benefitBoxText">
-                현직자 강의<br />
-                프로젝트 발표 참관 및 피드백<br />
-                직무 멘토링
-              </p>
-            </div>
-          </div>
-
-          <div class="benefitBox-component">
-            <div class="benefitBox">
-              <p class="benefitBoxTitle">
-                3. 하나은행 HR 담당자 주관 취업 상담
-              </p>
-              <p class="benefitBoxText">
-                훈련생 대상 채용설명회<br />
-                및 <br />
-                채용 관련 상담
-              </p>
-            </div>
-            <div class="benefitBox">
-              <p class="benefitBoxTitle">
-                4. 하나은행 명의 수료증 발급 및 훈련 <br />
-                장려금 지급
-              </p>
-              <p class="benefitBoxText">
-                수료증 발급,<br />
-                국민내일배움카드 훈련장려금<br />
-                매월 지급(자격 충족 시)
-              </p>
-            </div>
-          </div>
+        <div>
+          <button class="rullet-button" onclick="rotate()">
+            돌림판 돌리기!
+          </button>
         </div>
       </div>
     </main>
 
     <footer class="inner footer-component" id="footer"></footer>
-    <script async src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
   </body>
 </html>

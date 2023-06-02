@@ -5,10 +5,13 @@ import {
   modifyPost,
   submitPost,
   getSessionStorageItems,
+  asideHighLighter,
 } from '../../community.js';
 
 let postType = 'notice';
 let postingButton = document.querySelector('.postingButton');
+
+asideHighLighter(postType);
 
 let postId = getPostId();
 let postingUsername = document.querySelector('.postingUsername');
