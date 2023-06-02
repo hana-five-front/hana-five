@@ -1,30 +1,27 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 @media (min-width: 75.625rem) {
-  *{
-    width:100vw;
-    overflow: hidden;
-  }
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
   canvas {
     transition: 2s;
   }
- 
+  
   main {
     position: relative;
-    width:95vw;
-    overflow: hidden;
+    width: 60rem;
     height: 37.9375rem;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 1.875rem;
   }
-
+  
   button:active {
     background: #444;
     color: #f9f9f9;
   }
-
+  
   .roullet-component {
     height: 24.125rem;
     width: 30%;
@@ -40,7 +37,7 @@
     display: flex;
     justify-content: center;
   }
-
+  
   .rullet-top {
     position: absolute;
     top: 1rem;
@@ -52,24 +49,24 @@
     height: 5.625rem;
     margin-bottom: 1.875rem;
   }
-
+  
   .rullet-top-title {
     font-size: 3.1875rem;
     height: 3.5625rem;
   }
-
+  
   .rullet-top-subtitle {
     margin-top: 0.625rem;
     font-size: 0.9375rem;
     color: #6b7684;
   }
-
+  
   .rul-cursor {
     position: absolute;
     right: -2rem;
     top: -2.2rem;
   }
-
+  
   .rullet-button {
     width: 13.75rem;
     height: 3.125rem;
@@ -89,15 +86,15 @@
   .rullet-button:hover {
     font-weight: bold;
   }
-
+  
   .list-component {
     height: 12rem;
     width: 70%;
-
+  
     display: flex;
     justify-content: space-between;
   }
-
+  
   .pick-list {
     width: 28rem;
     height: 100%;
@@ -134,12 +131,12 @@
     align-items: center;
     justify-content: space-between;
   }
-
+  
   a {
     color: inherit;
     text-decoration: none;
   }
-
+  
   .rullet-keyword {
     color: #008375;
   }
