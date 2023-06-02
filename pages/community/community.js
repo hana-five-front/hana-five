@@ -8,6 +8,7 @@ export function setBoard(key) {
       date: '2023-05-31',
       id: 4,
       name: '이수창',
+      mail: 'suchasucha@naver.com',
       title: '안녕하세요 이수창입니다',
     },
     {
@@ -15,6 +16,7 @@ export function setBoard(key) {
       date: '2023-05-30',
       id: 3,
       name: '임채동',
+      mail: 'yahiggoda@naver.com',
       title: '감사합니다 임채동입니다',
     },
     {
@@ -22,6 +24,7 @@ export function setBoard(key) {
       date: '2023-05-29',
       id: 2,
       name: '이상준',
+      mail: 'uio3001@nate.com',
       title: '반갑습니다 이상준입니다',
     },
     {
@@ -29,6 +32,7 @@ export function setBoard(key) {
       date: '2023-05-28',
       id: 1,
       name: '장주성',
+      mail: 'jjs7280@kakao.com',
       title: '안녕하십니까 장주성입니다',
     },
     {
@@ -36,6 +40,7 @@ export function setBoard(key) {
       date: '2023-05-27',
       id: 0,
       name: '이현주',
+      mail: 'joo000705@naver.com',
       title: '좋은아침 이현주입니다',
     },
   ];
@@ -240,15 +245,14 @@ export function renderPost(postType) {
     getLocalStorageItems(postType),
     getPostId()
   );
-
   if (post) {
     detailTitle.textContent = post.title;
     detailWriter.textContent = post.name || '익명';
     detailDate.textContent = post.date;
-    if (post.name != getSessionStorageItems('userName')) {
+    if (post.mail != getSessionStorageItems('userMail')) {
       editButtons.style.visibility = 'hidden';
     }
-
+    console.log(post);
     post.content.forEach(e => {
       const outerDiv = document.createElement('div');
       outerDiv.textContent = e;
@@ -268,6 +272,7 @@ export function modifyPost(postType, postId) {
 
   let title = titleInput.value;
   let name = getSessionStorageItems('userName');
+  let mail = getSessionStorageItems('userMail');
   if (name === '') {
     name = '익명';
   }
@@ -285,6 +290,7 @@ export function modifyPost(postType, postId) {
       id: parseInt(postId),
       title: title,
       name: name,
+      mail: mail,
       content: content,
       date: date,
       comments: getCommentsByPostId(posts, postId),
@@ -315,6 +321,7 @@ export function submitComment(postType) {
   );
 
   let commentName = getSessionStorageItems('userName');
+  let commentMail = getSessionStorageItems('userMail');
   let commentContent = detailCommentInputContext.value;
   if (commentContent === '') {
     alert('댓글 내용을 입력해주세요.');
@@ -334,6 +341,7 @@ export function submitComment(postType) {
   post.comments.push({
     id: getNextId(post.comments),
     name: commentName,
+    mail: commentMail,
     content: commentContent,
   });
   setLocalStorageItems(postType, posts);
@@ -379,6 +387,7 @@ export async function submitPost(postType) {
   let titleInput = document.querySelector('.postingInputTitle');
   let name = null;
   name = getSessionStorageItems('userName');
+  let mail = getSessionStorageItems('userMail');
   let contentInput = document.querySelector('.postingInputContext');
 
   let title = titleInput.value;
@@ -402,6 +411,7 @@ export async function submitPost(postType) {
         id: nextId,
         title: titleInput.value,
         name: name,
+        mail: mail,
         content: contentInput.value.split('\n'),
         date: date,
       };
@@ -423,6 +433,7 @@ export async function submitPost(postType) {
         id: nextId,
         title: titleInput.value,
         name: name,
+        mail: mail,
         content: contentInput.value.split('\n'),
         date: date,
       };
@@ -459,7 +470,7 @@ function renderComments(postType, comments) {
     commentElement.appendChild(contextElement);
     commentElement.appendChild(divElement);
 
-    if (getSessionStorageItems('userName') == comment.name) {
+    if (getSessionStorageItems('userMail') == comment.mail) {
       let deleteCommentBtnElement = document.createElement('img');
       deleteCommentBtnElement.className = 'deleteCommentBtn';
       deleteCommentBtnElement.src = '/public/images/delete.svg';
