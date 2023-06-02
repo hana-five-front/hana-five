@@ -7,7 +7,7 @@ export const setFadeIn = $target => {
   setTimeout(() => {
     $target.classList.add(fadeInClass);
     $target.classList.remove(hideClass);
-  }, 100);
+  }, 500);
 };
 
 export const rotateImage = arr => {
