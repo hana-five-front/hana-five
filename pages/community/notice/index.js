@@ -9,7 +9,7 @@ import {
 } from '../community.js';
 
 function markDownToPlainWords(message) {
-  return message.replace(/&gt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
+  return message.replace(/&gt;|&lt;|:[a-zA-Z0-9_]+:|[\*_`~]/g, '');
 }
 
 function dateToText(date) {
