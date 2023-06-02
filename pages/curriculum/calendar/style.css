@@ -269,8 +269,6 @@
   .aside {
     display: none;
   }
-  .calendar2 {
-  }
   .page-container {
     display: flex;
     flex-direction: column;
@@ -424,7 +422,6 @@
     border-bottom: #008484 1px solid;
     height: 4vh;
   }
-
   .calendar2-row1 > div,
   #monthly-schedule > p,
   #special-time > p,
@@ -438,27 +435,24 @@
   .specialTimeList {
     display: flex;
     flex-direction: column;
-    width:95vw;
-    overflow:hidden;
+    width: 95vw;
+    padding-left: 1.25rem;
+    overflow: hidden;
   }
   .specialContent {
     display: flex;
     width: 95vw;
-
   }
   .specialContent > p {
     width: 60vw;
     font-size: 1rem;
     color: #333;
-    
   }
-
   .specialContent > :first-child {
     font-size: 1rem;
     color: #333;
     width: 20vw;
   }
-
   .calendar2-row1 > div > ul > li {
     margin: 0.625rem 0;
     list-style-type: none;
@@ -468,17 +462,15 @@
   }
   .info-container {
     display: flex;
-    margin-top:5vh;
+    margin-top: 5vh;
     justify-content: space-between;
-    width:95vw;
+    width: 95vw;
     flex-direction: column;
-   
   }
   .lecture-info {
-
     width: 95vw;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
   }
@@ -487,41 +479,40 @@
     font-weight: bold;
     padding-bottom: 3vh;
   }
-  .front-info{
-    display:flex;
+  .front-info {
+    display: flex;
     align-items: center;
     justify-content: center;
   }
   .name {
     padding-left: 2vw;
-    font-size:0.9rem;
+    font-size: 0.9rem;
   }
   .info2 {
-    width:100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-left:3vw;
+    padding-left: 3vw;
   }
-  .sub-title-lecture{
+  .sub-title-lecture {
     font-size: 1.5rem;
-    width:100%;
-    height:4vh;
+    width: 100%;
+    height: 4vh;
     border-bottom: 1px #008484 solid;
   }
-  .lecture{
-    width:100%;
+  .lecture {
+    width: 100%;
   }
-  .textbook{
-    width:100%;
-  
+  .textbook {
+    width: 100%;
   }
-  .brief{
+  .brief {
     font-size: 0.8rem;
   }
-  .profile-image > img{
-    width:40vw;
-    height:30vh;
+  .profile-image > img {
+    width: 40vw;
+    height: 30vh;
   }
 }
