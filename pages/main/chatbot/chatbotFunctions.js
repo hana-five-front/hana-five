@@ -107,7 +107,7 @@ export const ChatbotList = () => {
             data-nextReqGroup=${message.nextReqGroup}
             data-contents=${message.contents}
           >
-            <span class="buttonIcon">🏷️</span>
+            <span class="buttonIcon">${message.emojies}</span>
             <span class="buttonText">${message.contents}</span>
           </button>
         </li>
@@ -206,6 +206,7 @@ export const handleClickFAQButton = e => {
   question['resId'] = e.target.dataset.resid;
   question['nextReqGroup'] = e.target.dataset.nextreqgroup;
   question['contents'] = e.target.dataset.contents;
+  question['emojies'] = e.target.dataset.emoji;
   question['type'] = 'FAQ_RES';
   question['id'] = messages[messages.length - 1].id + 1;
   question['createdAt'] = getFormatTime(Date.now());
@@ -233,8 +234,9 @@ export const handleClickFAQButton = e => {
 
 export const ChatbotFAQButtons = () => {
   let tempInnerHTML = '';
+  let backgroundColor = '#ccc';
   FAQ_LIST.forEach(question => {
-    const { resId, reqGroup, nextReqGroup, contents } = question;
+    const { resId, reqGroup, nextReqGroup, contents, emoji } = question;
     if (parseInt(reqGroup) === parseInt(store.getState('nextReqGroup'))) {
       // 첫 질문에 처음으로 돌아가기 삭제
       if (messages.length === 1 && resId === 0) return;
@@ -242,13 +244,19 @@ export const ChatbotFAQButtons = () => {
       // 방금 선택한 버튼 생성 방지
       if (messages[messages.length - 1].resId === resId) return;
 
+      if (resId === 0) {
+        backgroundColor = '#888cf6';
+      }
+
       tempInnerHTML += `
       <button key=${resId + '-' + Date.now()} class="qnaButton" 
         data-resId=${resId}
         data-nextReqGroup=${nextReqGroup} 
         data-contents=${JSON.stringify(contents)}
+        data-emoji=${emoji}
+        style="border: ${backgroundColor} 1px solid;"
       >
-        <span class="buttonIcon">🏷️</span>
+        <span class="buttonIcon">${emoji}</span>
         <span class="buttonText">${contents}</span>
       </button>
       `;

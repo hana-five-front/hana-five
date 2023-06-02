@@ -62,13 +62,15 @@ li {
   background-color: #eee;
   max-width: 90%;
   padding: 1rem;
-  margin: 0 4rem 0.5rem 0.25rem;
-  border-radius: 1rem;
+  margin: 0 4rem 1rem 0.25rem;
+  border-radius: 1rem 1rem 1rem 0;
   word-break: break-all;
   word-wrap: break-word;
+  box-shadow: 0px 30px 30px 0px rgba(5, 1, 64, 0.06);
 }
 .userChatItemContainer {
   margin: 0 0.25rem 0.5rem 4rem;
+  border-radius: 1rem 1rem 0rem 1rem;
   text-align: left;
 }
 .messageSpan {
