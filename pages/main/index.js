@@ -25,6 +25,7 @@ slideList.insertBefore(clonedLast, slideList.firstElementChild);
 
 function goToSlide(index) {
   resultElement.innerText = number;
+  slideWidth = slides.clientWidth;
   slides.style.transform = 'translateX(' + -slideWidth * index + 'px)';
   currentIndex = index;
 }
@@ -135,7 +136,7 @@ const setLogoToWhite = $target => {
   $target.classList.remove('transparentLogo');
 };
 
-let carouselHeight = document.querySelector('.carousel').scrollHeight - 64;
+let carouselHeight = 64;
 const setLogoByScreenWidth = () => {
   if (window.innerWidth > 1210 || window.scrollY > carouselHeight) {
     setHeaderWhite();
@@ -146,7 +147,7 @@ const setLogoByScreenWidth = () => {
 
 const observeScreenResizeEvent = () => {
   window.addEventListener('resize', () => {
-    carouselHeight = document.querySelector('.carousel').scrollHeight - 64;
+    slideWidth = slides.clientWidth;
     resetSlideWidth();
     setLogoByScreenWidth();
   });
