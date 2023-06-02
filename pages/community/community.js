@@ -252,7 +252,7 @@ export function renderPost(postType) {
     if (post.mail != getSessionStorageItems('userMail')) {
       editButtons.style.visibility = 'hidden';
     }
-    console.log(post);
+
     post.content.forEach(e => {
       const outerDiv = document.createElement('div');
       outerDiv.textContent = e;
