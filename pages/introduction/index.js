@@ -1,4 +1,4 @@
-import { flipImages, makeImageTags, rotateImage } from './utils.js';
+import { makeImageTags, rotateImage, setFadeIn, setFadeOut } from './utils.js';
 
 const main = () => {
   const images = [
@@ -14,7 +14,12 @@ const main = () => {
 
   setInterval(() => {
     rotateImage(images);
-    makeImageTags(images);
+    setFadeOut(document.querySelector('.imagesContainer'));
+
+    setTimeout(() => {
+      makeImageTags(images);
+      setFadeIn(document.querySelector('.imagesContainer'));
+    }, 300);
   }, 3000);
 };
 

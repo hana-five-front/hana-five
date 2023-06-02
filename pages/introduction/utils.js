@@ -1,13 +1,14 @@
-export const setFadeIn = $target => {
-  const hideClass = 'animationHidden';
-  const fadeInClass = 'animationFadeIn';
-  $target.classList.add(hideClass);
-  $target.classList.remove(fadeInClass);
+const CLASS_FADE_OUT = 'animationHidden';
+const CLASS_FADE_IN = 'animationFadeIn';
 
-  setTimeout(() => {
-    $target.classList.add(fadeInClass);
-    $target.classList.remove(hideClass);
-  }, 500);
+export const setFadeIn = $target => {
+  $target.classList.add(CLASS_FADE_IN);
+  $target.classList.remove(CLASS_FADE_OUT);
+};
+
+export const setFadeOut = $target => {
+  $target.classList.add(CLASS_FADE_OUT);
+  $target.classList.remove(CLASS_FADE_IN);
 };
 
 export const rotateImage = arr => {
@@ -23,15 +24,11 @@ export const flipImages = arr => {
 };
 
 export const makeImageTags = images => {
-  const $imagesContainer = document.querySelector('.imagesContainer');
   let tagString = '';
-  for (const image of images) {
-    tagString += imgTagTemplate(image);
-  }
-  setFadeIn($imagesContainer);
+  images.forEach(image => (tagString += imgTagTemplate(image)));
 
-  $imagesContainer.innerHTML = tagString;
+  document.querySelector('.imagesContainer').innerHTML = tagString;
 };
 
 const imgTagTemplate = src =>
-  `<img src="${src}" alt="별돌이" width="300px" height="300px" />`;
+  `<img src="${src}" alt="수강생 분위기" width="300px" height="300px" />`;
