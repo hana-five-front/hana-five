@@ -450,6 +450,7 @@
     flex-direction: column;
     display: flex;
     align-items: center;
+    box-shadow: 0px 30px 50px 0px rgba(5, 1, 64, 0.06);
   }
   .middle-left {
     position: relative;
@@ -567,11 +568,9 @@
     align-items: center;
   }
   .middle-right {
-    display:none;
-;
+    display: none;
   }
   .todayTable {
-   
     width: 95%;
     height: 40vh;
     display: none;
@@ -582,18 +581,16 @@
     border-radius: 0.3125rem;
   }
   .todayTableTitle {
-
     display: none;
-
   }
   .todayTableTitle > :last-child {
-   display:none;
+    display: none;
   }
   .todayTableContent {
-    display:none;
+    display: none;
   }
   .todayTableContent > div {
-    display:none;
+    display: none;
   }
   .whatShouldIEatButton {
     display: none;

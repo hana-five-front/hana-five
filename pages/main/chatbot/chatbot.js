@@ -47,3 +47,4 @@ main();
 const obj = {
   name: '',
 };
+
