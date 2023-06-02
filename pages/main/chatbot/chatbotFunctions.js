@@ -361,7 +361,9 @@ export const ChatbotFooter = () => {
   }
 
   sendImage.addEventListener('click', handleSubmitMessage);
+  messageInput.addEventListener('keydown', handleKeydownMessage);
 
+  // 인풋 유무에 따른 disabled/enabled 토글
   messageInput.addEventListener('input', updateStyle);
   messageInput.addEventListener('change', updateStyle);
 
@@ -392,3 +394,9 @@ const setUserMessageInfo = inquire => ({
   userName: inquire?.title?.substr(4),
   messageContents: inquire.content[0].substr(4),
 });
+
+const handleKeydownMessage = e => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    document.querySelector('.sendImage').click();
+  }
+};
