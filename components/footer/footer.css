@@ -119,6 +119,7 @@
   .about-link {
     display: flex;
     width: 100%;
+    max-width: 25rem;
     justify-content: space-evenly;
     align-items: center;
   }
