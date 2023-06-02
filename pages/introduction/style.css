@@ -125,6 +125,8 @@
   }
   .images {
     width: 60rem;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 10rem;
     transition: all 0.8s ease-out;
   }
