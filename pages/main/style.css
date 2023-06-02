@@ -611,3 +611,11 @@
     text-decoration: none;
   }
 }
+#header {
+  transition: all 0.3s ease-out;
+}
+.transparent {
+  background: transparent;
+  border: 0;
+  opacity: 1;
+}

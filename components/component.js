@@ -35,8 +35,9 @@ function onClickSideBar() {
 
 function onClickShutDownSideBar() {
   const sideBar = document.querySelector('.sideBar');
-  const main = document.querySelector('main');
-  main.addEventListener('click', function () {
+  const $menuButton = document.querySelector('#menuButton');
+  document.addEventListener('click', function (e) {
+    if (e.target == sideBar || e.target == $menuButton) return;
     if (!sideBar.style.display === 'none' || !sideBar.style.display == '') {
       sideBar.style.display = 'none';
     }

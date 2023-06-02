@@ -1,3 +1,8 @@
+const LOGO_TRANSPARENT = '/public/images/headerLogo.png';
+const LOGO_WHITE = '/public/images/headerLogoWhite.png';
+const MENU_TRANSPARENT = '/public/images/header.svg';
+const MENU_WHITE = '/public/images/headerWhite.svg';
+
 const slides = document.getElementsByClassName('carousel-items')[0];
 const slide = document.getElementsByClassName('carousel-item')[0];
 const leftButton = document.getElementsByClassName('left-button')[0];
@@ -20,6 +25,7 @@ slideList.insertBefore(clonedLast, slideList.firstElementChild);
 
 function goToSlide(index) {
   resultElement.innerText = number;
+  slideWidth = slides.clientWidth;
   slides.style.transform = 'translateX(' + -slideWidth * index + 'px)';
   currentIndex = index;
 }
@@ -92,17 +98,70 @@ rightButton.addEventListener('click', () => {
   resetInterval();
 });
 
-const observeScreenResizeEvent = () => {
-  window.addEventListener('resize', () => {
-    slideWidth = slides.clientWidth;
-    resetInterval();
-    slides.style.transform = 'translateX(' + -slideWidth + 'px)';
-  });
+const resetSlideWidth = () => {
+  resetInterval();
+  slides.style.transform = 'translateX(' + -slideWidth + 'px)';
 };
-
-observeScreenResizeEvent();
 
 const resetInterval = () => {
   clearInterval(slideInterval);
   slideInterval = setInterval(autoSlideHandler, INTERVAL_TIME);
 };
+
+const setHeaderWhite = () => {
+  document.querySelector('#header').classList.remove('transparent');
+  setHeaderLogo(LOGO_TRANSPARENT);
+  setMenuImg(MENU_TRANSPARENT);
+};
+
+const setHeaderTransparent = () => {
+  document.querySelector('#header').classList.add('transparent');
+  setHeaderLogo(LOGO_WHITE);
+  setMenuImg(MENU_WHITE);
+};
+
+const setMenuImg = src => {
+  document.querySelector('#menuButton').src = src;
+};
+
+const setHeaderLogo = src => {
+  document.querySelector('#headerLogoImg').src = src;
+};
+
+const setTransparentLogo = $target => {
+  $target.classList.add('transparentLogo');
+};
+
+const setLogoToWhite = $target => {
+  $target.classList.remove('transparentLogo');
+};
+
+let carouselHeight = 64;
+const setLogoByScreenWidth = () => {
+  if (window.innerWidth > 1210 || window.scrollY > carouselHeight) {
+    setHeaderWhite();
+  } else {
+    setHeaderTransparent();
+  }
+};
+
+const observeScreenResizeEvent = () => {
+  window.addEventListener('resize', () => {
+    slideWidth = slides.clientWidth;
+    resetSlideWidth();
+    setLogoByScreenWidth();
+  });
+};
+
+window.addEventListener('load', () => {
+  setLogoByScreenWidth();
+  document.addEventListener('scroll', () => {
+    if (window.scrollY > carouselHeight || window.innerWidth > 1210) {
+      setHeaderWhite();
+    } else {
+      setHeaderTransparent();
+    }
+  });
+});
+
+observeScreenResizeEvent();
