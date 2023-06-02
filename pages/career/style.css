@@ -94,9 +94,12 @@
 
 @media (max-width: 75.625rem) {
   .careerMain {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    background-color: #f2f4f6;
   }
   .careerTitle {
     width: 340px;
@@ -105,10 +108,15 @@
     font-weight: bold;
   }
   .careerComponent {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 6.25rem 0;
+    padding: 6.25rem 1.5rem;
+  }
+  .careerSecondComponent {
+    background-color: #fff;
+    box-shadow: 10px 0px rgba(5, 1, 64, 0.06);
   }
   .imgBox {
     width: 150px;
@@ -121,23 +129,26 @@
     flex-direction: column;
     align-items: center;
     margin-top: 1.875rem;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 30px 50px 0px rgba(5, 1, 64, 0.06);
   }
   .contentContext {
-    width: 22rem;
+    width: 100%;
     padding-top: 0.625rem;
   }
-  ul {
+  .contentContext > ul {
     margin-left: 30px;
   }
   .careerSubTitle {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #008485;
     margin-bottom: 0.625rem;
   }
   .careerText {
     font-size: 1.25rem;
-    margin: 0;
   }
   .careerProcess {
     display: flex;
@@ -147,22 +158,24 @@
     margin-top: 2.1875rem;
   }
   .careerProcessBox {
-    width: 13.75rem;
+    /* width: 13.75rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 25px;
   }
   .careerProcessBox > p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     border: 0.125rem solid #008485;
     border-radius: 1.25rem;
-    width: 13.75rem;
-    height: 6.25rem;
+    width: 16rem;
+    height: 8rem;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 30px 50px 0px rgba(5, 1, 64, 0.06);
   }
   .careerBenefit {
     margin-top: 35px;
@@ -173,20 +186,24 @@
     justify-content: space-between;
   }
   .careerBenefitBox {
-    width: 25.75rem;
     margin-bottom: 25px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 30px 50px 0px rgba(5, 1, 64, 0.06);
   }
   .careerBenefitBox > div {
-    padding: 0 1.25rem;
-  }
-  .careerFaq {
-    width: 412px;
+    padding: 0 0.5rem;
   }
   .careerFaqBox {
     margin-top: 1.875rem;
   }
   .careerFaqBox > div {
-    padding: 0 1.25rem;
+    padding: 0 0.5em;
+  }
+  .careerFaqBox > ul {
+    margin-left: 1.5rem;
+    padding-right: 0.5rem;
   }
   p {
     margin: 0;
