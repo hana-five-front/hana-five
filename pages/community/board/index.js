@@ -33,7 +33,7 @@ searchInput.addEventListener('keypress', function (e) {
   }
 });
 
-if (!getSessionStorageItems('userName')) {
+if (!getSessionStorageItems('userMail')) {
   document.querySelector('.boardPostingButton').style.display = 'none';
 }
 

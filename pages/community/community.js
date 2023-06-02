@@ -8,6 +8,7 @@ export function setBoard(key) {
       date: '2023-05-31',
       id: 4,
       name: '이수창',
+      mail: 'joo000705@naver.com',
       title: '안녕하세요 이수창입니다',
     },
     {
@@ -15,6 +16,7 @@ export function setBoard(key) {
       date: '2023-05-30',
       id: 3,
       name: '임채동',
+      mail: 'yahiggoda@naver.com',
       title: '감사합니다 임채동입니다',
     },
     {
@@ -22,6 +24,7 @@ export function setBoard(key) {
       date: '2023-05-29',
       id: 2,
       name: '이상준',
+      mail: 'uio3001@nate.com',
       title: '반갑습니다 이상준입니다',
     },
     {
@@ -29,6 +32,7 @@ export function setBoard(key) {
       date: '2023-05-28',
       id: 1,
       name: '장주성',
+      mail: 'jjs7280@kakao.com',
       title: '안녕하십니까 장주성입니다',
     },
     {
@@ -36,6 +40,7 @@ export function setBoard(key) {
       date: '2023-05-27',
       id: 0,
       name: '이현주',
+      mail: 'joo000705@naver.com',
       title: '좋은아침 이현주입니다',
     },
   ];
@@ -247,7 +252,7 @@ export function renderPost(postType) {
     if (post.mail != getSessionStorageItems('userMail')) {
       editButtons.style.visibility = 'hidden';
     }
-
+    console.log(post);
     post.content.forEach(e => {
       const outerDiv = document.createElement('div');
       outerDiv.textContent = e;

@@ -20,7 +20,7 @@ renderPost(postType);
 
 let postingUsername = document.querySelector('.postingUsername');
 postingUsername.innerText = `${getSessionStorageItems('userName')}`;
-if (!getSessionStorageItems('userName')) {
+if (!getSessionStorageItems('userMail')) {
   let commentComponent = document.querySelector('.detailCommentInput');
   commentComponent.style.display = 'none';
 }
