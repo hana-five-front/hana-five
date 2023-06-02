@@ -12,6 +12,7 @@ const postType = 'board';
 
 const modifyBtn = document.querySelector('.modifyBtn');
 const deleteBtn = document.querySelector('.deleteBtn');
+const detailCommentInput = document.querySelector('.detailCommentInputContext');
 const submitCommentBtn = document.querySelector('.submitCommentBtn');
 
 asideHighLighter(postType);
@@ -35,4 +36,11 @@ deleteBtn.addEventListener('click', function () {
 
 submitCommentBtn.addEventListener('click', function () {
   submitComment(postType);
+});
+
+detailCommentInput.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    submitCommentBtn.click();
+  }
 });
