@@ -53,6 +53,3 @@ const main = () => {
 };
 
 main();
-const obj = {
-  name: '',
-};
