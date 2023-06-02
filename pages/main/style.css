@@ -505,13 +505,13 @@
     filter: brightness(30%);
   }
   .bg-carousel1 {
-    background-image: url('../../public/images/모바일캐러셀2.jpg');
+    background-image: url('../../public/images/모바일캐러셀2.png');
     background-size: cover;
     background-position: center;
     filter: brightness(30%);
   }
   .bg-carousel3 {
-    background-image: url('../../public/images/모바일캐러셀1.jpg');
+    background-image: url('../../public/images/모바일캐러셀1.png');
     background-size: cover;
     background-position: center;
     filter: brightness(30%);

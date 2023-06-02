@@ -1,114 +1,97 @@
 @media (min-width: 75.625rem) {
-  .careerBoxAll-component > img {
-    display: none;
-  }
-  .career-component {
-    margin-top: 10rem;
-    width: 16.0625rem;
-    height: 4.25rem;
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 150%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .careerBoxAll-component {
-    margin-top: 3.75rem;
-    width: 60rem;
-    height: 9.6875rem;
-    margin-left: auto;
-    margin-right: auto;
+  .careerMain {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
   }
-  .careerBoxOne-component {
-    /*각 전형별 바깥 테두리*/
-    width: 13.75rem;
-    height: 7.6875rem;
-  }
-  .process {
-    width: 13.75rem;
-    height: 2.1875rem;
+  .careerTitle {
+    font-size: 2.8125rem;
     font-weight: bold;
-    font-size: 1.4375rem;
-    line-height: 150%;
-    line-height: 2.1875rem;
   }
-  .processText {
-    border: 2px solid #008485;
-    border-radius: 20px;
-    width: 13.75rem;
-    height: 5.5rem;
-    line-height: 180%;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
+  .careerComponent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6.25rem 0;
+  }
+  .imgBox {
+    width: 150px;
+    height: 9.375rem;
+    display: flex;
     justify-content: center;
-    align-items: center;
   }
-
-  .benefit-component {
-    margin-top: 12.5rem;
-    width: 60rem;
-    height: 4.25rem;
-    line-height: 4.25rem;
+  .careerFirstContent > div {
+    display: flex;
+    margin-top: 1.875rem;
+  }
+  .contentContext {
+    width: 27.5rem;
+    padding-top: 0.625rem;
+    margin-left: 30px;
+  }
+  .careerSubTitle {
+    font-size: 1.75rem;
     font-weight: bold;
-    font-size: 2.5rem;
-    line-height: 150%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .benefitBoxAll-component {
-    margin-top: 3.125rem;
-    margin-bottom: 1.875rem;
-    width: 60rem;
-    height: 21.25rem;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-  }
-  .benefitBox-component {
-    width: 57.5rem;
-    height: 9.0625rem;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .benefitBox {
-    width: 430px;
-    height: 9.0625rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .benefitBoxTitle {
     color: #008485;
-    width: 20.875rem;
-    height: 2.8125rem;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 150%;
-    margin-top: 0.5rem;
     margin-bottom: 0.625rem;
   }
-  .benefitBoxText {
+  .careerText {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  .careerProcess {
+    width: 59.375rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.1875rem;
+  }
+  .careerProcessBox {
+    width: 13.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .careerProcessBox > p {
+    font-size: 1.1rem;
+    border: 0.125rem solid #008485;
+    border-radius: 1.25rem;
+    width: 13.75rem;
+    height: 6.25rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0.625rem 0;
+  }
+  .careerBenefit {
+    margin-top: 1.25rem;
+  }
+  .careerBenefitRow {
+    display: flex;
+    width: 56.25rem;
+    justify-content: space-between;
+    margin-top: 1.875rem;
+  }
+  .careerBenefitBox {
     width: 25.75rem;
-    height: 5.625rem;
-    margin-top: 2%;
-    font-size: 1rem;
-    line-height: 170%;
+  }
+  .careerBenefitBox > div {
+    padding: 0 1.25rem;
+  }
+  .careerFaq {
+    width: 62.5rem;
+  }
+  .careerFaqBox {
+    margin-top: 1.875rem;
+  }
+  .careerFaqBox > div {
+    padding: 0 1.25rem;
+  }
+  p {
+    margin: 0;
   }
 }
+
 @media (max-width: 75.625rem) {
   .career-main {
     display: flex;
