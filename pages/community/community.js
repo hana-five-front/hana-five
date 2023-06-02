@@ -8,7 +8,7 @@ export function setBoard(key) {
       date: '2023-05-31',
       id: 4,
       name: '이수창',
-      mail: 'joo000705@naver.com',
+      mail: 'suchasucha@naver.com',
       title: '안녕하세요 이수창입니다',
     },
     {
