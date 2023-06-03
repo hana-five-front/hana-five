@@ -8,9 +8,13 @@ import {
 } from './chatbotFunctions.js';
 import { openSocketConnection } from './chatbotSlackApi.js';
 
+const setModalVisible = () => {
+  document.querySelector('.modalContainer').classList.remove('hidden');
+};
+
 export const makeChatbotUI = () => {
-  const $modalContainer = document.querySelector('.modalContainer');
-  $modalContainer.classList.remove('hidden');
+  setModalVisible();
+
   ChatbotHeader();
   ChatbotCharacter();
   ChatbotList();
