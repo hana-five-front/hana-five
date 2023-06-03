@@ -202,25 +202,32 @@ export const ChatbotCharacter = () => {
 };
 
 export const handleClickFAQButton = e => {
-  const question = {};
-  question['resId'] = e.target.dataset.resid;
-  question['nextReqGroup'] = e.target.dataset.nextreqgroup;
-  question['contents'] = e.target.dataset.contents;
-  question['emojies'] = e.target.dataset.emoji;
-  question['type'] = 'FAQ_RES';
-  question['id'] = messages[messages.length - 1].id + 1;
-  question['createdAt'] = getFormatTime(Date.now());
+  const { resid, nextreqgroup, contents, emoji } = e.target.dataset;
+  const question = {
+    resId: resid,
+    nextReqGroup: nextreqgroup,
+    contents,
+    emojies: emoji,
+    type: 'FAQ_RES',
+    id: messages[messages.length - 1].id + 1,
+    createdAt: getFormatTime(Date.now()),
+  };
+
   messages.push(question);
   store.setState('nextReqGroup', question.nextReqGroup);
 
   // 선택한 버튼만 남기기
-  const temp = ANSWER_LIST.filter(response => {
-    return parseInt(response.resId) === parseInt(question.resId);
-  })[0];
-  if (temp) {
-    temp.createdAt = getFormatTime(Date.now());
-    temp.contents = temp.contents.replace(/\n/g, '<br>');
-    messages.push(temp);
+  let selectedQuestion = ANSWER_LIST.filter(
+    response => parseInt(response.resId) === parseInt(question.resId)
+  )[0];
+
+  if (selectedQuestion) {
+    selectedQuestion = {
+      ...selectedQuestion,
+      createdAt: getFormatTime(Date.now()),
+      contents: selectedQuestion.contents.replace(/\n/g, '<br>'),
+    };
+    messages.push(selectedQuestion);
   }
 
   if (question['resId'] == RES_ID_QNA && sessionStorage.getItem('userName')) {
