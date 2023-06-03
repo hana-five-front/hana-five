@@ -2,7 +2,11 @@ import { handleLogin } from '../../../scripts/kakaoLogin.js';
 import { store } from './Store.js';
 import { renderContents } from './chatbot.js';
 import { ANSWER_LIST, FAQ_LIST, RES_ID_QNA, messages } from './chatbotData.js';
-import { sendQnaToSlack, closeSocketConnection } from './chatbotSlackApi.js';
+import {
+  sendQnaToSlack,
+  closeSocketConnection,
+  openSocketConnection,
+} from './chatbotSlackApi.js';
 
 const SCROLL_ANIMATION_DURATION = 400;
 
@@ -13,6 +17,8 @@ const handleKeydownEscape = e => {
 };
 
 export const setOpenModal = () => {
+  openSocketConnection();
+
   document.addEventListener('keydown', handleKeydownEscape);
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.add('chatbotModal');

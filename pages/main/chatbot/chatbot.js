@@ -6,7 +6,6 @@ import {
   ChatbotFAQButtons,
   ChatbotFooter,
 } from './chatbotFunctions.js';
-import { openSocketConnection } from './chatbotSlackApi.js';
 
 const setModalVisible = () => {
   document.querySelector('.modalContainer').classList.remove('hidden');
@@ -18,7 +17,6 @@ export const makeChatbotUI = () => {
   ChatbotHeader();
   ChatbotCharacter();
   ChatbotList();
-  openSocketConnection();
   ChatbotFAQButtons();
   ChatbotFooter();
 };
