@@ -121,12 +121,57 @@ const QuestionItem = ({ message }) => {
   `;
 };
 
+const UserMessageItem = ({
+  inquire,
+  prevInquire,
+  userName,
+  messageContents,
+  isUserMessage,
+}) => {
+  let innerHTML = `<li class="resItem"><div>`;
+  const isDiffType =
+    (prevInquire.content[0].substr(0, 3) == '내용:') != isUserMessage;
+  if (isDiffType || prevInquire.title !== inquire.title) {
+    innerHTML += `<p class="chatName">${userName}</p>`;
+  }
+  innerHTML += `<p class="chatItemContainer userChatItemContainer">${messageContents}</p></div></li>`;
+
+  return innerHTML;
+};
+
+const AdminMessageItem = ({ message, messageContents, prevTime }) => {
+  let innerHTML = `<li key=${message.id} class="chatItem">`;
+  if (prevTime === undefined || prevTime !== message.createdAt) {
+    innerHTML += `<p class="chatTime">${message.createdAt}</p>`;
+  }
+  innerHTML += `
+    <div class="chatItemWrapper">
+      <div class="chatLogoBox" >
+        <img
+          class="headerLogo"
+          alt="headerLogo"
+          src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+          alt="챗봇 캐릭터"
+        />
+      </div>
+      <div>
+        <p class="chatName">디지털 하나로 문의 채널</p>
+        <p class="chatItemContainer">${messageContents}</p>
+      </div>
+    </div>
+  </li>
+  `;
+
+  return innerHTML;
+};
+
 export const ChatbotList = () => {
   const $chatbotList = document.querySelector('.chatbotList');
   let tempInnerHTML = '';
   messages.forEach((message, idx) => {
     const prevMessage = messages[idx - 1];
     const prevTime = prevMessage?.createdAt;
+
     if (message.type === 'FAQ_REQ') {
       tempInnerHTML += AnswerItem({ message, prevTime });
     } else if (message.type === 'FAQ_RES') {
@@ -139,41 +184,24 @@ export const ChatbotList = () => {
         slackInquire.forEach((inquire, idx, inquires) => {
           const { isUserMessage, userName, messageContents } =
             setUserMessageInfo(inquire);
-
+          const prevInquire = inquires[idx - 1] ?? {
+            content: [''],
+            title: 'uniqueTitle',
+          };
           if (isUserMessage) {
-            tempInnerHTML += `<li class="resItem"><div>`;
-            const prevInquire = inquires[idx - 1] ?? {
-              content: [''],
-              title: 'uniqueTitle',
-            };
-            const isDiffType =
-              (prevInquire.content[0].substr(0, 3) == '내용:') != isUserMessage;
-            if (isDiffType || prevInquire.title !== inquire.title) {
-              tempInnerHTML += `<p class="chatName">${userName}</p>`;
-            }
-            tempInnerHTML += `<p class="chatItemContainer userChatItemContainer">${messageContents}</p></div></li>`;
+            tempInnerHTML += UserMessageItem({
+              inquire,
+              prevInquire,
+              userName,
+              messageContents,
+              isUserMessage,
+            });
           } else {
-            tempInnerHTML += `<li key=${message.id} class="chatItem">`;
-            if (prevTime === undefined || prevTime !== message.createdAt) {
-              tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
-            }
-            tempInnerHTML += `
-                <div class="chatItemWrapper">
-                  <div class="chatLogoBox" >
-                    <img
-                      class="headerLogo"
-                      alt="headerLogo"
-                      src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-                      alt="챗봇 캐릭터"
-                    />
-                  </div>
-                  <div>
-                    <p class="chatName">디지털 하나로 문의 채널</p>
-                    <p class="chatItemContainer">${messageContents}</p>
-                  </div>
-                </div>
-              </li>
-              `;
+            tempInnerHTML += AdminMessageItem({
+              message,
+              messageContents,
+              prevTime,
+            });
           }
         });
       } else {
