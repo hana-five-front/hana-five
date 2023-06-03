@@ -203,6 +203,17 @@ li {
   font-size: 0.8rem;
   color: #777;
 }
+.response::before {
+  display: inline-block;
+  position: relative;
+  top: 0.125rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  content: '';
+  background-image: url('/public/images/greenDot.svg');
+  background-size: cover;
+  opacity: 1;
+}
 .resItem {
   display: flex;
   justify-content: flex-end;
