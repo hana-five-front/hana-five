@@ -53,12 +53,14 @@ export const handleLogin = $target => {
       },
     });
   } else if (!window.sessionStorage.getItem('userName')) {
+    localStorage.removeItem('slackQ&A');
     window.sessionStorage.setItem('userName', '');
     window.sessionStorage.setItem('userMail', '');
     $target.innerText = '로그인';
     location.reload();
   } else {
     Kakao.Auth.logout(function () {
+      localStorage.removeItem('slackQ&A');
       window.sessionStorage.setItem('userName', '');
       window.sessionStorage.setItem('userMail', '');
       $target.innerText = '로그인';
