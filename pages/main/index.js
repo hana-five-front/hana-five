@@ -155,13 +155,7 @@ const observeScreenResizeEvent = () => {
 
 window.addEventListener('load', () => {
   setLogoByScreenWidth();
-  document.addEventListener('scroll', () => {
-    if (window.scrollY > carouselHeight || window.innerWidth > 1210) {
-      setHeaderWhite();
-    } else {
-      setHeaderTransparent();
-    }
-  });
+  document.addEventListener('scroll', setLogoByScreenWidth);
 });
 
 observeScreenResizeEvent();
