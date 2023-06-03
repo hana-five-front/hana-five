@@ -25,10 +25,12 @@ export const setOpenModal = () => {
 
   $('html, body').animate({ scrollTop: '0' }, 500);
   document.body.style.overflow = 'hidden';
+  sessionStorage.setItem('isOpenModal', 'true');
 };
 
 export const setCloseModal = () => {
   closeSocketConnection();
+
   document.removeEventListener('keydown', handleKeydownEscape);
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.remove('chatbotModal');
@@ -41,6 +43,7 @@ export const setCloseModal = () => {
   });
 
   document.body.style.overflow = 'unset';
+  sessionStorage.setItem('isOpenModal', 'false');
 };
 
 export const getFormatTime = () => {

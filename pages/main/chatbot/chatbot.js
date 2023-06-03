@@ -43,6 +43,10 @@ const handleClickChatbot = () => {
 const main = () => {
   const $chatBotButton = document.querySelector('.chatbotButton');
   $chatBotButton.addEventListener('click', handleClickChatbot);
+  const isOpenModal = sessionStorage.getItem('isOpenModal');
+  if (isOpenModal === 'true') {
+    handleClickChatbot();
+  }
 };
 
-main();
+document.addEventListener('DOMContentLoaded', main);
