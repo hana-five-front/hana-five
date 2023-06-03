@@ -127,7 +127,7 @@ export const ChatbotList = () => {
 
       if (hasInquires) {
         slackInquire.forEach((inquire, idx, inquires) => {
-          const { isUserMessage, isAdminMessage, userName, messageContents } =
+          const { isUserMessage, userName, messageContents } =
             setUserMessageInfo(inquire);
 
           if (isUserMessage) {
