@@ -6,7 +6,6 @@ import {
   ChatbotFAQButtons,
   ChatbotFooter,
 } from './chatbotFunctions.js';
-import { openSocketConnection } from './chatbotSlackApi.js';
 
 const setModalVisible = () => {
   document.querySelector('.modalContainer').classList.remove('hidden');
@@ -18,7 +17,6 @@ export const makeChatbotUI = () => {
   ChatbotHeader();
   ChatbotCharacter();
   ChatbotList();
-  openSocketConnection();
   ChatbotFAQButtons();
   ChatbotFooter();
 };
@@ -43,6 +41,10 @@ const handleClickChatbot = () => {
 const main = () => {
   const $chatBotButton = document.querySelector('.chatbotButton');
   $chatBotButton.addEventListener('click', handleClickChatbot);
+  const isOpenModal = sessionStorage.getItem('isOpenModal');
+  if (isOpenModal === 'true') {
+    handleClickChatbot();
+  }
 };
 
-main();
+document.addEventListener('DOMContentLoaded', main);

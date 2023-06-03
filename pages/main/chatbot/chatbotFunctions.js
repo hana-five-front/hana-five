@@ -1,8 +1,12 @@
 import { handleLogin } from '../../../scripts/kakaoLogin.js';
 import { store } from './Store.js';
-import { renderContents, renderContentsWithSlack } from './chatbot.js';
+import { renderContents } from './chatbot.js';
 import { ANSWER_LIST, FAQ_LIST, RES_ID_QNA, messages } from './chatbotData.js';
-import { sendQnaToSlack, closeSocketConnection } from './chatbotSlackApi.js';
+import {
+  sendQnaToSlack,
+  closeSocketConnection,
+  openSocketConnection,
+} from './chatbotSlackApi.js';
 
 const SCROLL_ANIMATION_DURATION = 400;
 
@@ -13,6 +17,8 @@ const handleKeydownEscape = e => {
 };
 
 export const setOpenModal = () => {
+  openSocketConnection();
+
   document.addEventListener('keydown', handleKeydownEscape);
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.add('chatbotModal');
@@ -25,10 +31,12 @@ export const setOpenModal = () => {
 
   $('html, body').animate({ scrollTop: '0' }, 500);
   document.body.style.overflow = 'hidden';
+  sessionStorage.setItem('isOpenModal', 'true');
 };
 
 export const setCloseModal = () => {
   closeSocketConnection();
+
   document.removeEventListener('keydown', handleKeydownEscape);
   const $modalContainer = document.querySelector('.modalContainer');
   $modalContainer.classList.remove('chatbotModal');
@@ -41,6 +49,7 @@ export const setCloseModal = () => {
   });
 
   document.body.style.overflow = 'unset';
+  sessionStorage.setItem('isOpenModal', 'false');
 };
 
 export const getFormatTime = () => {
@@ -69,92 +78,130 @@ export const ChatbotHeader = () => {
   $chevronLeft.addEventListener('click', setCloseModal);
 };
 
+const AnswerItem = ({ message, prevTime }) => {
+  let innerHTML = `<li key=${message.id} class="chatItem">`;
+  if (prevTime === undefined || prevTime !== message.createdAt) {
+    innerHTML += `<p class="chatTime">${message.createdAt}</p>`;
+  }
+  innerHTML += `
+    <div class="chatItemWrapper">
+      <div class="chatLogoBox" >
+        <img
+          class="headerLogo"
+          alt="headerLogo"
+          src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+          alt="챗봇 캐릭터"
+        />
+      </div>
+      <div>
+        <p class="chatName">디지털 하나로 문의 채널</p>
+        <p class="chatItemContainer">${message.contents}</p>
+      </div>
+    </div>
+  </li>
+  `;
+
+  return innerHTML;
+};
+
+const QuestionItem = ({ message }) => {
+  return `
+    <li class="resItem">
+      <button 
+        key=${message.resId} 
+        class="qnaButtonSelected" 
+        data-resId=${message.resId}
+        data-nextReqGroup=${message.nextReqGroup}
+        data-contents=${message.contents}
+      >
+        <span class="buttonIcon">${message.emojies}</span>
+        <span class="buttonText">${message.contents}</span>
+      </button>
+    </li>
+  `;
+};
+
+const UserMessageItem = ({
+  inquire,
+  prevInquire,
+  userName,
+  messageContents,
+  isUserMessage,
+}) => {
+  let innerHTML = `<li class="resItem"><div>`;
+  const isDiffType =
+    (prevInquire.content[0].substr(0, 3) == '내용:') != isUserMessage;
+  if (isDiffType || prevInquire.title !== inquire.title) {
+    innerHTML += `<p class="chatName">${userName}</p>`;
+  }
+  innerHTML += `<p class="chatItemContainer userChatItemContainer">${messageContents}</p></div></li>`;
+
+  return innerHTML;
+};
+
+const AdminMessageItem = ({ message, messageContents, prevTime }) => {
+  let innerHTML = `<li key=${message.id} class="chatItem">`;
+  if (prevTime === undefined || prevTime !== message.createdAt) {
+    innerHTML += `<p class="chatTime">${message.createdAt}</p>`;
+  }
+  innerHTML += `
+    <div class="chatItemWrapper">
+      <div class="chatLogoBox" >
+        <img
+          class="headerLogo"
+          alt="headerLogo"
+          src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
+          alt="챗봇 캐릭터"
+        />
+      </div>
+      <div>
+        <p class="chatName">디지털 하나로 문의 채널</p>
+        <p class="chatItemContainer">${messageContents}</p>
+      </div>
+    </div>
+  </li>
+  `;
+
+  return innerHTML;
+};
+
 export const ChatbotList = () => {
   const $chatbotList = document.querySelector('.chatbotList');
   let tempInnerHTML = '';
-  messages.forEach((message, i) => {
-    const prevMessage = messages[i - 1];
+  messages.forEach((message, idx) => {
+    const prevMessage = messages[idx - 1];
     const prevTime = prevMessage?.createdAt;
+
     if (message.type === 'FAQ_REQ') {
-      tempInnerHTML += `<li key=${message.id} class="chatItem">`;
-      if (prevTime === undefined || prevTime !== message.createdAt) {
-        tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
-      }
-      tempInnerHTML += `
-        <div class="chatItemWrapper">
-          <div class="chatLogoBox" >
-            <img
-              class="headerLogo"
-              alt="headerLogo"
-              src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-              alt="챗봇 캐릭터"
-            />
-          </div>
-          <div>
-            <p class="chatName">디지털 하나로 문의 채널</p>
-            <p class="chatItemContainer">${message.contents}</p>
-          </div>
-        </div>
-      </li>
-      `;
+      tempInnerHTML += AnswerItem({ message, prevTime });
     } else if (message.type === 'FAQ_RES') {
-      tempInnerHTML += `
-        <li class="resItem">
-          <button 
-            key=${message.resId} 
-            class="qnaButtonSelected" 
-            data-resId=${message.resId}
-            data-nextReqGroup=${message.nextReqGroup}
-            data-contents=${message.contents}
-          >
-            <span class="buttonIcon">${message.emojies}</span>
-            <span class="buttonText">${message.contents}</span>
-          </button>
-        </li>
-      `;
+      tempInnerHTML += QuestionItem({ message });
     } else {
       const slackInquire = JSON.parse(localStorage.getItem('slackQ&A'));
       const hasInquires = setHasInquires(slackInquire);
 
       if (hasInquires) {
         slackInquire.forEach((inquire, idx, inquires) => {
-          const { isUserMessage, isAdminMessage, userName, messageContents } =
+          const { isUserMessage, userName, messageContents } =
             setUserMessageInfo(inquire);
-
+          const prevInquire = inquires[idx - 1] ?? {
+            content: [''],
+            title: 'uniqueTitle',
+          };
           if (isUserMessage) {
-            tempInnerHTML += `<li class="resItem"><div>`;
-            const prevInquire = inquires[idx - 1] ?? {
-              content: [''],
-              title: 'uniqueTitle',
-            };
-            const isDiffType =
-              (prevInquire.content[0].substr(0, 3) == '내용:') != isUserMessage;
-            if (isDiffType || prevInquire.title !== inquire.title) {
-              tempInnerHTML += `<p class="chatName">${userName}</p>`;
-            }
-            tempInnerHTML += `<p class="chatItemContainer userChatItemContainer">${messageContents}</p></div></li>`;
+            tempInnerHTML += UserMessageItem({
+              inquire,
+              prevInquire,
+              userName,
+              messageContents,
+              isUserMessage,
+            });
           } else {
-            tempInnerHTML += `<li key=${message.id} class="chatItem">`;
-            if (prevTime === undefined || prevTime !== message.createdAt) {
-              tempInnerHTML += `<p class="chatTime">${message.createdAt}</p>`;
-            }
-            tempInnerHTML += `
-                <div class="chatItemWrapper">
-                  <div class="chatLogoBox" >
-                    <img
-                      class="headerLogo"
-                      alt="headerLogo"
-                      src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-                      alt="챗봇 캐릭터"
-                    />
-                  </div>
-                  <div>
-                    <p class="chatName">디지털 하나로 문의 채널</p>
-                    <p class="chatItemContainer">${messageContents}</p>
-                  </div>
-                </div>
-              </li>
-              `;
+            tempInnerHTML += AdminMessageItem({
+              message,
+              messageContents,
+              prevTime,
+            });
           }
         });
       } else {
@@ -202,33 +249,33 @@ export const ChatbotCharacter = () => {
 };
 
 export const handleClickFAQButton = e => {
-  const question = {};
-  question['resId'] = e.target.dataset.resid;
-  question['nextReqGroup'] = e.target.dataset.nextreqgroup;
-  question['contents'] = e.target.dataset.contents;
-  question['emojies'] = e.target.dataset.emoji;
-  question['type'] = 'FAQ_RES';
-  question['id'] = messages[messages.length - 1].id + 1;
-  question['createdAt'] = getFormatTime(Date.now());
+  const { resid, nextreqgroup, contents, emoji } = e.target.dataset;
+  const question = {
+    resId: resid,
+    nextReqGroup: nextreqgroup,
+    contents,
+    emojies: emoji,
+    type: 'FAQ_RES',
+    id: messages[messages.length - 1].id + 1,
+    createdAt: getFormatTime(Date.now()),
+  };
   messages.push(question);
   store.setState('nextReqGroup', question.nextReqGroup);
 
   // 선택한 버튼만 남기기
-  const temp = ANSWER_LIST.filter(response => {
-    return parseInt(response.resId) === parseInt(question.resId);
-  })[0];
-  if (temp) {
-    temp.createdAt = getFormatTime(Date.now());
-    temp.contents = temp.contents.replace(/\n/g, '<br>');
-    messages.push(temp);
+  let selectedQuestion = ANSWER_LIST.filter(
+    response => parseInt(response.resId) === parseInt(question.resId)
+  )[0];
+  if (selectedQuestion) {
+    selectedQuestion = {
+      ...selectedQuestion,
+      createdAt: getFormatTime(Date.now()),
+      contents: selectedQuestion.contents.replace(/\n/g, '<br>'),
+    };
+    messages.push(selectedQuestion);
   }
 
-  if (question['resId'] == RES_ID_QNA && sessionStorage.getItem('userName')) {
-    renderContentsWithSlack();
-  } else {
-    renderContents();
-  }
-
+  renderContents();
   scrollDownChatbotContainer();
 };
 
@@ -240,13 +287,10 @@ export const ChatbotFAQButtons = () => {
     if (parseInt(reqGroup) === parseInt(store.getState('nextReqGroup'))) {
       // 첫 질문에 처음으로 돌아가기 삭제
       if (messages.length === 1 && resId === 0) return;
-
       // 방금 선택한 버튼 생성 방지
       if (messages[messages.length - 1].resId === resId) return;
 
-      if (resId === 0) {
-        backgroundColor = '#888cf6';
-      }
+      if (resId === 0) backgroundColor = '#888cf6';
 
       tempInnerHTML += `
       <button key=${resId + '-' + Date.now()} class="qnaButton" 
