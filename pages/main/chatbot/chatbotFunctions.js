@@ -1,6 +1,6 @@
 import { handleLogin } from '../../../scripts/kakaoLogin.js';
 import { store } from './Store.js';
-import { renderContents, renderContentsWithSlack } from './chatbot.js';
+import { renderContents } from './chatbot.js';
 import { ANSWER_LIST, FAQ_LIST, RES_ID_QNA, messages } from './chatbotData.js';
 import { sendQnaToSlack, closeSocketConnection } from './chatbotSlackApi.js';
 
@@ -212,7 +212,6 @@ export const handleClickFAQButton = e => {
     id: messages[messages.length - 1].id + 1,
     createdAt: getFormatTime(Date.now()),
   };
-
   messages.push(question);
   store.setState('nextReqGroup', question.nextReqGroup);
 
@@ -220,7 +219,6 @@ export const handleClickFAQButton = e => {
   let selectedQuestion = ANSWER_LIST.filter(
     response => parseInt(response.resId) === parseInt(question.resId)
   )[0];
-
   if (selectedQuestion) {
     selectedQuestion = {
       ...selectedQuestion,
@@ -230,12 +228,7 @@ export const handleClickFAQButton = e => {
     messages.push(selectedQuestion);
   }
 
-  if (question['resId'] == RES_ID_QNA && sessionStorage.getItem('userName')) {
-    renderContentsWithSlack();
-  } else {
-    renderContents();
-  }
-
+  renderContents();
   scrollDownChatbotContainer();
 };
 
@@ -247,13 +240,10 @@ export const ChatbotFAQButtons = () => {
     if (parseInt(reqGroup) === parseInt(store.getState('nextReqGroup'))) {
       // 첫 질문에 처음으로 돌아가기 삭제
       if (messages.length === 1 && resId === 0) return;
-
       // 방금 선택한 버튼 생성 방지
       if (messages[messages.length - 1].resId === resId) return;
 
-      if (resId === 0) {
-        backgroundColor = '#888cf6';
-      }
+      if (resId === 0) backgroundColor = '#888cf6';
 
       tempInnerHTML += `
       <button key=${resId + '-' + Date.now()} class="qnaButton" 
