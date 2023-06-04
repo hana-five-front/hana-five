@@ -62,3 +62,6 @@ a:active {
   font-weight: bold;
   text-decoration: none;
 }
+.color-primary {
+  color: var(--primary-color);
+}

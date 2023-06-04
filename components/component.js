@@ -12,6 +12,7 @@ function makeHeader() {
       document.getElementById('header').innerHTML = headerContent;
       onClickSideBar();
       onClickShutDownSideBar();
+      setCurrentPageHighlighter();
     })
     .catch(function (error) {
       console.error(error);
@@ -20,6 +21,15 @@ function makeHeader() {
       kakaoLoginInit();
     });
 }
+
+const setCurrentPageHighlighter = () => {
+  const currentPage = window.location.pathname.split('/')[2];
+  if (document.querySelector(`.link__${currentPage}`)) {
+    document
+      .querySelector(`.link__${currentPage}`)
+      .classList.add('color-primary');
+  }
+};
 
 function onClickSideBar() {
   const sideBar = document.querySelector('.sideBar');
