@@ -86,22 +86,22 @@
     background-position: center;
   }
   .wbg-carousel1 {
-    background-image: url('../../public/images/캐러셀1.jpg');
+    background-image: url('../../public/images/1.HEIC');
     background-size: cover;
     background-position: contain;
   }
   .wbg-carousel2 {
-    background-image: url('../../public/images/캐러셀2.jpg');
+    background-image: url('../../public/images/2.HEIC');
     background-size: cover;
     background-position: contain;
   }
   .wbg-carousel3 {
-    background-image: url('../../public/images/캐러셀3.jpg');
+    background-image: url('../../public/images/3.HEIC');
     background-size: cover;
     background-position: contain;
   }
   .wbg-carousel4 {
-    background-image: url('../../public/images/캐러셀4.jpg');
+    background-image: url('../../public/images/4.HEIC');
     background-size: cover;
     background-position: contain;
   }
@@ -501,26 +501,26 @@
     color: #008485;
   }
   .bg-carousel2 {
-    background-image: url('../../public/images/originalPopUp.jpg');
+    background-image: url('../../public/images/1.HEIC');
     background-size: cover;
     background-position: center;
     z-index: -1;
     filter: brightness(30%);
   }
   .bg-carousel1 {
-    background-image: url('../../public/images/모바일캐러셀2.png');
+    background-image: url('../../public/images/2.HEIC');
     background-size: cover;
     background-position: center;
     filter: brightness(30%);
   }
   .bg-carousel3 {
-    background-image: url('../../public/images/모바일캐러셀1.png');
+    background-image: url('../../public/images/3.HEIC');
     background-size: cover;
     background-position: center;
     filter: brightness(30%);
   }
   .bg-carousel4 {
-    background-image: url('../../public/images/모바일캐러셀3.jpg');
+    background-image: url('../../public/images/4.HEIC');
     background-size: cover;
     background-position: center;
     filter: brightness(30%);
