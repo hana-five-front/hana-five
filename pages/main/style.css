@@ -1,6 +1,6 @@
 @media (min-width: 75.625rem) {
   .main-component {
-    height: 38.6875rem;
+    /* height: 38.6875rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +10,7 @@
   }
   .middle-component {
     width: 60rem;
-    height: 14.375rem;
+    /* height: 14.375rem; */
     display: flex;
     justify-content: space-between;
   }
