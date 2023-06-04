@@ -18,21 +18,62 @@ function makeNotice(title, date, id) {
 
   noticeContainer.appendChild(outerDiv);
 }
-
+function makeErrorNotice() {
+  noticeContainer.innerHTML=''
+  const outerDiv = document.createElement('div')
+  const outerBlank1 = document.createElement('div')
+  const outerBlank2 = document.createElement('div')
+  const outerBlank3 = document.createElement('div')
+  const outerBlank4 = document.createElement('div')
+  outerDiv.textContent = '공지사항 글이 없습니다.'
+  noticeContainer.appendChild(outerDiv)
+  noticeContainer.appendChild(outerBlank1)
+  noticeContainer.appendChild(outerBlank2)
+  noticeContainer.appendChild(outerBlank3)
+  noticeContainer.appendChild(outerBlank4)
+}
+function dataArrange(data) {
+  if(isValidJson(data)) {
+    data= JSON.parse(data)
+  }
+  data = data.map((e, idx) => {
+    e.title = markDownToPlainWords(e.title);
+    e.content = e.content.map(e => markDownToPlainWords(e));
+    e.date = dateToText(e.date);
+    e.name = e.name === '' ? '익명' : e.name;
+    return (e = { ...e, id: idx });
+  });
+  return data
+}
+function setLocalStorageNotice (data) {
+  return localStorage.setItem('notice', JSON.stringify(data));
+}
 function dateToText(date) {
   return date.split('T')[0];
 }
+function isValidJson(jsonString) {
+  try {
+    JSON.parse(jsonString);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+function renderNoticeInMainPage(data) {
+  noticeContainer.innerHTML = '';
+  for (let i = 0; i < 5; i++) {
+    let { title, date, id } = data[i];
+    date = dateToText(date);
+    title = markDownToPlainWords(title);
+    makeNotice(title, date, id);
+  }
+}
 
 function getSlackNotice() {
-  const data = JSON.parse(localStorage.getItem('notice'));
-  if (data) {
-    noticeContainer.innerHTML = '';
-    for (let i = 0; i < 5; i++) {
-      let { title, date, id } = data[i];
-      date = dateToText(date);
-      title = markDownToPlainWords(title);
-      makeNotice(title, date, id);
-    }
+  const localData = JSON.parse(localStorage.getItem('notice'));
+  if (localData) {
+     renderNoticeInMainPage(localData)
   }
   fetch('https://server-eternalclash.koyeb.app/slackapi')
     .then(function (response) {
@@ -42,27 +83,16 @@ function getSlackNotice() {
       throw new Error('Error: ' + response.status);
     })
     .then(function (data) {
-      data = JSON.parse(data);
-      data = data.map((e, idx) => {
-        e.title = markDownToPlainWords(e.title);
-        e.content = e.content.map(e => markDownToPlainWords(e));
-        e.date = dateToText(e.date);
-        e.name = e.name === '' ? '익명' : e.name;
-        return (e = { ...e, id: idx });
-      });
-      localStorage.setItem('notice', JSON.stringify(data));
-      noticeContainer.innerHTML = '';
-      for (let i = 0; i < 5; i++) {
-        let { title, date, id } = data[i];
-        date = dateToText(date);
-        title = markDownToPlainWords(title);
-
-        makeNotice(title, date, id);
-      }
+      data = dataArrange(data)
+      setLocalStorageNotice(data)
+      renderNoticeInMainPage(data)
     })
     .catch(function (error) {
       console.error(error);
+      if(!localData)
+      makeErrorNotice();
     });
 }
 
 getSlackNotice();
+
