@@ -450,7 +450,7 @@ const handleKeydownMessage = e => {
   }
 };
 
-const scrollDownChatbotContainer = () => {
+export const scrollDownChatbotContainer = () => {
   const $chatbotList = document.querySelector('.chatbotList');
   $('.modalContainer').animate(
     { scrollTop: $chatbotList.scrollHeight, easing: 'ease-in-out' },
