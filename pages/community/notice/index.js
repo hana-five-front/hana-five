@@ -41,9 +41,7 @@ function getSlackNotice() {
       console.error(error);
     });
 }
-if (!getSessionStorageItems('userName')) {
-  document.querySelector('.boardPostingButton').style.display = 'none';
-}
+
 getSlackNotice();
 
 let postType = 'notice';

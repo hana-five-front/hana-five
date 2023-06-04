@@ -63,6 +63,7 @@
   }
   .boardPostingButton {
     width: auto;
+    display: none;
   }
   .boardPosting:hover {
     color: #008485;
