@@ -1,4 +1,4 @@
-import { ChatbotList } from './chatbotFunctions.js';
+import { ChatbotList, scrollDownChatbotContainer } from './chatbotFunctions.js';
 
 const serverUrl = `https://hon-adria-eternalclash.koyeb.app`;
 
@@ -29,6 +29,7 @@ export const openSocketConnection = () => {
 
     localStorage.setItem('slackQ&A', JSON.stringify(data));
     ChatbotList();
+    scrollDownChatbotContainer();
   });
 };
 
