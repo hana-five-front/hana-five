@@ -162,9 +162,9 @@ const renderCalendarTemplate = () => {
 const renderCalendarTitle = () => {
   const calendarMonth = document.querySelector('.calendar-month');
   calendarMonth.innerHTML = `
-    <img class="previous" src="/public/images/leftBtnImg.svg" alt="이전달">
+    <img class="previous" src="/public/images/leftBtnImg.svg" >
       <div id="month"></div>
-    <img class="next" src="/public/images/rightBtnImg.svg" alt="다음달">
+    <img class="next" src="/public/images/rightBtnImg.svg" >
   `;
   let $title = document.getElementById('month');
 
@@ -265,7 +265,7 @@ const renderSpecialSchedules = (specialData, monthKey, specialScheduleName) => {
   }
 
   specialList.innerHTML = '';
-  
+
   if (Array.isArray(lectureInfo) && lectureInfo.length > 0) {
     lectureInfo.forEach(item => {
       let specialContent = document.createElement('div');

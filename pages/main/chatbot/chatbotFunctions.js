@@ -62,13 +62,11 @@ export const getFormatTime = () => {
 export const ChatbotHeader = () => {
   const $chatbotHeader = document.querySelector('.chatbotHeader');
   $chatbotHeader.innerHTML = `
-    <img class="chevronLeft" src="/public/images/Chevron Left.svg" width="18px" height="18px" alt="뒤로가기" />
+    <img class="chevronLeft" src="/public/images/Chevron Left.svg"  />
     <div class="chatLogoBox">
       <img
         class="headerLogo"
-        alt="headerLogo"
         src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-        alt="챗봇 캐릭터"
       />
     </div>
     <p class="headerTitle">디지털 하나로 문의 채널</p>
@@ -88,9 +86,9 @@ const AnswerItem = ({ message, prevTime }) => {
       <div class="chatLogoBox" >
         <img
           class="headerLogo"
-          alt="headerLogo"
+          
           src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-          alt="챗봇 캐릭터"
+          
         />
       </div>
       <div>
@@ -149,9 +147,9 @@ const AdminMessageItem = ({ message, messageContents, prevTime }) => {
       <div class="chatLogoBox" >
         <img
           class="headerLogo"
-          alt="headerLogo"
+          
           src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-          alt="챗봇 캐릭터"
+          
         />
       </div>
       <div>
@@ -214,9 +212,9 @@ export const ChatbotList = () => {
               <div class="chatLogoBox" >
                 <img
                   class="headerLogo"
-                  alt="headerLogo"
+                  
                   src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-                  alt="챗봇 캐릭터"
+                  
                 />
               </div>
               <div>
@@ -238,9 +236,9 @@ export const ChatbotCharacter = () => {
   <div class="profileImageBox">
   <img
     class="profileImage"
-    alt="profileImage"
+    
     src="https://haitalk.kebhana.com/aicc/soe/service/storage/49e50558-09e8-47f2-b567-93b2a41099fc"
-    alt="챗봇 캐릭터"
+    
   />
   </div>
     <p class="profileTitle">디지털 하나로 문의 채널</p>

@@ -30,5 +30,4 @@ export const makeImageTags = images => {
   document.querySelector('.imagesContainer').innerHTML = tagString;
 };
 
-const imgTagTemplate = src =>
-  `<img src="${src}" alt="수강생 분위기" width="300px" height="300px" />`;
+const imgTagTemplate = src => `<img src="${src}" />`;
