@@ -53,37 +53,41 @@ const newMake = () => {
   }
 };
 
-const rotate = async () => {
-  roulletContainer.style.display = 'none';
-  $c.style.transform = 'initial';
-  $c.style.transition = 'initial';
+window.onload = function () {
+  const $roulletTitle = document.querySelector('rullet-top');
+  console.log($roulletTitle);
 
-  if (roulletContainer.children) {
-    roulletContainer.innerHTML = '';
-  }
+  const rotate = async () => {
+    roulletContainer.style.display = 'none';
+    $c.style.transform = 'initial';
+    $c.style.transition = 'initial';
 
-  setTimeout(() => {
-    const ran = Math.floor(Math.random() * product.length);
-
-    const arc = 360 / product.length;
-    const rotate = ran * arc + 3600 + arc * 3 - arc / 4;
-
-    $c.style.transform = `rotate(-${rotate - 144}deg)`;
-    $c.style.transition = '2s';
-
+    if (roulletContainer.children) {
+      roulletContainer.innerHTML = '';
+    }
+    $roulletTitle.style.display = 'none';
     setTimeout(() => {
-      var ps = new kakao.maps.services.Places();
+      const ran = Math.floor(Math.random() * product.length);
 
-      const mainTitle = document.createElement('div');
-      mainTitle.classList.add('pick-list-title');
-      mainTitle.innerHTML = `성수동 <span class="rullet-keyword"></span> 맛집 리스트`;
-      roulletContainer.appendChild(mainTitle);
+      const arc = 360 / product.length;
+      const rotate = ran * arc + 3600 + arc * 3 - arc / 4;
 
-      ps.keywordSearch(`성수역 ${product[ran]} 맛집`, placesSearchCB);
-      const name = document.querySelectorAll(`.rullet-keyword`)[0];
-      name.innerText = `[${product[ran]}]`;
-    }, 2000);
-  }, 1);
+      $c.style.transform = `rotate(-${rotate - 144}deg)`;
+      $c.style.transition = '2s';
+      setTimeout(() => {
+        var ps = new kakao.maps.services.Places();
+
+        const mainTitle = document.createElement('div');
+        mainTitle.classList.add('pick-list-title');
+        mainTitle.innerHTML = `성수동 <span class="rullet-keyword"></span> 맛집 리스트`;
+        roulletContainer.appendChild(mainTitle);
+
+        ps.keywordSearch(`성수역 ${product[ran]} 맛집`, placesSearchCB);
+        const name = document.querySelectorAll(`.rullet-keyword`)[0];
+        name.innerText = `[${product[ran]}]`;
+      }, 2000);
+    }, 1);
+  };
 };
 
 newMake();

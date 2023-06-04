@@ -6,7 +6,7 @@
   canvas {
     transition: 2s;
   }
-  
+
   main {
     position: relative;
     width: 60rem;
@@ -16,16 +16,16 @@
     justify-content: center;
     padding-top: 1.875rem;
   }
-  
+
   button:active {
     background: #444;
     color: #f9f9f9;
   }
-  
+
   .roullet-component {
     height: 24.125rem;
     width: 30%;
-    margin-top: 1.25rem;
+    margin-top: 6.25rem;
     display: flex;
     padding-top: 3.125rem;
     flex-direction: column;
@@ -37,7 +37,7 @@
     display: flex;
     justify-content: center;
   }
-  
+
   .rullet-top {
     position: absolute;
     top: 1rem;
@@ -47,26 +47,27 @@
     justify-content: center;
     width: 100%;
     height: 5.625rem;
+    margin-top: 5rem;
     margin-bottom: 1.875rem;
   }
-  
+
   .rullet-top-title {
     font-size: 3.1875rem;
     height: 3.5625rem;
   }
-  
+
   .rullet-top-subtitle {
     margin-top: 0.625rem;
     font-size: 0.9375rem;
     color: #6b7684;
   }
-  
+
   .rul-cursor {
     position: absolute;
     right: -2rem;
     top: -2.2rem;
   }
-  
+
   .rullet-button {
     width: 13.75rem;
     height: 3.125rem;
@@ -86,15 +87,15 @@
   .rullet-button:hover {
     font-weight: bold;
   }
-  
+
   .list-component {
     height: 12rem;
     width: 70%;
-  
+
     display: flex;
     justify-content: space-between;
   }
-  
+
   .pick-list {
     width: 28rem;
     height: 100%;
@@ -112,7 +113,7 @@
   .rullet-list {
     width: 70%;
     padding-top: 1.875rem;
-    height: 400px;
+    height: 25rem;
     margin-left: 3.75rem;
   }
   .rulletlist-list-name {
@@ -131,12 +132,12 @@
     align-items: center;
     justify-content: space-between;
   }
-  
+
   a {
     color: inherit;
     text-decoration: none;
   }
-  
+
   .rullet-keyword {
     color: #008375;
   }
@@ -180,7 +181,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom:5vh;
+    margin-bottom: 5vh;
   }
   .roullet-canvas {
     position: relative;
@@ -212,10 +213,9 @@
   .rullet-list {
     width: 95vw;
     padding-top: 1.875rem;
-    margin-bottom:10vh;
+    margin-bottom: 10vh;
   }
   .list-component {
-
     width: 95vw;
 
     display: flex;
@@ -225,7 +225,7 @@
   .pick-list {
     width: 100%;
     height: 100%;
-    padding-bottom:10vh;
+    padding-bottom: 10vh;
   }
   .pick-list-title {
     width: 100%;
