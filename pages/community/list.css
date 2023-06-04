@@ -87,15 +87,24 @@
     justify-content: space-between;
   }
   .boardContentTitle {
-    width: 33rem;
+    max-width: 70vw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: 1rem;
   }
+  .boardContentTitle {
+    padding-right: 1.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .boardContentInformation {
     display: flex;
-    justify-content: end;
+  }
+  .boardContentName {
+    white-space: nowrap;
+    overflow: hidden;
   }
   .boardContentDate {
     margin-left: 1.25rem;
@@ -301,9 +310,11 @@
     text-overflow: ellipsis;
   }
   .boardContentName {
+    max-width: 8rem;
     white-space: nowrap;
     overflow: hidden;
     font-size: 0.8rem;
+    text-overflow: ellipsis;
   }
   .boardContentDate {
     white-space: nowrap;
