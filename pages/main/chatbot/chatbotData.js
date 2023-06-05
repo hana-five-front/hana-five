@@ -28,98 +28,98 @@ export const FAQ_LIST = [
     reqGroup: 0,
     nextReqGroup: 0,
     contents: '디지털 하나로 소개',
-    emoji: '🏫',
+    emoji: 'emoji_1f3eb',
   },
   {
     resId: 2,
     reqGroup: 0,
     nextReqGroup: 1,
     contents: '지원 자격 문의',
-    emoji: '📝',
+    emoji: 'emoji_1f4dd',
   },
   {
     resId: 3,
     reqGroup: 0,
     nextReqGroup: 1,
     contents: '커리큘럼 문의',
-    emoji: '📈',
+    emoji: 'emoji_1f4c8',
   },
   {
     resId: 4,
     reqGroup: 0,
     nextReqGroup: 2,
     contents: '교육 생활 문의',
-    emoji: '🎓',
+    emoji: 'emoji_1f393',
   },
   {
     resId: 5,
     reqGroup: 1,
     nextReqGroup: 3,
     contents: '배우는 기술 스택',
-    emoji: '📚',
+    emoji: 'emoji_1f4da',
   },
   {
     resId: 6,
     reqGroup: 1,
     nextReqGroup: 3,
     contents: '교육 기간 문의',
-    emoji: '🗓',
+    emoji: 'emoji_1f5d3',
   },
   {
     resId: 7,
     reqGroup: 2,
     nextReqGroup: 3,
     contents: '교육 특전 문의',
-    emoji: '🎁',
+    emoji: 'emoji_1f381',
   },
   {
     resId: 8,
     reqGroup: 2,
     nextReqGroup: 3,
     contents: '강사님 정보',
-    emoji: '👸',
+    emoji: 'emoji_1f478',
   },
   {
     resId: 9,
     reqGroup: 2,
     nextReqGroup: 3,
     contents: '시간표 문의',
-    emoji: '📆',
+    emoji: 'emoji_1f4c6',
   },
   {
     resId: 10,
     reqGroup: 0,
     nextReqGroup: 3,
     contents: '1대1 Q&A 문의',
-    emoji: '📢',
+    emoji: 'emoji_1f4e2',
   },
   {
     resId: 0,
     reqGroup: 0,
     nextReqGroup: 0,
     contents: '처음으로 돌아가기',
-    emoji: '🔙',
+    emoji: 'emoji_1f519',
   },
   {
     resId: 0,
     reqGroup: 1,
     nextReqGroup: 0,
     contents: '처음으로 돌아가기',
-    emoji: '🔙',
+    emoji: 'emoji_1f519',
   },
   {
     resId: 0,
     reqGroup: 2,
     nextReqGroup: 0,
     contents: '처음으로 돌아가기',
-    emoji: '🔙',
+    emoji: 'emoji_1f519',
   },
   {
     resId: 0,
     reqGroup: 3,
     nextReqGroup: 0,
     contents: '처음으로 돌아가기',
-    emoji: '🔙',
+    emoji: 'emoji_1f519',
   },
 ];
 
@@ -234,3 +234,21 @@ export const GEAR_ICON_SVG_TAG = `
       d="M5.83354 10.0001C5.83354 7.69939 7.69881 5.83342 10.0002 5.83342C12.3009 5.83342 14.1669 7.69939 14.1669 10.0001C14.1669 12.3008 12.3009 14.1667 10.0002 14.1667C7.69881 14.1667 5.83354 12.3008 5.83354 10.0001ZM18.3335 11.2501V8.75008L16.4752 8.44008C16.3094 7.75508 16.0394 7.11175 15.6794 6.52675L16.776 4.99091L15.0085 3.22341L13.4727 4.32091C12.8877 3.96091 12.2452 3.69091 11.5602 3.52508L11.2502 1.66675H8.7502L8.4402 3.52508C7.7552 3.69091 7.11187 3.96091 6.52687 4.32091L4.99104 3.22341L3.22354 4.99091L4.3202 6.52675C3.96104 7.11175 3.6902 7.75508 3.5252 8.44008L1.66687 8.75008V11.2501L3.5252 11.5601C3.6902 12.2451 3.96104 12.8884 4.3202 13.4734L3.22354 15.0092L4.99104 16.7767L6.52687 15.6792C7.11187 16.0384 7.7552 16.3092 8.4402 16.4751L8.7502 18.3334H11.2502L11.5602 16.4751C12.2452 16.3092 12.8877 16.0384 13.4727 15.6792L15.0085 16.7767L16.776 15.0092L15.6794 13.4734C16.0394 12.8884 16.3094 12.2451 16.4752 11.5601L18.3335 11.2501Z"
     ></path>
   </svg>`;
+
+const getEmoji = emojiFileName => {
+  return `<img src="/public/emojis/${emojiFileName}" height="18px" width="18px"/>`;
+};
+
+export const EMOJI = {
+  emoji_1f519: getEmoji('back-with-leftwards-arrow-above_1f519.png'),
+  emoji_1f4da: getEmoji('books_1f4da.png'),
+  emoji_1f4c8: getEmoji('chart-with-upwards-trend_1f4c8.png'),
+  emoji_1f393: getEmoji('graduation-cap_1f393.png'),
+  emoji_1f4dd: getEmoji('memo_1f4dd.png'),
+  emoji_1f478: getEmoji('princess_1f478.png'),
+  emoji_1f4e2: getEmoji('public-address-loudspeaker_1f4e2.png'),
+  emoji_1f3eb: getEmoji('school_1f3eb.png'),
+  emoji_1f5d3: getEmoji('spiral-calendar-pad_1f5d3.png'),
+  emoji_1f4c6: getEmoji('tear-off-calendar_1f4c6.png'),
+  emoji_1f381: getEmoji('wrapped-present_1f381.png'),
+};

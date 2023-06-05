@@ -1,7 +1,13 @@
 import { handleLogin } from '../../../scripts/kakaoLogin.js';
 import { store } from './Store.js';
 import { renderContents } from './chatbot.js';
-import { ANSWER_LIST, FAQ_LIST, RES_ID_QNA, messages } from './chatbotData.js';
+import {
+  ANSWER_LIST,
+  EMOJI,
+  FAQ_LIST,
+  RES_ID_QNA,
+  messages,
+} from './chatbotData.js';
 import {
   sendQnaToSlack,
   closeSocketConnection,
@@ -114,7 +120,7 @@ const QuestionItem = ({ message }) => {
         data-nextReqGroup=${message.nextReqGroup}
         data-contents=${message.contents}
       >
-        <span class="buttonIcon">${message.emojies}</span>
+        <span class="buttonIcon">${EMOJI[message.emojis]}</span>
         <span class="buttonText">${message.contents}</span>
       </button>
     </li>
@@ -254,7 +260,7 @@ export const handleClickFAQButton = e => {
     resId: resid,
     nextReqGroup: nextreqgroup,
     contents,
-    emojies: emoji,
+    emojis: emoji,
     type: 'FAQ_RES',
     id: messages[messages.length - 1].id + 1,
     createdAt: getFormatTime(Date.now()),
@@ -300,7 +306,7 @@ export const ChatbotFAQButtons = () => {
         data-emoji=${emoji}
         style="border: ${backgroundColor} 1px solid;"
       >
-        <span class="buttonIcon">${emoji}</span>
+        <span class="buttonIcon">${EMOJI[emoji]}</span>
         <span class="buttonText">${contents}</span>
       </button>
       `;
