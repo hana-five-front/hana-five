@@ -33,8 +33,8 @@ searchInput.addEventListener('keypress', function (e) {
   }
 });
 
-if (!getSessionStorageItems('userMail')) {
-  document.querySelector('.boardPostingButton').style.display = 'none';
+if (getSessionStorageItems('userMail')) {
+  document.querySelector('.boardPostingButton').style.display = 'inline-block';
 }
 
 displayPage(posts, currentPage, boardList);

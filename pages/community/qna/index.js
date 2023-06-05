@@ -32,8 +32,8 @@ searchInput.addEventListener('keypress', function (e) {
     searchBtn.click();
   }
 });
-if (!getSessionStorageItems('userName')) {
-  document.querySelector('.boardPostingButton').style.display = 'none';
+if (getSessionStorageItems('userName')) {
+  document.querySelector('.boardPostingButton').style.display = 'inline-block';
 }
 displayPage(posts, currentPage, boardList);
 displayPagination(posts, currentPage, pagination, boardList);

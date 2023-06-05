@@ -3,7 +3,6 @@ import {
   displayPage,
   displayPagination,
   getLocalStorageItems,
-  getSessionStorageItems,
   searchPost,
   asideHighLighter,
 } from '../community.js';
@@ -41,9 +40,7 @@ function getSlackNotice() {
       console.error(error);
     });
 }
-if (!getSessionStorageItems('userName')) {
-  document.querySelector('.boardPostingButton').style.display = 'none';
-}
+
 getSlackNotice();
 
 let postType = 'notice';
