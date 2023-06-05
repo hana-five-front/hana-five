@@ -3,7 +3,6 @@ import {
   displayPage,
   displayPagination,
   getLocalStorageItems,
-  getSessionStorageItems,
   searchPost,
   asideHighLighter,
 } from '../community.js';
