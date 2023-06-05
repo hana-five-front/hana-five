@@ -1,5 +1,7 @@
-const LOGO_TRANSPARENT = '/public/images/headerLogo.png';
-const LOGO_WHITE = '/public/images/headerLogoWhite.png';
+const LOGO_TRANSPARENT =
+  'https://user-images.githubusercontent.com/88099590/243233646-7ed71c7e-7040-4ea1-a213-70b1442cc270.png';
+const LOGO_WHITE =
+  'https://user-images.githubusercontent.com/88099590/243233655-037fb19f-d8b6-421a-81e8-81dc841419f5.png';
 const MENU_TRANSPARENT = '/public/images/header.svg';
 const MENU_WHITE = '/public/images/headerWhite.svg';
 

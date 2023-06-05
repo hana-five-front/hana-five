@@ -236,19 +236,45 @@ export const GEAR_ICON_SVG_TAG = `
   </svg>`;
 
 const getEmoji = emojiFileName => {
-  return `<img src="/public/emojis/${emojiFileName}" height="18px" width="18px"/>`;
+  return `<img src="/public/emojis/${emojiFileName}" height="18px" width="18px" alt="faqButtonEmoji" />`;
+};
+
+const getEmojiFromWeb = src => {
+  return `<img src="${src}" height="18px" width="18px" alt="faqButtonEmoji" />`;
 };
 
 export const EMOJI = {
-  emoji_1f519: getEmoji('back-with-leftwards-arrow-above_1f519.png'),
-  emoji_1f4da: getEmoji('books_1f4da.png'),
-  emoji_1f4c8: getEmoji('chart-with-upwards-trend_1f4c8.png'),
-  emoji_1f393: getEmoji('graduation-cap_1f393.png'),
-  emoji_1f4dd: getEmoji('memo_1f4dd.png'),
-  emoji_1f478: getEmoji('princess_1f478.png'),
-  emoji_1f4e2: getEmoji('public-address-loudspeaker_1f4e2.png'),
-  emoji_1f3eb: getEmoji('school_1f3eb.png'),
-  emoji_1f5d3: getEmoji('spiral-calendar-pad_1f5d3.png'),
-  emoji_1f4c6: getEmoji('tear-off-calendar_1f4c6.png'),
-  emoji_1f381: getEmoji('wrapped-present_1f381.png'),
+  emoji_1f519: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/back-with-leftwards-arrow-above_1f519.png'
+  ),
+  emoji_1f4da: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/books_1f4da.png'
+  ),
+  emoji_1f4c8: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/chart-with-upwards-trend_1f4c8.png'
+  ),
+  emoji_1f393: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/graduation-cap_1f393.png'
+  ),
+  emoji_1f4dd: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/memo_1f4dd.png'
+  ),
+  emoji_1f478: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/princess_1f478.png'
+  ),
+  emoji_1f4e2: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/public-address-loudspeaker_1f4e2.png'
+  ),
+  emoji_1f3eb: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/school_1f3eb.png'
+  ),
+  emoji_1f5d3: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/spiral-calendar-pad_1f5d3.png'
+  ),
+  emoji_1f4c6: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/tear-off-calendar_1f4c6.png'
+  ),
+  emoji_1f381: getEmojiFromWeb(
+    'https://em-content.zobj.net/thumbs/160/apple/118/wrapped-present_1f381.png'
+  ),
 };
