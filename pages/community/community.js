@@ -15,9 +15,9 @@ export function setBoard(key) {
       content: ['반갑습니다'],
       date: '2023-05-30',
       id: 3,
-      name: '임채동',
+      name: '성창호',
       mail: 'yahiggoda@naver.com',
-      title: '감사합니다 임채동입니다',
+      title: '감사합니다 성창호입니다',
     },
     {
       content: ['감사합니다'],
@@ -31,17 +31,17 @@ export function setBoard(key) {
       content: ['좋은 하루입니다'],
       date: '2023-05-28',
       id: 1,
-      name: '장주성',
+      name: '곽동현',
       mail: 'jjs7280@kakao.com',
-      title: '안녕하십니까 장주성입니다',
+      title: '안녕하십니까 곽동현입니다',
     },
     {
       content: ['날씨가 좋네요'],
       date: '2023-05-27',
       id: 0,
-      name: '이현주',
+      name: '정재헌',
       mail: 'joo000705@naver.com',
-      title: '좋은아침 이현주입니다',
+      title: '좋은아침 정재헌입니다',
     },
   ];
   if (!localStorage.getItem('board'))

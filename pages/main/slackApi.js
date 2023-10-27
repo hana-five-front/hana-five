@@ -75,7 +75,7 @@ function getSlackNotice() {
   if (localData) {
      renderNoticeInMainPage(localData)
   }
-  fetch('https://server-eternalclash.koyeb.app/slackapi')
+  fetch('http://localhost:4000/slackapi')
     .then(function (response) {
       if (response.ok) {
         return response.json();
