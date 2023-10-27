@@ -1,17 +1,4 @@
-fetch('https://server-eternalclash.koyeb.app/header')
-  .then(function (response) {
-    if (response.ok) {
-      return response.json();
-    }
-    throw new Error('Error: ' + response.status);
-  })
-  .then(function (data) {
-    window.Kakao.init(data.header);
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
-
+window.Kakao.init('70ea0bfda7dfa09b98fb24b01114d26f');
 export const kakaoLoginInit = () => {
   const loginBtn = document.querySelector('#login');
   const loginBtnMobile = document.querySelector('#login2');
