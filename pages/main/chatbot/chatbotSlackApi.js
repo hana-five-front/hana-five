@@ -1,10 +1,10 @@
 import { ChatbotList, scrollDownChatbotContainer } from './chatbotFunctions.js';
 
-const serverUrl = `https://hon-adria-eternalclash.koyeb.app`;
+const serverUrl = `http://localhost:3000`;
 
 let socket;
 export const sendQnaToSlack = (userName, content) => {
-  fetch('https://server-eternalclash.koyeb.app/qna', {
+  fetch('http://localhost:3000/qna', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

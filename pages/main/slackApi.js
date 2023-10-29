@@ -75,7 +75,7 @@ function getSlackNotice() {
   if (localData) {
      renderNoticeInMainPage(localData)
   }
-  fetch('http://localhost:4000/slackapi')
+  fetch('http://localhost:3000/slackapi')
     .then(function (response) {
       if (response.ok) {
         return response.json();
